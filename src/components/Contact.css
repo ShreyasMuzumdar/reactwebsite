@@ -198,6 +198,44 @@
   50% { transform: translateY(-5px); }
 }
 
+.resume-section {
+  margin-top: 30px;
+  padding: 20px;
+  background: rgba(74, 144, 226, 0.05);
+  border-radius: 15px;
+  border: 1px solid rgba(74, 144, 226, 0.2);
+}
+
+.resume-section h4 {
+  color: #2c5aa0;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.resume-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(45deg, #4a90e2, #2c5aa0);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.resume-download:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(74, 144, 226, 0.4);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.resume-icon {
+  font-size: 1.2rem;
+}
+
 @media (max-width: 768px) {
   .contact-content {
     grid-template-columns: 1fr;

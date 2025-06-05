@@ -7,41 +7,39 @@ const AboutMe = () => {
         <div className="about-content">
           <div className="about-text">
             <h1 className="name-title">Shreyas Muzumdar</h1>
-            <h2 className="subtitle">Robotics Engineer & AI Enthusiast</h2>
+            <h2 className="subtitle">Mechanical Engineer</h2>
             <p className="description">
-              Welcome to my digital workshop! I'm a passionate robotics engineer with expertise in 
-              autonomous systems, computer vision, and machine learning. I love building intelligent 
-              machines that can perceive, learn, and interact with the world around them.
-            </p>
-            <p className="description">
-              My journey in robotics began with a fascination for how we can bridge the gap between 
-              the physical and digital worlds. From designing control algorithms to implementing 
-              cutting-edge AI models, I'm always exploring new ways to push the boundaries of 
-              what's possible in robotics.
+              Hello, My name is Shreyas Muzumdar. I am a current student at Northeastern
+              University and graduated from Saint Johns High School. Over the past few years, worked
+              on various projects broadening my engineering experience. Eager to work hard
+              while learning new concepts and helping you and your team in any way I can.
             </p>
             <div className="skills">
               <h3>Technical Skills</h3>
               <div className="skills-grid">
                 <div className="skill-category">
+                  <h4>CAD & Design</h4>
+                  <span className="skill-tags">CAD (Computer Aided Design) • Stress Testing • 3D Rendering • 3D Simulation</span>
+                </div>
+                <div className="skill-category">
+                  <h4>Manufacturing</h4>
+                  <span className="skill-tags">Laser Cutting • Metalworking Processes • 3D Printing</span>
+                </div>
+                <div className="skill-category">
+                  <h4>AI/ML & Vision</h4>
+                  <span className="skill-tags">Machine Learning & AI • Computer Vision • IoT Protocols</span>
+                </div>
+                <div className="skill-category">
                   <h4>Programming</h4>
-                  <span className="skill-tags">Python • C++ • ROS • MATLAB</span>
-                </div>
-                <div className="skill-category">
-                  <h4>AI/ML</h4>
-                  <span className="skill-tags">TensorFlow • PyTorch • OpenCV • Computer Vision</span>
-                </div>
-                <div className="skill-category">
-                  <h4>Hardware</h4>
-                  <span className="skill-tags">Arduino • Raspberry Pi • Sensors • Actuators</span>
-                </div>
-                <div className="skill-category">
-                  <h4>Tools</h4>
-                  <span className="skill-tags">Git • Docker • Linux • Simulation</span>
+                  <span className="skill-tags">Python Development • Java Development • Web Development</span>
                 </div>
               </div>
             </div>
           </div>
           <div className="about-visual">
+            <div className="profile-image-container">
+              <img src="/reactwebsite/DSC_9142.jpg" alt="Shreyas Muzumdar" className="profile-image" />
+            </div>
             <div className="robot-animation">
               <div className="robot-head">
                 <div className="robot-eye left-eye"></div>

@@ -50,16 +50,35 @@ const Contact: React.FC = () => {
             <div className="contact-details">
               <div className="contact-item">
                 <span className="contact-icon">📍</span>
-                <span>Your City, Country</span>
+                <div>
+                  <h4>Location</h4>
+                  <p>Boston, MA</p>
+                </div>
               </div>
+              
               <div className="contact-item">
                 <span className="contact-icon">📧</span>
-                <span>your.email@example.com</span>
+                <div>
+                  <h4>Email</h4>
+                  <p>muzumdar.s@northeastern.edu</p>
+                </div>
               </div>
+              
               <div className="contact-item">
-                <span className="contact-icon">📱</span>
-                <span>+1 (555) 123-4567</span>
+                <span className="contact-icon">🎓</span>
+                <div>
+                  <h4>University</h4>
+                  <p>Northeastern University</p>
+                </div>
               </div>
+            </div>
+
+            <div className="resume-section">
+              <h4>My Resume</h4>
+              <a href="/reactwebsite/Shreyas_Muzumdar_Resume.pdf" className="resume-download" target="_blank" rel="noopener noreferrer">
+                <span className="resume-icon">📄</span>
+                Download PDF
+              </a>
             </div>
 
             <div className="social-links">

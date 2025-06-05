@@ -17,6 +17,8 @@ const Header = () => {
         <ul className="nav-links">
           <li><button onClick={() => scrollToSection('about')} className="nav-button">About</button></li>
           <li><button onClick={() => scrollToSection('projects')} className="nav-button">Projects</button></li>
+          <li><button onClick={() => scrollToSection('robots')} className="nav-button">Robots</button></li>
+          <li><button onClick={() => scrollToSection('resume')} className="nav-button">Resume</button></li>
           <li><button onClick={() => scrollToSection('contact')} className="nav-button">Contact</button></li>
         </ul>
       </nav>

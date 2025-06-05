@@ -7,6 +7,60 @@ const Projects: React.FC = () => {
 
   const projects = [
     {
+      title: "Auto Tracking Camera",
+      description: "Developed a camera attachment that tracks and moves to detect and follow faces using Machine Learning and computer vision.",
+      tech: ["Python", "Computer Vision", "Arduino", "Machine Learning"],
+      categories: ["AI & ML", "Arduino", "Computer Vision"],
+      image: "📹",
+      github: "https://github.com/",
+      demo: "#"
+    },
+    {
+      title: "3D Printing Manufacturing Control System",
+      description: "IoT-based system for real-time monitoring and control of 3D printing processes.",
+      tech: ["IoT", "Octopi", "Raspberry Pi", "Python"],
+      categories: ["3D Printing", "IoT", "Arduino"],
+      image: "🖨️",
+      github: "https://github.com/",
+      demo: "#"
+    },
+    {
+      title: "Custom Computer",
+      description: "Created a Custom Computer using liquid cooling and high-performance components for optimal gaming. Also install multiple different linux distros on top of linux and create a NAS, minecraft server and a VPN.",
+      tech: ["WSL", "Ubuntu Server", "Arch Linux", "Network Administration"],
+      categories: ["IoT", "Hardware"],
+      image: "�",
+      github: "https://github.com/",
+      demo: "#"
+    },
+    {
+      title: "Home Automation System",
+      description: "Installed a home automation system that connects over 150 smart devices across multiple ecosystems to a single Raspberry Pi server.",
+      tech: ["IoT", "Voice Recognition", "Raspberry Pi", "Node.js"],
+      categories: ["IoT", "AI & ML", "Arduino"],
+      image: "🏠",
+      github: "https://github.com/",
+      demo: "#"
+    },
+    {
+      title: "Hand Tracking Mouse",
+      description: "Developed a program that uses the camera to detect the position of a hand and uses it to move the cursor.",
+      tech: ["Raspberry Pi", "Machine Learning", "AI", "Computer Vision"],
+      categories: ["AI & ML", "Arduino", "Computer Vision"],
+      image: "�",
+      github: "https://github.com/",
+      demo: "#"
+    },
+    {
+      title: "Neural-based Object Recognition",
+      description: "Implemented a real-time object recognition system using deep neural networks for robotic applications.",
+      tech: ["OpenCV", "YOLO", "Raspberry Pi", "TensorFlow"],
+      categories: ["AI & ML", "Computer Vision", "Arduino"],
+      image: "🧠",
+      github: "https://github.com/",
+      demo: "#"
+    },
+    {
       title: "Autonomous Navigation Robot",
       description: "A mobile robot equipped with LIDAR and camera sensors for autonomous navigation in indoor environments. Implemented SLAM algorithms and path planning using ROS.",
       tech: ["Python", "ROS", "OpenCV", "LIDAR", "Raspberry Pi"],
@@ -25,29 +79,11 @@ const Projects: React.FC = () => {
       demo: "#"
     },
     {
-      title: "Auto Tracking Camera",
-      description: "Created a camera attachment that tracks and moves to detect and follow faces using Machine Learning and computer vision.",
-      tech: ["Python", "Computer Vision", "Arduino", "Machine Learning"],
-      categories: ["AI & ML", "Arduino", "Computer Vision"],
-      image: "📹",
-      github: "https://github.com/",
-      demo: "#"
-    },
-    {
-      title: "3D Printing Manufacturing Control",
-      description: "IoT-based system for real-time monitoring and control of 3D printing processes with advanced material tracking.",
-      tech: ["IoT", "Octopi", "Raspberry Pi", "Python"],
-      categories: ["3D Printing", "IoT", "Arduino"],
-      image: "🖨️",
-      github: "https://github.com/",
-      demo: "#"
-    },
-    {
-      title: "Drone Swarm Coordination",
-      description: "Multi-drone system for coordinated flight patterns and formation control. Implemented distributed algorithms for swarm intelligence.",
-      tech: ["Python", "MAVLink", "ArduPilot", "Network Communication"],
-      categories: ["Robotics", "AI & ML", "IoT"],
-      image: "🚁",
+      title: "3D Printed Robotic Hand",
+      description: "Biomimetic robotic hand with individual finger control using 3D printed components and servo motors for precise manipulation tasks.",
+      tech: ["3D Printing", "Arduino", "Servo Control", "CAD Design"],
+      categories: ["Robotics", "3D Printing", "Arduino"],
+      image: "✋",
       github: "https://github.com/",
       demo: "#"
     },
@@ -59,46 +95,10 @@ const Projects: React.FC = () => {
       image: "⚽",
       github: "https://github.com/",
       demo: "#"
-    },
-    {
-      title: "3D Printed Robotic Hand",
-      description: "Biomimetic robotic hand with individual finger control using 3D printed components and servo motors for precise manipulation tasks.",
-      tech: ["3D Printing", "Arduino", "Servo Control", "CAD Design"],
-      categories: ["Robotics", "3D Printing", "Arduino"],
-      image: "✋",
-      github: "https://github.com/",
-      demo: "#"
-    },
-    {
-      title: "Smart Home Automation Hub",
-      description: "IoT-based system controlling 50+ smart devices with voice recognition and mobile app interface for comprehensive home automation.",
-      tech: ["Raspberry Pi", "IoT Protocols", "Voice Recognition", "Node.js"],
-      categories: ["IoT", "AI & ML", "Mobile Development"],
-      image: "🏠",
-      github: "https://github.com/",
-      demo: "#"
-    },
-    {
-      title: "Hand Tracking Mouse",
-      description: "Developed a program that uses the camera to detect the position of a hand and uses it to move the cursor.",
-      tech: ["Raspberry Pi", "Machine Learning", "AI", "Computer Vision"],
-      categories: ["AI & ML", "Arduino", "Computer Vision"],
-      image: "👆",
-      github: "https://github.com/",
-      demo: "#"
-    },
-    {
-      title: "Neural Object Recognition",
-      description: "Implemented a real-time object recognition system using deep neural networks for robotic applications.",
-      tech: ["OpenCV", "YOLO", "Raspberry Pi", "TensorFlow"],
-      categories: ["AI & ML", "Computer Vision", "Arduino"],
-      image: "🧠",
-      github: "https://github.com/",
-      demo: "#"
     }
   ];
 
-  const filterCategories = ["All", "Robotics", "AI & ML", "Computer Vision", "Arduino", "3D Printing", "IoT", "Mobile Development"];
+  const filterCategories = ["All", "Robotics", "AI & ML", "Computer Vision", "Arduino", "3D Printing", "IoT", "Hardware"];
 
   const filteredProjects = projects.filter(project => {
     const matchesCategory = activeFilter === 'All' || project.categories.includes(activeFilter);
