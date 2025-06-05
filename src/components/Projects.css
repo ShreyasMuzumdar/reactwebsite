@@ -1,7 +1,7 @@
 .projects {
   padding: 80px 0;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-  color: white;
+  background: linear-gradient(135deg, #f8fbff 0%, #ffffff 50%, #f0f4f8 100%);
+  color: #2c5aa0;
 }
 
 .projects .container {
@@ -38,10 +38,10 @@
 }
 
 .project-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.8);
   border-radius: 15px;
   padding: 30px;
-  border: 1px solid rgba(0, 255, 255, 0.2);
+  border: 1px solid rgba(74, 144, 226, 0.2);
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
   position: relative;
@@ -55,7 +55,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+  background: linear-gradient(90deg, transparent, rgba(74, 144, 226, 0.1), transparent);
   transition: left 0.5s ease;
 }
 
@@ -65,8 +65,8 @@
 
 .project-card:hover {
   transform: translateY(-10px);
-  border-color: #00ffff;
-  box-shadow: 0 20px 40px rgba(0, 255, 255, 0.1);
+  border-color: #4a90e2;
+  box-shadow: 0 20px 40px rgba(74, 144, 226, 0.2);
 }
 
 .project-icon {
@@ -86,7 +86,7 @@
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 15px;
-  color: #00ffff;
+  color: #4a90e2;
   text-align: center;
 }
 
@@ -94,7 +94,7 @@
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 20px;
-  color: rgba(255, 255, 255, 0.8);
+  color: #5a6c7d;
 }
 
 .project-tech {
@@ -105,17 +105,17 @@
 }
 
 .tech-tag {
-  background: rgba(0, 255, 255, 0.1);
-  color: #00ffff;
+  background: rgba(74, 144, 226, 0.1);
+  color: #4a90e2;
   padding: 5px 12px;
   border-radius: 20px;
   font-size: 0.85rem;
-  border: 1px solid rgba(0, 255, 255, 0.3);
+  border: 1px solid rgba(74, 144, 226, 0.3);
   transition: all 0.3s ease;
 }
 
 .tech-tag:hover {
-  background: rgba(0, 255, 255, 0.2);
+  background: rgba(74, 144, 226, 0.2);
   transform: scale(1.05);
 }
 
@@ -130,19 +130,19 @@
   align-items: center;
   gap: 8px;
   padding: 10px 20px;
-  background: rgba(0, 255, 255, 0.1);
-  color: white;
+  background: rgba(74, 144, 226, 0.1);
+  color: #2c5aa0;
   text-decoration: none;
   border-radius: 25px;
-  border: 1px solid rgba(0, 255, 255, 0.3);
+  border: 1px solid rgba(74, 144, 226, 0.3);
   transition: all 0.3s ease;
   font-weight: 500;
 }
 
 .project-link:hover {
-  background: rgba(0, 255, 255, 0.2);
+  background: rgba(74, 144, 226, 0.2);
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 255, 255, 0.2);
+  box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
 }
 
 @media (max-width: 768px) {

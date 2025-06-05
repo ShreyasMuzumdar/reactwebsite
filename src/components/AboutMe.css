@@ -1,7 +1,7 @@
 .about-section {
   min-height: 100vh;
   padding: 8rem 0 4rem 0;
-  background: linear-gradient(135deg, #0f0f23 0%, #1a1a3a 50%, #0f0f23 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 50%, #ffffff 100%);
   position: relative;
   overflow: hidden;
 }
@@ -14,8 +14,8 @@
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(circle at 20% 50%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(0, 255, 255, 0.1) 0%, transparent 50%);
+    radial-gradient(circle at 20% 50%, rgba(74, 144, 226, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(74, 144, 226, 0.1) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -35,14 +35,14 @@
 .name-title {
   font-size: 3.5rem;
   font-weight: bold;
-  color: #ffffff;
+  color: #2c5aa0;
   margin-bottom: 0.5rem;
-  text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  text-shadow: 0 0 20px rgba(74, 144, 226, 0.3);
 }
 
 .subtitle {
   font-size: 1.8rem;
-  color: #00ffff;
+  color: #4a90e2;
   margin-bottom: 2rem;
   font-weight: 300;
 }
@@ -50,7 +50,7 @@
 .description {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #e0e0e0;
+  color: #5a6c7d;
   margin-bottom: 1.5rem;
 }
 
@@ -59,7 +59,7 @@
 }
 
 .skills h3 {
-  color: #00ffff;
+  color: #4a90e2;
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
   text-align: center;
@@ -72,8 +72,8 @@
 }
 
 .skill-category {
-  background: rgba(0, 255, 255, 0.1);
-  border: 1px solid rgba(0, 255, 255, 0.3);
+  background: rgba(74, 144, 226, 0.1);
+  border: 1px solid rgba(74, 144, 226, 0.3);
   border-radius: 15px;
   padding: 1.5rem;
   text-align: center;
@@ -82,18 +82,18 @@
 
 .skill-category:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 255, 255, 0.2);
-  border-color: #00ffff;
+  box-shadow: 0 10px 25px rgba(74, 144, 226, 0.2);
+  border-color: #4a90e2;
 }
 
 .skill-category h4 {
-  color: #00ffff;
+  color: #4a90e2;
   font-size: 1.2rem;
   margin-bottom: 0.8rem;
 }
 
 .skill-tags {
-  color: #b0b0b0;
+  color: #5a6c7d;
   font-size: 0.9rem;
   line-height: 1.5;
 }
@@ -112,23 +112,23 @@
 .robot-head {
   width: 120px;
   height: 100px;
-  background: linear-gradient(45deg, #333, #555);
-  border: 3px solid #00ffff;
+  background: linear-gradient(45deg, #e6f1fa, #cce7f0);
+  border: 3px solid #4a90e2;
   border-radius: 20px 20px 10px 10px;
   position: relative;
   margin-bottom: 10px;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  box-shadow: 0 0 20px rgba(74, 144, 226, 0.3);
 }
 
 .robot-eye {
   width: 20px;
   height: 20px;
-  background: #00ffff;
+  background: #4a90e2;
   border-radius: 50%;
   position: absolute;
   top: 30px;
   animation: blink 2s infinite;
-  box-shadow: 0 0 10px #00ffff;
+  box-shadow: 0 0 10px rgba(74, 144, 226, 0.5);
 }
 
 .left-eye {
@@ -142,7 +142,7 @@
 .robot-antenna {
   width: 4px;
   height: 30px;
-  background: #00ffff;
+  background: #4a90e2;
   position: absolute;
   top: -25px;
   left: 50%;
@@ -165,11 +165,11 @@
 .robot-body {
   width: 140px;
   height: 120px;
-  background: linear-gradient(45deg, #444, #666);
-  border: 3px solid #00ffff;
+  background: linear-gradient(45deg, #cce7f0, #e6f1fa);
+  border: 3px solid #4a90e2;
   border-radius: 15px;
   position: relative;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  box-shadow: 0 0 20px rgba(74, 144, 226, 0.3);
 }
 
 .circuit-pattern {
@@ -179,10 +179,10 @@
   right: 20px;
   bottom: 20px;
   background: 
-    linear-gradient(90deg, transparent 45%, #00ffff 45%, #00ffff 55%, transparent 55%),
-    linear-gradient(0deg, transparent 45%, #00ffff 45%, #00ffff 55%, transparent 55%);
+    linear-gradient(90deg, transparent 45%, #4a90e2 45%, #4a90e2 55%, transparent 55%),
+    linear-gradient(0deg, transparent 45%, #4a90e2 45%, #4a90e2 55%, transparent 55%);
   background-size: 20px 20px;
-  opacity: 0.7;
+  opacity: 0.3;
   border-radius: 10px;
 }
 

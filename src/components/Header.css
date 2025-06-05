@@ -3,9 +3,9 @@
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(15, 15, 35, 0.95);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
-  border-bottom: 2px solid #00ffff;
+  border-bottom: 2px solid #4a90e2;
   z-index: 1000;
   padding: 1rem 0;
 }
@@ -22,8 +22,8 @@
 .logo-text {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #00ffff;
-  text-shadow: 0 0 10px #00ffff;
+  color: #4a90e2;
+  text-shadow: 0 0 10px rgba(74, 144, 226, 0.3);
 }
 
 .nav-links {
@@ -37,7 +37,7 @@
 .nav-button {
   background: none;
   border: 2px solid transparent;
-  color: #ffffff;
+  color: #4a90e2;
   padding: 0.5rem 1rem;
   border-radius: 25px;
   cursor: pointer;
@@ -47,9 +47,9 @@
 }
 
 .nav-button:hover {
-  border-color: #00ffff;
-  color: #00ffff;
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+  border-color: #4a90e2;
+  color: #2c5aa0;
+  box-shadow: 0 0 15px rgba(74, 144, 226, 0.3);
   transform: translateY(-2px);
 }
 
