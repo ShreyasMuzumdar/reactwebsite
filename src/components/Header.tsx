@@ -1,0 +1,27 @@
+import './Header.css'
+
+const Header = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <header className="header">
+      <nav className="nav">
+        <div className="logo">
+          <span className="logo-text">🤖 Shreyas Muzumdar</span>
+        </div>
+        <ul className="nav-links">
+          <li><button onClick={() => scrollToSection('about')} className="nav-button">About</button></li>
+          <li><button onClick={() => scrollToSection('projects')} className="nav-button">Projects</button></li>
+          <li><button onClick={() => scrollToSection('contact')} className="nav-button">Contact</button></li>
+        </ul>
+      </nav>
+    </header>
+  );
+};
+
+export default Header;

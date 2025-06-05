@@ -1,42 +1,93 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body {
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #000;
+  overflow-x: hidden;
 }
 
-@keyframes logo-spin {
+.App {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #000428 0%, #004e92 100%);
+}
+
+main {
+  position: relative;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a2e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00ffff;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0080ff;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(0, 255, 255, 0.3);
+  color: white;
+}
+
+/* Global animations */
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(30px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
 }
 
-.card {
-  padding: 2em;
+/* Responsive container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.read-the-docs {
-  color: #888;
+/* Section spacing */
+section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Loading animation for images */
+img {
+  transition: opacity 0.3s ease;
+}
+
+img[data-loaded="false"] {
+  opacity: 0;
+}
+
+img[data-loaded="true"] {
+  opacity: 1;
 }
