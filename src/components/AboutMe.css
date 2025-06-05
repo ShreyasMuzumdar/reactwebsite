@@ -1,28 +1,16 @@
 .about-section {
   min-height: 100vh;
   padding: 8rem 0 4rem 0;
-  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 50%, #ffffff 100%);
+  background: #ffffff;
   position: relative;
-  overflow: hidden;
-}
-
-.about-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: 
-    radial-gradient(circle at 20% 50%, rgba(74, 144, 226, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(74, 144, 226, 0.1) 0%, transparent 50%);
-  pointer-events: none;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+  position: relative;
+  z-index: 1;
 }
 
 .about-content {
@@ -30,6 +18,11 @@
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 10px 40px rgba(74, 144, 226, 0.1);
+  border: 1px solid rgba(74, 144, 226, 0.15);
 }
 
 .name-title {
@@ -37,7 +30,7 @@
   font-weight: bold;
   color: #2c5aa0;
   margin-bottom: 0.5rem;
-  text-shadow: 0 0 20px rgba(74, 144, 226, 0.3);
+  text-shadow: 0 0 20px rgba(74, 144, 226, 0.3), 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .subtitle {
@@ -45,13 +38,15 @@
   color: #4a90e2;
   margin-bottom: 2rem;
   font-weight: 300;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .description {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #5a6c7d;
+  color: #2c3e50;
   margin-bottom: 1.5rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .skills {
@@ -63,6 +58,7 @@
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
   text-align: center;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .skills-grid {
@@ -72,49 +68,57 @@
 }
 
 .skill-category {
-  background: rgba(74, 144, 226, 0.1);
-  border: 1px solid rgba(74, 144, 226, 0.3);
+  background: #ffffff;
+  border: 2px solid rgba(74, 144, 226, 0.3);
   border-radius: 15px;
   padding: 1.5rem;
   text-align: center;
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .skill-category:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(74, 144, 226, 0.2);
+  box-shadow: 0 15px 35px rgba(74, 144, 226, 0.25);
   border-color: #4a90e2;
+  background: #ffffff;
 }
 
 .skill-category h4 {
-  color: #4a90e2;
+  color: #2c5aa0;
   font-size: 1.2rem;
   margin-bottom: 0.8rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .skill-tags {
-  color: #5a6c7d;
+  color: #34495e;
   font-size: 0.9rem;
   line-height: 1.5;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .about-visual {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 4rem;
   position: relative;
+  justify-content: flex-start;
+  margin-top: -2rem;
 }
 
 .profile-image-container {
   position: relative;
-  width: 250px;
-  height: 250px;
+  width: 350px;
+  height: 350px;
   border-radius: 50%;
   overflow: hidden;
   border: 4px solid rgba(74, 144, 226, 0.3);
   box-shadow: 0 10px 30px rgba(74, 144, 226, 0.2);
   transition: all 0.3s ease;
+  margin-top: -1rem;
 }
 
 .profile-image-container:hover {
@@ -130,86 +134,210 @@
   display: block;
 }
 
+/* Robot Animation Container */
 .robot-animation {
   position: relative;
   animation: float 3s ease-in-out infinite;
+  margin-top: 2rem;
 }
 
-.robot-head {
-  width: 120px;
-  height: 100px;
-  background: linear-gradient(45deg, #e6f1fa, #cce7f0);
-  border: 3px solid #4a90e2;
-  border-radius: 20px 20px 10px 10px;
+/* Gear Robot Styles */
+.gear-robot {
   position: relative;
-  margin-bottom: 10px;
-  box-shadow: 0 0 20px rgba(74, 144, 226, 0.3);
 }
 
-.robot-eye {
-  width: 20px;
-  height: 20px;
-  background: #4a90e2;
+.main-gear {
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
+  background: linear-gradient(45deg, #4a90e2, #74afe7);
+  position: relative;
+  animation: rotate 8s linear infinite;
+  box-shadow: 0 0 25px rgba(74, 144, 226, 0.4);
+  border: 3px solid #2c5aa0;
+}
+
+.gear-tooth {
   position: absolute;
-  top: 30px;
-  animation: blink 2s infinite;
-  box-shadow: 0 0 10px rgba(74, 144, 226, 0.5);
-}
-
-.left-eye {
-  left: 25px;
-}
-
-.right-eye {
-  right: 25px;
-}
-
-.robot-antenna {
-  width: 4px;
-  height: 30px;
-  background: #4a90e2;
-  position: absolute;
-  top: -25px;
-  left: 50%;
-  transform: translateX(-50%);
+  width: 12px;
+  height: 20px;
+  background: linear-gradient(45deg, #4a90e2, #74afe7);
+  border: 2px solid #2c5aa0;
   border-radius: 2px;
 }
 
-.robot-antenna::after {
-  content: '';
-  width: 12px;
-  height: 12px;
-  background: #ff6b6b;
+.gear-tooth:nth-child(1) {
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.gear-tooth:nth-child(2) {
+  top: 5px;
+  right: -10px;
+  transform: rotate(45deg);
+}
+
+.gear-tooth:nth-child(3) {
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.gear-tooth:nth-child(4) {
+  bottom: 5px;
+  right: -10px;
+  transform: rotate(135deg);
+}
+
+.gear-tooth:nth-child(5) {
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(180deg);
+}
+
+.gear-tooth:nth-child(6) {
+  bottom: 5px;
+  left: -10px;
+  transform: rotate(225deg);
+}
+
+.gear-tooth:nth-child(7) {
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%) rotate(270deg);
+}
+
+.gear-tooth:nth-child(8) {
+  top: 5px;
+  left: -10px;
+  transform: rotate(315deg);
+}
+
+.gear-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background: #ffffff;
+  border-radius: 50%;
+  border: 3px solid #2c5aa0;
+  box-shadow: inset 0 0 15px rgba(74, 144, 226, 0.3);
+}
+
+.robot-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.gear-eye {
+  width: 8px;
+  height: 8px;
+  background: #4a90e2;
   border-radius: 50%;
   position: absolute;
-  top: -6px;
-  left: -4px;
-  animation: pulse 1.5s infinite;
+  animation: blink 3s infinite;
+  box-shadow: 0 0 8px rgba(74, 144, 226, 0.6);
 }
 
-.robot-body {
-  width: 140px;
-  height: 120px;
-  background: linear-gradient(45deg, #cce7f0, #e6f1fa);
-  border: 3px solid #4a90e2;
-  border-radius: 15px;
-  position: relative;
-  box-shadow: 0 0 20px rgba(74, 144, 226, 0.3);
+.left-gear-eye {
+  top: 18px;
+  left: 18px;
 }
 
-.circuit-pattern {
+.right-gear-eye {
+  top: 18px;
+  right: 18px;
+}
+
+.gear-mouth {
   position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 3px;
+  background: #4a90e2;
+  border-radius: 2px;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.4);
+}
+
+.side-gear {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(45deg, #74afe7, #4a90e2);
+  border-radius: 50%;
+  border: 2px solid #2c5aa0;
+  box-shadow: 0 0 15px rgba(74, 144, 226, 0.3);
+}
+
+.side-gear::before {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 12px;
+  background: #4a90e2;
+  border: 1px solid #2c5aa0;
+  border-radius: 1px;
+}
+
+.side-gear::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 8px;
+  background: #4a90e2;
+  border: 1px solid #2c5aa0;
+  border-radius: 1px;
+}
+
+.left-side-gear {
   top: 20px;
-  left: 20px;
-  right: 20px;
-  bottom: 20px;
-  background: 
-    linear-gradient(90deg, transparent 45%, #4a90e2 45%, #4a90e2 55%, transparent 55%),
-    linear-gradient(0deg, transparent 45%, #4a90e2 45%, #4a90e2 55%, transparent 55%);
-  background-size: 20px 20px;
-  opacity: 0.3;
-  border-radius: 10px;
+  left: -25px;
+  animation: rotate 6s linear infinite reverse;
+}
+
+.left-side-gear::before {
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.left-side-gear::after {
+  left: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.right-side-gear {
+  top: 20px;
+  right: -25px;
+  animation: rotate 10s linear infinite;
+}
+
+.right-side-gear::before {
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.right-side-gear::after {
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 @keyframes float {
