@@ -86,15 +86,6 @@ const Projects: React.FC = () => {
       image: "✋",
       github: "https://github.com/",
       demo: "#"
-    },
-    {
-      title: "AI-Powered Soccer Robot",
-      description: "Autonomous soccer-playing robot with machine learning for strategy and ball tracking. Competed in RoboCup Junior competitions.",
-      tech: ["TensorFlow", "Python", "Computer Vision", "Motion Planning"],
-      categories: ["Robotics", "AI & ML", "Computer Vision"],
-      image: "⚽",
-      github: "https://github.com/",
-      demo: "#"
     }
   ];
 
