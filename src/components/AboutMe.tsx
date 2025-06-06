@@ -40,16 +40,6 @@ const AboutMe = () => {
             <div className="profile-image-container">
               <img src="/reactwebsite/DSC_9142.jpg" alt="Shreyas Muzumdar" className="profile-image" />
             </div>
-            <div className="robot-animation">
-              <div className="robot-head">
-                <div className="robot-eye left-eye"></div>
-                <div className="robot-eye right-eye"></div>
-                <div className="robot-antenna"></div>
-              </div>
-              <div className="robot-body">
-                <div className="circuit-pattern"></div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
