@@ -137,34 +137,36 @@ const Projects: React.FC = () => {
 
         <div className="projects-grid">
           {filteredProjects.map((project, index) => (
-            <FloatingElement 
-              key={index} 
-              intensity="subtle" 
-              direction="random" 
-              duration={4 + index * 0.5}
-              delay={index * 0.2}
-            >
-              <Magnet strength={0.2}>
-                <GlareHover className="project-card">
-                  <div className="project-icon">{project.image}</div>
-                  <h3 className="project-title">
-                    <ScrollReveal enableBlur={false} baseOpacity={0.2}>
-                      {project.title}
-                    </ScrollReveal>
-                  </h3>
-                  <p className="project-description">
-                    <ScrollReveal baseOpacity={0.3} blurStrength={2}>
-                      {project.description}
-                    </ScrollReveal>
-                  </p>
-                  <div className="project-categories">
-                    {project.categories.map((category, catIndex) => (
-                      <span 
-                        key={catIndex} 
-                        className={`category-tag ${activeFilter === category ? 'active' : ''}`}
-                        onClick={() => setActiveFilter(category)}
-                      >
-                        {category}
+            <Magnet key={index} strength={0.2}>
+              <GlareHover className="project-card">
+                <div className="project-icon">
+                  <FloatingElement 
+                    intensity="subtle" 
+                    direction="random" 
+                    duration={4 + index * 0.5}
+                    delay={index * 0.2}
+                  >
+                    {project.image}
+                  </FloatingElement>
+                </div>
+                <h3 className="project-title">
+                  <ScrollReveal enableBlur={false} baseOpacity={0.2}>
+                    {project.title}
+                  </ScrollReveal>
+                </h3>
+                <p className="project-description">
+                  <ScrollReveal baseOpacity={0.3} blurStrength={2}>
+                    {project.description}
+                  </ScrollReveal>
+                </p>
+                <div className="project-categories">
+                  {project.categories.map((category, catIndex) => (
+                    <span 
+                      key={catIndex} 
+                      className={`category-tag ${activeFilter === category ? 'active' : ''}`}
+                      onClick={() => setActiveFilter(category)}
+                    >
+                      {category}
                       </span>
                     ))}
                   </div>
@@ -178,7 +180,6 @@ const Projects: React.FC = () => {
                   </div>
                 </GlareHover>
               </Magnet>
-            </FloatingElement>
           ))}
         </div>
 
