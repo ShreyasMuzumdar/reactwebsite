@@ -6,7 +6,6 @@ import Robots from './components/Robots'
 import Resume from './components/Resume'
 import Contact from './components/Contact'
 import AnimatedBackground from './components/AnimatedBackground'
-import GradientBackground from './components/GradientBackground'
 
 function App() {
   return (
@@ -15,13 +14,9 @@ function App() {
       <Header />
       <main>
         <AboutMe />
-        <GradientBackground variant="tech" speed="slow">
-          <Projects />
-        </GradientBackground>
+        <Projects />
         <Robots />
-        <GradientBackground variant="subtle" speed="medium">
-          <Resume />
-        </GradientBackground>
+        <Resume />
         <Contact />
       </main>
     </div>
