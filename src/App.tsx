@@ -5,16 +5,23 @@ import Projects from './components/Projects'
 import Robots from './components/Robots'
 import Resume from './components/Resume'
 import Contact from './components/Contact'
+import AnimatedBackground from './components/AnimatedBackground'
+import GradientBackground from './components/GradientBackground'
 
 function App() {
   return (
     <div className="App">
+      <AnimatedBackground />
       <Header />
       <main>
         <AboutMe />
-        <Projects />
+        <GradientBackground variant="tech" speed="slow">
+          <Projects />
+        </GradientBackground>
         <Robots />
-        <Resume />
+        <GradientBackground variant="subtle" speed="medium">
+          <Resume />
+        </GradientBackground>
         <Contact />
       </main>
     </div>

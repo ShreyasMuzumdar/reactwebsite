@@ -1,4 +1,6 @@
 import './Header.css'
+import ScrollReveal from './ScrollReveal'
+import GlitchText from './GlitchText'
 
 const Header = () => {
   const scrollToSection = (sectionId: string) => {
@@ -12,7 +14,11 @@ const Header = () => {
     <header className="header">
       <nav className="nav">
         <div className="logo">
-          <span className="logo-text">🤖 Shreyas Muzumdar</span>
+          <span className="logo-text">
+            <ScrollReveal enableBlur={false} baseOpacity={0.3}>
+              🤖 <GlitchText text="Shreyas Muzumdar" triggerOnHover={true} intensity="low" />
+            </ScrollReveal>
+          </span>
         </div>
         <ul className="nav-links">
           <li><button onClick={() => scrollToSection('about')} className="nav-button">About</button></li>

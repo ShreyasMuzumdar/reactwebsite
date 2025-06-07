@@ -1,0 +1,23 @@
+.particle-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9998;
+}
+
+/* Hide on touch devices */
+@media (hover: none) {
+  .particle-cursor {
+    display: none;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .particle-cursor {
+    display: none;
+  }
+}

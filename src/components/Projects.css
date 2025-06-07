@@ -158,21 +158,6 @@
   margin-bottom: 25px;
 }
 
-.tech-tag {
-  background: rgba(74, 144, 226, 0.1);
-  color: #4a90e2;
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  border: 1px solid rgba(74, 144, 226, 0.3);
-  transition: all 0.3s ease;
-}
-
-.tech-tag:hover {
-  background: rgba(74, 144, 226, 0.2);
-  transform: scale(1.05);
-}
-
 .project-links {
   display: flex;
   gap: 15px;
@@ -408,10 +393,5 @@
   .category-tag {
     font-size: 0.75rem;
     padding: 3px 8px;
-  }
-  
-  .tech-tag {
-    font-size: 0.75rem;
-    padding: 4px 10px;
   }
 }

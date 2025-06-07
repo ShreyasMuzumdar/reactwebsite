@@ -1,0 +1,56 @@
+.typewriter-effect {
+  display: inline-block;
+  font-family: 'Courier New', monospace;
+  color: #4a90e2;
+  position: relative;
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  width: 2px;
+  animation: blink 1s infinite;
+  color: #4a90e2;
+  font-weight: bold;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+/* Different typewriter styles */
+.typewriter-effect.large {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.typewriter-effect.accent {
+  color: #2c5aa0;
+  font-weight: 500;
+}
+
+.typewriter-effect.gradient {
+  background: linear-gradient(45deg, #4a90e2, #2c5aa0, #4a90e2);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

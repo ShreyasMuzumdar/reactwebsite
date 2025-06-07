@@ -1,0 +1,41 @@
+.glare-hover {
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+  --glare-opacity: 0;
+  --glare-color: rgba(255, 255, 255, 0.3);
+  
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.glare-hover:hover {
+  transform: translateY(-2px);
+}
+
+.glare-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    300px circle at var(--mouse-x) var(--mouse-y),
+    var(--glare-color) 0%,
+    transparent 70%
+  );
+  opacity: var(--glare-opacity);
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+@media (hover: none) {
+  .glare-hover:hover {
+    transform: none;
+  }
+  
+  .glare-overlay {
+    display: none;
+  }
+}

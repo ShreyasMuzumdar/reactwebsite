@@ -1,0 +1,17 @@
+.scroll-reveal-container {
+  display: inline-block;
+}
+
+.scroll-reveal-text {
+  display: inline;
+}
+
+.scroll-reveal-word {
+  display: inline-block;
+  margin-right: 0.25em;
+  transition: opacity 0.1s ease, filter 0.1s ease;
+}
+
+.scroll-reveal-word:last-child {
+  margin-right: 0;
+}

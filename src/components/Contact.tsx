@@ -1,5 +1,8 @@
 import React from 'react';
 import './Contact.css';
+import ScrollReveal from './ScrollReveal';
+import FloatingElement from './FloatingElement';
+import TypewriterEffect from './TypewriterEffect';
 
 const Contact: React.FC = () => {
   const socialLinks = [
@@ -13,49 +16,92 @@ const Contact: React.FC = () => {
     <section id="contact" className="contact">
       <div className="container">
         <h2 className="section-title">
-          <span className="title-icon">📡</span>
-          Get In Touch
+          <FloatingElement intensity="medium" direction="up" duration={3}>
+            <span className="title-icon">📡</span>
+          </FloatingElement>
+          <TypewriterEffect 
+            text="Get In Touch" 
+            speed={120}
+            loop={false}
+            className="large"
+          />
         </h2>
         
         <div className="contact-content-centered">
           <div className="contact-info-centered">
-            <h3>Let's Connect!</h3>
+            <h3>
+              <ScrollReveal enableBlur={false} baseOpacity={0.3}>
+                Let's Connect!
+              </ScrollReveal>
+            </h3>
             <p>
-              Interested in robotics, automation, or just want to chat about technology? 
-              I'm always excited to discuss new projects and opportunities.
+              <ScrollReveal baseOpacity={0.3} blurStrength={2}>
+                Interested in robotics, automation, or just want to chat about technology? 
+                I'm always excited to discuss new projects and opportunities.
+              </ScrollReveal>
             </p>
             
             <div className="contact-details">
               <div className="contact-item">
                 <span className="contact-icon">📍</span>
                 <div>
-                  <h4>Location</h4>
-                  <p>Boston, MA</p>
+                  <h4>
+                    <ScrollReveal enableBlur={false} baseOpacity={0.4}>
+                      Location
+                    </ScrollReveal>
+                  </h4>
+                  <p>
+                    <ScrollReveal enableBlur={false} baseOpacity={0.3}>
+                      Boston, MA
+                    </ScrollReveal>
+                  </p>
                 </div>
               </div>
               
               <div className="contact-item">
                 <span className="contact-icon">📧</span>
                 <div>
-                  <h4>Email</h4>
-                  <p>muzumdar.s@northeastern.edu</p>
+                  <h4>
+                    <ScrollReveal enableBlur={false} baseOpacity={0.4}>
+                      Email
+                    </ScrollReveal>
+                  </h4>
+                  <p>
+                    <ScrollReveal enableBlur={false} baseOpacity={0.3}>
+                      muzumdar.s@northeastern.edu
+                    </ScrollReveal>
+                  </p>
                 </div>
               </div>
               
               <div className="contact-item">
                 <span className="contact-icon">🎓</span>
                 <div>
-                  <h4>University</h4>
-                  <p>Northeastern University</p>
+                  <h4>
+                    <ScrollReveal enableBlur={false} baseOpacity={0.4}>
+                      University
+                    </ScrollReveal>
+                  </h4>
+                  <p>
+                    <ScrollReveal enableBlur={false} baseOpacity={0.3}>
+                      Northeastern University
+                    </ScrollReveal>
+                  </p>
                 </div>
               </div>
             </div>
 
             <div className="resume-section">
-              <h4>My Resume</h4>
+              <h4>
+                <ScrollReveal enableBlur={false} baseOpacity={0.4}>
+                  My Resume
+                </ScrollReveal>
+              </h4>
               <a href="/reactwebsite/Shreyas_Muzumdar_Resume.pdf" className="resume-download" target="_blank" rel="noopener noreferrer">
                 <span className="resume-icon">📄</span>
-                Download PDF
+                <ScrollReveal enableBlur={false} baseOpacity={0.3}>
+                  Download PDF
+                </ScrollReveal>
               </a>
             </div>
 
