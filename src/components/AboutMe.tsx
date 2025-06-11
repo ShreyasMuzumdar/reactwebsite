@@ -1,5 +1,4 @@
 import './AboutMe.css'
-import ShinyText from './ShinyText'
 import TypewriterEffect from './TypewriterEffect'
 import FloatingElement from './FloatingElement'
 
@@ -18,7 +17,7 @@ const AboutMe = () => {
             </div>
             <div className="about-text">
               <h1 className="name-title">
-                <ShinyText>Shreyas Muzumdar</ShinyText>
+                Shreyas Muzumdar
               </h1>
               <h2 className="subtitle">
                 <TypewriterEffect 
