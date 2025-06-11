@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './Projects.css';
-import ScrollReveal from './ScrollReveal';
 import Magnet from './Magnet';
 import GlareHover from './GlareHover';
 import FloatingElement from './FloatingElement';
@@ -77,7 +76,7 @@ const Projects: React.FC = () => {
       <div className="container">
         <h2 className="section-title">
           <span className="title-icon">🔧</span>
-          <ScrollReveal>Projects</ScrollReveal>
+          Projects
         </h2>
         
         <div className="search-container">
@@ -127,11 +126,9 @@ const Projects: React.FC = () => {
 
         <div className="results-info">
           <p>
-            <ScrollReveal enableBlur={false} baseOpacity={0.4}>
-              Showing {filteredProjects.length} of {projects.length} projects
-              {searchTerm && ` for "${searchTerm}"`}
-              {activeFilter !== 'All' && ` in ${activeFilter}`}
-            </ScrollReveal>
+            Showing {filteredProjects.length} of {projects.length} projects
+            {searchTerm && ` for "${searchTerm}"`}
+            {activeFilter !== 'All' && ` in ${activeFilter}`}
           </p>
         </div>
 
@@ -150,14 +147,10 @@ const Projects: React.FC = () => {
                   </FloatingElement>
                 </div>
                 <h3 className="project-title">
-                  <ScrollReveal enableBlur={false} baseOpacity={0.2}>
-                    {project.title}
-                  </ScrollReveal>
+                  {project.title}
                 </h3>
                 <p className="project-description">
-                  <ScrollReveal baseOpacity={0.3} blurStrength={2}>
-                    {project.description}
-                  </ScrollReveal>
+                  {project.description}
                 </p>
                 <div className="project-categories">
                   {project.categories.map((category, catIndex) => (

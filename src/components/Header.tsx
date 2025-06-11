@@ -1,5 +1,4 @@
 import './Header.css'
-import ScrollReveal from './ScrollReveal'
 import GlitchText from './GlitchText'
 
 const Header = () => {
@@ -15,9 +14,7 @@ const Header = () => {
       <nav className="nav">
         <div className="logo">
           <span className="logo-text">
-            <ScrollReveal enableBlur={false} baseOpacity={0.3}>
-              🤖 <GlitchText text="Shreyas Muzumdar" triggerOnHover={true} intensity="low" />
-            </ScrollReveal>
+            🤖 <GlitchText text="Shreyas Muzumdar" triggerOnHover={true} intensity="low" />
           </span>
         </div>
         <ul className="nav-links">

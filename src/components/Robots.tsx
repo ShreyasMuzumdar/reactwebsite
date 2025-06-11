@@ -1,6 +1,5 @@
 import React from 'react';
 import './Robots.css';
-import ScrollReveal from './ScrollReveal';
 import Magnet from './Magnet';
 import GlareHover from './GlareHover';
 
@@ -28,7 +27,7 @@ const Robots: React.FC = () => {
       <div className="container">
         <h2 className="section-title">
           <span className="title-icon">🤖</span>
-          <ScrollReveal>Robots</ScrollReveal>
+          Robots
         </h2>
         
         <div className="robots-grid">
@@ -46,28 +45,20 @@ const Robots: React.FC = () => {
               
               <div className="robot-content">
                 <h3 className="robot-name">
-                  <ScrollReveal enableBlur={false} baseOpacity={0.2}>
-                    {robot.name}
-                  </ScrollReveal>
+                  {robot.name}
                 </h3>
                 <p className="robot-description">
-                  <ScrollReveal baseOpacity={0.3} blurStrength={2}>
-                    {robot.description}
-                  </ScrollReveal>
+                  {robot.description}
                 </p>
                 
                 <div className="robot-features">
                   <h4>
-                    <ScrollReveal enableBlur={false} baseOpacity={0.4}>
-                      Key Features:
-                    </ScrollReveal>
+                    Key Features:
                   </h4>
                   <div className="features-list">
                     {robot.features.map((feature, featIndex) => (
                       <span key={featIndex} className="feature-tag">
-                        <ScrollReveal enableBlur={false} baseOpacity={0.3}>
-                          {feature}
-                        </ScrollReveal>
+                        {feature}
                       </span>
                     ))}
                   </div>
@@ -91,10 +82,8 @@ const Robots: React.FC = () => {
           <div className="ar-notice">
             <span className="ar-icon">📱</span>
             <p>
-              <ScrollReveal baseOpacity={0.3} blurStrength={2}>
-                <strong>AR Experience:</strong> Click "View in AR" on iOS devices to see these robots in augmented reality. 
-                Place them in your real environment and interact with 3D models!
-              </ScrollReveal>
+              <strong>AR Experience:</strong> Click "View in AR" on iOS devices to see these robots in augmented reality. 
+              Place them in your real environment and interact with 3D models!
             </p>
           </div>
         </div>

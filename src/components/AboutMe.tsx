@@ -1,5 +1,4 @@
 import './AboutMe.css'
-import ScrollReveal from './ScrollReveal'
 import ShinyText from './ShinyText'
 import TypewriterEffect from './TypewriterEffect'
 import FloatingElement from './FloatingElement'
@@ -19,9 +18,7 @@ const AboutMe = () => {
             </div>
             <div className="about-text">
               <h1 className="name-title">
-                <ScrollReveal enableBlur={false} baseOpacity={0.2}>
-                  <ShinyText>Shreyas Muzumdar</ShinyText>
-                </ScrollReveal>
+                <ShinyText>Shreyas Muzumdar</ShinyText>
               </h1>
               <h2 className="subtitle">
                 <TypewriterEffect 
@@ -31,12 +28,10 @@ const AboutMe = () => {
                 />
               </h2>
               <p className="description">
-                <ScrollReveal baseOpacity={0.2} blurStrength={3}>
-                  Hello, My name is Shreyas Muzumdar. I am a current student at Northeastern
-                  University and graduated from Saint Johns High School. Over the past few years, worked
-                  on various projects broadening my engineering experience. Eager to work hard
-                  while learning new concepts and helping you and your team in any way I can.
-                </ScrollReveal>
+                Hello, My name is Shreyas Muzumdar. I am a current student at Northeastern
+                University and graduated from Saint Johns High School. Over the past few years, worked
+                on various projects broadening my engineering experience. Eager to work hard
+                while learning new concepts and helping you and your team in any way I can.
               </p>
             </div>
           </div>
@@ -47,57 +42,39 @@ const AboutMe = () => {
         <div className="container">
           <div className="skills">
             <h3>
-              <ScrollReveal enableBlur={false} baseOpacity={0.3}>
-                Technical Skills
-              </ScrollReveal>
+              Technical Skills
             </h3>
             <div className="skills-grid">
               <div className="skill-category">
                 <h4>
-                  <ScrollReveal enableBlur={false} baseOpacity={0.4}>
-                    CAD & Design
-                  </ScrollReveal>
+                  CAD & Design
                 </h4>
                 <span className="skill-tags">
-                  <ScrollReveal baseOpacity={0.3} blurStrength={2}>
-                    CAD (Computer Aided Design) • Stress Testing • 3D Rendering • 3D Simulation
-                  </ScrollReveal>
+                  CAD (Computer Aided Design) • Stress Testing • 3D Rendering • 3D Simulation
                 </span>
               </div>
               <div className="skill-category">
                 <h4>
-                  <ScrollReveal enableBlur={false} baseOpacity={0.4}>
-                    Manufacturing
-                  </ScrollReveal>
+                  Manufacturing
                 </h4>
                 <span className="skill-tags">
-                  <ScrollReveal baseOpacity={0.3} blurStrength={2}>
-                    Laser Cutting • Metalworking Processes • 3D Printing
-                  </ScrollReveal>
+                  Laser Cutting • Metalworking Processes • 3D Printing
                 </span>
               </div>
               <div className="skill-category">
                 <h4>
-                  <ScrollReveal enableBlur={false} baseOpacity={0.4}>
-                    AI/ML & Vision
-                  </ScrollReveal>
+                  AI/ML & Vision
                 </h4>
                 <span className="skill-tags">
-                  <ScrollReveal baseOpacity={0.3} blurStrength={2}>
-                    Machine Learning & AI • Computer Vision • IoT Protocols
-                  </ScrollReveal>
+                  Machine Learning & AI • Computer Vision • IoT Protocols
                 </span>
               </div>
               <div className="skill-category">
                 <h4>
-                  <ScrollReveal enableBlur={false} baseOpacity={0.4}>
-                    Programming
-                  </ScrollReveal>
+                  Programming
                 </h4>
                 <span className="skill-tags">
-                  <ScrollReveal baseOpacity={0.3} blurStrength={2}>
-                    Python Development • Java Development • Web Development
-                  </ScrollReveal>
+                  Python Development • Java Development • Web Development
                 </span>
               </div>
             </div>

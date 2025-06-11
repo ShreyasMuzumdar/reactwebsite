@@ -1,6 +1,5 @@
 import React from 'react';
 import './Contact.css';
-import ScrollReveal from './ScrollReveal';
 import FloatingElement from './FloatingElement';
 import TypewriterEffect from './TypewriterEffect';
 
@@ -30,15 +29,11 @@ const Contact: React.FC = () => {
         <div className="contact-content-centered">
           <div className="contact-info-centered">
             <h3>
-              <ScrollReveal enableBlur={false} baseOpacity={0.3}>
-                Let's Connect!
-              </ScrollReveal>
+              Let's Connect!
             </h3>
             <p>
-              <ScrollReveal baseOpacity={0.3} blurStrength={2}>
-                Interested in robotics, automation, or just want to chat about technology? 
-                I'm always excited to discuss new projects and opportunities.
-              </ScrollReveal>
+              Interested in robotics, automation, or just want to chat about technology? 
+              I'm always excited to discuss new projects and opportunities.
             </p>
             
             <div className="contact-details">
@@ -46,14 +41,10 @@ const Contact: React.FC = () => {
                 <span className="contact-icon">📍</span>
                 <div>
                   <h4>
-                    <ScrollReveal enableBlur={false} baseOpacity={0.4}>
-                      Location
-                    </ScrollReveal>
+                    Location
                   </h4>
                   <p>
-                    <ScrollReveal enableBlur={false} baseOpacity={0.3}>
-                      Boston, MA
-                    </ScrollReveal>
+                    Boston, MA
                   </p>
                 </div>
               </div>
@@ -62,14 +53,10 @@ const Contact: React.FC = () => {
                 <span className="contact-icon">📧</span>
                 <div>
                   <h4>
-                    <ScrollReveal enableBlur={false} baseOpacity={0.4}>
-                      Email
-                    </ScrollReveal>
+                    Email
                   </h4>
                   <p>
-                    <ScrollReveal enableBlur={false} baseOpacity={0.3}>
-                      muzumdar.s@northeastern.edu
-                    </ScrollReveal>
+                    muzumdar.s@northeastern.edu
                   </p>
                 </div>
               </div>
@@ -78,14 +65,10 @@ const Contact: React.FC = () => {
                 <span className="contact-icon">🎓</span>
                 <div>
                   <h4>
-                    <ScrollReveal enableBlur={false} baseOpacity={0.4}>
-                      University
-                    </ScrollReveal>
+                    University
                   </h4>
                   <p>
-                    <ScrollReveal enableBlur={false} baseOpacity={0.3}>
-                      Northeastern University
-                    </ScrollReveal>
+                    Northeastern University
                   </p>
                 </div>
               </div>
@@ -93,15 +76,11 @@ const Contact: React.FC = () => {
 
             <div className="resume-section">
               <h4>
-                <ScrollReveal enableBlur={false} baseOpacity={0.4}>
-                  My Resume
-                </ScrollReveal>
+                My Resume
               </h4>
               <a href="/reactwebsite/Shreyas_Muzumdar_Resume.pdf" className="resume-download" target="_blank" rel="noopener noreferrer">
                 <span className="resume-icon">📄</span>
-                <ScrollReveal enableBlur={false} baseOpacity={0.3}>
-                  Download PDF
-                </ScrollReveal>
+                Download PDF
               </a>
             </div>
 

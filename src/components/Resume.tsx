@@ -1,12 +1,11 @@
 import './Resume.css'
-import ScrollReveal from './ScrollReveal'
 
 const Resume = () => {
   return (
     <section id="resume" className="resume-section">
       <div className="container">
         <h2 className="section-title">
-          <ScrollReveal>Resume</ScrollReveal>
+          Resume
         </h2>
         <div className="resume-content">
           <div className="resume-actions">
@@ -39,17 +38,15 @@ const Resume = () => {
           
           <div className="resume-fallback">
             <p>
-              <ScrollReveal enableBlur={false} baseOpacity={0.4}>
-                Having trouble viewing the resume? 
-                <a 
-                  href="/reactwebsite/Shreyas_Muzumdar_Resume.pdf" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="fallback-link"
-                >
-                  Click here to open it in a new tab
-                </a>
-              </ScrollReveal>
+              Having trouble viewing the resume? 
+              <a 
+                href="/reactwebsite/Shreyas_Muzumdar_Resume.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="fallback-link"
+              >
+                Click here to open it in a new tab
+              </a>
             </p>
           </div>
         </div>
