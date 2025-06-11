@@ -5,12 +5,10 @@ import Projects from './components/Projects'
 import Robots from './components/Robots'
 import Resume from './components/Resume'
 import Contact from './components/Contact'
-import AnimatedBackground from './components/AnimatedBackground'
 
 function App() {
   return (
     <div className="App">
-      <AnimatedBackground />
       <Header />
       <main>
         <AboutMe />
