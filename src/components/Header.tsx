@@ -1,5 +1,4 @@
 import './Header.css'
-import GlitchText from './GlitchText'
 
 const Header = () => {
   const scrollToSection = (sectionId: string) => {
@@ -14,7 +13,7 @@ const Header = () => {
       <nav className="nav">
         <div className="logo">
           <span className="logo-text">
-            🤖 <GlitchText text="Shreyas Muzumdar" triggerOnHover={true} intensity="low" />
+            🤖 Shreyas Muzumdar
           </span>
         </div>
         <ul className="nav-links">
