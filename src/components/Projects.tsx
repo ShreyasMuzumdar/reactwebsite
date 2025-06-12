@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './Projects.css';
-import Magnet from './Magnet';
 import GlareHover from './GlareHover';
 import FloatingElement from './FloatingElement';
 import GeometricPatterns from './GeometricPatterns';
@@ -141,9 +140,8 @@ const Projects: React.FC = () => {
 
         <div className="projects-grid">
           {filteredProjects.map((project, index) => (
-            <Magnet key={index} strength={0.2}>
-              <GlareHover className="project-card">
-                <div className="project-icon">
+            <GlareHover key={index} className="project-card">
+              <div className="project-icon">
                   <FloatingElement 
                     intensity="subtle" 
                     direction="random" 
@@ -179,7 +177,6 @@ const Projects: React.FC = () => {
                     </a>
                   </div>
                 </GlareHover>
-              </Magnet>
           ))}
         </div>
 

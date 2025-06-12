@@ -35,6 +35,7 @@ const GeometricPatterns: React.FC<GeometricPatternsProps> = ({
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const shapesRef = useRef<Shape[]>([]);
   const animationRef = useRef<number | null>(null);
+  const dimensionsRef = useRef({ width: 0, height: 0 });
 
   useEffect(() => {
     const densityMap = { low: 8, medium: 15, high: 25 };
@@ -103,17 +104,44 @@ const GeometricPatterns: React.FC<GeometricPatternsProps> = ({
       ctx.restore();
     };
 
-    const canvas = canvasRef.current;
-    if (!canvas) return;
+    const setupCanvas = () => {
+      const canvas = canvasRef.current;
+      if (!canvas) return null;
 
-    const parent = canvas.parentElement;
-    if (!parent) return;
+      const parent = canvas.parentElement;
+      if (!parent) return null;
 
-    canvas.width = parent.clientWidth;
-    canvas.height = parent.clientHeight;
+      // Get the device pixel ratio for high-DPI displays
+      const dpr = window.devicePixelRatio || 1;
+      
+      // Get the display size
+      const displayWidth = parent.clientWidth;
+      const displayHeight = parent.clientHeight;
+      
+      // Store dimensions for animation
+      dimensionsRef.current = { width: displayWidth, height: displayHeight };
+      
+      // Set the internal size (accounting for device pixel ratio)
+      canvas.width = displayWidth * dpr;
+      canvas.height = displayHeight * dpr;
+      
+      // Set the display size
+      canvas.style.width = displayWidth + 'px';
+      canvas.style.height = displayHeight + 'px';
 
-    const ctx = canvas.getContext('2d');
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return null;
+      
+      // Scale the context to account for device pixel ratio
+      ctx.scale(dpr, dpr);
+      
+      return ctx;
+    };
+
+    const ctx = setupCanvas();
     if (!ctx) return;
+
+    const { width: displayWidth, height: displayHeight } = dimensionsRef.current;
 
     const shapeCount = densityMap[density];
     const shapes: Shape[] = Array.from({ length: shapeCount }, (_, index) => {
@@ -124,13 +152,13 @@ const GeometricPatterns: React.FC<GeometricPatternsProps> = ({
       return {
         id: index,
         type,
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
+        x: Math.random() * displayWidth,
+        y: Math.random() * displayHeight,
         size,
         rotation: Math.random() * 360,
         rotationSpeed: (Math.random() - 0.5) * speedMap[speed] * 2,
-        moveX: Math.random() * canvas.width,
-        moveY: Math.random() * canvas.height,
+        moveX: Math.random() * displayWidth,
+        moveY: Math.random() * displayHeight,
         moveSpeedX: (Math.random() - 0.5) * speedMap[speed] * 0.5,
         moveSpeedY: (Math.random() - 0.5) * speedMap[speed] * 0.5,
         color,
@@ -141,7 +169,8 @@ const GeometricPatterns: React.FC<GeometricPatternsProps> = ({
     shapesRef.current = shapes;
 
     const animateShapes = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const { width, height } = dimensionsRef.current;
+      ctx.clearRect(0, 0, width, height);
 
       shapesRef.current.forEach(shape => {
         shape.rotation += shape.rotationSpeed;
@@ -151,16 +180,16 @@ const GeometricPatterns: React.FC<GeometricPatternsProps> = ({
         shape.x = shape.moveX + Math.sin(Date.now() * 0.001 + shape.id) * 30;
         shape.y = shape.moveY + Math.cos(Date.now() * 0.0008 + shape.id) * 20;
 
-        if (shape.moveX > canvas.width + shape.size) {
+        if (shape.moveX > width + shape.size) {
           shape.moveX = -shape.size;
         } else if (shape.moveX < -shape.size) {
-          shape.moveX = canvas.width + shape.size;
+          shape.moveX = width + shape.size;
         }
 
-        if (shape.moveY > canvas.height + shape.size) {
+        if (shape.moveY > height + shape.size) {
           shape.moveY = -shape.size;
         } else if (shape.moveY < -shape.size) {
-          shape.moveY = canvas.height + shape.size;
+          shape.moveY = height + shape.size;
         }
 
         shape.opacity += Math.sin(Date.now() * 0.002 + shape.id) * 0.001;
@@ -175,12 +204,15 @@ const GeometricPatterns: React.FC<GeometricPatternsProps> = ({
     animateShapes();
 
     const handleResize = () => {
-      const newWidth = parent.clientWidth;
-      const newHeight = parent.clientHeight;
-      
-      if (canvas.width !== newWidth || canvas.height !== newHeight) {
-        canvas.width = newWidth;
-        canvas.height = newHeight;
+      const newCtx = setupCanvas();
+      if (newCtx) {
+        // Update shapes to fit new dimensions if needed
+        const { width, height } = dimensionsRef.current;
+        shapesRef.current.forEach(shape => {
+          // Keep shapes within new bounds
+          if (shape.moveX > width) shape.moveX = width - shape.size;
+          if (shape.moveY > height) shape.moveY = height - shape.size;
+        });
       }
     };
 

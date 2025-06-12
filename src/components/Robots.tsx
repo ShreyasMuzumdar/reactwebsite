@@ -1,6 +1,5 @@
 import React from 'react';
 import './Robots.css';
-import Magnet from './Magnet';
 import GlareHover from './GlareHover';
 import GeometricPatterns from './GeometricPatterns';
 
@@ -39,9 +38,8 @@ const Robots: React.FC = () => {
         
         <div className="robots-grid">
           {robots.map((robot, index) => (
-            <Magnet key={index} strength={0.15}>
-              <GlareHover className="robot-card">
-                <div className="robot-image-container">
+            <GlareHover key={index} className="robot-card">
+              <div className="robot-image-container">
                   <img src={robot.image} alt={robot.name} className="robot-image" />
                   <div className="image-overlay">
                     <a href={robot.model3d} className="view-3d-btn">
@@ -81,7 +79,6 @@ const Robots: React.FC = () => {
                 </div>
               </div>
               </GlareHover>
-            </Magnet>
           ))}
         </div>
         
