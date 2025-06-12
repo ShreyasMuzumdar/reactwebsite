@@ -1,6 +1,8 @@
 .resume-section {
   padding: 80px 0;
   background: #ffffff;
+  position: relative;
+  overflow: hidden;
 }
 
 .resume-content {

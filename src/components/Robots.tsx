@@ -2,6 +2,7 @@ import React from 'react';
 import './Robots.css';
 import Magnet from './Magnet';
 import GlareHover from './GlareHover';
+import GeometricPatterns from './GeometricPatterns';
 
 const Robots: React.FC = () => {
   const robots = [
@@ -24,6 +25,12 @@ const Robots: React.FC = () => {
 
   return (
     <section id="robots" className="robots">
+      <GeometricPatterns 
+        density="medium" 
+        speed="medium" 
+        opacity={0.35}
+        colors={['#4a90e2', '#2c5aa0', '#357abd', '#74a9ff']}
+      />
       <div className="container">
         <h2 className="section-title">
           <span className="title-icon">🤖</span>

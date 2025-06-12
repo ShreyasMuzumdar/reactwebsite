@@ -1,4 +1,5 @@
 import './Header.css'
+import GeometricPatterns from './GeometricPatterns';
 
 const Header = () => {
   const scrollToSection = (sectionId: string) => {
@@ -10,6 +11,12 @@ const Header = () => {
 
   return (
     <header className="header">
+      <GeometricPatterns 
+        density="low" 
+        speed="slow" 
+        opacity={0.2}
+        colors={['#4a90e2', '#2c5aa0', '#357abd']}
+      />
       <nav className="nav">
         <div className="logo">
           <span className="logo-text">

@@ -1,8 +1,15 @@
 import './Resume.css'
+import GeometricPatterns from './GeometricPatterns'
 
 const Resume = () => {
   return (
     <section id="resume" className="resume-section">
+      <GeometricPatterns 
+        density="low" 
+        speed="slow" 
+        opacity={0.25}
+        colors={['#4a90e2', '#2c5aa0', '#357abd']}
+      />
       <div className="container">
         <h2 className="section-title">
           Resume

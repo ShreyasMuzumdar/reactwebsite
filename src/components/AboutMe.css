@@ -3,6 +3,7 @@
   padding: 8rem 0 4rem 0;
   background: #ffffff;
   position: relative;
+  overflow: hidden;
 }
 
 .container {
