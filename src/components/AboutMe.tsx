@@ -2,6 +2,7 @@ import './AboutMe.css'
 import TypewriterEffect from './TypewriterEffect'
 import FloatingElement from './FloatingElement'
 import GeometricPatterns from './GeometricPatterns'
+import GlareHover from './GlareHover'
 
 const AboutMe = () => {
   return (
@@ -51,38 +52,38 @@ const AboutMe = () => {
               Technical Skills
             </h3>
             <div className="skills-grid">
-              <div className="skill-category">
+              <GlareHover className="skill-category">
                 <h4>
                   CAD & Design
                 </h4>
                 <span className="skill-tags">
                   CAD (Computer Aided Design) • Stress Testing • 3D Rendering • 3D Simulation
                 </span>
-              </div>
-              <div className="skill-category">
+              </GlareHover>
+              <GlareHover className="skill-category">
                 <h4>
                   Manufacturing
                 </h4>
                 <span className="skill-tags">
                   Laser Cutting • Metalworking Processes • 3D Printing
                 </span>
-              </div>
-              <div className="skill-category">
+              </GlareHover>
+              <GlareHover className="skill-category">
                 <h4>
                   AI/ML & Vision
                 </h4>
                 <span className="skill-tags">
                   Machine Learning & AI • Computer Vision • IoT Protocols
                 </span>
-              </div>
-              <div className="skill-category">
+              </GlareHover>
+              <GlareHover className="skill-category">
                 <h4>
                   Programming
                 </h4>
                 <span className="skill-tags">
                   Python Development • Java Development • Web Development
                 </span>
-              </div>
+              </GlareHover>
             </div>
           </div>
         </div>
