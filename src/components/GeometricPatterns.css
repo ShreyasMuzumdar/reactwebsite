@@ -1,0 +1,45 @@
+/* Geometric Patterns Background Effect */
+.geometric-patterns {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.geometric-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0.6;
+  mix-blend-mode: multiply;
+}
+
+/* Make sure content appears above the geometric patterns */
+.geometric-patterns ~ * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .geometric-canvas {
+    opacity: 0.4;
+  }
+}
+
+@media (max-width: 480px) {
+  .geometric-canvas {
+    opacity: 0.3;
+  }
+}
+
+/* Accessibility - reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .geometric-canvas {
+    opacity: 0.2;
+  }
+}

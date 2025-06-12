@@ -3,6 +3,7 @@ import './Projects.css';
 import Magnet from './Magnet';
 import GlareHover from './GlareHover';
 import FloatingElement from './FloatingElement';
+import GeometricPatterns from './GeometricPatterns';
 
 const Projects: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<string>('All');
@@ -73,6 +74,12 @@ const Projects: React.FC = () => {
 
   return (
     <section id="projects" className="projects">
+      <GeometricPatterns 
+        density="medium" 
+        speed="slow" 
+        opacity={0.4}
+        colors={['#4a90e2', '#2c5aa0', '#357abd', '#74a9ff', '#9bb8ff']}
+      />
       <div className="container">
         <h2 className="section-title">
           <span className="title-icon">🔧</span>
