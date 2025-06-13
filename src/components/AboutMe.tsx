@@ -51,39 +51,78 @@ const AboutMe = () => {
             <h3>
               Technical Skills
             </h3>
-            <div className="skills-grid">
-              <GlareHover className="skill-category">
-                <h4>
-                  CAD & Design
-                </h4>
-                <span className="skill-tags">
-                  CAD (Computer Aided Design) • Stress Testing • 3D Rendering • 3D Simulation
-                </span>
-              </GlareHover>
-              <GlareHover className="skill-category">
-                <h4>
-                  Manufacturing
-                </h4>
-                <span className="skill-tags">
-                  Laser Cutting • Metalworking Processes • 3D Printing
-                </span>
-              </GlareHover>
-              <GlareHover className="skill-category">
-                <h4>
-                  AI/ML & Vision
-                </h4>
-                <span className="skill-tags">
-                  Machine Learning & AI • Computer Vision • IoT Protocols
-                </span>
-              </GlareHover>
-              <GlareHover className="skill-category">
-                <h4>
-                  Programming
-                </h4>
-                <span className="skill-tags">
-                  Python Development • Java Development • Web Development
-                </span>
-              </GlareHover>
+            <div className="skills-categories">
+              <div className="skill-category-section">
+                <h4 className="category-title">CAD</h4>
+                <div className="skills-grid">
+                  <GlareHover className="skill-item">
+                    <span className="skill-name">Solidworks</span>
+                  </GlareHover>
+                  <GlareHover className="skill-item">
+                    <span className="skill-name">Fusion 360</span>
+                  </GlareHover>
+                  <GlareHover className="skill-item">
+                    <span className="skill-name">Onshape</span>
+                  </GlareHover>
+                  <GlareHover className="skill-item">
+                    <span className="skill-name">AutoCAD</span>
+                  </GlareHover>
+                </div>
+              </div>
+             
+              <div className="skill-category-section">
+                <h4 className="category-title">Mechanical Design/Analysis</h4>
+                <div className="skills-grid">
+                  <GlareHover className="skill-item">
+                    <span className="skill-name">SolidWorks Simulation (FEA)</span>
+                  </GlareHover>
+                  <GlareHover className="skill-item">
+                    <span className="skill-name">Blender 3D Rendering</span>
+                  </GlareHover>
+                  <GlareHover className="skill-item">
+                    <span className="skill-name">Tolerance Analysis</span>
+                  </GlareHover>
+                  <GlareHover className="skill-item">
+                    <span className="skill-name">Engineering Drawings</span>
+                  </GlareHover>
+                </div>
+              </div>
+             
+              <div className="skill-category-section">
+                <h4 className="category-title">Prototyping</h4>
+                <div className="skills-grid">
+                  <GlareHover className="skill-item">
+                    <span className="skill-name">CNC/Laser Cutting</span>
+                  </GlareHover>
+                  <GlareHover className="skill-item">
+                    <span className="skill-name">Power & Hand Tools</span>
+                  </GlareHover>
+                  <GlareHover className="skill-item">
+                    <span className="skill-name">3D Printing</span>
+                  </GlareHover>
+                  <GlareHover className="skill-item">
+                    <span className="skill-name">Soldering & Wiring</span>
+                  </GlareHover>
+                </div>
+              </div>
+
+              <div className="skill-category-section">
+                <h4 className="category-title">Programming</h4>
+                <div className="skills-grid">
+                  <GlareHover className="skill-item">
+                    <span className="skill-name">Python (CV, ML & AI)</span>
+                  </GlareHover>
+                  <GlareHover className="skill-item">
+                    <span className="skill-name">Web Development</span>
+                  </GlareHover>
+                  <GlareHover className="skill-item">
+                    <span className="skill-name">Java</span>
+                  </GlareHover>
+                  <GlareHover className="skill-item">
+                    <span className="skill-name">IoT Protocols</span>
+                  </GlareHover>
+                </div>
+              </div>
             </div>
           </div>
         </div>
