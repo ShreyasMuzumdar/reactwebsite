@@ -3,6 +3,24 @@ import TypewriterEffect from './TypewriterEffect'
 import FloatingElement from './FloatingElement'
 import GeometricPatterns from './GeometricPatterns'
 import GlareHover from './GlareHover'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { 
+  faCube,
+  faWrench, 
+  faRuler, 
+  faDraftingCompass, 
+  faCalculator, 
+  faChartBar, 
+  faHammer, 
+  faPrint,
+  faPlug,
+  faCode,
+  faCloud,
+  faIndustry,
+  faCubes,
+  faPenToSquare
+} from '@fortawesome/free-solid-svg-icons'
+import { faPython, faJava } from '@fortawesome/free-brands-svg-icons'
 
 const AboutMe = () => {
   return (
@@ -56,15 +74,27 @@ const AboutMe = () => {
                 <h4 className="category-title">CAD</h4>
                 <div className="skills-grid">
                   <GlareHover className="skill-item">
+                    <span className="skill-icon">
+                      <FontAwesomeIcon icon={faCube} />
+                    </span>
                     <span className="skill-name">Solidworks</span>
                   </GlareHover>
                   <GlareHover className="skill-item">
+                    <span className="skill-icon">
+                      <FontAwesomeIcon icon={faWrench} />
+                    </span>
                     <span className="skill-name">Fusion 360</span>
                   </GlareHover>
                   <GlareHover className="skill-item">
+                    <span className="skill-icon">
+                      <FontAwesomeIcon icon={faRuler} />
+                    </span>
                     <span className="skill-name">Onshape</span>
                   </GlareHover>
                   <GlareHover className="skill-item">
+                    <span className="skill-icon">
+                      <FontAwesomeIcon icon={faDraftingCompass} />
+                    </span>
                     <span className="skill-name">AutoCAD</span>
                   </GlareHover>
                 </div>
@@ -74,15 +104,27 @@ const AboutMe = () => {
                 <h4 className="category-title">Mechanical Design/Analysis</h4>
                 <div className="skills-grid">
                   <GlareHover className="skill-item">
+                    <span className="skill-icon">
+                      <FontAwesomeIcon icon={faCalculator} />
+                    </span>
                     <span className="skill-name">SolidWorks Simulation (FEA)</span>
                   </GlareHover>
                   <GlareHover className="skill-item">
+                    <span className="skill-icon">
+                      <FontAwesomeIcon icon={faCubes} />
+                    </span>
                     <span className="skill-name">Blender 3D Rendering</span>
                   </GlareHover>
                   <GlareHover className="skill-item">
+                    <span className="skill-icon">
+                      <FontAwesomeIcon icon={faChartBar} />
+                    </span>
                     <span className="skill-name">Tolerance Analysis</span>
                   </GlareHover>
                   <GlareHover className="skill-item">
+                    <span className="skill-icon">
+                      <FontAwesomeIcon icon={faPenToSquare} />
+                    </span>
                     <span className="skill-name">Engineering Drawings</span>
                   </GlareHover>
                 </div>
@@ -92,15 +134,27 @@ const AboutMe = () => {
                 <h4 className="category-title">Prototyping</h4>
                 <div className="skills-grid">
                   <GlareHover className="skill-item">
+                    <span className="skill-icon">
+                      <FontAwesomeIcon icon={faIndustry} />
+                    </span>
                     <span className="skill-name">CNC/Laser Cutting</span>
                   </GlareHover>
                   <GlareHover className="skill-item">
+                    <span className="skill-icon">
+                      <FontAwesomeIcon icon={faHammer} />
+                    </span>
                     <span className="skill-name">Power & Hand Tools</span>
                   </GlareHover>
                   <GlareHover className="skill-item">
+                    <span className="skill-icon">
+                      <FontAwesomeIcon icon={faPrint} />
+                    </span>
                     <span className="skill-name">3D Printing</span>
                   </GlareHover>
                   <GlareHover className="skill-item">
+                    <span className="skill-icon">
+                      <FontAwesomeIcon icon={faPlug} />
+                    </span>
                     <span className="skill-name">Soldering & Wiring</span>
                   </GlareHover>
                 </div>
@@ -110,15 +164,27 @@ const AboutMe = () => {
                 <h4 className="category-title">Programming</h4>
                 <div className="skills-grid">
                   <GlareHover className="skill-item">
+                    <span className="skill-icon">
+                      <FontAwesomeIcon icon={faPython} />
+                    </span>
                     <span className="skill-name">Python (CV, ML & AI)</span>
                   </GlareHover>
                   <GlareHover className="skill-item">
+                    <span className="skill-icon">
+                      <FontAwesomeIcon icon={faCode} />
+                    </span>
                     <span className="skill-name">Web Development</span>
                   </GlareHover>
                   <GlareHover className="skill-item">
+                    <span className="skill-icon">
+                      <FontAwesomeIcon icon={faJava} />
+                    </span>
                     <span className="skill-name">Java</span>
                   </GlareHover>
                   <GlareHover className="skill-item">
+                    <span className="skill-icon">
+                      <FontAwesomeIcon icon={faCloud} />
+                    </span>
                     <span className="skill-name">IoT Protocols</span>
                   </GlareHover>
                 </div>
