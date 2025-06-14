@@ -79,7 +79,7 @@ const AboutMe = () => {
                     </span>
                     <div className="skill-content">
                       <span className="skill-name">Solidworks</span>
-                      <span className="skill-experience">3 years</span>
+                      <span className="skill-experience">4 years</span>
                     </div>
                   </GlareHover>
                   <GlareHover className="skill-item">
@@ -88,7 +88,7 @@ const AboutMe = () => {
                     </span>
                     <div className="skill-content">
                       <span className="skill-name">Fusion 360</span>
-                      <span className="skill-experience">2 years</span>
+                      <span className="skill-experience">4 years</span>
                     </div>
                   </GlareHover>
                   <GlareHover className="skill-item">
@@ -97,7 +97,7 @@ const AboutMe = () => {
                     </span>
                     <div className="skill-content">
                       <span className="skill-name">Onshape</span>
-                      <span className="skill-experience">1 year</span>
+                      <span className="skill-experience">2 year</span>
                     </div>
                   </GlareHover>
                   <GlareHover className="skill-item">
@@ -106,7 +106,7 @@ const AboutMe = () => {
                     </span>
                     <div className="skill-content">
                       <span className="skill-name">AutoCAD</span>
-                      <span className="skill-experience">2 years</span>
+                      <span className="skill-experience">1 year</span>
                     </div>
                   </GlareHover>
                 </div>
@@ -130,7 +130,7 @@ const AboutMe = () => {
                     </span>
                     <div className="skill-content">
                       <span className="skill-name">Blender 3D Rendering</span>
-                      <span className="skill-experience">1 year</span>
+                      <span className="skill-experience">2 years</span>
                     </div>
                   </GlareHover>
                   <GlareHover className="skill-item">
@@ -163,7 +163,7 @@ const AboutMe = () => {
                     </span>
                     <div className="skill-content">
                       <span className="skill-name">CNC/Laser Cutting</span>
-                      <span className="skill-experience">2 years</span>
+                      <span className="skill-experience">3 years</span>
                     </div>
                   </GlareHover>
                   <GlareHover className="skill-item">
@@ -190,7 +190,7 @@ const AboutMe = () => {
                     </span>
                     <div className="skill-content">
                       <span className="skill-name">Soldering & Wiring</span>
-                      <span className="skill-experience">3 years</span>
+                      <span className="skill-experience">2 years</span>
                     </div>
                   </GlareHover>
                 </div>
