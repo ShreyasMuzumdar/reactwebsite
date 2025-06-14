@@ -2,6 +2,8 @@ import './Resume.css'
 import GeometricPatterns from './GeometricPatterns'
 
 const Resume = () => {
+  const baseUrl = import.meta.env.BASE_URL;
+
   return (
     <section id="resume" className="resume-section">
       <GeometricPatterns 
@@ -17,7 +19,7 @@ const Resume = () => {
         <div className="resume-content">
           <div className="resume-actions">
             <a 
-              href="/reactwebsite/files/Shreyas_Muzumdar_Resume.pdf" 
+              href={`${baseUrl}files/Shreyas_Muzumdar_Resume.pdf`} 
               target="_blank" 
               rel="noopener noreferrer"
               className="resume-button download-btn"
@@ -25,7 +27,7 @@ const Resume = () => {
               📄 Download PDF
             </a>
             <a 
-              href="/reactwebsite/files/Shreyas_Muzumdar_Resume.pdf" 
+              href={`${baseUrl}files/Shreyas_Muzumdar_Resume.pdf`} 
               target="_blank" 
               rel="noopener noreferrer"
               className="resume-button view-btn"
@@ -36,7 +38,7 @@ const Resume = () => {
           
           <div className="resume-viewer">
             <iframe
-              src="/reactwebsite/files/Shreyas_Muzumdar_Resume.pdf"
+              src={`${baseUrl}files/Shreyas_Muzumdar_Resume.pdf`}
               title="Shreyas Muzumdar Resume"
               className="resume-pdf"
               loading="lazy"
@@ -47,7 +49,7 @@ const Resume = () => {
             <p>
               Having trouble viewing the resume? 
               <a 
-                href="/reactwebsite/files/Shreyas_Muzumdar_Resume.pdf" 
+                href={`${baseUrl}files/Shreyas_Muzumdar_Resume.pdf`} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="fallback-link"

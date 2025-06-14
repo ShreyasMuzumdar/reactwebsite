@@ -4,26 +4,28 @@ import GlareHover from './GlareHover';
 import GeometricPatterns from './GeometricPatterns';
 
 const Robots: React.FC = () => {
+  const baseUrl = import.meta.env.BASE_URL;
+  
   const robots = [
         {
       name: "StretchBot",
       description: "Industrial robotic arm for precision assembly tasks.",
-      image: "/reactwebsite/files/StretchBot.png",
-      model3d: "/reactwebsite/files/StretchBot.usdz",
+      image: `${baseUrl}files/StretchBot.png`,
+      model3d: `${baseUrl}files/StretchBot.usdz`,
       features: ["6-DOF Movement", "Precision Assembly", "Industrial Grade", "Servo Control"]
     },
     {
       name: "BlackBox",
       description: "This robot is designed for autonomous navigation in indoor environments. It features LIDAR and computer vision for mapping and obstacle avoidance.",
-      image: "/reactwebsite/files/BlackBox.png",
-      model3d: "/reactwebsite/files/BlackBox.usdz",
+      image: `${baseUrl}files/BlackBox.png`,
+      model3d: `${baseUrl}files/BlackBox.usdz`,
       features: ["LIDAR Navigation", "Computer Vision", "Obstacle Avoidance", "Indoor Mapping"]
     },
     {
       name: "PlugBot",
       description: "This robot is designed for autonomous navigation in indoor environments. It features LIDAR and computer vision for mapping and obstacle avoidance.",
-      image: "/reactwebsite/files/PlugBot.png",
-      model3d: "/reactwebsite/files/PlugBot.usdz",
+      image: `${baseUrl}files/PlugBot.png`,
+      model3d: `${baseUrl}files/PlugBot.usdz`,
       features: ["LIDAR Navigation", "Computer Vision", "Obstacle Avoidance", "Indoor Mapping"]
     }
 

@@ -5,6 +5,8 @@ import TypewriterEffect from './TypewriterEffect';
 import GeometricPatterns from './GeometricPatterns';
 
 const Contact: React.FC = () => {
+  const baseUrl = import.meta.env.BASE_URL;
+
   const socialLinks = [
     { name: 'GitHub', icon: '🐙', url: 'https://github.com', color: '#333' },
     { name: 'LinkedIn', icon: '💼', url: 'https://linkedin.com', color: '#0077b5' },
@@ -85,7 +87,7 @@ const Contact: React.FC = () => {
               <h4>
                 My Resume
               </h4>
-              <a href="/reactwebsite/files/Shreyas_Muzumdar_Resume.pdf" className="resume-download" target="_blank" rel="noopener noreferrer">
+              <a href={`${baseUrl}files/Shreyas_Muzumdar_Resume.pdf`} className="resume-download" target="_blank" rel="noopener noreferrer">
                 <span className="resume-icon">📄</span>
                 Download PDF
               </a>
