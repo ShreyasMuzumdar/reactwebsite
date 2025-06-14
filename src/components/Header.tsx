@@ -25,6 +25,7 @@ const Header = () => {
         opacity={0.2}
         colors={['#4a90e2', '#2c5aa0', '#357abd']}
       />
+      <div className={`mobile-menu-backdrop ${isMobileMenuOpen ? 'active' : ''}`} onClick={() => setIsMobileMenuOpen(false)}></div>
       <nav className="nav">
         <div className="logo">
           <span className="logo-text">
