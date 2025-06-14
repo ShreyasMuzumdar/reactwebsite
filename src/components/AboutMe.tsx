@@ -53,7 +53,7 @@ const AboutMe = () => {
                 />
               </h2>
               <p className="description">
-                Hello, My name is Shreyas Muzumdar. I am a current student at Northeastern
+                Hello, My name is Shreyas Muzumdar. I am a student at Northeastern
                 University and graduated from Saint Johns High School. Over the past few years, worked
                 on various projects broadening my engineering experience. Eager to work hard
                 while learning new concepts and helping you and your team in any way I can.

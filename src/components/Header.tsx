@@ -1,12 +1,20 @@
 import './Header.css'
 import GeometricPatterns from './GeometricPatterns';
+import { useState } from 'react';
 
 const Header = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+    setIsMobileMenuOpen(false); // Close mobile menu after navigation
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   return (
@@ -23,7 +31,12 @@ const Header = () => {
             🤖 Shreyas Muzumdar
           </span>
         </div>
-        <ul className="nav-links">
+        <button className="mobile-menu-toggle" onClick={toggleMobileMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul className={`nav-links ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}>
           <li><button onClick={() => scrollToSection('about')} className="nav-button">About</button></li>
           <li><button onClick={() => scrollToSection('projects')} className="nav-button">Projects</button></li>
           <li><button onClick={() => scrollToSection('robots')} className="nav-button">Robots</button></li>
