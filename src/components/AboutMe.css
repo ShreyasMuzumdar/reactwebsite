@@ -87,17 +87,17 @@
   background: #ffffff;
   border: 2px solid rgba(74, 144, 226, 0.3);
   border-radius: 12px;
-  padding: 0.8rem 1rem;
+  padding: 1rem 1.5rem;
   text-align: left;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  min-height: 50px;
+  min-height: 70px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: 100%;
+  width: 220px;
   gap: 12px;
 }
 
@@ -122,13 +122,27 @@
 
 .skill-name {
   color: #2c5aa0;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 600;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   line-height: 1.3;
   flex: 1;
 }
 
+.skill-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.skill-experience {
+  color: #666;
+  font-size: 0.75rem;
+  font-weight: 500;
+  opacity: 0.8;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
 
 .about-visual {
   display: flex;
@@ -208,15 +222,17 @@
 }
 
 .skills-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.8rem;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  align-items: center;
+  padding-bottom: 0.5rem;
 }
 
 
 
-/* Skills categories container - Compact Grid Format */
+/* Skills categories container - 2 Categories Per Row */
 .skills-categories {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -228,15 +244,15 @@
 .skill-category-section {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.2rem;
 }
 
 .category-title {
   color: #2c5aa0;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 600;
   text-align: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   position: relative;
 }
@@ -286,29 +302,29 @@
   
   .skills-categories {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 2rem;
   }
   
   .skills-grid {
-    grid-template-columns: 1fr;
-    gap: 0.6rem;
-  }
-  
-  .skill-item {
-    padding: 0.7rem 0.8rem;
-    min-height: 45px;
-  }
-  
-  .skill-category-section {
     gap: 0.8rem;
   }
   
+  .skill-item {
+    padding: 0.8rem 1rem;
+    min-height: 60px;
+    width: 200px;
+  }
+  
+  .skill-category-section {
+    gap: 1rem;
+  }
+  
   .category-title {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
   
   .skill-name {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
   }
   
   .skills-section {

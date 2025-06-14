@@ -77,25 +77,37 @@ const AboutMe = () => {
                     <span className="skill-icon">
                       <FontAwesomeIcon icon={faCube} />
                     </span>
-                    <span className="skill-name">Solidworks</span>
+                    <div className="skill-content">
+                      <span className="skill-name">Solidworks</span>
+                      <span className="skill-experience">3 years</span>
+                    </div>
                   </GlareHover>
                   <GlareHover className="skill-item">
                     <span className="skill-icon">
                       <FontAwesomeIcon icon={faWrench} />
                     </span>
-                    <span className="skill-name">Fusion 360</span>
+                    <div className="skill-content">
+                      <span className="skill-name">Fusion 360</span>
+                      <span className="skill-experience">2 years</span>
+                    </div>
                   </GlareHover>
                   <GlareHover className="skill-item">
                     <span className="skill-icon">
                       <FontAwesomeIcon icon={faRuler} />
                     </span>
-                    <span className="skill-name">Onshape</span>
+                    <div className="skill-content">
+                      <span className="skill-name">Onshape</span>
+                      <span className="skill-experience">1 year</span>
+                    </div>
                   </GlareHover>
                   <GlareHover className="skill-item">
                     <span className="skill-icon">
                       <FontAwesomeIcon icon={faDraftingCompass} />
                     </span>
-                    <span className="skill-name">AutoCAD</span>
+                    <div className="skill-content">
+                      <span className="skill-name">AutoCAD</span>
+                      <span className="skill-experience">2 years</span>
+                    </div>
                   </GlareHover>
                 </div>
               </div>
@@ -107,25 +119,37 @@ const AboutMe = () => {
                     <span className="skill-icon">
                       <FontAwesomeIcon icon={faCalculator} />
                     </span>
-                    <span className="skill-name">SolidWorks Simulation (FEA)</span>
+                    <div className="skill-content">
+                      <span className="skill-name">SolidWorks Simulation (FEA)</span>
+                      <span className="skill-experience">2 years</span>
+                    </div>
                   </GlareHover>
                   <GlareHover className="skill-item">
                     <span className="skill-icon">
                       <FontAwesomeIcon icon={faCubes} />
                     </span>
-                    <span className="skill-name">Blender 3D Rendering</span>
+                    <div className="skill-content">
+                      <span className="skill-name">Blender 3D Rendering</span>
+                      <span className="skill-experience">1 year</span>
+                    </div>
                   </GlareHover>
                   <GlareHover className="skill-item">
                     <span className="skill-icon">
                       <FontAwesomeIcon icon={faChartBar} />
                     </span>
-                    <span className="skill-name">Tolerance Analysis</span>
+                    <div className="skill-content">
+                      <span className="skill-name">Tolerance Analysis</span>
+                      <span className="skill-experience">2 years</span>
+                    </div>
                   </GlareHover>
                   <GlareHover className="skill-item">
                     <span className="skill-icon">
                       <FontAwesomeIcon icon={faPenToSquare} />
                     </span>
-                    <span className="skill-name">Engineering Drawings</span>
+                    <div className="skill-content">
+                      <span className="skill-name">Engineering Drawings</span>
+                      <span className="skill-experience">3 years</span>
+                    </div>
                   </GlareHover>
                 </div>
               </div>
@@ -137,25 +161,37 @@ const AboutMe = () => {
                     <span className="skill-icon">
                       <FontAwesomeIcon icon={faIndustry} />
                     </span>
-                    <span className="skill-name">CNC/Laser Cutting</span>
+                    <div className="skill-content">
+                      <span className="skill-name">CNC/Laser Cutting</span>
+                      <span className="skill-experience">2 years</span>
+                    </div>
                   </GlareHover>
                   <GlareHover className="skill-item">
                     <span className="skill-icon">
                       <FontAwesomeIcon icon={faHammer} />
                     </span>
-                    <span className="skill-name">Power & Hand Tools</span>
+                    <div className="skill-content">
+                      <span className="skill-name">Power & Hand Tools</span>
+                      <span className="skill-experience">4 years</span>
+                    </div>
                   </GlareHover>
                   <GlareHover className="skill-item">
                     <span className="skill-icon">
                       <FontAwesomeIcon icon={faPrint} />
                     </span>
-                    <span className="skill-name">3D Printing</span>
+                    <div className="skill-content">
+                      <span className="skill-name">3D Printing</span>
+                      <span className="skill-experience">3 years</span>
+                    </div>
                   </GlareHover>
                   <GlareHover className="skill-item">
                     <span className="skill-icon">
                       <FontAwesomeIcon icon={faPlug} />
                     </span>
-                    <span className="skill-name">Soldering & Wiring</span>
+                    <div className="skill-content">
+                      <span className="skill-name">Soldering & Wiring</span>
+                      <span className="skill-experience">3 years</span>
+                    </div>
                   </GlareHover>
                 </div>
               </div>
@@ -167,25 +203,37 @@ const AboutMe = () => {
                     <span className="skill-icon">
                       <FontAwesomeIcon icon={faPython} />
                     </span>
-                    <span className="skill-name">Python (CV, ML & AI)</span>
+                    <div className="skill-content">
+                      <span className="skill-name">Python (CV, ML & AI)</span>
+                      <span className="skill-experience">2 years</span>
+                    </div>
                   </GlareHover>
                   <GlareHover className="skill-item">
                     <span className="skill-icon">
                       <FontAwesomeIcon icon={faCode} />
                     </span>
-                    <span className="skill-name">Web Development</span>
+                    <div className="skill-content">
+                      <span className="skill-name">Web Development</span>
+                      <span className="skill-experience">1 year</span>
+                    </div>
                   </GlareHover>
                   <GlareHover className="skill-item">
                     <span className="skill-icon">
                       <FontAwesomeIcon icon={faJava} />
                     </span>
-                    <span className="skill-name">Java</span>
+                    <div className="skill-content">
+                      <span className="skill-name">Java</span>
+                      <span className="skill-experience">2 years</span>
+                    </div>
                   </GlareHover>
                   <GlareHover className="skill-item">
                     <span className="skill-icon">
                       <FontAwesomeIcon icon={faCloud} />
                     </span>
-                    <span className="skill-name">IoT Protocols</span>
+                    <div className="skill-content">
+                      <span className="skill-name">IoT Protocols</span>
+                      <span className="skill-experience">1 year</span>
+                    </div>
                   </GlareHover>
                 </div>
               </div>
