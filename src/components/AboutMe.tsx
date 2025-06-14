@@ -18,7 +18,7 @@ const AboutMe = () => {
             <div className="about-visual">
               <div className="profile-image-container">
                 <FloatingElement intensity="subtle" direction="up" duration={4}>
-                  <img src="/reactwebsite/DSC_9142.jpg" alt="Shreyas Muzumdar" className="profile-image" />
+                  <img src="/reactwebsite/files/DSC_9142.jpg" alt="Shreyas Muzumdar" className="profile-image" />
                 </FloatingElement>
               </div>
             </div>

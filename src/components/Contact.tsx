@@ -85,7 +85,7 @@ const Contact: React.FC = () => {
               <h4>
                 My Resume
               </h4>
-              <a href="/reactwebsite/Shreyas_Muzumdar_Resume.pdf" className="resume-download" target="_blank" rel="noopener noreferrer">
+              <a href="/reactwebsite/files/Shreyas_Muzumdar_Resume.pdf" className="resume-download" target="_blank" rel="noopener noreferrer">
                 <span className="resume-icon">📄</span>
                 Download PDF
               </a>

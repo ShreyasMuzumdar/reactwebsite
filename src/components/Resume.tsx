@@ -17,7 +17,7 @@ const Resume = () => {
         <div className="resume-content">
           <div className="resume-actions">
             <a 
-              href="/reactwebsite/Shreyas_Muzumdar_Resume.pdf" 
+              href="/reactwebsite/files/Shreyas_Muzumdar_Resume.pdf" 
               target="_blank" 
               rel="noopener noreferrer"
               className="resume-button download-btn"
@@ -25,7 +25,7 @@ const Resume = () => {
               📄 Download PDF
             </a>
             <a 
-              href="/reactwebsite/Shreyas_Muzumdar_Resume.pdf" 
+              href="/reactwebsite/files/Shreyas_Muzumdar_Resume.pdf" 
               target="_blank" 
               rel="noopener noreferrer"
               className="resume-button view-btn"
@@ -36,7 +36,7 @@ const Resume = () => {
           
           <div className="resume-viewer">
             <iframe
-              src="/reactwebsite/Shreyas_Muzumdar_Resume.pdf"
+              src="/reactwebsite/files/Shreyas_Muzumdar_Resume.pdf"
               title="Shreyas Muzumdar Resume"
               className="resume-pdf"
               loading="lazy"
@@ -47,7 +47,7 @@ const Resume = () => {
             <p>
               Having trouble viewing the resume? 
               <a 
-                href="/reactwebsite/Shreyas_Muzumdar_Resume.pdf" 
+                href="/reactwebsite/files/Shreyas_Muzumdar_Resume.pdf" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="fallback-link"

@@ -8,22 +8,22 @@ const Robots: React.FC = () => {
         {
       name: "StretchBot",
       description: "Industrial robotic arm for precision assembly tasks.",
-      image: "/reactwebsite/StretchBot.png",
-      model3d: "/reactwebsite/StretchBot.usdz",
+      image: "/reactwebsite/files/StretchBot.png",
+      model3d: "/reactwebsite/files/StretchBot.usdz",
       features: ["6-DOF Movement", "Precision Assembly", "Industrial Grade", "Servo Control"]
     },
     {
       name: "BlackBox",
       description: "This robot is designed for autonomous navigation in indoor environments. It features LIDAR and computer vision for mapping and obstacle avoidance.",
-      image: "/reactwebsite/BlackBox.png",
-      model3d: "/reactwebsite/BlackBox.usdz",
+      image: "/reactwebsite/files/BlackBox.png",
+      model3d: "/reactwebsite/files/BlackBox.usdz",
       features: ["LIDAR Navigation", "Computer Vision", "Obstacle Avoidance", "Indoor Mapping"]
     },
     {
       name: "PlugBot",
       description: "This robot is designed for autonomous navigation in indoor environments. It features LIDAR and computer vision for mapping and obstacle avoidance.",
-      image: "/reactwebsite/PlugBot.png",
-      model3d: "/reactwebsite/PlugBot.usdz",
+      image: "/reactwebsite/files/PlugBot.png",
+      model3d: "/reactwebsite/files/PlugBot.usdz",
       features: ["LIDAR Navigation", "Computer Vision", "Obstacle Avoidance", "Indoor Mapping"]
     }
 
