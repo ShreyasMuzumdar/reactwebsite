@@ -1,6 +1,7 @@
 import './App.css'
 import Header from './components/Header'
 import AboutMe from './components/AboutMe'
+import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Robots from './components/Robots'
 import Resume from './components/Resume'
@@ -12,6 +13,7 @@ function App() {
       <Header />
       <main>
         <AboutMe />
+        <Skills />
         <Projects />
         <Robots />
         <Resume />
