@@ -30,28 +30,23 @@ const EducationExperience: React.FC = () => {
 
   const experienceData = [
     {
-      period: "2025 - Present",
+      period: "June 2024 - August 2024",
       company: "RoboHub",
       location: "Boston, MA", 
-      position: "Teaching Assistant",
-      description: "Conducting research on autonomous systems and machine learning applications in robotics. Working on projects involving ROS, computer vision, and embedded systems programming.",
-      achievements: [
-        "Published 2 research papers",
-        "Developed novel SLAM algorithm",
-        "Mentored junior students"
-      ],
+      position: "Intern",
+      description: "Taught younger kids engineering skills, Helped students create drones, Lego robots, 3d models, and animations & Developed a system to create time-lapses of different 3d prints",
       logo: "🔬"
     },
     {
-      period: "2011 - 2025",
-      company: "Saint Johns Pioneer Robotics  ",
+      period: "2021 - 2025",
+      company: "Saint Johns Pioneer Robotics",
       location: "Boston, MA",
       position: "Build Team Lead",
-      description: "Led the build team for the robotics club, overseeing the building and programming of competition robots.",
+      description: "Led the build team for the robotics team, overseeing the building and programming of competition robots.",
       achievements: [
-        "Trained 50+ students",
-        "Reduced equipment downtime by 30%",
-        "Created educational content"
+        "Led team to MTI (Top 40 teams worldwide)",
+        "MA State Champion",
+        "3x MA State Finalist",
       ],
       logo: "🛠️"
     }

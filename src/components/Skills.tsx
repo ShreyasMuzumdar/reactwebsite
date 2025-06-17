@@ -85,7 +85,7 @@ const Skills = () => {
                     <FontAwesomeIcon icon={faCalculator} />
                   </span>
                   <div className="skill-content">
-                    <span className="skill-name">SolidWorks Simulation (FEA)</span>
+                    <span className="skill-name">SolidWorks Simulation</span>
                     <span className="skill-experience">2 years</span>
                   </div>
                 </GlareHover>
