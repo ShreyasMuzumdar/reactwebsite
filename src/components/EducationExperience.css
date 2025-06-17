@@ -1,8 +1,9 @@
 .education-experience {
   position: relative;
   padding: 120px 0;
-  background: var(--gradient-background);
+  background: var(--bg-primary);
   overflow: hidden;
+  transition: background 0.3s ease;
   min-height: 100vh;
   transition: background 0.3s ease;
 }

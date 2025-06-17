@@ -6,28 +6,23 @@ import GeometricPatterns from './GeometricPatterns';
 const EducationExperience: React.FC = () => {
   const educationData = [
     {
-      period: "2021 - 2025",
+      period: "2025 - Present",
       institution: "Northeastern University",
       location: "Boston, MA",
-      degree: "B.S. in Computer Engineering",
-      description: "Focused on robotics, automation, and embedded systems. Relevant coursework includes Digital Signal Processing, Control Systems, Machine Learning, Computer Vision, and Robotics.",
-      achievements: [
-        "Dean's List (2022-2024)",
-        "Robotics Club Vice President", 
-        "Senior Capstone: Autonomous Navigation System"
-      ],
+      degree: "B.S. in Mechanical Engineering",
+      description: "Focused on robotics, automation, and embedded systems.",
       logo: "🎓"
     },
     {
-      period: "2017 - 2021",
-      institution: "High School",
-      location: "Boston, MA",
+      period: "2021 - 2025",
+      institution: "Saint Johns High School",
+      location: "Shrewsbury, MA",
       degree: "High School Diploma",
       description: "Strong foundation in STEM subjects with emphasis on mathematics, physics, and computer science.",
       achievements: [
-        "Valedictorian",
-        "National Honor Society",
-        "Robotics Team Captain"
+        "Robotics Build Team Lead",
+        "Investment Club President",
+        "National Honor Society"
       ],
       logo: "🏫"
     }
@@ -35,23 +30,10 @@ const EducationExperience: React.FC = () => {
 
   const experienceData = [
     {
-      period: "Summer 2024",
-      company: "Tech Robotics Inc.",
-      location: "Boston, MA",
-      position: "Robotics Engineering Intern",
-      description: "Developed autonomous navigation algorithms for warehouse robots. Implemented computer vision systems for object detection and worked on sensor fusion for LIDAR and camera data.",
-      achievements: [
-        "Improved navigation accuracy by 25%",
-        "Developed Python-based control interface",
-        "Collaborated with cross-functional engineering teams"
-      ],
-      logo: "🤖"
-    },
-    {
-      period: "2023 - Present",
-      company: "Northeastern Robotics Lab",
+      period: "2025 - Present",
+      company: "RoboHub",
       location: "Boston, MA", 
-      position: "Research Assistant",
+      position: "Teaching Assistant",
       description: "Conducting research on autonomous systems and machine learning applications in robotics. Working on projects involving ROS, computer vision, and embedded systems programming.",
       achievements: [
         "Published 2 research papers",
@@ -61,11 +43,11 @@ const EducationExperience: React.FC = () => {
       logo: "🔬"
     },
     {
-      period: "2022 - 2023",
-      company: "Local Makerspace",
+      period: "2011 - 2025",
+      company: "Saint Johns Pioneer Robotics  ",
       location: "Boston, MA",
-      position: "Technical Volunteer",
-      description: "Taught robotics workshops to high school students and helped maintain 3D printers and CNC machines. Developed curriculum for introductory programming courses.",
+      position: "Build Team Lead",
+      description: "Led the build team for the robotics club, overseeing the building and programming of competition robots.",
       achievements: [
         "Trained 50+ students",
         "Reduced equipment downtime by 30%",
@@ -112,14 +94,16 @@ const EducationExperience: React.FC = () => {
                     <div className="timeline-body">
                       <h5 className="timeline-degree">{item.degree}</h5>
                       <p className="timeline-description">{item.description}</p>
-                      <div className="timeline-achievements">
-                        <h6>Key Achievements:</h6>
-                        <ul>
-                          {item.achievements.map((achievement, achIndex) => (
-                            <li key={achIndex}>{achievement}</li>
-                          ))}
-                        </ul>
-                      </div>
+                      {item.achievements && (
+                        <div className="timeline-achievements">
+                          <h6>Key Achievements:</h6>
+                          <ul>
+                            {item.achievements.map((achievement, achIndex) => (
+                              <li key={achIndex}>{achievement}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </GlareHover>
@@ -149,14 +133,16 @@ const EducationExperience: React.FC = () => {
                     <div className="timeline-body">
                       <h5 className="timeline-position">{item.position}</h5>
                       <p className="timeline-description">{item.description}</p>
-                      <div className="timeline-achievements">
-                        <h6>Key Accomplishments:</h6>
-                        <ul>
-                          {item.achievements.map((achievement, achIndex) => (
-                            <li key={achIndex}>{achievement}</li>
-                          ))}
-                        </ul>
-                      </div>
+                      {item.achievements && (
+                        <div className="timeline-achievements">
+                          <h6>Key Accomplishments:</h6>
+                          <ul>
+                            {item.achievements.map((achievement, achIndex) => (
+                              <li key={achIndex}>{achievement}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </GlareHover>

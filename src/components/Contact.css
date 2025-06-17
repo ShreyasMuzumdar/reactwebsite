@@ -99,28 +99,50 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 10px 15px;
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(74, 144, 226, 0.2);
+  padding: 12px 20px;
+  background: var(--bg-card);
+  border: 2px solid var(--border-light);
   border-radius: 25px;
-  color: #2c5aa0;
+  color: var(--text-primary);
   text-decoration: none;
   transition: all 0.3s ease;
+  font-weight: 500;
+  backdrop-filter: blur(10px);
 }
 
 .social-link:hover {
-  background: rgba(255, 255, 255, 1);
-  border-color: var(--hover-color, #4a90e2);
+  background: var(--bg-card-hover);
+  border-color: var(--accent-primary);
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+  box-shadow: 0 8px 25px var(--shadow-medium);
+  color: var(--accent-primary);
+}
+
+[data-theme="dark"] .social-link {
+  background: var(--bg-card);
+  border-color: var(--border-medium);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .social-link:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--accent-secondary);
+  color: var(--accent-secondary);
+  box-shadow: 0 8px 25px var(--shadow-strong);
 }
 
 .social-icon {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
+}
+
+.social-link:hover .social-icon {
+  transform: scale(1.1);
 }
 
 .social-name {
-  font-weight: 500;
+  font-weight: 600;
+  transition: color 0.3s ease;
 }
 
 .resume-section {

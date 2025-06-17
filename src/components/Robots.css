@@ -110,9 +110,9 @@
 }
 
 .view-3d-btn:hover {
-  background: white;
+  background: var(--bg-card-hover);
   transform: scale(1.05);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 15px var(--shadow-medium);
 }
 
 .robot-content {
