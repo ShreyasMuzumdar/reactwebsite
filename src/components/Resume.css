@@ -212,15 +212,28 @@
   .resume-actions {
     flex-direction: column;
     align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
   }
   
   .resume-button {
     width: 200px;
     justify-content: center;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .resume-viewer {
+    margin: 0;
+    padding: 8px;
+    border-radius: 12px;
   }
   
   .resume-pdf {
-    height: 600px;
+    height: 70vh;
+    min-height: 500px;
+    max-height: 800px;
+    border-radius: 8px;
   }
 }
 
@@ -229,11 +242,40 @@
     padding: 40px 0;
   }
   
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .resume-actions {
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+  }
+  
+  .resume-button {
+    width: 180px;
+    padding: 0.7rem 1.2rem;
+    font-size: 0.85rem;
+  }
+  
+  .resume-viewer {
+    padding: 6px;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+  
   .resume-pdf {
-    height: 500px;
+    height: 75vh;
+    min-height: 400px;
+    max-height: 700px;
+    border-radius: 6px;
   }
   
   .resume-content {
-    margin: 0 10px;
+    margin: 0;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
   }
 }
