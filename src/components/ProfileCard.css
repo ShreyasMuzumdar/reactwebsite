@@ -1,14 +1,14 @@
 /* Profile Card - ReactBits.dev inspired effect */
 .profile-card {
   position: relative;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--bg-card);
   border-radius: 16px;
   padding: 0;
   overflow: hidden;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-light);
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -23,8 +23,8 @@
   bottom: 0;
   background: radial-gradient(
     300px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    rgba(76, 175, 255, 0.15) 0%,
-    rgba(148, 0, 211, 0.1) 30%,
+    var(--accent-primary) 0%,
+    var(--accent-tertiary) 30%,
     transparent 70%
   );
   opacity: 0;

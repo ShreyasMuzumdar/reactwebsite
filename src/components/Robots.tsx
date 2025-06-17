@@ -12,21 +12,18 @@ const Robots: React.FC = () => {
       description: "Industrial robotic arm for precision assembly tasks.",
       image: `${baseUrl}files/StretchBot.png`,
       model3d: `${baseUrl}files/StretchBot.usdz`,
-      features: ["6-DOF Movement", "Precision Assembly", "Industrial Grade", "Servo Control"]
     },
     {
       name: "BlackBox",
       description: "This robot is designed for autonomous navigation in indoor environments. It features LIDAR and computer vision for mapping and obstacle avoidance.",
       image: `${baseUrl}files/BlackBox.png`,
       model3d: `${baseUrl}files/BlackBox.usdz`,
-      features: ["LIDAR Navigation", "Computer Vision", "Obstacle Avoidance", "Indoor Mapping"]
     },
     {
       name: "PlugBot",
       description: "This robot is designed for autonomous navigation in indoor environments. It features LIDAR and computer vision for mapping and obstacle avoidance.",
       image: `${baseUrl}files/PlugBot.png`,
       model3d: `${baseUrl}files/PlugBot.usdz`,
-      features: ["LIDAR Navigation", "Computer Vision", "Obstacle Avoidance", "Indoor Mapping"]
     }
 
   ];
@@ -64,19 +61,6 @@ const Robots: React.FC = () => {
                 <p className="robot-description">
                   {robot.description}
                 </p>
-                
-                <div className="robot-features">
-                  <h4>
-                    Key Features:
-                  </h4>
-                  <div className="features-list">
-                    {robot.features.map((feature, featIndex) => (
-                      <span key={featIndex} className="feature-tag">
-                        {feature}
-                      </span>
-                    ))}
-                  </div>
-                </div>
                 
                 <div className="robot-actions">
                   <a href={robot.model3d} className="robot-link primary">

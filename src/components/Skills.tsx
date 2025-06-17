@@ -155,7 +155,7 @@ const Skills = () => {
                   </span>
                   <div className="skill-content">
                     <span className="skill-name">Soldering & Wiring</span>
-                    <span className="skill-experience">3 years</span>
+                    <span className="skill-experience">1 year</span>
                   </div>
                 </GlareHover>
               </div>

@@ -1,17 +1,77 @@
+/* CSS Variables for Theme System */
 :root {
   font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light;
-  color: #4a90e2;
-  background-color: #ffffff;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+/* Light Theme Variables */
+[data-theme="light"] {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-tertiary: rgba(74, 144, 226, 0.05);
+  --bg-card: rgba(255, 255, 255, 0.8);
+  --bg-card-hover: rgba(255, 255, 255, 0.9);
+  
+  --text-primary: #2c5aa0;
+  --text-secondary: #4a90e2;
+  --text-tertiary: #6c757d;
+  --text-light: #8a8a8a;
+  --text-white: #ffffff;
+  
+  --accent-primary: #4a90e2;
+  --accent-secondary: #2c5aa0;
+  --accent-tertiary: #357abd;
+  --accent-light: #74a9ff;
+  
+  --border-light: rgba(74, 144, 226, 0.2);
+  --border-medium: rgba(74, 144, 226, 0.3);
+  --border-strong: rgba(74, 144, 226, 0.5);
+  
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-medium: rgba(0, 0, 0, 0.15);
+  --shadow-strong: rgba(0, 0, 0, 0.2);
+  
+  --gradient-primary: linear-gradient(135deg, #4a90e2 0%, #2c5aa0 100%);
+  --gradient-secondary: linear-gradient(135deg, #74a9ff 0%, #357abd 100%);
+  --gradient-background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%);
+}
+
+/* Dark Theme Variables */
+[data-theme="dark"] {
+  --bg-primary: #0c0c0c;
+  --bg-secondary: #1a1a1a;
+  --bg-tertiary: rgba(74, 144, 226, 0.05);
+  --bg-card: rgba(255, 255, 255, 0.05);
+  --bg-card-hover: rgba(255, 255, 255, 0.08);
+  
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.9);
+  --text-tertiary: rgba(255, 255, 255, 0.7);
+  --text-light: rgba(255, 255, 255, 0.6);
+  --text-white: #ffffff;
+  
+  --accent-primary: #4a90e2;
+  --accent-secondary: #74a9ff;
+  --accent-tertiary: #357abd;
+  --accent-light: #2c5aa0;
+  
+  --border-light: rgba(255, 255, 255, 0.1);
+  --border-medium: rgba(255, 255, 255, 0.2);
+  --border-strong: rgba(255, 255, 255, 0.3);
+  
+  --shadow-light: rgba(0, 0, 0, 0.2);
+  --shadow-medium: rgba(0, 0, 0, 0.3);
+  --shadow-strong: rgba(0, 0, 0, 0.4);
+  
+  --gradient-primary: linear-gradient(135deg, #4a90e2 0%, #2c5aa0 100%);
+  --gradient-secondary: linear-gradient(135deg, #74a9ff 0%, #357abd 100%);
+  --gradient-background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 50%, #0c0c0c 100%);
 }
 
 * {
@@ -23,8 +83,9 @@ body {
   padding: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: #ffffff;
-  color: #4a90e2;
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #root {
@@ -34,58 +95,64 @@ body {
 
 a {
   font-weight: 500;
-  color: #4a90e2;
+  color: var(--accent-primary);
   text-decoration: inherit;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #2c5aa0;
+  color: var(--accent-secondary);
 }
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   font-weight: 600;
   line-height: 1.2;
-  color: #2c5aa0;
+  color: var(--text-primary);
 }
+
 
 p {
   margin: 0;
-  color: #4a90e2;
+  color: var(--text-secondary);
 }
 
 button {
   border-radius: 8px;
-  border: 1px solid rgba(74, 144, 226, 0.3);
+  border: 1px solid var(--border-medium);
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background: rgba(74, 144, 226, 0.1);
-  color: #2c5aa0;
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 button:hover {
-  border-color: #4a90e2;
-  background: rgba(74, 144, 226, 0.2);
+  border-color: var(--accent-primary);
+  background: var(--bg-card);
   transform: translateY(-2px);
 }
 
 button:focus,
 button:focus-visible {
-  outline: 2px solid #4a90e2;
+  outline: 2px solid var(--accent-primary);
   outline-offset: 2px;
 }
 
 input, textarea {
   font-family: inherit;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border-light);
+  transition: all 0.3s ease;
 }
 
-/* Remove default input styling */
 input:focus,
 textarea:focus {
   outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 2px var(--border-light);
 }

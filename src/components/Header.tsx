@@ -1,5 +1,6 @@
 import './Header.css'
 import GeometricPatterns from './GeometricPatterns';
+import ThemeToggle from './ThemeToggle';
 import { useState } from 'react';
 
 const Header = () => {
@@ -32,14 +33,18 @@ const Header = () => {
             🤖 Shreyas Muzumdar
           </span>
         </div>
-        <button className="mobile-menu-toggle" onClick={toggleMobileMenu}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+        <div className="nav-controls">
+          <ThemeToggle />
+          <button className="mobile-menu-toggle" onClick={toggleMobileMenu}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
         <ul className={`nav-links ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}>
           <li><button onClick={() => scrollToSection('about')} className="nav-button">About</button></li>
           <li><button onClick={() => scrollToSection('skills')} className="nav-button">Skills</button></li>
+          <li><button onClick={() => scrollToSection('education-experience')} className="nav-button">Education & Experience</button></li>
           <li><button onClick={() => scrollToSection('projects')} className="nav-button">Projects</button></li>
           <li><button onClick={() => scrollToSection('robots')} className="nav-button">Robots</button></li>
           <li><button onClick={() => scrollToSection('resume')} className="nav-button">Resume</button></li>

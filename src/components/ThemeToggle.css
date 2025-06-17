@@ -1,0 +1,72 @@
+.theme-toggle {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.05);
+}
+
+.theme-toggle-track {
+  width: 50px;
+  height: 24px;
+  background: var(--toggle-track-bg, rgba(255, 255, 255, 0.2));
+  border-radius: 50px;
+  position: relative;
+  transition: all 0.3s ease;
+  border: 1px solid var(--toggle-border, rgba(255, 255, 255, 0.3));
+}
+
+.theme-toggle-thumb {
+  width: 20px;
+  height: 20px;
+  background: var(--toggle-thumb-bg, linear-gradient(135deg, #4facfe, #00f2fe));
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .theme-toggle-thumb {
+  transform: translateX(26px);
+}
+
+.theme-icon {
+  font-size: 10px;
+  line-height: 1;
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.3));
+}
+
+/* Enhanced icon visibility */
+[data-theme="light"] .theme-icon {
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
+}
+
+[data-theme="dark"] .theme-icon {
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3));
+}
+
+/* Light theme variables */
+[data-theme="light"] {
+  --toggle-track-bg: rgba(0, 0, 0, 0.1);
+  --toggle-border: rgba(0, 0, 0, 0.2);
+  --toggle-thumb-bg: linear-gradient(135deg, #ffffff, #f0f8ff);
+}
+
+/* Dark theme variables */
+[data-theme="dark"] {
+  --toggle-track-bg: rgba(255, 255, 255, 0.1);
+  --toggle-border: rgba(255, 255, 255, 0.2);
+  --toggle-thumb-bg: linear-gradient(135deg, #4facfe, #00f2fe);
+}

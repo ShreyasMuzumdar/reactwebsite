@@ -2,7 +2,7 @@
   --mouse-x: 50%;
   --mouse-y: 50%;
   --glare-opacity: 0;
-  --glare-color: rgba(255, 255, 255, 0.3);
+  --glare-color: var(--border-strong, rgba(255, 255, 255, 0.3));
   
   position: relative;
   overflow: hidden;

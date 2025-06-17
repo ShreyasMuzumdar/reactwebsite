@@ -5,13 +5,10 @@ import TypewriterEffect from './TypewriterEffect';
 import GeometricPatterns from './GeometricPatterns';
 
 const Contact: React.FC = () => {
-  const baseUrl = import.meta.env.BASE_URL;
-
   const socialLinks = [
-    { name: 'GitHub', icon: '🐙', url: 'https://github.com', color: '#333' },
-    { name: 'LinkedIn', icon: '💼', url: 'https://linkedin.com', color: '#0077b5' },
-    { name: 'Email', icon: '📧', url: 'mailto:your.email@example.com', color: '#ea4335' },
-    { name: 'Twitter', icon: '🐦', url: 'https://twitter.com', color: '#1da1f2' }
+    { name: 'GitHub', icon: '🐙', url: 'https://github.com/ShreyasMuzumdar', color: '#333' },
+    { name: 'Email', icon: '💼', url: 'mailto:muzumdar.s@northeastern.edu', color: '#0077b5' },
+    { name: 'LinkedIn', icon: '💼', url: 'https://linkedin.com/in/shreyasmuzumdar', color: '#0077b5' },
   ];
 
   return (
@@ -81,16 +78,6 @@ const Contact: React.FC = () => {
                   </p>
                 </div>
               </div>
-            </div>
-
-            <div className="resume-section">
-              <h4>
-                My Resume
-              </h4>
-              <a href={`${baseUrl}files/Shreyas_Muzumdar_Resume.pdf`} className="resume-download" target="_blank" rel="noopener noreferrer">
-                <span className="resume-icon">📄</span>
-                Download PDF
-              </a>
             </div>
 
             <div className="social-links">
