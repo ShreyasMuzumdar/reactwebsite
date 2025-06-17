@@ -1,9 +1,23 @@
 .resume-section {
   padding: 80px 0;
   background: var(--bg-primary);
+  color: var(--text-secondary);
   position: relative;
   overflow: hidden;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+}
+
+[data-theme="dark"] .resume-section,
+[data-theme="dark"] .resume-section .container,
+[data-theme="dark"] .resume-section .resume-content,
+[data-theme="dark"] .resume-section .resume-actions {
+  background: #0c0c0c !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+[data-theme="dark"] .resume-section * {
+  color: inherit;
 }
 
 .resume-section .section-title {
@@ -12,11 +26,40 @@
   margin-bottom: 40px;
   color: var(--text-primary);
   transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+[data-theme="dark"] .resume-section .section-title {
+  color: #ffffff !important;
+}
+
+.resume-section .section-title::before {
+  content: '📄';
+  font-size: 2rem;
 }
 
 .resume-content {
   max-width: 1000px;
   margin: 0 auto;
+  padding: 0 20px;
+  background: transparent;
+}
+
+[data-theme="dark"] .resume-content {
+  background: transparent !important;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  background: transparent;
+}
+
+[data-theme="dark"] .container {
+  background: transparent !important;
 }
 
 .resume-actions {
@@ -48,6 +91,17 @@
   box-shadow: 0 8px 25px var(--shadow-medium);
 }
 
+[data-theme="dark"] .resume-button {
+  border-color: var(--accent-secondary);
+  color: var(--accent-secondary);
+  background: var(--bg-card);
+}
+
+[data-theme="dark"] .resume-button:hover {
+  background: var(--accent-secondary);
+  color: var(--text-white);
+}
+
 .download-btn {
   background: var(--gradient-primary);
   color: var(--text-white);
@@ -68,6 +122,13 @@
   margin-bottom: 20px;
   border: 1px solid var(--border-light);
   transition: all 0.3s ease;
+  padding: 10px;
+}
+
+[data-theme="dark"] .resume-viewer {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-medium);
+  box-shadow: 0 10px 30px var(--shadow-strong);
 }
 
 .resume-pdf {
@@ -75,6 +136,7 @@
   height: 800px;
   border: none;
   display: block;
+  border-radius: 10px;
 }
 
 .resume-fallback {
@@ -84,6 +146,11 @@
   border-radius: 10px;
   border: 1px dashed var(--accent-primary);
   transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .resume-fallback {
+  background: var(--bg-card);
+  border-color: var(--accent-secondary);
 }
 
 .resume-fallback p {
@@ -103,6 +170,37 @@
 
 .fallback-link:hover {
   text-decoration: underline;
+}
+
+[data-theme="dark"] .fallback-link {
+  color: var(--accent-secondary);
+}
+
+/* Fix white bar above resume section and ensure complete dark mode coverage */
+[data-theme="dark"] #root {
+  background: #0c0c0c !important;
+}
+
+[data-theme="dark"] html {
+  background: #0c0c0c !important;
+}
+
+[data-theme="dark"] main {
+  background: #0c0c0c !important;
+}
+
+/* Ensure all sections are dark themed */
+[data-theme="dark"] section {
+  background: var(--bg-primary) !important;
+}
+
+/* Specific override for any potential white spaces */
+[data-theme="dark"] * {
+  box-sizing: border-box;
+}
+
+[data-theme="dark"] .App {
+  background: #0c0c0c !important;
 }
 
 /* Mobile Responsiveness */
