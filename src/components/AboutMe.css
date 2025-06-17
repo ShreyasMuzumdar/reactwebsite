@@ -407,4 +407,22 @@
     font-size: 2rem;
     margin-bottom: 2rem;
   }
+  
+  .interests-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  
+  .interest-item {
+    padding: 0.8rem 1rem;
+  }
+  
+  .interests-title {
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .interest-text {
+    font-size: 0.9rem;
+  }
 }
