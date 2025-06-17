@@ -9,7 +9,9 @@ const Header = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const headerHeight = 100; // Account for fixed header height
+      // Dynamically calculate header height for accurate scrolling
+      const header = document.querySelector('.header') as HTMLElement;
+      const headerHeight = header ? header.offsetHeight + 20 : 80; // Add 20px buffer
       const elementPosition = element.offsetTop - headerHeight;
       
       window.scrollTo({

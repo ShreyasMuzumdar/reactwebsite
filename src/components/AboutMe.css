@@ -55,6 +55,72 @@
   transition: color 0.3s ease;
 }
 
+/* Interests Section */
+.interests-section {
+  margin-top: 2.5rem;
+  width: 100%;
+}
+
+.interests-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  text-shadow: 0 1px 3px var(--shadow-light);
+  transition: color 0.3s ease;
+}
+
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.interest-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: var(--bg-tertiary);
+  border: 2px solid var(--border-light);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.interest-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px var(--shadow-medium);
+  border-color: var(--accent-primary);
+  background: var(--bg-card-hover);
+}
+
+.interest-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  filter: brightness(1.1);
+  transition: all 0.3s ease;
+}
+
+.interest-item:hover .interest-icon {
+  transform: scale(1.1);
+  filter: brightness(1.3);
+}
+
+.interest-text {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  text-shadow: 0 1px 2px var(--shadow-light);
+}
+
+.interest-item:hover .interest-text {
+  color: var(--text-primary);
+}
+
 .skill-category {
   background: var(--bg-card);
   border: 2px solid var(--border-light);

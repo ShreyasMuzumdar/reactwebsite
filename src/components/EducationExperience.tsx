@@ -10,7 +10,7 @@ const EducationExperience: React.FC = () => {
       institution: "Northeastern University",
       location: "Boston, MA",
       degree: "B.S. in Mechanical Engineering",
-      description: "Focused on robotics, automation, and embedded systems.",
+      description: "Involves the design, development, and manufacture of machinery and devices to transmit power or to convert energy from thermal to mechanical form in order to power the modern world and its machines.",
       logo: "🎓"
     },
     {
@@ -34,12 +34,12 @@ const EducationExperience: React.FC = () => {
       company: "RoboHub",
       location: "Boston, MA", 
       position: "Intern",
-      description: "Taught younger kids engineering skills, Helped students create drones, Lego robots, 3d models, and animations & Developed a system to create time-lapses of different 3d prints",
+      description: "Taught younger kids engineering skills, Helped students create drones, Lego robots, 3d models, and animations & Developed a system to create time-lapses of different 3d prints.",
       logo: "🔬"
     },
     {
       period: "2021 - 2025",
-      company: "Saint Johns Pioneer Robotics",
+      company: "Pioneer Robotics",
       location: "Boston, MA",
       position: "Build Team Lead",
       description: "Led the build team for the robotics team, overseeing the building and programming of competition robots.",

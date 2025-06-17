@@ -29,8 +29,9 @@
   background: var(--toggle-thumb-bg, linear-gradient(135deg, #4facfe, #00f2fe));
   border-radius: 50%;
   position: absolute;
-  top: 2px;
+  top: 50%;
   left: 2px;
+  transform: translateY(-50%);
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
@@ -39,7 +40,7 @@
 }
 
 [data-theme="dark"] .theme-toggle-thumb {
-  transform: translateX(26px);
+  transform: translateY(-50%) translateX(26px);
 }
 
 .theme-icon {

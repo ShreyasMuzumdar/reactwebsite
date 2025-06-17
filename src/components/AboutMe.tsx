@@ -39,6 +39,36 @@ const AboutMe = () => {
                 on various projects broadening my engineering experience. Eager to work hard
                 while learning new concepts and helping you and your team in any way I can.
               </p>
+              
+              <div className="interests-section">
+                <h3 className="interests-title">My Interests</h3>
+                <div className="interests-grid">
+                  <div className="interest-item">
+                    <span className="interest-icon">🤖</span>
+                    <span className="interest-text">Robotics & Automation</span>
+                  </div>
+                  <div className="interest-item">
+                    <span className="interest-icon">🔧</span>
+                    <span className="interest-text">Mechanical Design</span>
+                  </div>
+                  <div className="interest-item">
+                    <span className="interest-icon">💡</span>
+                    <span className="interest-text">Innovation & Problem Solving</span>
+                  </div>
+                  <div className="interest-item">
+                    <span className="interest-icon">🎯</span>
+                    <span className="interest-text">Project Management</span>
+                  </div>
+                  <div className="interest-item">
+                    <span className="interest-icon">🏗️</span>
+                    <span className="interest-text">3D Printing & Prototyping</span>
+                  </div>
+                  <div className="interest-item">
+                    <span className="interest-icon">📊</span>
+                    <span className="interest-text">Data Analysis</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
