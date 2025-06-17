@@ -224,9 +224,11 @@
   }
   
   .resume-viewer {
-    margin: 0;
+    margin: 0 auto;
     padding: 8px;
     border-radius: 12px;
+    width: 100%;
+    max-width: 100%;
   }
   
   .resume-pdf {
@@ -234,6 +236,7 @@
     min-height: 500px;
     max-height: 800px;
     border-radius: 8px;
+    width: 100%;
   }
 }
 
@@ -260,7 +263,8 @@
   .resume-viewer {
     padding: 6px;
     border-radius: 10px;
-    margin-bottom: 1rem;
+    margin: 0 auto 1rem auto;
+    width: 100%;
   }
   
   .resume-pdf {
@@ -268,10 +272,12 @@
     min-height: 400px;
     max-height: 700px;
     border-radius: 6px;
+    width: 100%;
   }
   
   .resume-content {
     margin: 0;
+    width: 100%;
   }
   
   .section-title {
