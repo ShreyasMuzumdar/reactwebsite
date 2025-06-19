@@ -7,7 +7,7 @@ const Resume = () => {
   return (
     <section id="resume" className="resume-section">
       <GeometricPatterns 
-        density="low" 
+        density="high" 
         speed="slow" 
         opacity={0.25}
         colors={['#4a90e2', '#2c5aa0', '#357abd']}

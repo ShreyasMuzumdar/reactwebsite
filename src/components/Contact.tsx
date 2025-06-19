@@ -14,7 +14,7 @@ const Contact: React.FC = () => {
   return (
     <section id="contact" className="contact">
       <GeometricPatterns 
-        density="medium" 
+        density="high" 
         speed="medium" 
         opacity={0.3}
         colors={['#4a90e2', '#2c5aa0', '#357abd', '#74a9ff']}

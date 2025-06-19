@@ -74,7 +74,7 @@ const Projects: React.FC = () => {
   return (
     <section id="projects" className="projects">
       <GeometricPatterns 
-        density="medium" 
+        density="high" 
         speed="slow" 
         opacity={0.4}
         colors={['#4a90e2', '#2c5aa0', '#357abd', '#74a9ff', '#9bb8ff']}
