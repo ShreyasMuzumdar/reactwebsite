@@ -61,12 +61,12 @@ const AboutMe = () => {
                     <span className="interest-text">NFL</span>
                   </GlareHover>
                   <GlareHover className="interest-item">
-                    <span className="interest-icon">✈️</span>
-                    <span className="interest-text">Travel</span>
+                    <span className="interest-icon">🎸</span>
+                    <span className="interest-text">Guitar</span>
                   </GlareHover>
                   <GlareHover className="interest-item">
-                    <span className="interest-icon">🎬</span>
-                    <span className="interest-text">Video editing</span>
+                    <span className="interest-icon">🏊‍♂ ️</span>
+                    <span className="interest-text">Swimming</span>
                   </GlareHover>
                   <GlareHover className="interest-item">
                     <span className="interest-icon">📱</span>
