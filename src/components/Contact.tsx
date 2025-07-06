@@ -6,7 +6,7 @@ import GeometricPatterns from './GeometricPatterns';
 
 const Contact: React.FC = () => {
   const socialLinks = [
-    { name: 'GitHub', icon: '🐙', url: 'https://github.com/ShreyasMuzumdar', color: '#333' },
+    { name: 'GitHub', icon: '🐙', url: 'hhttps://github.com/ShreyasMuzumdar?tab=stars', color: '#333' },
     { name: 'Email', icon: '💼', url: 'mailto:muzumdar.s@northeastern.edu', color: '#0077b5' },
     { name: 'LinkedIn', icon: '💼', url: 'https://linkedin.com/in/shreyasmuzumdar', color: '#0077b5' },
   ];
