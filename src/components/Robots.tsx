@@ -9,19 +9,19 @@ const Robots: React.FC = () => {
   const robots = [
         {
       name: "StretchBot",
-      description: "Industrial robotic arm for precision assembly tasks.",
+      description: "Stretch Bot was our robot during the POWERPLAY season. We won the State Championship and had the highest scoring match in the State Championship with 269 points.",
       image: `${baseUrl}files/StretchBot.png`,
       model3d: `${baseUrl}files/StretchBot.usdz`,
     },
     {
       name: "BlackBox",
-      description: "This robot is designed for autonomous navigation in indoor environments. It features LIDAR and computer vision for mapping and obstacle avoidance.",
+      description: "BlackBox was our robot during the CENTERSTAGE season. We went to the finals of the State Championship and averaged the highest autonomous robot score.",
       image: `${baseUrl}files/BlackBox.png`,
       model3d: `${baseUrl}files/BlackBox.usdz`,
     },
     {
       name: "PlugBot",
-      description: "This robot is designed for autonomous navigation in indoor environments. It features LIDAR and computer vision for mapping and obstacle avoidance.",
+      description: "PlugBot was our robot during the INTOTHEDEEP season. It was designed for autonomous navigation in indoor environments, featuring LIDAR and computer vision for mapping and obstacle avoidance.",
       image: `${baseUrl}files/PlugBot.png`,
       model3d: `${baseUrl}files/PlugBot.usdz`,
     }
