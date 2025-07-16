@@ -14,7 +14,7 @@ const Projects: React.FC = () => {
       description: "Developed a camera attachment that tracks and moves to detect and follow faces using Machine Learning and computer vision.",
       categories: ["AI & ML", "Arduino", "Computer Vision"],
       image: "📹",
-      github: "https://github.com/",
+      github: "https://github.com/ShreyasMuzumdar/CameraTrackingSystem",
       demo: "#"
     },
     {
@@ -22,7 +22,6 @@ const Projects: React.FC = () => {
       description: "IoT-based system for real-time monitoring and control of 3D printing processes.",
       categories: ["3D Printing", "IoT", "Arduino"],
       image: "🖨️",
-      github: "https://github.com/",
       demo: "#"
     },
     {
@@ -30,7 +29,6 @@ const Projects: React.FC = () => {
       description: "Installed a home automation system that connects over 150 smart devices across multiple ecosystems to a single Raspberry Pi server.",
       categories: ["IoT", "AI & ML", "Arduino"],
       image: "🏠",
-      github: "https://github.com/",
       demo: "#"
     },
     {
@@ -38,7 +36,7 @@ const Projects: React.FC = () => {
       description: "Developed a program that uses the camera to detect the position of a hand and uses it to move the cursor.",
       categories: ["AI & ML", "Arduino", "Computer Vision"],
       image: "✋",
-      github: "https://github.com/",
+      github: "https://github.com/ShreyasMuzumdar/HandTrackingMouse",
       demo: "#"
     },
     {
@@ -46,7 +44,6 @@ const Projects: React.FC = () => {
       description: "Digitally cloned my voice by training a machine learning model based on voice samples.",
       categories: ["AI & ML", "Computer Vision", "Raspberry Pi"],
       image: "✨",
-      github: "https://github.com/",
       demo: "#"
     },
     {
@@ -54,7 +51,7 @@ const Projects: React.FC = () => {
       description: "A voice-controlled assistant powered by deepseek to interact with various smart devices and perform tasks using Human-like voice.",
       categories: ["IoT", "AI & ML", "Raspberry Pi"],
       image: "🤖",
-      github: "https://github.com/",
+      github: "https://github.com/ShreyasMuzumdar/ollama-voice-mac",
       demo: "#"
     },
   ];

@@ -7,7 +7,7 @@ const Robots: React.FC = () => {
   const baseUrl = import.meta.env.BASE_URL;
   
   const robots = [
-        {
+    {
       name: "StretchBot",
       description: "Stretch Bot was our robot during the POWERPLAY season. We won the State Championship and had the highest scoring match in the State Championship with 269 points.",
       image: `${baseUrl}files/StretchBot.png`,
@@ -21,11 +21,10 @@ const Robots: React.FC = () => {
     },
     {
       name: "PlugBot",
-      description: "PlugBot was our robot during the INTOTHEDEEP season. It was designed for autonomous navigation in indoor environments, featuring LIDAR and computer vision for mapping and obstacle avoidance.",
+      description: "PlugBot was our robot during the INTOTHEDEEP season. It uses a camera and differential claw designed to precisely pick up objects with minimal human intervention.",
       image: `${baseUrl}files/PlugBot.png`,
       model3d: `${baseUrl}files/PlugBot.usdz`,
     }
-
   ];
 
   return (
@@ -66,9 +65,6 @@ const Robots: React.FC = () => {
                   <a href={robot.model3d} className="robot-link primary">
                     <span>🥽</span> 3D Preview
                   </a>
-                  <button className="robot-link secondary">
-                    <span>📊</span> Specifications
-                  </button>
                 </div>
               </div>
               </GlareHover>
