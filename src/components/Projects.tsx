@@ -40,19 +40,12 @@ const Projects: React.FC = () => {
       demo: "#"
     },
     {
-      title: "ShreyAI",
-      description: "Digitally cloned my voice by training a machine learning model based on voice samples.",
-      categories: ["AI & ML", "Computer Vision", "Raspberry Pi"],
-      image: "✨",
-      demo: "#"
-    },
-    {
-      title: "Voice Assistant",
-      description: "A voice-controlled assistant powered by deepseek to interact with various smart devices and perform tasks using Human-like voice.",
-      categories: ["IoT", "AI & ML", "Raspberry Pi"],
-      image: "🤖",
-      github: "https://github.com/ShreyasMuzumdar/ollama-voice-mac",
-      demo: "#"
+  title: "ShreyAI Voice Assistant",
+  description: "A combined system that pairs my ShreyAI custom-cloned voice with a local voice assistant powered by DeepSeek/Ollama. Runs on Mac/Raspberry Pi to enable natural voice interactions and control of devices.",
+  categories: ["AI & ML", "IoT", "Raspberry Pi"],
+  image: "🤖✨",
+  github: "https://github.com/ShreyasMuzumdar/ollama-voice-mac",
+  demo: "https://github.com/ShreyasMuzumdar/ollama-voice-mac"
     },
   ];
 
