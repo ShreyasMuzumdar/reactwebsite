@@ -40,16 +40,24 @@ const Projects: React.FC = () => {
       demo: "#"
     },
     {
-  title: "ShreyAI Voice Assistant",
-  description: "A combined system that pairs my ShreyAI custom-cloned voice with a local voice assistant powered by DeepSeek/Ollama. Runs on Mac/Raspberry Pi to enable natural voice interactions and control of devices.",
-  categories: ["AI & ML", "IoT", "Raspberry Pi"],
-  image: "🤖✨",
-  github: "https://github.com/ShreyasMuzumdar/ollama-voice-mac",
-  demo: "https://github.com/ShreyasMuzumdar/ollama-voice-mac"
+      title: "ShreyAI Voice Assistant",
+      description: "A combined system that pairs my ShreyAI custom-cloned voice with a local voice assistant powered by DeepSeek/Ollama. Runs on Mac/Raspberry Pi to enable natural voice interactions and control of devices.",
+      categories: ["AI & ML", "IoT", "Raspberry Pi"],
+      image: "🤖",
+      github: "https://github.com/ShreyasMuzumdar/ollama-voice-mac",
+      demo: "https://github.com/ShreyasMuzumdar/ollama-voice-mac"
+    },
+    {
+      title: "n8n Automation Server",
+      description: "Self-hosted n8n workflow automation server that automatically updates devices, AI newsletter and more.",
+      categories: ["Automation", "IoT", "Raspberry Pi"],
+      image: "🔁",
+      github: "#",
+      demo: "#"
     },
   ];
 
-  const filterCategories = ["All", "AI & ML", "Computer Vision", "Arduino", "IoT", "3D Printing", "Raspberry Pi"];
+  const filterCategories = ["All", "AI & ML", "Computer Vision", "Arduino", "IoT", "Automation", "3D Printing", "Raspberry Pi"];
 
   const filteredProjects = projects.filter(project => {
     const matchesCategory = activeFilter === 'All' || project.categories.includes(activeFilter);
