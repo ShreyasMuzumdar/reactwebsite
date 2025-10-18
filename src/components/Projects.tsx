@@ -55,6 +55,14 @@ const Projects: React.FC = () => {
       github: "#",
       demo: "#"
     },
+    {
+      title: "Connect 4 AI Bot",
+      description: "Intelligent Connect 4 game featuring an AI opponent powered by the minimax algorithm with alpha-beta pruning. Built with Pygame for interactive gameplay and optimized decision-making.",
+      categories: ["AI & ML", "Computer Vision"],
+      image: "🔴",
+      github: "https://github.com/ShreyasMuzumdar/connect4",
+      demo: `${import.meta.env.BASE_URL}connect4.html`
+    },
   ];
 
   const filterCategories = ["All", "AI & ML", "Computer Vision", "Arduino", "IoT", "Automation", "3D Printing", "Raspberry Pi"];
