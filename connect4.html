@@ -902,7 +902,7 @@
             statusDiv.textContent = '🤖 AI is thinking...';
             
             setTimeout(() => {
-                const depthMap = { easy: 2, medium: 4, hard: 6 };
+                const depthMap = { easy: 8, medium: 16, hard: 32 };
                 const depth = depthMap[difficulty];
                 const [col, score] = minimax(depth, -Infinity, Infinity, true);
                 
