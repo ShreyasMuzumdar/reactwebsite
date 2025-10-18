@@ -27,7 +27,7 @@ const Projects: React.FC = () => {
     {
       title: "Home Automation System",
       description: "Installed a home automation system that connects over 150 smart devices across multiple ecosystems to a single Raspberry Pi server.",
-      categories: ["IoT", "AI & ML", "Arduino"],
+      categories: ["IoT", "Arduino", "Automation"],
       image: "🏠",
       demo: "#"
     },
@@ -46,14 +46,6 @@ const Projects: React.FC = () => {
       image: "🤖",
       github: "https://github.com/ShreyasMuzumdar/ollama-voice-mac",
       demo: "https://github.com/ShreyasMuzumdar/ollama-voice-mac"
-    },
-    {
-      title: "n8n Automation Server",
-      description: "Self-hosted n8n workflow automation server that automatically updates devices, AI newsletter and more.",
-      categories: ["Automation", "IoT", "Raspberry Pi"],
-      image: "🔁",
-      github: "#",
-      demo: "#"
     },
     {
       title: "Connect 4 AI Bot",
