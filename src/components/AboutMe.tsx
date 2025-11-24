@@ -3,6 +3,7 @@ import TypewriterEffect from './TypewriterEffect'
 import FloatingElement from './FloatingElement'
 import GeometricPatterns from './GeometricPatterns'
 import GlareHover from './GlareHover'
+import VoiceAssistant from './VoiceAssistant'
 
 const AboutMe = () => {
   return (
@@ -15,7 +16,10 @@ const AboutMe = () => {
           colors={['#4a90e2', '#2c5aa0', '#357abd', '#74a9ff']}
         />
         <div className="container">
-          <div className="about-content">
+          <div className="about-content" style={{ position: 'relative' }}>
+            <div style={{ position: 'absolute', top: '20px', right: '20px', zIndex: 10 }}>
+              <VoiceAssistant />
+            </div>
             <div className="about-visual">
               <div className="profile-image-container">
                 <FloatingElement intensity="subtle" direction="up" duration={4}>
