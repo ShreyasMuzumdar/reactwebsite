@@ -9,8 +9,9 @@
 /* Individual skill item styles */
 .skill-item {
   background: var(--bg-card);
-  border: 2px solid var(--border-medium);
-  border-radius: 12px;
+  border: 1px solid var(--border-medium);
+  border-left: 3px solid var(--accent-primary);
+  border-radius: 2px;
   padding: 1rem 1.5rem;
   text-align: left;
   transition: all 0.3s ease;
@@ -24,6 +25,7 @@
   width: 100%;
   max-width: 280px;
   gap: 12px;
+  backdrop-filter: blur(5px);
 }
 
 .skill-item:hover {
@@ -74,7 +76,7 @@
 /* Skills Section */
 .skills-section {
   padding: 4rem 0;
-  background: var(--bg-primary);
+  background: transparent;
   position: relative;
   overflow: hidden;
   transition: background 0.3s ease;
@@ -127,7 +129,7 @@
 }
 
 .category-title {
-  color: #2c5aa0;
+  color: #B7950B;
   font-size: 1.5rem;
   font-weight: 600;
   text-align: center;
@@ -144,7 +146,7 @@
   transform: translateX(-50%);
   width: 60px;
   height: 3px;
-  background: linear-gradient(45deg, #4a90e2, #2c5aa0);
+  background: linear-gradient(45deg, #FFE135, #B7950B);
   border-radius: 2px;
 }
 

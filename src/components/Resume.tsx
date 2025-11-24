@@ -6,13 +6,13 @@ const Resume = () => {
 
   return (
     <section id="resume" className="resume-section">
-      <GeometricPatterns 
-        density="high" 
-        speed="slow" 
-        opacity={0.25}
-        colors={['#4a90e2', '#2c5aa0', '#357abd']}
-      />
-      <div className="container">
+        <GeometricPatterns 
+          density="medium" 
+          speed="slow" 
+          opacity={0.2}
+          colors={['#FFE135', '#FFD700', '#F4D03F', '#FFF59D', '#FFF9C4']}
+        />
+        <div className="container">
         <h2 className="section-title">
           Resume
         </h2>

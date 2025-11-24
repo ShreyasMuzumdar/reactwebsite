@@ -159,14 +159,14 @@ const Projects: React.FC = () => {
   });
 
   return (
-    <section id="projects" className="projects">
-      <GeometricPatterns 
-        density="high" 
-        speed="slow" 
-        opacity={0.4}
-        colors={['#4a90e2', '#2c5aa0', '#357abd', '#74a9ff', '#9bb8ff']}
-      />
-      <div className="container">
+    <section id="projects" className="projects-section">
+        <GeometricPatterns 
+          density="medium" 
+          speed="slow" 
+          opacity={0.2}
+          colors={['#FFE135', '#FFD700', '#F4D03F', '#FFF59D', '#FFF9C4']}
+        />
+        <div className="container">
         <h2 className="section-title">
           <span className="title-icon">🔧</span>
           Projects

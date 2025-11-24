@@ -140,14 +140,14 @@
 }
 
 .skill-category h4 {
-  color: #2c5aa0;
+  color: #B7950B;
   font-size: 1.2rem;
   margin-bottom: 0.8rem;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .skill-tags {
-  color: #34495e;
+  color: var(--text-secondary);
   font-size: 0.9rem;
   line-height: 1.5;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -192,7 +192,7 @@
 }
 
 .skill-name {
-  color: #2c5aa0;
+  color: #B7950B;
   font-size: 0.95rem;
   font-weight: 600;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
@@ -208,7 +208,7 @@
 }
 
 .skill-experience {
-  color: #666;
+  color: var(--text-tertiary);
   font-size: 0.75rem;
   font-weight: 500;
   opacity: 0.8;
@@ -228,15 +228,15 @@
   height: 300px;
   border-radius: 50%;
   overflow: hidden;
-  border: 4px solid rgba(74, 144, 226, 0.3);
-  box-shadow: 0 10px 30px rgba(74, 144, 226, 0.2);
+  border: 4px solid rgba(255, 225, 53, 0.3);
+  box-shadow: 0 10px 30px rgba(255, 225, 53, 0.2);
   transition: all 0.3s ease;
 }
 
 .profile-image-container:hover {
   transform: scale(1.05);
-  border-color: #4a90e2;
-  box-shadow: 0 15px 40px rgba(74, 144, 226, 0.3);
+  border-color: #FFE135;
+  box-shadow: 0 15px 40px rgba(255, 225, 53, 0.3);
 }
 
 .profile-image {
@@ -270,9 +270,9 @@
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(circle at 20% 50%, rgba(74, 144, 226, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(74, 144, 226, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 40% 80%, rgba(74, 144, 226, 0.05) 0%, transparent 50%);
+    radial-gradient(circle at 20% 50%, rgba(255, 225, 53, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 225, 53, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(255, 225, 53, 0.05) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -285,7 +285,7 @@
 }
 
 .skills h3 {
-  color: #2c5aa0;
+  color: #B7950B;
   font-size: 2.5rem;
   margin-bottom: 3rem;
   text-align: center;
@@ -320,7 +320,7 @@
 }
 
 .category-title {
-  color: #2c5aa0;
+  color: #B7950B;
   font-size: 1.5rem;
   font-weight: 600;
   text-align: center;
@@ -337,19 +337,7 @@
   transform: translateX(-50%);
   width: 60px;
   height: 3px;
-  background: linear-gradient(45deg, #4a90e2, #2c5aa0);
-  border-radius: 2px;
-}
-
-.category-title::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(45deg, #4a90e2, #2c5aa0);
+  background: linear-gradient(45deg, #FFE135, #FFD700);
   border-radius: 2px;
 }
 

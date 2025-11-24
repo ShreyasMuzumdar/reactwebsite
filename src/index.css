@@ -1,6 +1,6 @@
 /* CSS Variables for Theme System */
 :root {
-  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   line-height: 1.5;
   font-weight: 400;
   font-synthesis: none;
@@ -12,66 +12,68 @@
 
 /* Light Theme Variables */
 [data-theme="light"] {
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8f9fa;
-  --bg-tertiary: rgba(74, 144, 226, 0.05);
-  --bg-card: rgba(255, 255, 255, 0.8);
-  --bg-card-hover: rgba(255, 255, 255, 0.9);
+  --bg-primary: #f0f2f5;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: rgba(255, 225, 53, 0.1); /* Banana tint */
+  --bg-card: rgba(255, 255, 255, 0.9);
+  --bg-card-hover: #ffffff;
   
-  --text-primary: #2c5aa0;
-  --text-secondary: #4a90e2;
+  --text-primary: #1a1a1a;
+  --text-secondary: #4a4a4a;
   --text-tertiary: #6c757d;
   --text-light: #8a8a8a;
   --text-white: #ffffff;
   
-  --accent-primary: #4a90e2;
-  --accent-secondary: #2c5aa0;
-  --accent-tertiary: #357abd;
-  --accent-light: #74a9ff;
+  /* Banana Yellow Accents */
+  --accent-primary: #D4AC0D; /* Darker yellow for contrast on light */
+  --accent-secondary: #B7950B;
+  --accent-tertiary: #F1C40F;
+  --accent-light: #F7DC6F;
   
-  --border-light: rgba(74, 144, 226, 0.2);
-  --border-medium: rgba(74, 144, 226, 0.3);
-  --border-strong: rgba(74, 144, 226, 0.5);
+  --border-light: rgba(212, 172, 13, 0.2);
+  --border-medium: rgba(212, 172, 13, 0.3);
+  --border-strong: rgba(212, 172, 13, 0.5);
   
-  --shadow-light: rgba(0, 0, 0, 0.1);
-  --shadow-medium: rgba(0, 0, 0, 0.15);
-  --shadow-strong: rgba(0, 0, 0, 0.2);
+  --shadow-light: rgba(0, 0, 0, 0.05);
+  --shadow-medium: rgba(0, 0, 0, 0.1);
+  --shadow-strong: rgba(0, 0, 0, 0.15);
   
-  --gradient-primary: linear-gradient(135deg, #4a90e2 0%, #2c5aa0 100%);
-  --gradient-secondary: linear-gradient(135deg, #74a9ff 0%, #357abd 100%);
-  --gradient-background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%);
+  --gradient-primary: linear-gradient(135deg, #D4AC0D 0%, #B7950B 100%);
+  --gradient-secondary: linear-gradient(135deg, #F1C40F 0%, #D4AC0D 100%);
+  --gradient-background: linear-gradient(135deg, #f0f2f5 0%, #ffffff 100%);
 }
 
-/* Dark Theme Variables */
+/* Dark Theme Variables - Robotics Style */
 [data-theme="dark"] {
-  --bg-primary: #0c0c0c;
-  --bg-secondary: #1a1a1a;
-  --bg-tertiary: rgba(74, 144, 226, 0.05);
-  --bg-card: rgba(255, 255, 255, 0.05);
-  --bg-card-hover: rgba(255, 255, 255, 0.08);
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #141414;
+  --bg-tertiary: rgba(255, 225, 53, 0.05);
+  --bg-card: rgba(20, 20, 20, 0.8);
+  --bg-card-hover: rgba(30, 30, 30, 0.9);
   
   --text-primary: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.9);
-  --text-tertiary: rgba(255, 255, 255, 0.7);
-  --text-light: rgba(255, 255, 255, 0.6);
+  --text-secondary: #e0e0e0;
+  --text-tertiary: #a0a0a0;
+  --text-light: #707070;
   --text-white: #ffffff;
   
-  --accent-primary: #4a90e2;
-  --accent-secondary: #74a9ff;
-  --accent-tertiary: #357abd;
-  --accent-light: #2c5aa0;
+  /* Nano Banana Accents */
+  --accent-primary: #FFE135; /* Banana Yellow */
+  --accent-secondary: #FFD700; /* Gold */
+  --accent-tertiary: #F4D03F;
+  --accent-light: #FFF59D;
   
-  --border-light: rgba(255, 255, 255, 0.1);
-  --border-medium: rgba(255, 255, 255, 0.2);
-  --border-strong: rgba(255, 255, 255, 0.3);
+  --border-light: rgba(255, 225, 53, 0.15);
+  --border-medium: rgba(255, 225, 53, 0.3);
+  --border-strong: rgba(255, 225, 53, 0.5);
   
-  --shadow-light: rgba(0, 0, 0, 0.2);
-  --shadow-medium: rgba(0, 0, 0, 0.3);
-  --shadow-strong: rgba(0, 0, 0, 0.4);
+  --shadow-light: rgba(0, 0, 0, 0.3);
+  --shadow-medium: rgba(0, 0, 0, 0.5);
+  --shadow-strong: rgba(0, 0, 0, 0.7);
   
-  --gradient-primary: linear-gradient(135deg, #4a90e2 0%, #2c5aa0 100%);
-  --gradient-secondary: linear-gradient(135deg, #74a9ff 0%, #357abd 100%);
-  --gradient-background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 50%, #0c0c0c 100%);
+  --gradient-primary: linear-gradient(135deg, #FFE135 0%, #FFD700 100%);
+  --gradient-secondary: linear-gradient(135deg, #F4D03F 0%, #FFE135 100%);
+  --gradient-background: linear-gradient(135deg, #0a0a0a 0%, #141414 100%);
 }
 
 * {
@@ -106,34 +108,42 @@ a:hover {
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
+  font-family: 'Orbitron', sans-serif; /* Robotics Font */
   font-weight: 600;
   line-height: 1.2;
   color: var(--text-primary);
+  letter-spacing: 0.5px;
 }
 
+p, span, div {
+  font-family: 'Inter', sans-serif;
+}
 
-p {
-  margin: 0;
-  color: var(--text-secondary);
+code, pre, .tech-text {
+  font-family: 'Roboto Mono', monospace;
 }
 
 button {
-  border-radius: 8px;
+  border-radius: 4px; /* Sharper corners for robotics feel */
   border: 1px solid var(--border-medium);
   padding: 0.6em 1.2em;
   font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background: var(--bg-tertiary);
-  color: var(--text-primary);
+  font-weight: 600;
+  font-family: 'Orbitron', sans-serif;
+  background: rgba(255, 225, 53, 0.05);
+  color: var(--accent-primary);
   cursor: pointer;
   transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 button:hover {
   border-color: var(--accent-primary);
-  background: var(--bg-card);
+  background: var(--accent-primary);
+  color: var(--bg-primary); /* Contrast text on hover */
   transform: translateY(-2px);
+  box-shadow: 0 0 15px var(--border-medium);
 }
 
 button:focus,

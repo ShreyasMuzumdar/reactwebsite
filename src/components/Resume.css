@@ -1,6 +1,6 @@
 .resume-section {
   padding: 80px 0;
-  background: var(--bg-primary);
+  background: transparent;
   color: var(--text-secondary);
   position: relative;
   overflow: hidden;
@@ -12,7 +12,7 @@
 [data-theme="dark"] .resume-section .container,
 [data-theme="dark"] .resume-section .resume-content,
 [data-theme="dark"] .resume-section .resume-actions {
-  background: #0c0c0c !important;
+  background: transparent !important;
   color: rgba(255, 255, 255, 0.9) !important;
 }
 
@@ -178,20 +178,20 @@
 
 /* Fix white bar above resume section and ensure complete dark mode coverage */
 [data-theme="dark"] #root {
-  background: #0c0c0c !important;
+  background: transparent !important;
 }
 
 [data-theme="dark"] html {
-  background: #0c0c0c !important;
+  background: #050505 !important;
 }
 
 [data-theme="dark"] main {
-  background: #0c0c0c !important;
+  background: transparent !important;
 }
 
 /* Ensure all sections are dark themed */
 [data-theme="dark"] section {
-  background: var(--bg-primary) !important;
+  background: transparent !important;
 }
 
 /* Specific override for any potential white spaces */
@@ -200,7 +200,7 @@
 }
 
 [data-theme="dark"] .App {
-  background: #0c0c0c !important;
+  background: transparent !important;
 }
 
 /* Mobile Responsiveness */

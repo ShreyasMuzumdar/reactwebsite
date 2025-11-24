@@ -1,7 +1,7 @@
 .typewriter-effect {
   display: inline-block;
   font-family: 'Courier New', monospace;
-  color: #4a90e2;
+  color: #FFE135;
   position: relative;
 }
 
@@ -9,7 +9,7 @@
   display: inline-block;
   width: 2px;
   animation: blink 1s infinite;
-  color: #4a90e2;
+  color: #FFE135;
   font-weight: bold;
   margin-left: 2px;
 }
@@ -30,12 +30,12 @@
 }
 
 .typewriter-effect.accent {
-  color: #2c5aa0;
+  color: #B7950B;
   font-weight: 500;
 }
 
 .typewriter-effect.gradient {
-  background: linear-gradient(45deg, #4a90e2, #2c5aa0, #4a90e2);
+  background: linear-gradient(45deg, #FFE135, #B7950B, #FFE135);
   background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

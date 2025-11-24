@@ -1,6 +1,6 @@
 .robots {
   padding: 80px 0;
-  background: var(--bg-primary);
+  background: transparent;
   color: var(--text-primary);
   position: relative;
   overflow: hidden;
@@ -45,25 +45,43 @@
 
 .robot-card {
   background: var(--bg-card);
-  border-radius: 20px;
+  border-radius: 4px;
   overflow: hidden;
-  border: 1px solid var(--border-light);
+  border: 1px solid var(--border-medium);
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
   position: relative;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 20px),
+    calc(100% - 20px) 100%,
+    0 100%
+  );
+}
+
+.robot-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent-primary);
+  opacity: 0.5;
 }
 
 .robot-card:hover {
   transform: translateY(-10px);
-  border-color: #4a90e2;
-  box-shadow: 0 20px 40px rgba(74, 144, 226, 0.2);
+  border-color: var(--accent-primary);
+  box-shadow: 0 20px 40px rgba(255, 225, 53, 0.2);
 }
 
 .robot-image-container {
   position: relative;
   height: 300px;
   overflow: hidden;
-  background: linear-gradient(45deg, #f8fbff, #e6f2ff);
+  background: linear-gradient(45deg, var(--bg-secondary), var(--bg-tertiary));
 }
 
 .robot-image {
@@ -83,7 +101,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(74, 144, 226, 0.8);
+  background: rgba(255, 225, 53, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -97,7 +115,7 @@
 
 .view-3d-btn {
   background: rgba(255, 255, 255, 0.9);
-  color: #2c5aa0;
+  color: var(--accent-secondary);
   padding: 12px 24px;
   border-radius: 25px;
   text-decoration: none;
@@ -106,7 +124,7 @@
   align-items: center;
   gap: 8px;
   transition: all 0.3s ease;
-  border: 2px solid rgba(74, 144, 226, 0.3);
+  border: 2px solid rgba(255, 225, 53, 0.3);
 }
 
 .view-3d-btn:hover {
@@ -122,7 +140,7 @@
 .robot-name {
   font-size: 1.8rem;
   font-weight: 600;
-  color: #4a90e2;
+  color: var(--accent-primary);
   margin-bottom: 15px;
 }
 
@@ -130,12 +148,12 @@
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 25px;
-  color: #5a6c7d;
+  color: var(--text-secondary);
 }
 
 .robot-features h4 {
   font-size: 1rem;
-  color: #2c5aa0;
+  color: var(--accent-secondary);
   margin-bottom: 15px;
   font-weight: 600;
 }
@@ -148,17 +166,17 @@
 }
 
 .feature-tag {
-  background: rgba(74, 144, 226, 0.1);
-  color: #4a90e2;
+  background: rgba(255, 225, 53, 0.1);
+  color: var(--accent-primary);
   padding: 6px 12px;
   border-radius: 15px;
   font-size: 0.85rem;
-  border: 1px solid rgba(74, 144, 226, 0.3);
+  border: 1px solid rgba(255, 225, 53, 0.3);
   transition: all 0.3s ease;
 }
 
 .feature-tag:hover {
-  background: rgba(74, 144, 226, 0.2);
+  background: rgba(255, 225, 53, 0.2);
   transform: scale(1.05);
 }
 
@@ -183,33 +201,33 @@
 }
 
 .robot-link.primary {
-  background: linear-gradient(45deg, #4a90e2, #2c5aa0);
+  background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
   color: white;
-  border: 2px solid #4a90e2;
+  border: 2px solid var(--accent-primary);
 }
 
 .robot-link.primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(74, 144, 226, 0.4);
+  box-shadow: 0 8px 20px rgba(255, 225, 53, 0.4);
 }
 
 .robot-link.secondary {
-  background: rgba(74, 144, 226, 0.1);
-  color: #2c5aa0;
-  border: 2px solid rgba(74, 144, 226, 0.3);
+  background: rgba(255, 225, 53, 0.1);
+  color: var(--accent-secondary);
+  border: 2px solid rgba(255, 225, 53, 0.3);
 }
 
 .robot-link.secondary:hover {
-  background: rgba(74, 144, 226, 0.2);
-  border-color: #4a90e2;
+  background: rgba(255, 225, 53, 0.2);
+  border-color: var(--accent-primary);
   transform: translateY(-2px);
 }
 
 .ar-info {
-  background: rgba(74, 144, 226, 0.05);
+  background: rgba(255, 225, 53, 0.05);
   border-radius: 15px;
   padding: 20px;
-  border: 1px solid rgba(74, 144, 226, 0.2);
+  border: 1px solid rgba(255, 225, 53, 0.2);
 }
 
 .ar-notice {
@@ -226,12 +244,12 @@
 
 .ar-notice p {
   margin: 0;
-  color: #5a6c7d;
+  color: var(--text-secondary);
   line-height: 1.6;
 }
 
 .ar-notice strong {
-  color: #2c5aa0;
+  color: var(--accent-secondary);
 }
 
 /* Modal Styles */

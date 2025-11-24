@@ -28,14 +28,14 @@ const Robots: React.FC = () => {
   ];
 
   return (
-    <section id="robots" className="robots">
-      <GeometricPatterns 
-        density="high" 
-        speed="medium" 
-        opacity={0.35}
-        colors={['#4a90e2', '#2c5aa0', '#357abd', '#74a9ff']}
-      />
-      <div className="container">
+    <section id="robots" className="robots-section">
+        <GeometricPatterns 
+          density="medium" 
+          speed="slow" 
+          opacity={0.2}
+          colors={['#FFE135', '#FFD700', '#F4D03F', '#FFF59D']}
+        />
+        <div className="container">
         <h2 className="section-title">
           <span className="title-icon">🤖</span>
           Robots

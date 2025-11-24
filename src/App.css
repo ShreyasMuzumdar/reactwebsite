@@ -8,19 +8,29 @@ body {
   font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   color: var(--text-secondary);
-  background: var(--bg-primary);
+  background: transparent;
   overflow-x: hidden;
   transition: background 0.3s ease, color 0.3s ease;
 }
 
 .App {
   min-height: 100vh;
-  background: var(--bg-primary);
+  background: transparent;
   transition: background 0.3s ease;
 }
 
 main {
   position: relative;
+}
+
+.fixed-background {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
 }
 
 /* Smooth scrolling */
@@ -38,18 +48,18 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #4a90e2;
+  background: #FFE135;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2c5aa0;
+  background: #B7950B;
 }
 
 /* Selection color */
 ::selection {
-  background: rgba(74, 144, 226, 0.3);
-  color: #2c5aa0;
+  background: rgba(255, 225, 53, 0.3);
+  color: #B7950B;
 }
 
 /* Global animations */

@@ -1,7 +1,7 @@
 .education-experience {
   position: relative;
   padding: 120px 0;
-  background: var(--bg-primary);
+  background: transparent;
   overflow: hidden;
   transition: background 0.3s ease;
   min-height: 100vh;
@@ -107,9 +107,17 @@
   padding-left: 3rem;
   background: var(--bg-card) !important;
   backdrop-filter: blur(10px) !important;
-  border-radius: 15px !important;
-  border: 1px solid var(--border-light) !important;
+  border-radius: 4px !important;
+  border: 1px solid var(--border-medium) !important;
+  border-left: 3px solid var(--accent-primary) !important;
   transition: all 0.3s ease !important;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 15px),
+    calc(100% - 15px) 100%,
+    0 100%
+  );
 }
 
 .timeline-item:hover {

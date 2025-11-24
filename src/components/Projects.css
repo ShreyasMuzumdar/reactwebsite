@@ -1,6 +1,6 @@
 .projects {
   padding: 80px 0;
-  background: var(--bg-primary);
+  background: transparent;
   color: var(--text-primary);
   position: relative;
   overflow: hidden;
@@ -86,9 +86,9 @@
 
 .project-card {
   background: var(--bg-card);
-  border-radius: 15px;
+  border-radius: 4px;
   padding: 30px;
-  border: 1px solid var(--border-light);
+  border: 1px solid var(--border-medium);
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
   position: relative;
@@ -98,6 +98,24 @@
   animation: fadeInUp 0.5s ease forwards;
   max-width: 450px;
   justify-self: start;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 20px),
+    calc(100% - 20px) 100%,
+    0 100%
+  );
+}
+
+.project-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, transparent 50%, var(--accent-primary) 50%);
+  opacity: 0.5;
 }
 
 @keyframes fadeInUp {
@@ -284,7 +302,7 @@
 
 .filter-btn.active:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(74, 144, 226, 0.4);
+  box-shadow: 0 8px 20px rgba(255, 225, 53, 0.4);
 }
 
 .project-categories {
@@ -295,29 +313,29 @@
 }
 
 .category-tag {
-  background: rgba(74, 144, 226, 0.15);
-  color: #2c5aa0;
+  background: rgba(255, 225, 53, 0.15);
+  color: #B7950B;
   padding: 4px 10px;
   border-radius: 15px;
   font-size: 0.8rem;
   font-weight: 600;
-  border: 1px solid rgba(74, 144, 226, 0.2);
+  border: 1px solid rgba(255, 225, 53, 0.2);
   transition: all 0.3s ease;
   cursor: pointer;
   user-select: none;
 }
 
 .category-tag:hover {
-  background: rgba(74, 144, 226, 0.25);
+  background: rgba(255, 225, 53, 0.25);
   transform: scale(1.05);
-  border-color: rgba(74, 144, 226, 0.4);
+  border-color: rgba(255, 225, 53, 0.4);
 }
 
 .category-tag.active {
-  background: linear-gradient(45deg, #4a90e2, #2c5aa0);
-  color: white;
-  border-color: #4a90e2;
-  box-shadow: 0 2px 8px rgba(74, 144, 226, 0.3);
+  background: linear-gradient(45deg, #FFE135, #B7950B);
+  color: var(--text-primary);
+  border-color: #FFE135;
+  box-shadow: 0 2px 8px rgba(255, 225, 53, 0.3);
 }
 
 .no-projects {
