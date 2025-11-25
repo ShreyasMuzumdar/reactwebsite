@@ -74,7 +74,7 @@
 .robot-card:hover {
   transform: translateY(-10px);
   border-color: var(--accent-primary);
-  box-shadow: 0 20px 40px rgba(255, 225, 53, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 51, 102, 0.2);
 }
 
 .robot-image-container {
@@ -101,7 +101,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(255, 225, 53, 0.8);
+  background: rgba(0, 51, 102, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -124,7 +124,7 @@
   align-items: center;
   gap: 8px;
   transition: all 0.3s ease;
-  border: 2px solid rgba(255, 225, 53, 0.3);
+  border: 2px solid rgba(0, 51, 102, 0.3);
 }
 
 .view-3d-btn:hover {
@@ -166,17 +166,17 @@
 }
 
 .feature-tag {
-  background: rgba(255, 225, 53, 0.1);
+  background: rgba(0, 51, 102, 0.1);
   color: var(--accent-primary);
   padding: 6px 12px;
   border-radius: 15px;
   font-size: 0.85rem;
-  border: 1px solid rgba(255, 225, 53, 0.3);
+  border: 1px solid rgba(0, 51, 102, 0.3);
   transition: all 0.3s ease;
 }
 
 .feature-tag:hover {
-  background: rgba(255, 225, 53, 0.2);
+  background: rgba(0, 51, 102, 0.2);
   transform: scale(1.05);
 }
 
@@ -208,26 +208,26 @@
 
 .robot-link.primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(255, 225, 53, 0.4);
+  box-shadow: 0 8px 20px rgba(0, 51, 102, 0.4);
 }
 
 .robot-link.secondary {
-  background: rgba(255, 225, 53, 0.1);
+  background: rgba(0, 51, 102, 0.1);
   color: var(--accent-secondary);
-  border: 2px solid rgba(255, 225, 53, 0.3);
+  border: 2px solid rgba(0, 51, 102, 0.3);
 }
 
 .robot-link.secondary:hover {
-  background: rgba(255, 225, 53, 0.2);
+  background: rgba(0, 51, 102, 0.2);
   border-color: var(--accent-primary);
   transform: translateY(-2px);
 }
 
 .ar-info {
-  background: rgba(255, 225, 53, 0.05);
+  background: rgba(0, 51, 102, 0.05);
   border-radius: 15px;
   padding: 20px;
-  border: 1px solid rgba(255, 225, 53, 0.2);
+  border: 1px solid rgba(0, 51, 102, 0.2);
 }
 
 .ar-notice {

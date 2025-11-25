@@ -58,13 +58,7 @@
         }
 
         #backgroundCanvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            pointer-events: none;
+            display: none;
         }
 
         .container {
@@ -310,12 +304,12 @@
         }
 
         .ai-btn {
-            background: #ffdd00;
-            color: #333;
+            background: #003366;
+            color: white;
         }
 
         [data-theme="dark"] .ai-btn {
-            color: #1a1a1a;
+            color: #ffffff;
         }
 
         .starter-btn:hover {
@@ -340,7 +334,6 @@
     </style>
 </head>
 <body>
-    <canvas id="backgroundCanvas"></canvas>
     
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
         <div class="theme-toggle-track">
@@ -439,139 +432,6 @@
             }
         });
 
-        // Geometric Patterns Background Animation
-        const bgCanvas = document.getElementById('backgroundCanvas');
-        const bgCtx = bgCanvas.getContext('2d');
-        
-        function resizeBackgroundCanvas() {
-            bgCanvas.width = window.innerWidth;
-            bgCanvas.height = window.innerHeight;
-        }
-        
-        resizeBackgroundCanvas();
-        window.addEventListener('resize', resizeBackgroundCanvas);
-
-        const shapes = [];
-        const lightColors = ['#4D96FF', '#003366', '#60A5FA', '#93C5FD'];
-        const darkColors = ['#4D96FF', '#003366', '#60A5FA', '#93C5FD'];
-        const shapeTypes = ['circle', 'triangle', 'square', 'diamond', 'hexagon'];
-        const numShapes = 40; // High density
-
-        function getShapeColors() {
-            const theme = document.documentElement.getAttribute('data-theme');
-            return theme === 'dark' ? darkColors : lightColors;
-        }
-
-        function getShapeOpacity() {
-            const theme = document.documentElement.getAttribute('data-theme');
-            return theme === 'dark' ? 0.3 : 0.4;
-        }
-
-        class Shape {
-            constructor() {
-                this.x = Math.random() * bgCanvas.width;
-                this.y = Math.random() * bgCanvas.height;
-                this.size = Math.random() * 40 + 20;
-                this.type = shapeTypes[Math.floor(Math.random() * shapeTypes.length)];
-                this.colorIndex = Math.floor(Math.random() * lightColors.length);
-                this.speedX = (Math.random() - 0.5) * 0.5;
-                this.speedY = (Math.random() - 0.5) * 0.5;
-                this.rotation = Math.random() * Math.PI * 2;
-                this.rotationSpeed = (Math.random() - 0.5) * 0.02;
-                this.baseOpacity = Math.random() * 0.2 + 0.1;
-                this.pulseSpeed = Math.random() * 0.02 + 0.01;
-                this.pulsePhase = Math.random() * Math.PI * 2;
-            }
-
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-                this.rotation += this.rotationSpeed;
-                this.pulsePhase += this.pulseSpeed;
-
-                if (this.x < -this.size) this.x = bgCanvas.width + this.size;
-                if (this.x > bgCanvas.width + this.size) this.x = -this.size;
-                if (this.y < -this.size) this.y = bgCanvas.height + this.size;
-                if (this.y > bgCanvas.height + this.size) this.y = -this.size;
-            }
-
-            draw() {
-                bgCtx.save();
-                bgCtx.translate(this.x, this.y);
-                bgCtx.rotate(this.rotation);
-                
-                const colors = getShapeColors();
-                const themeOpacity = getShapeOpacity();
-                const pulse = Math.sin(this.pulsePhase) * 0.2 + 0.8;
-                const currentOpacity = this.baseOpacity * pulse * themeOpacity;
-                const color = colors[this.colorIndex];
-                
-                bgCtx.strokeStyle = color + Math.floor(currentOpacity * 255).toString(16).padStart(2, '0');
-                bgCtx.lineWidth = 2;
-
-                switch(this.type) {
-                    case 'circle':
-                        bgCtx.beginPath();
-                        bgCtx.arc(0, 0, this.size / 2, 0, Math.PI * 2);
-                        bgCtx.stroke();
-                        break;
-                    case 'triangle':
-                        bgCtx.beginPath();
-                        bgCtx.moveTo(0, -this.size / 2);
-                        bgCtx.lineTo(this.size / 2, this.size / 2);
-                        bgCtx.lineTo(-this.size / 2, this.size / 2);
-                        bgCtx.closePath();
-                        bgCtx.stroke();
-                        break;
-                    case 'square':
-                        bgCtx.strokeRect(-this.size / 2, -this.size / 2, this.size, this.size);
-                        break;
-                    case 'diamond':
-                        bgCtx.beginPath();
-                        bgCtx.moveTo(0, -this.size / 2);
-                        bgCtx.lineTo(this.size / 2, 0);
-                        bgCtx.lineTo(0, this.size / 2);
-                        bgCtx.lineTo(-this.size / 2, 0);
-                        bgCtx.closePath();
-                        bgCtx.stroke();
-                        break;
-                    case 'hexagon':
-                        bgCtx.beginPath();
-                        for (let i = 0; i < 6; i++) {
-                            const angle = (Math.PI / 3) * i;
-                            const x = (this.size / 2) * Math.cos(angle);
-                            const y = (this.size / 2) * Math.sin(angle);
-                            if (i === 0) bgCtx.moveTo(x, y);
-                            else bgCtx.lineTo(x, y);
-                        }
-                        bgCtx.closePath();
-                        bgCtx.stroke();
-                        break;
-                }
-                
-                bgCtx.restore();
-            }
-        }
-
-        for (let i = 0; i < numShapes; i++) {
-            shapes.push(new Shape());
-        }
-
-        function animateBackground() {
-            // Set background color based on theme
-            const theme = document.documentElement.getAttribute('data-theme');
-            bgCtx.fillStyle = theme === 'dark' ? '#0c0c0c' : '#ffffff';
-            bgCtx.fillRect(0, 0, bgCanvas.width, bgCanvas.height);
-            
-            shapes.forEach(shape => {
-                shape.update();
-                shape.draw();
-            });
-            requestAnimationFrame(animateBackground);
-        }
-
-        animateBackground();
-
         // Connect 4 Game Code
         const canvas = document.getElementById('gameCanvas');
         const ctx = canvas.getContext('2d');
@@ -632,7 +492,7 @@
                         ctx.arc(x, y, RADIUS - 3, 0, Math.PI * 2);
                         ctx.fill();
                     } else if (board[r][c] === AI) {
-                        ctx.fillStyle = '#ffdd00';
+                        ctx.fillStyle = '#003366';
                         ctx.beginPath();
                         ctx.arc(x, y, RADIUS - 3, 0, Math.PI * 2);
                         ctx.fill();
