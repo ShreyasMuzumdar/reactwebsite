@@ -11,9 +11,9 @@
             --bg-card: rgba(255, 255, 255, 0.8);
             --text-primary: #1a1a1a;
             --text-secondary: #4a4a4a;
-            --accent-primary: #4a90e2;
-            --accent-secondary: #2c5aa0;
-            --border-light: rgba(74, 144, 226, 0.2);
+            --accent-primary: #FFE135;
+            --accent-secondary: #003366;
+            --border-light: rgba(255, 225, 53, 0.2);
             --shadow-medium: rgba(0, 0, 0, 0.1);
             --modal-backdrop: rgba(0, 0, 0, 0.7);
             --toggle-track-bg: rgba(0, 0, 0, 0.1);
@@ -27,14 +27,14 @@
             --bg-card: rgba(255, 255, 255, 0.05);
             --text-primary: #ffffff;
             --text-secondary: #b0b0b0;
-            --accent-primary: #4a90e2;
-            --accent-secondary: #74a9ff;
-            --border-light: rgba(74, 144, 226, 0.3);
+            --accent-primary: #FFE135;
+            --accent-secondary: #93C5FD;
+            --border-light: rgba(255, 225, 53, 0.3);
             --shadow-medium: rgba(0, 0, 0, 0.3);
             --modal-backdrop: rgba(0, 0, 0, 0.85);
             --toggle-track-bg: rgba(255, 255, 255, 0.1);
             --toggle-border: rgba(255, 255, 255, 0.2);
-            --toggle-thumb-bg: linear-gradient(135deg, #4facfe, #00f2fe);
+            --toggle-thumb-bg: linear-gradient(135deg, #4D96FF, #003366);
         }
 
         * {
@@ -452,8 +452,8 @@
         window.addEventListener('resize', resizeBackgroundCanvas);
 
         const shapes = [];
-        const lightColors = ['#4a90e2', '#2c5aa0', '#357abd', '#74a9ff'];
-        const darkColors = ['#4a90e2', '#2c5aa0', '#357abd', '#74a9ff'];
+        const lightColors = ['#4D96FF', '#003366', '#60A5FA', '#93C5FD'];
+        const darkColors = ['#4D96FF', '#003366', '#60A5FA', '#93C5FD'];
         const shapeTypes = ['circle', 'triangle', 'square', 'diamond', 'hexagon'];
         const numShapes = 40; // High density
 
@@ -606,7 +606,7 @@
         function drawBoard() {
             // Get current theme
             const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-            const boardBg = '#4a90e2';
+            const boardBg = '#4D96FF';
             const holeBg = isDark ? '#000000' : '#ffffff';
             
             // Background
