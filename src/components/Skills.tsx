@@ -1,6 +1,5 @@
 import './Skills.css'
 import GlareHover from './GlareHover'
-import GeometricPatterns from './GeometricPatterns'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { 
   faCube,
@@ -23,12 +22,6 @@ import { faPython, faJava } from '@fortawesome/free-brands-svg-icons'
 const Skills = () => {
   return (
     <section id="skills" className="skills-section">
-        <GeometricPatterns 
-          density="medium" 
-          speed="slow" 
-          opacity={0.2}
-          colors={['#FFE135', '#FFD700', '#F4D03F', '#FFF59D', '#FFF9C4']}
-        />
         <div className="container">
         <div className="skills">
           <h3>

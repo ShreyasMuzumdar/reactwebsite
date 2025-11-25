@@ -48,18 +48,18 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #FFE135;
+  background: #4D96FF;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #B7950B;
+  background: #003366;
 }
 
 /* Selection color */
 ::selection {
-  background: rgba(255, 225, 53, 0.3);
-  color: #B7950B;
+  background: rgba(77, 150, 255, 0.3);
+  color: #003366;
 }
 
 /* Global animations */

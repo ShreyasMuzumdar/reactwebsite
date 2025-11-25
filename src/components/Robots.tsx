@@ -1,7 +1,6 @@
 import React from 'react';
 import './Robots.css';
 import GlareHover from './GlareHover';
-import GeometricPatterns from './GeometricPatterns';
 
 const Robots: React.FC = () => {
   const baseUrl = import.meta.env.BASE_URL;
@@ -29,12 +28,6 @@ const Robots: React.FC = () => {
 
   return (
     <section id="robots" className="robots-section">
-        <GeometricPatterns 
-          density="medium" 
-          speed="slow" 
-          opacity={0.2}
-          colors={['#FFE135', '#FFD700', '#F4D03F', '#FFF59D']}
-        />
         <div className="container">
         <h2 className="section-title">
           <span className="title-icon">🤖</span>

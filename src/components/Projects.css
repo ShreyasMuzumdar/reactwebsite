@@ -302,7 +302,7 @@
 
 .filter-btn.active:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(255, 225, 53, 0.4);
+  box-shadow: 0 8px 20px rgba(0, 51, 102, 0.4);
 }
 
 .project-categories {
@@ -313,29 +313,29 @@
 }
 
 .category-tag {
-  background: rgba(255, 225, 53, 0.15);
-  color: #B7950B;
+  background: rgba(0, 51, 102, 0.15);
+  color: var(--accent-secondary);
   padding: 4px 10px;
   border-radius: 15px;
   font-size: 0.8rem;
   font-weight: 600;
-  border: 1px solid rgba(255, 225, 53, 0.2);
+  border: 1px solid rgba(0, 51, 102, 0.2);
   transition: all 0.3s ease;
   cursor: pointer;
   user-select: none;
 }
 
 .category-tag:hover {
-  background: rgba(255, 225, 53, 0.25);
+  background: rgba(0, 51, 102, 0.25);
   transform: scale(1.05);
-  border-color: rgba(255, 225, 53, 0.4);
+  border-color: rgba(0, 51, 102, 0.4);
 }
 
 .category-tag.active {
-  background: linear-gradient(45deg, #FFE135, #B7950B);
+  background: var(--gradient-primary);
   color: var(--text-primary);
-  border-color: #FFE135;
-  box-shadow: 0 2px 8px rgba(255, 225, 53, 0.3);
+  border-color: #003366;
+  box-shadow: 0 2px 8px rgba(0, 51, 102, 0.3);
 }
 
 .no-projects {

@@ -2,7 +2,6 @@ import React from 'react';
 import './Contact.css';
 import FloatingElement from './FloatingElement';
 import TypewriterEffect from './TypewriterEffect';
-import GeometricPatterns from './GeometricPatterns';
 
 const Contact: React.FC = () => {
   const socialLinks = [
@@ -40,12 +39,6 @@ const Contact: React.FC = () => {
 
   return (
     <section id="contact" className="contact-section">
-        <GeometricPatterns 
-          density="medium" 
-          speed="slow" 
-          opacity={0.2}
-          colors={['#FFE135', '#FFD700', '#F4D03F', '#FFF59D']}
-        />
         <div className="container">
         <h2 className="section-title">
           <FloatingElement intensity="medium" direction="up" duration={3}>

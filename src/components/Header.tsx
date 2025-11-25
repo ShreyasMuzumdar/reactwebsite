@@ -33,14 +33,7 @@ const Header = () => {
           <span className="logo-text">
             🤖 Shreyas Muzumdar
           </span>
-        </div>
-        <div className="nav-controls">
           <ThemeToggle />
-          <button className="mobile-menu-toggle" onClick={toggleMobileMenu}>
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
         </div>
         <ul className={`nav-links ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}>
           <li><button onClick={() => scrollToSection('about')} className="nav-button">About</button></li>
@@ -51,6 +44,13 @@ const Header = () => {
           <li><button onClick={() => scrollToSection('resume')} className="nav-button">Resume</button></li>
           <li><button onClick={() => scrollToSection('contact')} className="nav-button">Contact</button></li>
         </ul>
+        <div className="nav-controls">
+          <button className="mobile-menu-toggle" onClick={toggleMobileMenu}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </nav>
     </header>
   );

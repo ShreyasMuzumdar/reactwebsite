@@ -1,7 +1,6 @@
 import React from 'react';
 import './EducationExperience.css';
 import GlareHover from './GlareHover';
-import GeometricPatterns from './GeometricPatterns';
 
 const EducationExperience: React.FC = () => {
   const educationData = [
@@ -54,12 +53,6 @@ const EducationExperience: React.FC = () => {
 
   return (
     <section id="education-experience" className="education-experience-section">
-        <GeometricPatterns 
-          density="medium" 
-          speed="slow" 
-          opacity={0.2}
-          colors={['#FFE135', '#FFD700', '#F4D03F', '#FFF59D', '#FFF9C4']}
-        />
         <div className="container">
         <h2 className="section-title">
           <span className="title-icon">📚</span>

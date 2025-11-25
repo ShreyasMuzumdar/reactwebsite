@@ -8,35 +8,45 @@ const CircuitBackground: React.FC = () => {
     if (!svgRef.current) return;
 
     const paths = svgRef.current.querySelectorAll('.st0');
+    
+    const animate = () => {
+      // Reset animations
+      paths.forEach((p) => {
+        const path = p as SVGGeometryElement;
+        path.style.transition = 'none';
+        path.style.strokeDasharray = 'none';
+        path.style.strokeDashoffset = '0';
+      });
 
-    // Reset animations
-    paths.forEach((p) => {
-      const path = p as SVGGeometryElement;
-      path.style.transition = 'none';
-      path.style.strokeDasharray = 'none';
-      path.style.strokeDashoffset = '0';
-    });
+      // Force reflow
+      svgRef.current?.getBoundingClientRect();
 
-    // Force reflow
-    svgRef.current.getBoundingClientRect();
+      // Start animation
+      paths.forEach((p) => {
+        const path = p as SVGGeometryElement;
+        const length = path.getTotalLength();
+        
+        // Set initial state
+        path.style.transition = 'none';
+        path.style.strokeDasharray = `${length} ${length}`;
+        path.style.strokeDashoffset = `${length}`;
+        
+        // Force reflow for this element
+        path.getBoundingClientRect();
+        
+        // Animate to final state
+        path.style.transition = 'stroke-dashoffset 5s ease-in-out';
+        path.style.strokeDashoffset = '0';
+      });
+    };
 
-    // Start animation
-    paths.forEach((p) => {
-      const path = p as SVGGeometryElement;
-      const length = path.getTotalLength();
-      
-      // Set initial state
-      path.style.transition = 'none';
-      path.style.strokeDasharray = `${length} ${length}`;
-      path.style.strokeDashoffset = `${length}`;
-      
-      // Force reflow for this element
-      path.getBoundingClientRect();
-      
-      // Animate to final state
-      path.style.transition = 'stroke-dashoffset 5s ease-in-out';
-      path.style.strokeDashoffset = '0';
-    });
+    // Initial animation
+    animate();
+
+    // Loop animation every 7 seconds
+    const intervalId = setInterval(animate, 7000);
+
+    return () => clearInterval(intervalId);
   }, []);
 
   return (
