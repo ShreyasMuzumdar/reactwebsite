@@ -150,6 +150,10 @@
   border-radius: 2px;
 }
 
+[data-theme="dark"] .category-title {
+  color: #ffffff;
+}
+
 @media (max-width: 768px) {
   .skills-categories {
     grid-template-columns: 1fr;
