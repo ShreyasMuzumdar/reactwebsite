@@ -28,11 +28,11 @@ const Robots: React.FC = () => {
       docs: `${baseUrl}BlackBox-docs.html`,
     },
     {
-      name: "PlugBot",
-      description: "PlugBot was our robot during the INTOTHEDEEP season. It uses a camera and differential claw designed to precisely pick up objects with minimal human intervention.",
-      image: `${baseUrl}files/PlugBot.png`,
-      model3d: `${baseUrl}files/PlugBot.usdz`,
-      docs: `${baseUrl}PlugBot-docs.html`,
+      name: "MantisBot",
+      description: "MantisBot was our robot during the INTOTHEDEEP season. It uses a camera and differential claw designed to precisely pick up objects with minimal human intervention.",
+      image: `${baseUrl}files/MantisBot.png`,
+      model3d: `${baseUrl}files/MantisBot.usdz`,
+      docs: `${baseUrl}MantisBot-docs.html`,
     }
   ];
 

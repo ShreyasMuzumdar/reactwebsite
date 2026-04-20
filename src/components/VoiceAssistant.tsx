@@ -72,7 +72,7 @@ const knowledgeBase = [
   },
   {
     keywords: ['robot', 'robotics', 'arm'],
-    response: "The Robots section showcases 3D models of robotic projects, including a PlugBot and a StretchBot. Feel free to interact with them!"
+    response: "The Robots section showcases 3D models of robotic projects, including a MantisBot and a StretchBot. Feel free to interact with them!"
   },
   {
     keywords: ['stop', 'quiet', 'shh'],
