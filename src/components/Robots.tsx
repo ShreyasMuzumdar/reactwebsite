@@ -7,6 +7,12 @@ const Robots: React.FC = () => {
   
   const robots = [
     {
+      name: "Shreybot",
+      description: "Shreybot is a custom robot project showcasing innovative design and engineering.",
+      image: `${baseUrl}files/Shreybot.png`,
+      model3d: `${baseUrl}files/Shreybot.usdz`,
+    },
+    {
       name: "StretchBot",
       description: "Stretch Bot was our robot during the POWERPLAY season. We won the State Championship and had the highest scoring match in the State Championship with 269 points.",
       image: `${baseUrl}files/StretchBot.png`,
@@ -28,7 +34,7 @@ const Robots: React.FC = () => {
 
   return (
     <section id="robots" className="robots-section">
-        <div className="container">
+      <div className="container">
         <h2 className="section-title">
           <span className="title-icon">🤖</span>
           Robots
@@ -38,13 +44,13 @@ const Robots: React.FC = () => {
           {robots.map((robot, index) => (
             <GlareHover key={index} className="robot-card">
               <div className="robot-image-container">
-                  <img src={robot.image} alt={robot.name} className="robot-image" />
-                  <div className="image-overlay">
-                    <a href={robot.model3d} className="view-3d-btn">
-                      <span>📱</span> View in AR
-                    </a>
-                  </div>
+                <img src={robot.image} alt={robot.name} className="robot-image" />
+                <div className="image-overlay">
+                  <a href={robot.model3d} className="view-3d-btn">
+                    <span>📱</span> View in AR
+                  </a>
                 </div>
+              </div>
               
               <div className="robot-content">
                 <h3 className="robot-name">
@@ -60,7 +66,7 @@ const Robots: React.FC = () => {
                   </a>
                 </div>
               </div>
-              </GlareHover>
+            </GlareHover>
           ))}
         </div>
         
