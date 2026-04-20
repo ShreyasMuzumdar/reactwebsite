@@ -11,24 +11,28 @@ const Robots: React.FC = () => {
       description: "Shreybot is a custom robot project showcasing innovative design and engineering.",
       image: `${baseUrl}files/Shreybot.png`,
       model3d: `${baseUrl}files/Shreybot.usdz`,
+      docs: `${baseUrl}Shreybot-docs.html`,
     },
     {
       name: "StretchBot",
       description: "Stretch Bot was our robot during the POWERPLAY season. We won the State Championship and had the highest scoring match in the State Championship with 269 points.",
       image: `${baseUrl}files/StretchBot.png`,
       model3d: `${baseUrl}files/StretchBot.usdz`,
+      docs: `${baseUrl}StretchBot-docs.html`,
     },
     {
       name: "BlackBox",
       description: "BlackBox was our robot during the CENTERSTAGE season. We went to the finals of the State Championship and averaged the highest autonomous robot score.",
       image: `${baseUrl}files/BlackBox.png`,
       model3d: `${baseUrl}files/BlackBox.usdz`,
+      docs: `${baseUrl}BlackBox-docs.html`,
     },
     {
       name: "PlugBot",
       description: "PlugBot was our robot during the INTOTHEDEEP season. It uses a camera and differential claw designed to precisely pick up objects with minimal human intervention.",
       image: `${baseUrl}files/PlugBot.png`,
       model3d: `${baseUrl}files/PlugBot.usdz`,
+      docs: `${baseUrl}PlugBot-docs.html`,
     }
   ];
 
@@ -63,6 +67,9 @@ const Robots: React.FC = () => {
                 <div className="robot-actions">
                   <a href={robot.model3d} className="robot-link primary">
                     <span>🥽</span> 3D Preview
+                  </a>
+                  <a href={robot.docs} className="robot-link primary">
+                    <span>📖</span> Documentation
                   </a>
                 </div>
               </div>
