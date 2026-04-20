@@ -98,6 +98,17 @@
             transform: translateX(-5px);
         }
 
+        [data-theme="dark"] .back-link {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            color: white;
+            border-color: var(--accent-primary);
+        }
+
+        [data-theme="dark"] .back-link:hover {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            filter: brightness(1.1);
+        }
+
         .subtitle {
             color: var(--text-secondary);
             font-size: 1.1rem;
