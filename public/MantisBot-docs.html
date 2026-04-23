@@ -268,6 +268,95 @@
             display: block;
             object-fit: cover;
         }
+
+        .overview-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: start;
+            margin-bottom: 40px;
+        }
+
+        .overview-text {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .overview-text p {
+            margin-bottom: 15px;
+        }
+
+        .overview-photos {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .overview-photo-placeholder {
+            background: var(--bg-secondary);
+            border: 2px dashed var(--border-light);
+            border-radius: 15px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .features-compact-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .features-compact-list li {
+            color: var(--text-primary);
+            padding: 8px 0;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .features-compact-list li:before {
+            content: attr(data-icon);
+            margin-right: 12px;
+            font-size: 1.4rem;
+        }
+
+        @media (max-width: 768px) {
+            .overview-section {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 25px;
+            }
+
+            .header {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body data-theme="light">
@@ -280,24 +369,7 @@
             <a href="/reactwebsite/" class="back-link">← Back to Site</a>
         </div>
 
-        <div class="robot-image-section">
-            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=400&fit=crop" alt="MantisBot Robot" class="page-hero-image">
-        </div>
-
-        <div class="content-section">
-            <h2 class="section-title">Overview</h2>
-            <p class="section-content">
-                MantisBot was our robot during the INTOTHEDEEP season (2024-2025), representing the latest in our robotics engineering capabilities. This robot showcases cutting-edge computer vision technology and intelligent mechanical design to achieve autonomous pickup and placement with minimal human intervention.
-            </p>
-        </div>
-
-        <div class="content-section">
-            <h2 class="section-title">Key Innovation</h2>
-            <div class="section-content">
-                <strong>Camera-Based Differential Claw System:</strong> MantisBot features an innovative differential claw mechanism controlled by computer vision. The robot uses a camera to detect objects and precisely pick them up with minimal human intervention, enabling highly accurate and efficient autonomous play.
-            </div>
-        </div>
-
+        <!-- Technical Specifications at Top -->
         <div class="content-section">
             <h2 class="section-title">Technical Specifications</h2>
             <div class="specs-grid">
@@ -310,33 +382,44 @@
                     <div class="spec-value">Computer Vision</div>
                 </div>
                 <div class="spec-card">
-                    <div class="spec-label">Key Feature</div>
-                    <div class="spec-value">Differential Claw</div>
+                    <div class="spec-label">Specialization</div>
+                    <div class="spec-value">Autonomous Manipulation</div>
                 </div>
             </div>
         </div>
 
+        <!-- Key Features as Individual Sections -->
         <div class="content-section">
             <h2 class="section-title">Key Features</h2>
-            <ul class="features-list">
-                <li>Advanced camera-based object detection</li>
-                <li>Intelligent differential claw mechanism</li>
-                <li>Autonomous object recognition and pickup</li>
-                <li>Precise placement capabilities</li>
-                <li>Minimal human intervention required</li>
-                <li>Adaptive manipulation algorithms</li>
+            <ul class="features-compact-list">
+                <li data-icon="📷">Advanced Camera-Based Object Detection</li>
+                <li data-icon="🦀">Intelligent Differential Claw Mechanism</li>
+                <li data-icon="🎯">Autonomous Object Recognition and Pickup</li>
+                <li data-icon="📍">Precise Placement Capabilities</li>
+                <li data-icon="🧠">Adaptive Manipulation Algorithms</li>
             </ul>
         </div>
 
+        <!-- Overview Section with Photo Space -->
         <div class="content-section">
-            <h2 class="section-title">Capabilities</h2>
-            <ul class="features-list">
-                <li>Real-time object detection via camera</li>
-                <li>Autonomous approach and acquisition</li>
-                <li>Differential grip control for various object types</li>
-                <li>Precise placement in target locations</li>
-                <li>Machine learning-powered decision making</li>
-            </ul>
+            <h2 class="section-title">Detailed Overview</h2>
+            <div class="overview-section">
+                <div class="overview-text">
+                    <p>MantisBot represents Pioneer Robotics' latest innovation in the INTOTHEDEEP season (2024-2025). This robot embodies a forward-thinking approach to competitive robotics—prioritizing autonomous capabilities and intelligent mechanical design to achieve tasks that would traditionally require manual control.</p>
+                    
+                    <p>The defining characteristic of MantisBot is its camera-based differential claw system. Rather than relying on simple grabbing mechanisms, this intelligent claw can adapt its grip based on real-time analysis of the object being manipulated. Computer vision guides the entire process, from initial object detection to final placement, creating an almost autonomous competitor.</p>
+                    
+                    <p>MantisBot demonstrates that the future of competitive robotics lies in the integration of advanced perception and intelligent manipulation. The robot's ability to autonomously identify, acquire, and place game objects with minimal human intervention opens new possibilities for match strategy. This engineering achievement reflects Pioneer Robotics' commitment to pushing the boundaries of what's possible in FTC competition.</p>
+                </div>
+                <div class="overview-photos">
+                    <div class="overview-photo-placeholder">
+                        📸 Robot Photo
+                    </div>
+                    <div class="overview-photo-placeholder">
+                        📸 Claw Mechanism
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="content-section">

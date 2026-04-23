@@ -277,6 +277,95 @@
             display: block;
             object-fit: cover;
         }
+
+        .overview-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: start;
+            margin-bottom: 40px;
+        }
+
+        .overview-text {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .overview-text p {
+            margin-bottom: 15px;
+        }
+
+        .overview-photos {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .overview-photo-placeholder {
+            background: var(--bg-secondary);
+            border: 2px dashed var(--border-light);
+            border-radius: 15px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .features-compact-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .features-compact-list li {
+            color: var(--text-primary);
+            padding: 8px 0;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .features-compact-list li:before {
+            content: attr(data-icon);
+            margin-right: 12px;
+            font-size: 1.4rem;
+        }
+
+        @media (max-width: 768px) {
+            .overview-section {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 25px;
+            }
+
+            .header {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body data-theme="light">
@@ -289,31 +378,7 @@
             <a href="/reactwebsite/" class="back-link">← Back to Site</a>
         </div>
 
-        <div class="robot-image-section">
-            <img src="https://images.unsplash.com/photo-1549692520-acc6669e2f0c?w=800&h=400&fit=crop" alt="StretchBot Robot" class="page-hero-image">
-        </div>
-
-        <div class="content-section">
-            <h2 class="section-title">Overview</h2>
-            <p class="section-content">
-                StretchBot was our robot during the POWERPLAY season (2022-2023), representing a pinnacle of competitive robotics achievement. This robot was specifically designed to excel in FIRST Robotics challenges and demonstrated exceptional performance throughout the season.
-            </p>
-            <div class="achievement-box">
-                🏆 State Championship Winner - Highest Scoring Match: 269 points
-            </div>
-        </div>
-
-        <div class="content-section">
-            <h2 class="section-title">Competition Achievements</h2>
-            <ul class="features-list">
-                <li>Won the State Championship</li>
-                <li>Highest scoring match at State Championship: 269 points</li>
-                <li>Exceptional autonomous performance</li>
-                <li>Reliable and consistent gameplay</li>
-                <li>Advanced mechanism design</li>
-            </ul>
-        </div>
-
+        <!-- Technical Specifications at Top -->
         <div class="content-section">
             <h2 class="section-title">Technical Specifications</h2>
             <div class="specs-grid">
@@ -322,25 +387,48 @@
                     <div class="spec-value">POWERPLAY (2022-2023)</div>
                 </div>
                 <div class="spec-card">
-                    <div class="spec-label">Primary Objective</div>
-                    <div class="spec-value">Cones & Sleeves</div>
+                    <div class="spec-label">Achievement</div>
+                    <div class="spec-value">State Champion</div>
                 </div>
                 <div class="spec-card">
-                    <div class="spec-label">Specialization</div>
-                    <div class="spec-value">High Scoring Strategy</div>
+                    <div class="spec-label">Highest Score</div>
+                    <div class="spec-value">269 Points</div>
                 </div>
             </div>
         </div>
 
+        <!-- Key Features as Individual Sections -->
         <div class="content-section">
             <h2 class="section-title">Key Features</h2>
-            <ul class="features-list">
-                <li>Optimized intake system for rapid collection</li>
-                <li>Precision placement mechanisms</li>
-                <li>Advanced autonomous routines</li>
-                <li>High-speed elevator system</li>
-                <li>Reliable scoring reliability</li>
+            <ul class="features-compact-list">
+                <li data-icon="🎯">Optimized Intake System</li>
+                <li data-icon="📍">Precision Placement Mechanisms</li>
+                <li data-icon="🤖">Advanced Autonomous Routines</li>
+                <li data-icon="⚡">High-Speed Elevator System</li>
+                <li data-icon="🛡️">Exceptional Reliability</li>
             </ul>
+        </div>
+
+        <!-- Overview Section with Photo Space -->
+        <div class="content-section">
+            <h2 class="section-title">Detailed Overview</h2>
+            <div class="overview-section">
+                <div class="overview-text">
+                    <p>StretchBot represents the pinnacle of competitive robotics achievement during the POWERPLAY season (2022-2023). This robot dominated the competition landscape, culminating in a State Championship victory and achieving the highest-scoring single match with an impressive 269 points.</p>
+                    
+                    <p>The robot's success stems from meticulous attention to detail in every engineering discipline. From mechanical design focused on speed and precision, to electrical systems optimized for reliability, to software algorithms tuned through countless matches—every aspect was refined to peak performance. StretchBot demonstrates how comprehensive engineering excellence leads to undeniable competitive success.</p>
+                    
+                    <p>What truly distinguishes StretchBot is its consistent performance under pressure. The championship path required proving reliability through dozens of matches, strategic performance in critical moments, and the ability to execute complex autonomous routines and teleop tasks flawlessly. StretchBot delivered on all fronts, establishing a legacy as one of Pioneer Robotics' greatest competitive achievements.</p>
+                </div>
+                <div class="overview-photos">
+                    <div class="overview-photo-placeholder">
+                        📸 Robot Photo
+                    </div>
+                    <div class="overview-photo-placeholder">
+                        📸 Championship Match
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="content-section">

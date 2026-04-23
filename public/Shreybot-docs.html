@@ -268,56 +268,148 @@
             display: block;
             object-fit: cover;
         }
+
+        .overview-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: start;
+            margin-bottom: 40px;
+        }
+
+        .overview-text {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .overview-text p {
+            margin-bottom: 15px;
+        }
+
+        .overview-photos {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .overview-photo-placeholder {
+            background: var(--bg-secondary);
+            border: 2px dashed var(--border-light);
+            border-radius: 15px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .features-compact-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .features-compact-list li {
+            color: var(--text-primary);
+            padding: 8px 0;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .features-compact-list li:before {
+            content: attr(data-icon);
+            margin-right: 12px;
+            font-size: 1.4rem;
+        }
+
+        @media (max-width: 768px) {
+            .overview-section {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 25px;
+            }
+
+            .header {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body data-theme="light">
     <div class="container">
         <div class="header">
             <div>
-                <h1>🤖 Shreybot</h1>
-                <p class="subtitle">Custom Robot Engineering Showcase</p>
+                <h1>Shreybot</h1>
+                <div class="subtitle">Freight Frenzy Season Robot</div>
             </div>
             <a href="/reactwebsite/" class="back-link">← Back to Site</a>
         </div>
 
-        <div class="robot-image-section">
-            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=400&fit=crop" alt="Shreybot Robot" class="page-hero-image">
-        </div>
-
-        <div class="content-section">
-            <h2 class="section-title">Overview</h2>
-            <p class="section-content">
-                Shreybot is a custom robot project that showcases innovative design and advanced engineering principles. This project demonstrates the integration of multiple complex systems including mechanical design, electrical architecture, and intelligent control systems. Built from the ground up, Shreybot represents a comprehensive exploration of robotics engineering.
-            </p>
-        </div>
-
+        <!-- Technical Specifications at Top -->
         <div class="content-section">
             <h2 class="section-title">Technical Specifications</h2>
             <div class="specs-grid">
                 <div class="spec-card">
-                    <div class="spec-label">Platform</div>
-                    <div class="spec-value">Custom Mechanical Design</div>
+                    <div class="spec-label">Season</div>
+                    <div class="spec-value">Freight Frenzy</div>
                 </div>
                 <div class="spec-card">
-                    <div class="spec-label">Control System</div>
-                    <div class="spec-value">Advanced Integration</div>
-                </div>
-                <div class="spec-card">
-                    <div class="spec-label">Key Feature</div>
-                    <div class="spec-value">Innovative Engineering</div>
+                    <div class="spec-label">Achievement</div>
+                    <div class="spec-value">State Championship</div>
                 </div>
             </div>
         </div>
 
+        <!-- Key Features as Individual Sections -->
         <div class="content-section">
             <h2 class="section-title">Key Features</h2>
-            <ul class="features-list">
-                <li>Custom-designed mechanical components</li>
-                <li>Integrated electrical systems</li>
-                <li>Advanced control architecture</li>
-                <li>Optimized for performance and reliability</li>
-                <li>Showcases engineering best practices</li>
+            <ul class="features-compact-list">
+                <li data-icon="⚙️">Tines Collection System</li>
+                <li data-icon="📏">Long Robotics Slides</li> 
             </ul>
+        </div>
+
+        <!-- Overview Section with Photo Space -->
+        <div class="content-section">
+            <h2 class="section-title">Detailed Overview</h2>
+            <div class="overview-section">
+                <div class="overview-text">
+                    <p>Shreybot was my first robot working with Pioneer Robotics during the Freight Frenzy season. This robot includes a robust tines collection system that then deposits the freight using a extenable linear slides.</p>
+                    <p></p>
+                </div>
+                <div class="overview-photos">
+                    <div class="overview-photo-placeholder">
+                        📸 Robot Photo
+                    </div>
+                    <div class="overview-photo-placeholder">
+                        📸 Mechanism Detail
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="content-section">
