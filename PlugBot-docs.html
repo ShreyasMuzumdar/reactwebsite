@@ -268,6 +268,103 @@
             display: block;
             object-fit: cover;
         }
+
+        .overview-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: start;
+            margin-bottom: 40px;
+        }
+
+        .overview-text {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .overview-text p {
+            margin-bottom: 15px;
+        }
+
+        .overview-subtitle {
+            color: var(--accent-primary);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .overview-photos {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .overview-photo-placeholder {
+            background: var(--bg-secondary);
+            border: 2px dashed var(--border-light);
+            border-radius: 15px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .features-compact-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .features-compact-list li {
+            color: var(--text-primary);
+            padding: 8px 0;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .features-compact-list li:before {
+            content: attr(data-icon);
+            margin-right: 12px;
+            font-size: 1.4rem;
+        }
+
+        @media (max-width: 768px) {
+            .overview-section {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 25px;
+            }
+
+            .header {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body data-theme="light">
@@ -275,68 +372,65 @@
         <div class="header">
             <div>
                 <h1>🤖 MantisBot</h1>
-                <p class="subtitle">INTOTHEDEEP Season Innovation</p>
+                <p class="subtitle">Advanced Robotics Innovation</p>
             </div>
             <a href="/reactwebsite/" class="back-link">← Back to Site</a>
         </div>
 
-        <div class="robot-image-section">
-            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=400&fit=crop" alt="MantisBot Robot" class="page-hero-image">
-        </div>
-
-        <div class="content-section">
-            <h2 class="section-title">Overview</h2>
-            <p class="section-content">
-                MantisBot was our robot during the INTOTHEDEEP season (2024-2025), representing the latest in our robotics engineering capabilities. This robot showcases cutting-edge computer vision technology and intelligent mechanical design to achieve autonomous pickup and placement with minimal human intervention.
-            </p>
-        </div>
-
-        <div class="content-section">
-            <h2 class="section-title">Key Innovation</h2>
-            <div class="section-content">
-                <strong>Camera-Based Differential Claw System:</strong> MantisBot features an innovative differential claw mechanism controlled by computer vision. The robot uses a camera to detect objects and precisely pick them up with minimal human intervention, enabling highly accurate and efficient autonomous play.
-            </div>
-        </div>
-
+        <!-- Technical Specifications at Top -->
         <div class="content-section">
             <h2 class="section-title">Technical Specifications</h2>
             <div class="specs-grid">
                 <div class="spec-card">
-                    <div class="spec-label">Season</div>
-                    <div class="spec-value">INTOTHEDEEP (2024-2025)</div>
+                    <div class="spec-label">Category</div>
+                    <div class="spec-value">FTC Robot</div>
                 </div>
                 <div class="spec-card">
-                    <div class="spec-label">Primary Technology</div>
-                    <div class="spec-value">Computer Vision</div>
+                    <div class="spec-label">Design Focus</div>
+                    <div class="spec-value">Innovative Engineering</div>
                 </div>
                 <div class="spec-card">
-                    <div class="spec-label">Key Feature</div>
-                    <div class="spec-value">Differential Claw</div>
+                    <div class="spec-label">Technology</div>
+                    <div class="spec-value">Advanced Systems</div>
                 </div>
             </div>
         </div>
 
+        <!-- Key Features as Individual Sections -->
         <div class="content-section">
             <h2 class="section-title">Key Features</h2>
-            <ul class="features-list">
-                <li>Advanced camera-based object detection</li>
-                <li>Intelligent differential claw mechanism</li>
-                <li>Autonomous object recognition and pickup</li>
-                <li>Precise placement capabilities</li>
-                <li>Minimal human intervention required</li>
-                <li>Adaptive manipulation algorithms</li>
+            <ul class="features-compact-list">
+                <li data-icon="⚙️">Robust Mechanical Design</li>
+                <li data-icon="💡">Innovative System Integration</li>
+                <li data-icon="🎯">Precision Control Systems</li>
+                <li data-icon="⚡">Efficient Power Management</li>
+                <li data-icon="🔧">Modular Architecture</li>
             </ul>
         </div>
 
+        <!-- Overview Section with Photo Space -->
         <div class="content-section">
-            <h2 class="section-title">Capabilities</h2>
-            <ul class="features-list">
-                <li>Real-time object detection via camera</li>
-                <li>Autonomous approach and acquisition</li>
-                <li>Differential grip control for various object types</li>
-                <li>Precise placement in target locations</li>
-                <li>Machine learning-powered decision making</li>
-            </ul>
+            <h2 class="section-title">Detailed Overview</h2>
+            <div class="overview-section">
+                <div class="overview-text">
+                    <div class="overview-subtitle">Engineering Excellence</div>
+                    <p>MantisBot represents the cutting edge of FTC robotics engineering. Developed with meticulous attention to detail, this robot showcases the principles that define competitive robotics success: innovation, reliability, and continuous improvement.</p>
+                    
+                    <div class="overview-subtitle">Solid Mechanical Foundation</div>
+                    <p>The robot is built on a foundation of solid mechanical engineering, combining proven design principles with innovative solutions. Every subsystem—from the drivetrain to specialized mechanisms—has been optimized through rigorous testing and refinement. MantisBot demonstrates how systematic engineering processes lead to superior performance.</p>
+                    
+                    <div class="overview-subtitle">Adaptable Architecture</div>
+                    <p>What makes MantisBot particularly noteworthy is its adaptability. The modular architecture allows for quick modifications based on match experience and strategic insights. This flexibility has proven invaluable throughout the season, enabling continuous optimization and competitive advantage in dynamic game environments.</p>
+                </div>
+                <div class="overview-photos">
+                    <div class="overview-photo-placeholder">
+                        📸 Robot Photo
+                    </div>
+                    <div class="overview-photo-placeholder">
+                        📸 System Detail
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="content-section">

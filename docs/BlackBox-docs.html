@@ -167,6 +167,38 @@
             font-size: 0.95rem;
         }
 
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .feature-card {
+            background: var(--bg-secondary);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid var(--border-light);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .feature-title {
+            color: var(--accent-primary);
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .feature-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
         .features-list {
             list-style: none;
             margin-top: 15px;
@@ -277,6 +309,103 @@
             display: block;
             object-fit: cover;
         }
+
+        .overview-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: start;
+            margin-bottom: 40px;
+        }
+
+        .overview-text {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .overview-text p {
+            margin-bottom: 15px;
+        }
+
+        .overview-subtitle {
+            color: var(--accent-primary);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .overview-photos {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .overview-photo-placeholder {
+            background: var(--bg-secondary);
+            border: 2px dashed var(--border-light);
+            border-radius: 15px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .features-compact-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .features-compact-list li {
+            color: var(--text-primary);
+            padding: 8px 0;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .features-compact-list li:before {
+            content: attr(data-icon);
+            margin-right: 12px;
+            font-size: 1.4rem;
+        }
+
+        @media (max-width: 768px) {
+            .overview-section {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 25px;
+            }
+
+            .header {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body data-theme="light">
@@ -289,31 +418,7 @@
             <a href="/reactwebsite/" class="back-link">← Back to Site</a>
         </div>
 
-        <div class="robot-image-section">
-            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=400&fit=crop" alt="BlackBox Robot" class="page-hero-image">
-        </div>
-
-        <div class="content-section">
-            <h2 class="section-title">Overview</h2>
-            <p class="section-content">
-                BlackBox was our robot during the CENTERSTAGE season (2023-2024), showcasing advanced autonomous capabilities and consistent performance. This robot was engineered to excel in a highly competitive environment and demonstrated exceptional technical achievement.
-            </p>
-            <div class="achievement-box">
-                🎯 State Championship Finalist - Highest Autonomous Robot Score
-            </div>
-        </div>
-
-        <div class="content-section">
-            <h2 class="section-title">Competition Achievements</h2>
-            <ul class="features-list">
-                <li>Reached State Championship Finals</li>
-                <li>Averaged the highest autonomous robot score</li>
-                <li>Advanced computer vision capabilities</li>
-                <li>Exceptional autonomous routines</li>
-                <li>Consistent performance across matches</li>
-            </ul>
-        </div>
-
+        <!-- Technical Specifications at Top -->
         <div class="content-section">
             <h2 class="section-title">Technical Specifications</h2>
             <div class="specs-grid">
@@ -322,25 +427,71 @@
                     <div class="spec-value">CENTERSTAGE (2023-2024)</div>
                 </div>
                 <div class="spec-card">
-                    <div class="spec-label">Primary Focus</div>
-                    <div class="spec-value">Autonomous Excellence</div>
+                    <div class="spec-label">Achievement</div>
+                    <div class="spec-value">State Finalist</div>
                 </div>
                 <div class="spec-card">
-                    <div class="spec-label">Key Technology</div>
-                    <div class="spec-value">Computer Vision</div>
+                    <div class="spec-label">Specialization</div>
+                    <div class="spec-value">Autonomous Excellence</div>
                 </div>
             </div>
         </div>
 
+        <!-- Key Features as Individual Sections -->
         <div class="content-section">
             <h2 class="section-title">Key Features</h2>
-            <ul class="features-list">
-                <li>Advanced computer vision system</li>
-                <li>Optimized autonomous algorithms</li>
-                <li>Precision servo-controlled mechanisms</li>
-                <li>Multi-sensor integration</li>
-                <li>High-reliability design architecture</li>
-            </ul>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">👁️</div>
+                    <div class="feature-title">Advanced Computer Vision System</div>
+                    <div class="feature-description">State-of-the-art image recognition enabling precise object detection and autonomous decision-making in real-time.</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <div class="feature-title">Optimized Autonomous Algorithms</div>
+                    <div class="feature-description">Sophisticated programming focused on maximizing autonomous performance during the critical opening seconds.</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <div class="feature-title">Precision Servo Control</div>
+                    <div class="feature-description">Fine-tuned servo mechanisms ensuring accurate positioning and smooth mechanical operations throughout gameplay.</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📡</div>
+                    <div class="feature-title">Multi-Sensor Integration</div>
+                    <div class="feature-description">Comprehensive sensor suite including cameras, distance sensors, and IMU for complete environmental awareness.</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <div class="feature-title">High-Reliability Design Architecture</div>
+                    <div class="feature-description">Robust construction with redundant systems ensuring consistent performance across all competitive matches.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Overview Section with Photo Space -->
+        <div class="content-section">
+            <h2 class="section-title">Detailed Overview</h2>
+            <div class="overview-section">
+                <div class="overview-text">
+                    <div class="overview-subtitle">Autonomous Excellence</div>
+                    <p>BlackBox represents Pioneer Robotics' pursuit of autonomous excellence during the CENTERSTAGE season (2023-2024). This robot achieved remarkable success, reaching the State Championship Finals and earning recognition for the highest autonomous scores among all competing robots in our division.</p>
+                    
+                    <div class="overview-subtitle">Vision-Guided Strategy</div>
+                    <p>The development of BlackBox was driven by a single objective: master autonomous programming. While other teams focus on teleop performance, BlackBox prioritizes those critical first 30 seconds of autonomous play. The advanced computer vision system can identify game elements with remarkable accuracy, enabling complex autonomous strategies that competitors cannot match.</p>
+                    
+                    <div class="overview-subtitle">Multi-Technology Integration</div>
+                    <p>What truly distinguishes BlackBox is the integration of multiple technologies working in perfect harmony. The sophisticated sensor suite continuously collects environmental data, which is processed by our algorithms to make intelligent decisions. This multi-layered approach to robotics—combining mechanical reliability with smart software—demonstrated that competitive advantage comes from engineering excellence across all disciplines.</p>
+                </div>
+                <div class="overview-photos">
+                    <div class="overview-photo-placeholder">
+                        📸 Robot Photo
+                    </div>
+                    <div class="overview-photo-placeholder">
+                        📸 Autonomous Performance
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="content-section">
