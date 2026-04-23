@@ -1,148 +1,82 @@
+/** @jsx React.createElement */
 import React, { useState } from 'react';
 import './Projects.css';
 import GlareHover from './GlareHover';
 import FloatingElement from './FloatingElement';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPython } from '@fortawesome/free-brands-svg-icons';
+import { faVideo, faPrint, faHouse, faHand, faRobot, faGamepad } from '@fortawesome/free-solid-svg-icons';
 
-const Projects: React.FC = () => {
+const Projects = (): React.ReactElement => {
   const [activeFilter, setActiveFilter] = useState<string>('All');
   const [searchTerm, setSearchTerm] = useState<string>('');
+
+  const iconMap = {
+    video: faVideo,
+    print: faPrint,
+    house: faHouse,
+    hand: faHand,
+    robot: faRobot,
+    gamepad: faGamepad,
+    python: faPython,
+  };
 
   const projects = [
     {
       title: "Auto Tracking Camera",
       description: "Developed a camera attachment that tracks and moves to detect and follow faces using Machine Learning and computer vision.",
       categories: ["AI & ML", "Raspberry Pi", "Computer Vision"],
-      image: "📹",
+      icon: 'video' as const,
       github: "https://github.com/ShreyasMuzumdar/CameraTrackingSystem"
     },
     {
       title: "3D Printing Manufacturing Control System",
       description: "IoT-based system for real-time monitoring and control of 3D printing processes.",
       categories: ["3D Printing", "IoT", "Arduino"],
-      image: "🖨️"
+      icon: 'print' as const,
     },
     {
       title: "Home Automation System",
       description: "Installed a home automation system that connects over 150 smart devices across multiple ecosystems to a single Raspberry Pi server.",
       categories: ["IoT", "Arduino", "Automation"],
-      image: "🏠"
+      icon: 'house' as const,
     },
     {
       title: "Hand Tracking Mouse",
       description: "Developed a program that uses the camera to detect the position of a hand and uses it to move the cursor.",
       categories: ["AI & ML", "Arduino", "Computer Vision"],
-      image: "✋",
+      icon: 'hand' as const,
       github: "https://github.com/ShreyasMuzumdar/HandTrackingMouse"
     },
     {
       title: "ShreyAI Voice Assistant",
       description: "A combined system that pairs my ShreyAI custom-cloned voice with a local voice assistant powered by DeepSeek/Ollama. Runs on Mac/Raspberry Pi to enable natural voice interactions and control of devices.",
       categories: ["AI & ML", "IoT", "Raspberry Pi"],
-      image: "🤖",
+      icon: 'robot' as const,
       github: "https://github.com/ShreyasMuzumdar/ollama-voice-mac"
-    },
-    {
-      title: "n8n Automation Server",
-      description: "Self-hosted n8n workflow automation server that automatically updates devices, AI newsletter and more.",
-      categories: ["Automation", "IoT", "Raspberry Pi"],
-      image: "🔁"
     },
     {
       title: "Connect 4 AI Bot",
       description: "Intelligent Connect 4 game featuring an AI opponent powered by the minimax algorithm with alpha-beta pruning. Built with Pygame for interactive gameplay and optimized decision-making.",
-      categories: ["AI & ML", "Computer Vision"],
-      image: "🔴",
+      categories: ["AI & ML", "Python"],
+      icon: 'gamepad' as const,
       github: "https://github.com/ShreyasMuzumdar/connect4",
       demo: `${import.meta.env.BASE_URL}connect4.html`
     },
     {
-      title: "QR Code Generator",
-      description: "Developed a program that generates QR codes from text input.",
+      title: "Python Automations",
+      description: "Collection of Python automation tools including QR code generation and file organization. Developed programs that generate QR codes from text input and automatically organize and clean up files.",
       categories: ["Python"],
-      /* 
-      QR Code SVG Breakdown:
-      
-      1. TOP-LEFT CORNER (x="5" y="5"): Position Detection Pattern
-         - Outer black square (20x20)
-         - Middle white square (14x14) 
-         - Inner black square (8x8)
-      
-      2. TOP-RIGHT CORNER (x="35" y="5"): Position Detection Pattern
-         - Same structure as top-left
-      
-      3. BOTTOM-LEFT CORNER (x="5" y="35"): Position Detection Pattern
-         - Same structure as top-left
-      
-      4. BOTTOM-RIGHT REGION (x="35-50" y="35-50"): Data/Information Area
-         - 12 small pixels (4x4) scattered randomly
-         - Represents encoded data in a real QR code
-      
-      5. TIMING PATTERNS (x="28" and y="28"): Alignment guides
-         - 3 vertical pixels connecting top corners
-         - 3 horizontal pixels connecting left corners
-         - Helps scanners determine QR code size and alignment
-      */
-      image: (
-        <svg width="60" height="60" viewBox="0 0 60 60" fill="currentColor">
-          <rect x="5" y="5" width="20" height="20" fill="currentColor"/>
-          <rect x="8" y="8" width="14" height="14" fill="var(--bg-primary)"/>
-          <rect x="11" y="11" width="8" height="8" fill="currentColor"/>
-          
-          <rect x="35" y="5" width="20" height="20" fill="currentColor"/>
-          <rect x="38" y="8" width="14" height="14" fill="var(--bg-primary)"/>
-          <rect x="41" y="11" width="8" height="8" fill="currentColor"/>
-          
-          <rect x="5" y="35" width="20" height="20" fill="currentColor"/>
-          <rect x="8" y="38" width="14" height="14" fill="var(--bg-primary)"/>
-          <rect x="11" y="41" width="8" height="8" fill="currentColor"/>
-          
-          <rect x="35" y="35" width="4" height="4" fill="currentColor"/>
-          <rect x="40" y="35" width="4" height="4" fill="currentColor"/>
-          <rect x="45" y="35" width="4" height="4" fill="currentColor"/>
-          <rect x="50" y="35" width="4" height="4" fill="currentColor"/>
-          <rect x="35" y="40" width="4" height="4" fill="currentColor"/>
-          <rect x="40" y="40" width="4" height="4" fill="currentColor"/>
-          <rect x="45" y="40" width="4" height="4" fill="currentColor"/>
-          <rect x="50" y="40" width="4" height="4" fill="currentColor"/>
-          <rect x="35" y="45" width="4" height="4" fill="currentColor"/>
-          <rect x="40" y="45" width="4" height="4" fill="currentColor"/>
-          <rect x="45" y="45" width="4" height="4" fill="currentColor"/>
-          <rect x="50" y="45" width="4" height="4" fill="currentColor"/>
-          <rect x="35" y="50" width="4" height="4" fill="currentColor"/> 
-          <rect x="40" y="50" width="4" height="4" fill="currentColor"/>
-          <rect x="45" y="50" width="4" height="4" fill="currentColor"/>
-          <rect x="50" y="50" width="4" height="4" fill="currentColor"/>
-          
-          <rect x="28" y="5" width="4" height="4" fill="currentColor"/>
-          <rect x="28" y="12" width="4" height="4" fill="currentColor"/>
-          <rect x="28" y="19" width="4" height="4" fill="currentColor"/>
-          <rect x="5" y="28" width="4" height="4" fill="currentColor"/>
-          <rect x="12" y="28" width="4" height="4" fill="currentColor"/>
-          <rect x="19" y="28" width="4" height="4" fill="currentColor"/>
-          <rect x="28" y="28" width="4" height="4" fill="currentColor"/>
-          <rect x="28" y="35" width="4" height="4" fill="currentColor"/>
-          <rect x="28" y="42" width="4" height="4" fill="currentColor"/>
-          <rect x="28" y="49" width="4" height="4" fill="currentColor"/>
-          <rect x="5" y="28" width="4" height="4" fill="currentColor"/>
-          <rect x="12" y="28" width="4" height="4" fill="currentColor"/>
-          <rect x="19" y="28" width="4" height="4" fill="currentColor"/>
-          <rect x="28" y="28" width="4" height="4" fill="currentColor"/>
-          <rect x="35" y="28" width="4" height="4" fill="currentColor"/>
-          <rect x="42" y="28" width="4" height="4" fill="currentColor"/>
-          <rect x="49" y="28" width="4" height="4" fill="currentColor"/>
-          <rect x="5" y="28" width="4" height="4" fill="currentColor"/>
-        </svg>
-      ), 
-      
-      github: "https://github.com/ShreyasMuzumdar/QRcodeGenerator"
+      icon: 'python' as const,
+      github: "https://github.com/ShreyasMuzumdar"
     },
     {
-      title: "File Cleaner",
-      description: "Developed a program that automatically organizes and cleans up files.",
+      title: "Satellite Tracking Project",
+      description: "Collection of Python automation tools including QR code generation and file organization. Developed programs that generate QR codes from text input and automatically organize and clean up files.",
       categories: ["Python"],
-      image: "🧹",
-      github: "https://github.com/ShreyasMuzumdar/FileCleaner"
-    },
+      icon: 'python' as const,
+      github: "https://github.com/ShreyasMuzumdar"
+    }
   ];
 
   const filterCategories = ["All", "AI & ML", "Computer Vision", "Arduino", "IoT", "Automation", "3D Printing", "Raspberry Pi","Python"];
@@ -228,7 +162,7 @@ const Projects: React.FC = () => {
                     duration={4 + index * 0.5}
                     delay={index * 0.2}
                   >
-                    {project.image}
+                    <FontAwesomeIcon icon={iconMap[project.icon]} />
                   </FloatingElement>
                 </div>
                 <h3 className="project-title">
