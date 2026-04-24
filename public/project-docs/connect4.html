@@ -193,6 +193,27 @@
             transform: scale(1.05);
         }
 
+        .back-to-site-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: var(--accent-primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 4px 15px var(--shadow-medium);
+        }
+
+        .back-to-site-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px var(--shadow-medium);
+            filter: brightness(1.1);
+        }
+
         .theme-toggle-track {
             width: 50px;
             height: 24px;
@@ -342,6 +363,8 @@
             </div>
         </div>
     </button>
+    
+    <a href="../" class="back-to-site-btn" title="Back to main site">← Back to Site</a>
     
     <div class="container">
         <h1>🔴 Connect 4 AI</h1>

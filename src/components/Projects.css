@@ -191,6 +191,7 @@
   display: flex;
   gap: 15px;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .project-link {

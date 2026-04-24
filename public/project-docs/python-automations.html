@@ -82,9 +82,29 @@
         .link:hover {
             background: #330867;
         }
+        .back-to-site-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: #30cfd0;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        .back-to-site-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background: #330867;
+        }
     </style>
 </head>
 <body>
+    <a href="../" class="back-to-site-btn" title="Back to main site">← Back to Site</a>
     <div class="container">
         <h1>🐍 Python Automations</h1>
         <p class="subtitle">Useful Python tools for QR code generation and intelligent file management</p>
