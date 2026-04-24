@@ -1,7 +1,6 @@
 import './AboutMe.css'
 import TypewriterEffect from './TypewriterEffect'
 import FloatingElement from './FloatingElement'
-import GlareHover from './GlareHover'
 import VoiceAssistant from './VoiceAssistant'
 
 const AboutMe = () => {
@@ -37,48 +36,6 @@ const AboutMe = () => {
                 on various projects broadening my engineering experience. Eager to work hard
                 while learning new concepts and helping you and your team in any way I can.
               </p>
-              
-              <div className="interests-section">
-                <h3 className="interests-title">My Interests</h3>
-                <div className="interests-grid">
-                  <GlareHover className="interest-item">
-                    <span className="interest-icon">🏎️</span>
-                    <span className="interest-text">Formula 1 Racing</span>
-                  </GlareHover>
-                  <GlareHover className="interest-item">
-                    <span className="interest-icon">🎾</span>
-                    <span className="interest-text">Tennis</span>
-                  </GlareHover>
-                  <GlareHover className="interest-item">
-                    <span className="interest-icon">💰</span>
-                    <span className="interest-text">Personal Finance</span>
-                  </GlareHover>
-                  <GlareHover className="interest-item">
-                    <span className="interest-icon">🏈</span>
-                    <span className="interest-text">NFL</span>
-                  </GlareHover>
-                  <GlareHover className="interest-item">
-                    <span className="interest-icon">🎸</span>
-                    <span className="interest-text">Guitar</span>
-                  </GlareHover>
-                  <GlareHover className="interest-item">
-                    <span className="interest-icon">🏊‍♂</span>
-                    <span className="interest-text">Swimming</span>
-                  </GlareHover>
-                  <GlareHover className="interest-item">
-                    <span className="interest-icon">📱</span>
-                    <span className="interest-text">Consumer Tech</span>
-                  </GlareHover>
-                  <GlareHover className="interest-item">
-                    <span className="interest-icon">🎮</span>
-                    <span className="interest-text">Gaming</span>
-                  </GlareHover>
-                  <GlareHover className="interest-item">
-                    <span className="interest-icon">🧱</span>
-                    <span className="interest-text">Legos</span>
-                  </GlareHover>
-                </div>
-              </div>
             </div>
           </div>
         </div>

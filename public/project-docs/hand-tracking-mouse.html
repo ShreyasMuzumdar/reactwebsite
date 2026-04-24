@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hand Tracking Mouse - Documentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            color: #fa709a;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        .subtitle {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #fa709a;
+            padding-bottom: 15px;
+        }
+        .section {
+            margin: 30px 0;
+        }
+        h2 {
+            color: #fa709a;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            border-left: 4px solid #fa709a;
+            padding-left: 15px;
+        }
+        p, li {
+            font-size: 1.05em;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 10px;
+        }
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+        .tech-stack {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .tech-item {
+            background: #f0f0f0;
+            padding: 10px 15px;
+            border-radius: 5px;
+            border-left: 3px solid #fa709a;
+        }
+        .link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #fa709a;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .link:hover {
+            background: #fee140;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>✋ Hand Tracking Mouse</h1>
+        <p class="subtitle">Control your computer cursor using hand gestures detected by camera</p>
+
+        <div class="section">
+            <h2>Overview</h2>
+            <p>Hand Tracking Mouse is an innovative input device that uses computer vision to detect hand position and gestures, converting them into mouse cursor movements and clicks. This hands-free interface provides an alternative way to interact with computers, particularly useful for presentations, accessibility, or gaming.</p>
+        </div>
+
+        <div class="section">
+            <h2>Key Features</h2>
+            <ul>
+                <li>Real-time hand position detection</li>
+                <li>Cursor movement synchronized with hand movements</li>
+                <li>Gesture recognition for mouse clicks</li>
+                <li>Multi-hand detection and tracking</li>
+                <li>Adjustable sensitivity and smoothing</li>
+                <li>Low-latency performance</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Technology Stack</h2>
+            <div class="tech-stack">
+                <div class="tech-item">Python</div>
+                <div class="tech-item">OpenCV</div>
+                <div class="tech-item">Hand Detection</div>
+                <div class="tech-item">Computer Vision</div>
+                <div class="tech-item">Arduino</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>How It Works</h2>
+            <ol>
+                <li><strong>Hand Detection:</strong> Camera captures video and detects hand positions</li>
+                <li><strong>Position Mapping:</strong> Hand position is mapped to screen coordinates</li>
+                <li><strong>Gesture Recognition:</strong> Specific hand gestures trigger mouse actions</li>
+                <li><strong>Cursor Control:</strong> System updates cursor position in real-time</li>
+                <li><strong>Click Actions:</strong> Recognized gestures execute mouse clicks</li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <h2>Supported Gestures</h2>
+            <ul>
+                <li>Open hand: Move cursor</li>
+                <li>Pinch gesture: Left mouse click</li>
+                <li>Two-finger pinch: Right mouse click</li>
+                <li>Peace sign: Scroll wheel</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Applications</h2>
+            <ul>
+                <li>Hands-free computing</li>
+                <li>Accessibility tools for motor impairments</li>
+                <li>Interactive presentations and kiosks</li>
+                <li>Gaming and entertainment</li>
+                <li>Virtual reality interfaces</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <a href="https://github.com/ShreyasMuzumdar/HandTrackingMouse" class="link">View on GitHub</a>
+        </div>
+    </div>
+</body>
+</html>

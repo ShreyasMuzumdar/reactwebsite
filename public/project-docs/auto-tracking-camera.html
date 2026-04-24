@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Tracking Camera - Documentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        .subtitle {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 15px;
+        }
+        .section {
+            margin: 30px 0;
+        }
+        h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            border-left: 4px solid #667eea;
+            padding-left: 15px;
+        }
+        p, li {
+            font-size: 1.05em;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 10px;
+        }
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+        .tech-stack {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .tech-item {
+            background: #f0f0f0;
+            padding: 10px 15px;
+            border-radius: 5px;
+            border-left: 3px solid #667eea;
+        }
+        .link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .link:hover {
+            background: #764ba2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎥 Auto Tracking Camera</h1>
+        <p class="subtitle">A smart camera system that detects and follows faces using Machine Learning and computer vision</p>
+
+        <div class="section">
+            <h2>Overview</h2>
+            <p>The Auto Tracking Camera is an intelligent camera attachment that uses machine learning and computer vision techniques to detect, track, and follow human faces in real-time. The camera system dynamically adjusts its angle and position to maintain the target face in the center of the frame.</p>
+        </div>
+
+        <div class="section">
+            <h2>Key Features</h2>
+            <ul>
+                <li>Real-time face detection using machine learning models</li>
+                <li>Automatic camera positioning and angle adjustment</li>
+                <li>Multi-face detection and tracking capabilities</li>
+                <li>High-performance computer vision pipeline</li>
+                <li>Seamless integration with Raspberry Pi systems</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Technology Stack</h2>
+            <div class="tech-stack">
+                <div class="tech-item">Python</div>
+                <div class="tech-item">OpenCV</div>
+                <div class="tech-item">Machine Learning</div>
+                <div class="tech-item">Raspberry Pi</div>
+                <div class="tech-item">Face Detection</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>How It Works</h2>
+            <ol>
+                <li><strong>Face Detection:</strong> The system uses pre-trained ML models to detect faces in the video stream</li>
+                <li><strong>Position Calculation:</strong> Calculates the position of detected faces relative to the camera center</li>
+                <li><strong>Motor Control:</strong> Sends commands to servo motors to adjust camera position</li>
+                <li><strong>Continuous Tracking:</strong> Updates position in real-time as faces move</li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <h2>Applications</h2>
+            <ul>
+                <li>Video conferencing and streaming</li>
+                <li>Surveillance systems</li>
+                <li>Interactive presentations</li>
+                <li>Security monitoring</li>
+                <li>Content creation and streaming</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <a href="https://github.com/ShreyasMuzumdar/CameraTrackingSystem" class="link">View on GitHub</a>
+        </div>
+    </div>
+</body>
+</html>

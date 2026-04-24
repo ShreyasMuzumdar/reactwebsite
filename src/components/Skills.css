@@ -85,7 +85,7 @@
 .skills {
   position: relative;
   z-index: 1;
-  max-width: 800px;
+  max-width: 100%;
   margin: 0 auto;
   text-align: center;
 }
@@ -110,14 +110,16 @@
   width: 100%;
 }
 
-/* Skills categories container - 2 Categories Per Row */
+/* Skills categories container - 4 Categories Per Row */
 .skills-categories {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 3rem;
   max-width: 100%;
   width: 100%;
   align-items: start;
+  justify-items: center;
+  margin: 0 auto;
 }
 
 .skill-category-section {
@@ -161,7 +163,6 @@
   }
   
   .skills-grid {
-    gap: 0.7rem;
   }
   
   .skill-item {
@@ -189,6 +190,7 @@
   
   .skills h3 {
     font-size: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2rem
+    grid-template-columns: 1fr;
   }
 }

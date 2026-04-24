@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Automation System - Documentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            color: #00f2fe;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        .subtitle {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #00f2fe;
+            padding-bottom: 15px;
+        }
+        .section {
+            margin: 30px 0;
+        }
+        h2 {
+            color: #00f2fe;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            border-left: 4px solid #00f2fe;
+            padding-left: 15px;
+        }
+        p, li {
+            font-size: 1.05em;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 10px;
+        }
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+        .tech-stack {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .tech-item {
+            background: #f0f0f0;
+            padding: 10px 15px;
+            border-radius: 5px;
+            border-left: 3px solid #00f2fe;
+        }
+        .link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #00f2fe;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .link:hover {
+            background: #4facfe;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏠 Home Automation System</h1>
+        <p class="subtitle">Connected smart home solution managing 150+ devices across multiple ecosystems</p>
+
+        <div class="section">
+            <h2>Overview</h2>
+            <p>A comprehensive home automation platform that integrates and controls over 150 smart devices from various manufacturers. The system is built on a central Raspberry Pi server that acts as a unified hub for all home automation functions, providing seamless control and automation across the entire smart home ecosystem.</p>
+        </div>
+
+        <div class="section">
+            <h2>Key Features</h2>
+            <ul>
+                <li>Centralized control of 150+ smart devices</li>
+                <li>Multi-ecosystem integration (multiple brands and protocols)</li>
+                <li>Automated routines and scheduling</li>
+                <li>Energy monitoring and optimization</li>
+                <li>Remote access via mobile and web interfaces</li>
+                <li>Voice assistant integration</li>
+                <li>Real-time notifications and alerts</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Supported Device Categories</h2>
+            <ul>
+                <li>Smart Lighting (switches, dimmers, RGB bulbs)</li>
+                <li>Climate Control (thermostats, fans, humidifiers)</li>
+                <li>Security (cameras, door locks, motion sensors)</li>
+                <li>Entertainment (TVs, speakers, media centers)</li>
+                <li>Kitchen Appliances (smart plugs, refrigerators)</li>
+                <li>Sensors (temperature, humidity, air quality)</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Technology Stack</h2>
+            <div class="tech-stack">
+                <div class="tech-item">Raspberry Pi</div>
+                <div class="tech-item">Arduino</div>
+                <div class="tech-item">IoT Protocols</div>
+                <div class="tech-item">Automation</div>
+                <div class="tech-item">APIs</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Architecture</h2>
+            <ol>
+                <li><strong>Central Hub:</strong> Raspberry Pi running home automation software</li>
+                <li><strong>Protocol Bridges:</strong> Support for Z-Wave, Zigbee, WiFi, and other protocols</li>
+                <li><strong>Automation Engine:</strong> Rules and scheduling system</li>
+                <li><strong>User Interfaces:</strong> Web dashboard, mobile apps, voice control</li>
+                <li><strong>Security Layer:</strong> Encrypted communication and authentication</li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <h2>Benefits</h2>
+            <ul>
+                <li>Convenience - Control all devices from one platform</li>
+                <li>Energy Efficiency - Monitor and optimize consumption</li>
+                <li>Security - Centralized monitoring and alerts</li>
+                <li>Flexibility - Support for devices from different manufacturers</li>
+                <li>Future-proof - Easily add new devices</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

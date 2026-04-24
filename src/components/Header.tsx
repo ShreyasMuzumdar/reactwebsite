@@ -37,8 +37,6 @@ const Header = () => {
         </div>
         <ul className={`nav-links ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}>
           <li><button onClick={() => scrollToSection('about')} className="nav-button">About</button></li>
-          <li><button onClick={() => scrollToSection('skills')} className="nav-button">Skills</button></li>
-          <li><button onClick={() => scrollToSection('education-experience')} className="nav-button">Education & Experience</button></li>
           <li><button onClick={() => scrollToSection('projects')} className="nav-button">Projects</button></li>
           <li><button onClick={() => scrollToSection('robots')} className="nav-button">Robots</button></li>
           <li><button onClick={() => scrollToSection('resume')} className="nav-button">Resume</button></li>

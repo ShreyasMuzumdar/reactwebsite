@@ -7,7 +7,7 @@
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-medium);
   z-index: 1000;
-  padding: 0.6rem 0;
+  padding: 1.2rem 0;
   transition: all 0.3s ease;
 }
 
@@ -26,7 +26,7 @@
 }
 
 .logo-text {
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   font-weight: bold;
   color: var(--accent-primary);
   text-shadow: 0 0 10px var(--accent-primary);
@@ -39,6 +39,7 @@
   list-style: none;
   gap: 0.15rem;
   margin: 0;
+  margin-left: auto;
   padding: 0;
   white-space: nowrap;
   flex-wrap: nowrap;
@@ -48,11 +49,11 @@
   background: none;
   border: 2px solid transparent;
   color: var(--accent-primary);
-  padding: 0.25rem 0.4rem;
+  padding: 0.4rem 0.6rem;
   border-radius: 25px;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 0.7rem;
+  font-size: 0.85rem;
   font-weight: 500;
   white-space: nowrap;
   flex-shrink: 0;

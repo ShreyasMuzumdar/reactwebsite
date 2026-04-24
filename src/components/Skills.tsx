@@ -105,7 +105,7 @@ const Skills = () => {
                     <FontAwesomeIcon icon={faPenToSquare} />
                   </span>
                   <div className="skill-content">
-                    <span className="skill-name">Engineering Drawings</span>
+                    <span className="skill-name">CAD Drawings</span>
                     <span className="skill-experience">3 years</span>
                   </div>
                 </GlareHover>

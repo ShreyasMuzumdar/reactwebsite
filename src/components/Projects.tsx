@@ -1,11 +1,10 @@
-/** @jsx React.createElement */
 import React, { useState } from 'react';
 import './Projects.css';
 import GlareHover from './GlareHover';
 import FloatingElement from './FloatingElement';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPython } from '@fortawesome/free-brands-svg-icons';
-import { faVideo, faPrint, faHouse, faHand, faRobot, faGamepad } from '@fortawesome/free-solid-svg-icons';
+import { faVideo, faPrint, faHouse, faHand, faRobot, faGamepad, faSatellite, faCircle } from '@fortawesome/free-solid-svg-icons';
 
 const Projects = (): React.ReactElement => {
   const [activeFilter, setActiveFilter] = useState<string>('All');
@@ -19,6 +18,8 @@ const Projects = (): React.ReactElement => {
     robot: faRobot,
     gamepad: faGamepad,
     python: faPython,
+    satellite: faSatellite,
+    chess: faCircle,
   };
 
   const projects = [
@@ -27,55 +28,62 @@ const Projects = (): React.ReactElement => {
       description: "Developed a camera attachment that tracks and moves to detect and follow faces using Machine Learning and computer vision.",
       categories: ["AI & ML", "Raspberry Pi", "Computer Vision"],
       icon: 'video' as const,
-      github: "https://github.com/ShreyasMuzumdar/CameraTrackingSystem"
+      github: "https://github.com/ShreyasMuzumdar/CameraTrackingSystem",
+      docs: `${import.meta.env.BASE_URL}project-docs/auto-tracking-camera.html`
     },
     {
       title: "3D Printing Manufacturing Control System",
       description: "IoT-based system for real-time monitoring and control of 3D printing processes.",
       categories: ["3D Printing", "IoT", "Arduino"],
       icon: 'print' as const,
+      docs: `${import.meta.env.BASE_URL}project-docs/3d-printing-control.html`
     },
     {
       title: "Home Automation System",
       description: "Installed a home automation system that connects over 150 smart devices across multiple ecosystems to a single Raspberry Pi server.",
       categories: ["IoT", "Arduino", "Automation"],
       icon: 'house' as const,
+      docs: `${import.meta.env.BASE_URL}project-docs/home-automation.html`
     },
     {
       title: "Hand Tracking Mouse",
       description: "Developed a program that uses the camera to detect the position of a hand and uses it to move the cursor.",
       categories: ["AI & ML", "Arduino", "Computer Vision"],
       icon: 'hand' as const,
-      github: "https://github.com/ShreyasMuzumdar/HandTrackingMouse"
+      github: "https://github.com/ShreyasMuzumdar/HandTrackingMouse",
+      docs: `${import.meta.env.BASE_URL}project-docs/hand-tracking-mouse.html`
     },
     {
       title: "ShreyAI Voice Assistant",
       description: "A combined system that pairs my ShreyAI custom-cloned voice with a local voice assistant powered by DeepSeek/Ollama. Runs on Mac/Raspberry Pi to enable natural voice interactions and control of devices.",
       categories: ["AI & ML", "IoT", "Raspberry Pi"],
       icon: 'robot' as const,
-      github: "https://github.com/ShreyasMuzumdar/ollama-voice-mac"
+      github: "https://github.com/ShreyasMuzumdar/ollama-voice-mac",
+      docs: `${import.meta.env.BASE_URL}project-docs/voice-assistant.html`
     },
     {
       title: "Connect 4 AI Bot",
-      description: "Intelligent Connect 4 game featuring an AI opponent powered by the minimax algorithm with alpha-beta pruning. Built with Pygame for interactive gameplay and optimized decision-making.",
+      description: "Intelligent Connect 4 game featuring an AI opponent powered by the minimax algorithm with alpha-beta pruning.",
       categories: ["AI & ML", "Python"],
-      icon: 'gamepad' as const,
+      icon: 'chess' as const,
       github: "https://github.com/ShreyasMuzumdar/connect4",
-      demo: `${import.meta.env.BASE_URL}connect4.html`
+      docs: `${import.meta.env.BASE_URL}project-docs/connect4.html`
     },
     {
       title: "Python Automations",
       description: "Collection of Python automation tools including QR code generation and file organization. Developed programs that generate QR codes from text input and automatically organize and clean up files.",
       categories: ["Python"],
       icon: 'python' as const,
-      github: "https://github.com/ShreyasMuzumdar"
+      github: "https://github.com/ShreyasMuzumdar",
+      docs: `${import.meta.env.BASE_URL}project-docs/python-automations.html`
     },
     {
       title: "Satellite Tracking Project",
-      description: "Collection of Python automation tools including QR code generation and file organization. Developed programs that generate QR codes from text input and automatically organize and clean up files.",
-      categories: ["Python"],
-      icon: 'python' as const,
-      github: "https://github.com/ShreyasMuzumdar"
+      description: "School project that uses MATLAB and Arduino to track the position of a satellite and display it on a real-time GUI. Combines embedded systems with computational modeling for orbital tracking.",
+      categories: ["Arduino", "MATLAB"],
+      icon: 'satellite' as const,
+      github: "https://github.com/ShreyasMuzumdar",
+      docs: `${import.meta.env.BASE_URL}project-docs/satellite-tracking.html`
     }
   ];
 
@@ -186,6 +194,11 @@ const Projects = (): React.ReactElement => {
                     {project.github && (
                       <a href={project.github} className="project-link" target="_blank" rel="noopener noreferrer">
                         <span>📁</span> Code
+                      </a>
+                    )}
+                    {project.docs && (
+                      <a href={project.docs} className="project-link" target="_blank" rel="noopener noreferrer">
+                        <span>📖</span> Docs
                       </a>
                     )}
                     {project.demo && (

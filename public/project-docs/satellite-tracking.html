@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satellite Tracking Project - Documentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #2e2e78 0%, #005c97 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            color: #005c97;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        .subtitle {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #005c97;
+            padding-bottom: 15px;
+        }
+        .section {
+            margin: 30px 0;
+        }
+        h2 {
+            color: #005c97;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            border-left: 4px solid #005c97;
+            padding-left: 15px;
+        }
+        p, li {
+            font-size: 1.05em;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 10px;
+        }
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+        .tech-stack {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .tech-item {
+            background: #f0f0f0;
+            padding: 10px 15px;
+            border-radius: 5px;
+            border-left: 3px solid #005c97;
+        }
+        .link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #005c97;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .link:hover {
+            background: #2e2e78;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🛰️ Satellite Tracking Project</h1>
+        <p class="subtitle">Real-time satellite position tracking using MATLAB and Arduino with GUI visualization</p>
+
+        <div class="section">
+            <h2>Overview</h2>
+            <p>A school project that combines computational modeling with embedded systems to track satellite positions in real-time. Using MATLAB for orbital calculations and Arduino for hardware control, the system displays satellite trajectories and positions on an intuitive graphical user interface.</p>
+        </div>
+
+        <div class="section">
+            <h2>Key Features</h2>
+            <ul>
+                <li>Real-time satellite position calculations</li>
+                <li>Orbital mechanics computations using MATLAB</li>
+                <li>Hardware control via Arduino integration</li>
+                <li>Live GUI with position visualization</li>
+                <li>Trajectory plotting and prediction</li>
+                <li>Multiple satellite tracking support</li>
+                <li>Altitude and velocity monitoring</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Technology Stack</h2>
+            <div class="tech-stack">
+                <div class="tech-item">MATLAB</div>
+                <div class="tech-item">Arduino</div>
+                <div class="tech-item">Embedded Systems</div>
+                <div class="tech-item">Orbital Mechanics</div>
+                <div class="tech-item">GUI Design</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>System Architecture</h2>
+            <ol>
+                <li><strong>Data Input:</strong> Orbital parameters (TLE - Two Line Element data)</li>
+                <li><strong>Calculation Engine:</strong> MATLAB computes satellite position using orbital mechanics</li>
+                <li><strong>Hardware Interface:</strong> Arduino communicates position data to hardware</li>
+                <li><strong>Visualization:</strong> Real-time 3D rendering of satellite position</li>
+                <li><strong>Tracking:</strong> Continuous updates of satellite trajectory</li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <h2>Core Functions</h2>
+            <ul>
+                <li><strong>Orbital Propagation:</strong> Calculates satellite position at any given time</li>
+                <li><strong>Coordinate Transform:</strong> Converts orbital to geographic coordinates</li>
+                <li><strong>Visualization:</strong> Renders satellite and Earth in 3D</li>
+                <li><strong>Hardware Control:</strong> Commands motors for pointing devices</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Applications</h2>
+            <ul>
+                <li>Educational tool for orbital mechanics</li>
+                <li>Satellite observation scheduling</li>
+                <li>Antenna pointing systems</li>
+                <li>Space situational awareness</li>
+                <li>Research in celestial mechanics</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Data Sources</h2>
+            <ul>
+                <li>Two Line Element (TLE) data from NORAD</li>
+                <li>Orbital parameters databases</li>
+                <li>Real-time GPS/GNSS data validation</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <a href="https://github.com/ShreyasMuzumdar" class="link">View on GitHub</a>
+        </div>
+    </div>
+</body>
+</html>
