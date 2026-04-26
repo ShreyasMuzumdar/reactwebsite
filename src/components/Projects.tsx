@@ -68,7 +68,7 @@ const Projects = (): React.ReactElement => {
       icon: 'chess' as const,
       github: "https://github.com/ShreyasMuzumdar/connect4",
       docs: `${import.meta.env.BASE_URL}project-docs/connect4.html`,
-      demo: `${import.meta.env.BASE_URL}project-docs/connect4.html`
+      demo: "https://shreyasmuzumdar.github.io/connect-4/"
     },
     {
       title: "Python Automations",
