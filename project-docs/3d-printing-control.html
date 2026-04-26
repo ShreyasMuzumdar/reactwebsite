@@ -82,9 +82,29 @@
         .link:hover {
             background: #f093fb;
         }
+        .back-to-site-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: #f5576c;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        .back-to-site-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background: #f093fb;
+        }
     </style>
 </head>
 <body>
+    <a href="../" class="back-to-site-btn" title="Back to main site">← Back to Site</a>
     <div class="container">
         <h1>🖨️ 3D Printing Manufacturing Control System</h1>
         <p class="subtitle">IoT-based system for real-time monitoring and control of 3D printing processes</p>

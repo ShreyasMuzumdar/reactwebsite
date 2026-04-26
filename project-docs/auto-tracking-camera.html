@@ -82,9 +82,29 @@
         .link:hover {
             background: #764ba2;
         }
+        .back-to-site-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        .back-to-site-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background: #764ba2;
+        }
     </style>
 </head>
 <body>
+    <a href="../" class="back-to-site-btn" title="Back to main site">← Back to Site</a>
     <div class="container">
         <h1>🎥 Auto Tracking Camera</h1>
         <p class="subtitle">A smart camera system that detects and follows faces using Machine Learning and computer vision</p>

@@ -406,21 +406,26 @@
                 <h1>Shreybot</h1>
                 <div class="subtitle">Freight Frenzy Season Robot</div>
             </div>
-            <a href="/reactwebsite/" class="back-link">← Back to Site</a>
+            <a href="../" class="back-link">← Back to Site</a>
         </div>
 
-        <!-- Technical Specifications at Top -->
+        <!-- Technical Specifications Cards at Top (No Header) -->
+        <div class="specs-grid" style="margin-bottom: 40px;">
+            <div class="spec-card">
+                <div class="spec-label">Season</div>
+                <div class="spec-value">Freight Frenzy</div>
+            </div>
+            <div class="spec-card">
+                <div class="spec-label">Achievement</div>
+                <div class="spec-value">State Championship</div>
+            </div>
+        </div>
+
+        <!-- Game Overview Section -->
         <div class="content-section">
-            <h2 class="section-title">Technical Specifications</h2>
-            <div class="specs-grid">
-                <div class="spec-card">
-                    <div class="spec-label">Season</div>
-                    <div class="spec-value">Freight Frenzy</div>
-                </div>
-                <div class="spec-card">
-                    <div class="spec-label">Achievement</div>
-                    <div class="spec-value">State Championship</div>
-                </div>
+            <h2 class="section-title">About Freight Frenzy</h2>
+            <div class="section-content">
+                <p>Freight Frenzy is an FTC (FIRST Tech Challenge) competition where robots compete to collect and deliver game pieces called "freight" to scoring zones. The objective is to score the most points by moving cubic and spherical freight from the warehouse onto alliance-specific shipping hubs. Teams must design efficient mechanisms to intake, transport, and deposit freight at various heights. This game emphasizes strategic planning, mechanical precision, and autonomous capabilities.</p>
             </div>
         </div>
 
@@ -450,12 +455,33 @@
                     <p>Shreybot was my first robot working with Pioneer Robotics during the Freight Frenzy season. This robot includes a robust tines collection system that then deposits the freight using a extenable linear slides.</p>
                 </div>
                 <div class="overview-photos">
-                    <div class="overview-photo-placeholder">
-                        📸 Robot Photo
-                    </div>
-                    <div class="overview-photo-placeholder">
-                        📸 Mechanism Detail
-                    </div>
+                    <img src="../files/robot-photos/shreybot/IMG_3405.jpeg" alt="Shreybot Robot Photo" style="width: 100%; height: auto; border-radius: 15px; object-fit: cover;">
+                </div>
+                    <div class="overview-text">
+                    <div class="overview-subtitle">Tines Collection System</div>
+                    <p> When deciding how to make the tines collection system, We used a simple design and then tweaked it depending on how the tines interacted with the freight. 
+                        For example, we adjusted the distance between the tines and the type of tines used to see how that would affect performance. 
+                        While the initial design was functional, we found that optimizing the tine geometry and positioning significantly improved the robot's ability to consistently collect freight during matches.
+                        For example we started with plastic tubing as the tines but found that they were too firm to reliably pick up the freight off the ground. 
+                        So, we switched to using 3d printed tines but then they were too flexible to pick up the heavier freight.
+                        The goal of the tines collection system was to be able to reliably pick up all types of freight so we used a combination of both tines in different configurations.
+                    </p>
+
+                </div>
+                <div class="overview-photos">
+                    <img src="../files/robot-photos/shreybot/IMG_3267.jpeg" alt="Shreybot Robot Photo" style="width: 100%; height: auto; border-radius: 15px; object-fit: cover;">
+                </div>
+                    <div class="overview-text">
+                    <div class="overview-subtitle">Long Robotics Slides</div>
+                    <p>
+                        The long robotics slides system enables the robot to deposit and place game objects at multiple heights with precision and reliability.
+                        these are 2 step slide meaning they can extend to about half of the slide length.
+                        The benefit of using long robotics slides is that they are significantly smaller when retracted, allowing for better maneuverability and reduced risk of damage during matches.
+                        The long robitics slides also are a significantly cheaper alternative compared to misumi slides. 
+                    </p>
+                </div>
+                <div class="overview-photos">
+                    <img src="../files/robot-photos/shreybot/IMG_3280.jpeg" alt="Shreybot Robot Photo" style="width: 100%; height: auto; border-radius: 15px; object-fit: cover;">
                 </div>
             </div>
         </div>
