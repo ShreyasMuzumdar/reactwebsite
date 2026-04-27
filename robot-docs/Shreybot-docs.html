@@ -44,13 +44,13 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
             background: var(--bg-primary);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             padding: 20px;
             transition: background 0.3s ease;
             position: relative;
@@ -61,9 +61,9 @@
             background: var(--bg-card);
             backdrop-filter: blur(10px);
             border-radius: 20px;
-            padding: 40px;
+            padding: 50px 40px;
             box-shadow: 0 20px 60px var(--shadow-medium);
-            max-width: 800px;
+            max-width: 900px;
             width: 100%;
             border: 1px solid var(--border-light);
             position: relative;
@@ -73,14 +73,27 @@
         .header {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
+            align-items: flex-start;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 3px solid var(--border-light);
         }
 
         h1 {
             color: var(--text-primary);
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0;
         }
 
         .back-link {
@@ -91,6 +104,7 @@
             border-radius: 20px;
             transition: all 0.3s ease;
             border: 1px solid var(--border-light);
+            white-space: nowrap;
         }
 
         .back-link:hover {
@@ -105,116 +119,160 @@
         }
 
         [data-theme="dark"] .back-link:hover {
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
             filter: brightness(1.1);
         }
 
-        .subtitle {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-        }
-
         .content-section {
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
         .section-title {
             color: var(--accent-primary);
             font-size: 1.8rem;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--border-light);
+            font-weight: 700;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--accent-primary);
+            letter-spacing: -0.3px;
         }
 
         .section-content {
             color: var(--text-secondary);
-            line-height: 1.8;
+            line-height: 1.85;
             font-size: 1rem;
+        }
+
+        .section-content p {
+            margin-bottom: 16px;
         }
 
         .specs-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
-            margin-top: 20px;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid var(--border-light);
         }
 
         .spec-card {
             background: var(--bg-secondary);
-            padding: 20px;
-            border-radius: 15px;
+            padding: 24px;
+            border-radius: 12px;
             border: 1px solid var(--border-light);
+            text-align: center;
         }
 
         .spec-label {
             color: var(--accent-primary);
-            font-weight: 600;
-            margin-bottom: 8px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .spec-value {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            font-weight: 600;
         }
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .feature-card {
+        .problem-decision-result {
             background: var(--bg-secondary);
-            padding: 20px;
-            border-radius: 15px;
+            padding: 28px;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-primary);
+            margin-bottom: 32px;
+            line-height: 1.85;
+        }
+
+        .pdr-label {
+            color: var(--accent-primary);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .pdr-content {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        .mechanism-section {
+            margin-bottom: 40px;
+        }
+
+        .mechanism-title {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid var(--border-light);
+        }
+
+        .mechanism-image {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            object-fit: cover;
+            margin-top: 20px;
+            margin-bottom: 20px;
             border: 1px solid var(--border-light);
         }
 
-        .feature-icon {
-            font-size: 2rem;
+        .takeaway-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .takeaway-card {
+            background: var(--bg-secondary);
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+        }
+
+        .takeaway-number {
+            display: inline-block;
+            background: var(--accent-primary);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .takeaway-title {
+            color: var(--text-primary);
+            font-weight: 700;
+            font-size: 1.05rem;
             margin-bottom: 10px;
         }
 
-        .feature-title {
-            color: var(--accent-primary);
-            font-weight: 600;
-            margin-bottom: 8px;
-            font-size: 1.1rem;
-        }
-
-        .feature-description {
+        .takeaway-text {
             color: var(--text-secondary);
             font-size: 0.95rem;
             line-height: 1.6;
-        }
-
-        .features-list {
-            list-style: none;
-            margin-top: 15px;
-        }
-
-        .features-list li {
-            color: var(--text-secondary);
-            padding: 10px 0;
-            padding-left: 25px;
-            position: relative;
-        }
-
-        .features-list li:before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: var(--accent-primary);
-            font-weight: bold;
         }
 
         .action-buttons {
             display: flex;
             gap: 15px;
             flex-wrap: wrap;
-            margin-top: 30px;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid var(--border-light);
         }
 
         .btn {
@@ -222,7 +280,7 @@
             font-size: 1rem;
             font-weight: 600;
             border: none;
-            border-radius: 25px;
+            border-radius: 8px;
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px var(--shadow-medium);
@@ -255,20 +313,35 @@
 
         @media (max-width: 768px) {
             .container {
-                padding: 25px;
+                padding: 30px 20px;
             }
 
             .header {
                 flex-direction: column;
-                gap: 15px;
+                gap: 20px;
                 align-items: flex-start;
+                margin-bottom: 30px;
+                padding-bottom: 20px;
             }
 
             h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
             }
 
             .specs-grid {
+                grid-template-columns: 1fr;
+                margin-bottom: 30px;
+            }
+
+            .problem-decision-result {
+                padding: 20px;
+            }
+
+            .takeaway-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -285,118 +358,6 @@
         html[data-theme="dark"] body {
             background: var(--bg-primary);
         }
-
-        .robot-image-section {
-            margin-bottom: 40px;
-            border-radius: 15px;
-            overflow: hidden;
-            border: 1px solid var(--border-light);
-            box-shadow: 0 10px 30px var(--shadow-medium);
-        }
-
-        .page-hero-image {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: cover;
-        }
-
-        .overview-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            align-items: start;
-            margin-bottom: 40px;
-        }
-
-        .overview-text {
-            color: var(--text-secondary);
-            line-height: 1.8;
-            font-size: 1rem;
-        }
-
-        .overview-text p {
-            margin-bottom: 15px;
-        }
-
-        .overview-subtitle {
-            color: var(--accent-primary);
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-
-        .overview-photos {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-        }
-
-        .overview-photo-placeholder {
-            background: var(--bg-secondary);
-            border: 2px dashed var(--border-light);
-            border-radius: 15px;
-            height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .features-compact-list {
-            list-style: none;
-            margin-top: 15px;
-        }
-
-        .features-compact-list li {
-            color: var(--text-primary);
-            padding: 8px 0;
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-
-        .features-compact-list li:before {
-            content: attr(data-icon);
-            margin-right: 12px;
-            font-size: 1.4rem;
-        }
-
-        @media (max-width: 768px) {
-            .overview-section {
-                grid-template-columns: 1fr;
-            }
-
-            .container {
-                padding: 25px;
-            }
-
-            .header {
-                flex-direction: column;
-                gap: 15px;
-                align-items: flex-start;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            .specs-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .action-buttons {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-                text-align: center;
-            }
-        }
     </style>
 </head>
 <body data-theme="light">
@@ -404,92 +365,116 @@
         <div class="header">
             <div>
                 <h1>Shreybot</h1>
-                <div class="subtitle">Freight Frenzy Season Robot</div>
+                <div class="subtitle">Mechanical Engineering Case Study</div>
             </div>
-            <a href="../" class="back-link">← Back to Site</a>
+            <a href="../" class="back-link">← Back</a>
         </div>
 
-        <!-- Technical Specifications Cards at Top (No Header) -->
-        <div class="specs-grid" style="margin-bottom: 40px;">
+        <!-- Quick Stats -->
+        <div class="specs-grid">
             <div class="spec-card">
                 <div class="spec-label">Season</div>
                 <div class="spec-value">Freight Frenzy</div>
             </div>
             <div class="spec-card">
                 <div class="spec-label">Achievement</div>
-                <div class="spec-value">State Championship</div>
+                <div class="spec-value">State Finalist</div>
             </div>
         </div>
 
-        <!-- Game Overview Section -->
+        <!-- Project Overview -->
         <div class="content-section">
-            <h2 class="section-title">About Freight Frenzy</h2>
+            <h2 class="section-title">Overview</h2>
             <div class="section-content">
-                <p>Freight Frenzy is an FTC (FIRST Tech Challenge) competition where robots compete to collect and deliver game pieces called "freight" to scoring zones. The objective is to score the most points by moving cubic and spherical freight from the warehouse onto alliance-specific shipping hubs. Teams must design efficient mechanisms to intake, transport, and deposit freight at various heights. This game emphasizes strategic planning, mechanical precision, and autonomous capabilities.</p>
+                <p>Shreybot was my first robot with Pioneer Robotics during the Freight Frenzy season. This case study documents the mechanical design decisions, engineering tradeoffs, and lessons learned while building a robot to compete in FTC's rapid-freight logistics challenge.</p>
+                <p style="margin-top: 12px;"><strong>Challenge:</strong> Design a robot to collect cubic and spherical freight from a warehouse and deposit them on alliance-specific shipping hubs at multiple heights, all within severe weight and space constraints.</p>
             </div>
         </div>
 
-        <!-- Key Features as Individual Sections -->
+        <!-- Mechanism 1: Tines Collection System -->
+        <div class="mechanism-section">
+            <h3 class="mechanism-title">🎯 Tines Collection System</h3>
+            
+            <div class="problem-decision-result">
+                <div class="pdr-label">Problem</div>
+                <div class="pdr-content">We needed a mechanism that could reliably pick up both cubic and spherical freight from the ground with minimal energy and jamming risk. Early sketches showed a simple single-material design, but testing revealed we lacked the versatility to handle freight of varying geometry and weight.</div>
+            </div>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Design Decision</div>
+                <div class="pdr-content">I prototyped tines with different materials in parallel: plastic tubing (rigid, precise) and 3D-printed flexible tines. Rather than choosing one, I designed a hybrid system that uses both materials in different configurations depending on which type of freight we're targeting. This dual-material approach trades increased complexity for robustness.</div>
+            </div>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Result</div>
+                <div class="pdr-content">The hybrid tines system achieved consistent pickup rates across all freight types during competition. The tradeoff: more complex assembly and higher material cost, but eliminated mechanical failures during match play—which was worth the investment.</div>
+            </div>
+
+            <img src="../files/robot-photos/shreybot/IMG_3267.jpeg" alt="Tines collection system detail" class="mechanism-image">
+        </div>
+
+        <!-- Mechanism 2: Linear Slide Stack -->
+        <div class="mechanism-section">
+            <h3 class="mechanism-title">⬆️ Long Robotics Slides Vertical Stack</h3>
+            
+            <div class="problem-decision-result">
+                <div class="pdr-label">Problem</div>
+                <div class="pdr-content">We needed to deposit freight at multiple heights (hub levels at ~15", 18", and 24"). Misuimi linear slides offered precision but were prohibitively expensive and too heavy for our drive base load budget. We had to balance lift height, speed, reliability, and cost.</div>
+            </div>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Design Decision</div>
+                <div class="pdr-content">I chose a two-stage Long Robotics slide system—these slides extend to roughly 50% of their fully compressed length, cutting our footprint in half versus single-stage alternatives. They're significantly cheaper than Misumi and lighter. The tradeoff: lower precision and slower extension speed compared to Misumi.</div>
+            </div>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Result</div>
+                <div class="pdr-content">The Long Robotics solution proved reliable throughout the season with no wear-related failures. The reduced speed meant slightly longer cycle times, but we prioritized consistency over speed. The cost savings let us allocate budget to other critical systems like intake redundancy.</div>
+            </div>
+
+            <img src="../files/robot-photos/shreybot/IMG_3280.jpeg" alt="Linear slide stack and deposit mechanism" class="mechanism-image">
+        </div>
+
+        <!-- Integrated System -->
+        <div class="mechanism-section">
+            <h3 class="mechanism-title">🔧 System Integration</h3>
+            <img src="../files/robot-photos/shreybot/IMG_3405.jpeg" alt="Full robot assembly" class="mechanism-image">
+            <div class="section-content" style="margin-top: 20px;">
+                <p>The collection system and linear stack required tight integration to handle freight handoff smoothly. The intake tilts freight into the collection tines, then the slides extend to position it precisely for deposit. This sequential motion reduced jamming compared to simultaneous actuation, though it added ~1 second per cycle.</p>
+            </div>
+        </div>
+
+        <!-- Key Takeaways -->
         <div class="content-section">
-            <h2 class="section-title">Key Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">⚙️</div>
-                    <div class="feature-title">Tines Collection System</div>
-                    <div class="feature-description">Robust mechanism designed to efficiently collect and hold freight with precision and reliability throughout matches.</div>
+            <h2 class="section-title">Key Takeaways</h2>
+            <div class="takeaway-grid">
+                <div class="takeaway-card">
+                    <div class="takeaway-number">1</div>
+                    <div class="takeaway-title">Prototype Early, Prototype Often</div>
+                    <div class="takeaway-text">The hybrid tines approach emerged only after building and testing both material options in parallel. I'd budget even more time for iterative prototyping next time.</div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📏</div>
-                    <div class="feature-title">Long Robotics Slides</div>
-                    <div class="feature-description">Extendable linear slides system enabling reliable deposit and placement of game objects at multiple heights.</div>
+                <div class="takeaway-card">
+                    <div class="takeaway-number">2</div>
+                    <div class="takeaway-title">Understand Your Tradeoffs</div>
+                    <div class="takeaway-text">Every design choice was a deliberate tradeoff. Long Robotics gave up precision for cost and weight. Being explicit about these tradeoffs made it easier to defend design decisions to teammates and coaches.</div>
+                </div>
+                <div class="takeaway-card">
+                    <div class="takeaway-number">3</div>
+                    <div class="takeaway-title">Prioritize Reliability Over Speed</div>
+                    <div class="takeaway-text">In competition, a robot that works 100% of the time beats one that's fast but unreliable. This mindset shaped every decision—from hybrid tines to sequential motion control.</div>
+                </div>
+                <div class="takeaway-card">
+                    <div class="takeaway-number">4</div>
+                    <div class="takeaway-title">Budget Constraints are Features</div>
+                    <div class="takeaway-text">The cost and weight limits forced creative solutions that ended up being more elegant than "best of breed" solutions. Constraints breed innovation.</div>
                 </div>
             </div>
         </div>
 
-        <!-- Overview Section with Photo Space -->
+        <!-- Call to Action -->
         <div class="content-section">
-            <h2 class="section-title">Detailed Overview</h2>
-            <div class="overview-section">
-                <div class="overview-text">
-                    <div class="overview-subtitle">Introduction</div>
-                    <p>Shreybot was my first robot working with Pioneer Robotics during the Freight Frenzy season. This robot includes a robust tines collection system that then deposits the freight using a extenable linear slides.</p>
-                </div>
-                <div class="overview-photos">
-                    <img src="../files/robot-photos/shreybot/IMG_3405.jpeg" alt="Shreybot Robot Photo" style="width: 100%; height: auto; border-radius: 15px; object-fit: cover;">
-                </div>
-                    <div class="overview-text">
-                    <div class="overview-subtitle">Tines Collection System</div>
-                    <p> When deciding how to make the tines collection system, We used a simple design and then tweaked it depending on how the tines interacted with the freight. 
-                        For example, we adjusted the distance between the tines and the type of tines used to see how that would affect performance. 
-                        While the initial design was functional, we found that optimizing the tine geometry and positioning significantly improved the robot's ability to consistently collect freight during matches.
-                        For example we started with plastic tubing as the tines but found that they were too firm to reliably pick up the freight off the ground. 
-                        So, we switched to using 3d printed tines but then they were too flexible to pick up the heavier freight.
-                        The goal of the tines collection system was to be able to reliably pick up all types of freight so we used a combination of both tines in different configurations.
-                    </p>
-
-                </div>
-                <div class="overview-photos">
-                    <img src="../files/robot-photos/shreybot/IMG_3267.jpeg" alt="Shreybot Robot Photo" style="width: 100%; height: auto; border-radius: 15px; object-fit: cover;">
-                </div>
-                    <div class="overview-text">
-                    <div class="overview-subtitle">Long Robotics Slides</div>
-                    <p>
-                        The long robotics slides system enables the robot to deposit and place game objects at multiple heights with precision and reliability.
-                        these are 2 step slide meaning they can extend to about half of the slide length.
-                        The benefit of using long robotics slides is that they are significantly smaller when retracted, allowing for better maneuverability and reduced risk of damage during matches.
-                        The long robitics slides also are a significantly cheaper alternative compared to misumi slides. 
-                    </p>
-                </div>
-                <div class="overview-photos">
-                    <img src="../files/robot-photos/shreybot/IMG_3280.jpeg" alt="Shreybot Robot Photo" style="width: 100%; height: auto; border-radius: 15px; object-fit: cover;">
-                </div>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <h2 class="section-title">Experience This Robot</h2>
             <div class="action-buttons">
-                <a href="files/Shreybot.usdz" class="btn btn-primary">📱 View in AR</a>
+                <a href="../files/Shreybot.usdz" class="btn btn-primary">📱 View in AR</a>
                 <a href="/reactwebsite/#robots" class="btn btn-secondary">View All Robots</a>
             </div>
         </div>
