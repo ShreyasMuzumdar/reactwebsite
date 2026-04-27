@@ -15,10 +15,6 @@
             --accent-secondary: #003366;
             --border-light: rgba(0, 51, 102, 0.2);
             --shadow-medium: rgba(0, 0, 0, 0.1);
-            --modal-backdrop: rgba(0, 0, 0, 0.7);
-            --toggle-track-bg: rgba(0, 0, 0, 0.1);
-            --toggle-border: rgba(0, 0, 0, 0.2);
-            --toggle-thumb-bg: linear-gradient(135deg, #ffffff, #f0f8ff);
         }
 
         [data-theme="dark"] {
@@ -31,29 +27,20 @@
             --accent-secondary: #93C5FD;
             --border-light: rgba(0, 51, 102, 0.3);
             --shadow-medium: rgba(0, 0, 0, 0.3);
-            --modal-backdrop: rgba(0, 0, 0, 0.85);
-            --toggle-track-bg: rgba(255, 255, 255, 0.1);
-            --toggle-border: rgba(255, 255, 255, 0.2);
-            --toggle-thumb-bg: linear-gradient(135deg, #4D96FF, #003366);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
             background: var(--bg-primary);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             padding: 20px;
             transition: background 0.3s ease;
-            position: relative;
             overflow-x: hidden;
         }
 
@@ -61,26 +48,60 @@
             background: var(--bg-card);
             backdrop-filter: blur(10px);
             border-radius: 20px;
-            padding: 40px;
+            padding: 50px 40px;
             box-shadow: 0 20px 60px var(--shadow-medium);
-            max-width: 800px;
+            max-width: 900px;
             width: 100%;
             border: 1px solid var(--border-light);
-            position: relative;
-            z-index: 1;
         }
 
         .header {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
+            align-items: flex-start;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 3px solid var(--border-light);
         }
 
         h1 {
             color: var(--text-primary);
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .header-controls {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .theme-toggle {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .theme-toggle:hover {
+            background: var(--accent-primary);
+            color: white;
         }
 
         .back-link {
@@ -91,6 +112,7 @@
             border-radius: 20px;
             transition: all 0.3s ease;
             border: 1px solid var(--border-light);
+            white-space: nowrap;
         }
 
         .back-link:hover {
@@ -104,139 +126,182 @@
             border-color: var(--accent-primary);
         }
 
-        [data-theme="dark"] .back-link:hover {
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-            filter: brightness(1.1);
-        }
-
-        .subtitle {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-        }
-
-        .content-section {
-            margin-bottom: 40px;
-        }
-
-        .section-title {
-            color: var(--accent-primary);
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--border-light);
-        }
-
-        .section-content {
-            color: var(--text-secondary);
-            line-height: 1.8;
-            font-size: 1rem;
-        }
-
-        .achievement-box {
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-            color: white;
-            padding: 20px;
-            border-radius: 15px;
-            margin-top: 15px;
-            font-weight: 600;
-        }
+        [data-theme="dark"] .back-link:hover { filter: brightness(1.1); }
 
         .specs-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 20px;
-            margin-top: 20px;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid var(--border-light);
         }
 
         .spec-card {
             background: var(--bg-secondary);
-            padding: 20px;
-            border-radius: 15px;
+            padding: 24px;
+            border-radius: 12px;
             border: 1px solid var(--border-light);
+            text-align: center;
         }
 
         .spec-label {
             color: var(--accent-primary);
-            font-weight: 600;
-            margin-bottom: 8px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .spec-value {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .content-section { margin-bottom: 50px; }
+
+        .section-title {
+            color: var(--accent-primary);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--accent-primary);
+            letter-spacing: -0.3px;
+        }
+
+        .section-content {
             color: var(--text-secondary);
-            font-size: 0.95rem;
+            line-height: 1.85;
+            font-size: 1rem;
         }
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
+        .section-content p { margin-bottom: 16px; }
+
+        .mechanism-section {
+            margin-bottom: 50px;
+            padding-bottom: 50px;
+            border-bottom: 2px solid var(--border-light);
         }
 
-        .feature-card {
+        .mechanism-title {
+            color: var(--text-primary);
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            letter-spacing: -0.2px;
+        }
+
+        .problem-decision-result {
             background: var(--bg-secondary);
-            padding: 20px;
-            border-radius: 15px;
-            border: 1px solid var(--border-light);
+            padding: 28px;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-primary);
+            margin-bottom: 20px;
+            line-height: 1.85;
         }
 
-        .feature-icon {
-            font-size: 2rem;
+        .pdr-label {
+            color: var(--accent-primary);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
             margin-bottom: 10px;
         }
 
-        .feature-title {
-            color: var(--accent-primary);
-            font-weight: 600;
-            margin-bottom: 8px;
-            font-size: 1.1rem;
+        .pdr-content {
+            color: var(--text-secondary);
+            font-size: 1rem;
         }
 
-        .feature-description {
+        .strategy-callout {
+            background: var(--bg-secondary);
+            border-left: 4px solid var(--accent-primary);
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin-top: 20px;
+            color: var(--text-secondary);
+            line-height: 1.85;
+            font-size: 1rem;
+        }
+
+        .strategy-label {
+            color: var(--accent-primary);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            min-height: 220px;
+            background: var(--bg-secondary);
+            border: 2px dashed var(--border-light);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 20px;
+            gap: 8px;
+        }
+
+        .photo-placeholder span { font-size: 2rem; }
+
+        .takeaway-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .takeaway-card {
+            background: var(--bg-secondary);
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+        }
+
+        .takeaway-number {
+            color: var(--accent-primary);
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            opacity: 0.4;
+        }
+
+        .takeaway-title {
+            color: var(--text-primary);
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .takeaway-text {
             color: var(--text-secondary);
             font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .features-list {
-            list-style: none;
-            margin-top: 15px;
-        }
-
-        .features-list li {
-            color: var(--text-secondary);
-            padding: 10px 0;
-            padding-left: 25px;
-            position: relative;
-        }
-
-        .features-list li:before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: var(--accent-primary);
-            font-weight: bold;
+            line-height: 1.7;
         }
 
         .action-buttons {
             display: flex;
             gap: 15px;
             flex-wrap: wrap;
-            margin-top: 30px;
         }
 
         .btn {
-            padding: 12px 30px;
-            font-size: 1rem;
-            font-weight: 600;
-            border: none;
+            padding: 14px 28px;
             border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px var(--shadow-medium);
+            font-weight: 600;
+            font-size: 1rem;
             text-decoration: none;
-            display: inline-block;
+            transition: all 0.3s ease;
         }
 
         .btn-primary {
@@ -263,250 +328,284 @@
         }
 
         @media (max-width: 768px) {
-            .container {
-                padding: 25px;
-            }
-
+            .container { padding: 30px 20px; }
             .header {
                 flex-direction: column;
-                gap: 15px;
+                gap: 20px;
                 align-items: flex-start;
+                margin-bottom: 30px;
+                padding-bottom: 20px;
             }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            .specs-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .action-buttons {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-                text-align: center;
-            }
+            h1 { font-size: 2.2rem; }
+            .section-title { font-size: 1.5rem; }
+            .specs-grid { grid-template-columns: 1fr; margin-bottom: 30px; }
+            .problem-decision-result { padding: 20px; }
+            .takeaway-grid { grid-template-columns: 1fr; }
+            .action-buttons { flex-direction: column; }
+            .btn { width: 100%; text-align: center; }
         }
 
-        html[data-theme="dark"] body {
-            background: var(--bg-primary);
+        html[data-theme="dark"] body { background: var(--bg-primary); }
+
+        .takeaway-list {
+            list-style: none;
+            padding: 0;
         }
 
-        .robot-image-section {
-            margin-bottom: 40px;
-            border-radius: 15px;
-            overflow: hidden;
-            border: 1px solid var(--border-light);
-            box-shadow: 0 10px 30px var(--shadow-medium);
+        .takeaway-list li {
+            margin-bottom: 28px;
+            padding-left: 0;
         }
 
-        .page-hero-image {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: cover;
+        .takeaway-list-item {
+            display: flex;
+            gap: 20px;
         }
 
-        .overview-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            align-items: start;
-            margin-bottom: 40px;
-        }
-
-        .overview-text {
-            color: var(--text-secondary);
-            line-height: 1.8;
-            font-size: 1rem;
-        }
-
-        .overview-text p {
-            margin-bottom: 15px;
-        }
-
-        .overview-subtitle {
-            color: var(--accent-primary);
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-
-        .overview-photos {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-        }
-
-        .overview-photo-placeholder {
-            background: var(--bg-secondary);
-            border: 2px dashed var(--border-light);
-            border-radius: 15px;
-            height: 200px;
+        .takeaway-list-number {
             display: flex;
             align-items: center;
             justify-content: center;
+            background: var(--accent-primary);
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-weight: 700;
+            flex-shrink: 0;
+            line-height: 1;
+        }
+
+        .takeaway-list-content { flex: 1; }
+
+        .takeaway-list-title {
+            color: var(--text-primary);
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .takeaway-list-text {
             color: var(--text-secondary);
             font-size: 0.95rem;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .features-compact-list {
-            list-style: none;
-            margin-top: 15px;
-        }
-
-        .features-compact-list li {
-            color: var(--text-primary);
-            padding: 8px 0;
-            font-size: 1.1rem;
             line-height: 1.6;
         }
 
-        .features-compact-list li:before {
-            content: attr(data-icon);
-            margin-right: 12px;
-            font-size: 1.4rem;
-        }
-
-        @media (max-width: 768px) {
-            .overview-section {
-                grid-template-columns: 1fr;
-            }
-
-            .container {
-                padding: 25px;
-            }
-
-            .header {
-                flex-direction: column;
-                gap: 15px;
-                align-items: flex-start;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            .specs-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .action-buttons {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-                text-align: center;
-            }
+        .takeaway-intro {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.85;
+            margin-bottom: 24px;
         }
     </style>
 </head>
 <body data-theme="light">
     <div class="container">
+
+        <!-- Header -->
         <div class="header">
             <div>
-                <h1>🤖 BlackBox</h1>
-                <p class="subtitle">CENTERSTAGE Season Finalist</p>
+                <h1>BlackBox</h1>
+                <div class="subtitle">Mechanical Engineering Case Study</div>
             </div>
-            <a href="../" class="back-link">← Back to Site</a>
-        </div>
-
-        <!-- Technical Specifications at Top -->
-        <div class="content-section">
-            <h2 class="section-title">Technical Specifications</h2>
-            <div class="specs-grid">
-                <div class="spec-card">
-                    <div class="spec-label">Season</div>
-                    <div class="spec-value">CENTERSTAGE (2023-2024)</div>
-                </div>
-                <div class="spec-card">
-                    <div class="spec-label">Achievement</div>
-                    <div class="spec-value">State Finalist</div>
-                </div>
-                <div class="spec-card">
-                    <div class="spec-label">Specialization</div>
-                    <div class="spec-value">Autonomous Excellence</div>
-                </div>
+            <div class="header-controls">
+                <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
+                <a href="../" class="back-link">← Back</a>
             </div>
         </div>
 
-        <!-- Key Features as Individual Sections -->
-        <div class="content-section">
-            <h2 class="section-title">Key Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">👁️</div>
-                    <div class="feature-title">Advanced Computer Vision System</div>
-                    <div class="feature-description">State-of-the-art image recognition enabling precise object detection and autonomous decision-making in real-time.</div>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🤖</div>
-                    <div class="feature-title">Optimized Autonomous Algorithms</div>
-                    <div class="feature-description">Sophisticated programming focused on maximizing autonomous performance during the critical opening seconds.</div>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">⚙️</div>
-                    <div class="feature-title">Precision Servo Control</div>
-                    <div class="feature-description">Fine-tuned servo mechanisms ensuring accurate positioning and smooth mechanical operations throughout gameplay.</div>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📡</div>
-                    <div class="feature-title">Multi-Sensor Integration</div>
-                    <div class="feature-description">Comprehensive sensor suite including cameras, distance sensors, and IMU for complete environmental awareness.</div>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🛡️</div>
-                    <div class="feature-title">High-Reliability Design Architecture</div>
-                    <div class="feature-description">Robust construction with redundant systems ensuring consistent performance across all competitive matches.</div>
-                </div>
+        <!-- Quick Stats -->
+        <div class="specs-grid">
+            <div class="spec-card">
+                <div class="spec-label">Season</div>
+                <div class="spec-value">CENTERSTAGE (2023–24)</div>
+            </div>
+            <div class="spec-card">
+                <div class="spec-label">Achievement</div>
+                <div class="spec-value">State Finalist</div>
             </div>
         </div>
 
-        <!-- Overview Section with Photo Space -->
+        <!-- Overview -->
         <div class="content-section">
-            <h2 class="section-title">Detailed Overview</h2>
-            <div class="overview-section">
-                <div class="overview-text">
-                    <div class="overview-subtitle">Autonomous Excellence</div>
-                    <p>BlackBox represents Pioneer Robotics' pursuit of autonomous excellence during the CENTERSTAGE season (2023-2024). This robot achieved remarkable success, reaching the State Championship Finals and earning recognition for the highest autonomous scores among all competing robots in our division.</p>
-                    
-                    <div class="overview-subtitle">Vision-Guided Strategy</div>
-                    <p>The development of BlackBox was driven by a single objective: master autonomous programming. While other teams focus on teleop performance, BlackBox prioritizes those critical first 30 seconds of autonomous play. The advanced computer vision system can identify game elements with remarkable accuracy, enabling complex autonomous strategies that competitors cannot match.</p>
-                    
-                    <div class="overview-subtitle">Multi-Technology Integration</div>
-                    <p>What truly distinguishes BlackBox is the integration of multiple technologies working in perfect harmony. The sophisticated sensor suite continuously collects environmental data, which is processed by our algorithms to make intelligent decisions. This multi-layered approach to robotics—combining mechanical reliability with smart software—demonstrated that competitive advantage comes from engineering excellence across all disciplines.</p>
-                </div>
-                <div class="overview-photos">
-                    <div class="overview-photo-placeholder">
-                        📸 Robot Photo
+            <h2 class="section-title">Overview</h2>
+            <div class="section-content">
+                <p>BlackBox was Pioneer Robotics' entry for the CENTERSTAGE season. What makes this robot's story unusual is that it wasn't our first robot that year — we competed in our first two qualifiers with a claw-based robot, realized it wouldn't be competitive at States, and committed to a complete rebuild with a 7-week deadline. This case study documents the mechanical decisions behind that redesign: the custom carbon fiber chassis, the four-iteration intake, the laser-cut polycarbonate depositor, and the drone launcher we engineered from scratch.</p>
+                <p><strong>Challenge:</strong> Design a robot to collect game pieces called "pixels" from the field and deposit them onto a backdrop at specific locations, while also launching a paper airplane drone into a designated zone at the end of each match.</p>
+            </div>
+
+            <div class="strategy-callout">
+                <div class="strategy-label">The Big Redesign</div>
+                After our WPI qualifier, we did an honest debrief. Our claw-based robot had a match OPR of 20 points — not competitive for States. Rather than patch the existing design, we committed to a full rebuild with a hard deadline: 7 weeks to States. I designed the new chassis from scratch, iterated through four intake designs, and built a modular robot that could swap subsystems independently. The result was a match OPR of 98 points — nearly a 5× improvement.
+            </div>
+        </div>
+
+        <!-- Mechanism 1: Custom Chassis -->
+        <div class="mechanism-section">
+            <h3 class="mechanism-title">🔧 Custom Carbon Fiber Chassis</h3>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Problem</div>
+                <div class="pdr-content">Our previous chassis used standard U-Channel framing, which forced us to work around the structure rather than design around our mechanisms. Electronics had to be placed awkwardly — the panel dragged against the floor and caused frequent disconnects. We had no vertical mounting space for mechanisms, and there was no easy access for maintenance between matches.</div>
+            </div>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Design Decision</div>
+                <div class="pdr-content">I designed Pioneer Robotics' first-ever fully custom chassis — a paneled side-plate design laser-cut from carbon fiber. Custom hole locations meant we could place every component exactly where it needed to be rather than compromising around a standard frame. The side plates are removable with 12 screws for fast maintenance, and I added a dedicated electronics access door on the side. Carbon fiber gave us the best strength-to-weight ratio available. Vertical component mounting — the key lesson from the previous chassis — eliminated the floor-dragging electronics issue entirely. I also integrated spring-loaded odometry pods directly into the chassis design so localization was built in from the start.</div>
+            </div>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Result</div>
+                <div class="pdr-content">The custom chassis eliminated the disconnect issues we'd fought all season. Vertical mounting kept all electronics clear of the ground, and the modular side plates meant any subsystem could be swapped with four screws during a match break — which we used repeatedly during the redesign period to iterate on the depositor while leaving the rest of the robot untouched.</div>
+            </div>
+
+            <img src="../files/robot-photos/blackbox/classic_robot.jpeg" alt="BlackBox chassis design" style="width: 100%; height: auto; border-radius: 12px; object-fit: cover; margin-top: 20px; border: 1px solid var(--border-light);">
+        </div>
+
+        <!-- Mechanism 2: Intake -->
+        <div class="mechanism-section">
+            <h3 class="mechanism-title">🎯 Intake System</h3>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Problem</div>
+                <div class="pdr-content">CENTERSTAGE pixels are flat hexagonal tiles that need to be collected from both the ground and from stacks. We needed an intake that could handle both reliably without jamming, transfer cleanly to the depositor, and do it fast enough to be competitive. Our first attempt — a claw — was slow and unreliable. We went through four iterations before landing on the right solution.</div>
+            </div>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Design Decision</div>
+                <div class="pdr-content">Iteration 1 was a claw — simple to build, but slow cycle time and unreliable pickup. Iteration 2 used compliant wheels with a bar — better for drivers, worked on stacks, but too big and heavy, with a ramp transfer angle that was too steep. Iteration 3 was a tine system — fast intake, low maintenance, wide range — but couldn't collect from pixel stacks and had inconsistent transfer to the depositor. After connecting with iRobot engineers who showed us how to think about intake mechanisms, I combined the tine concept with O-ring belts into a single hybrid system: an arm that raises and lowers mini tines (made from modified compliant wheels) driven by chain and sprockets through a single motor. The O-ring belts replaced a direct drive and reduced jamming significantly. I built the structure from polycarbonate plates held together with structure beams, prototyped extensively in plywood first, and designed it as a fully self-contained module.</div>
+            </div>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Result</div>
+                <div class="pdr-content">The final intake collected pixels consistently from both the ground and stacks, required less driver precision than earlier iterations, and transferred cleanly to the depositor. The chain-and-sprocket drive ran faster than gears while using only one motor — an efficiency win that freed up motor ports. The iRobot engineers' guidance on combining tines and belts was directly applied here and made the difference.</div>
+            </div>
+
+            <img src="../files/robot-photos/blackbox/intake.jpeg" alt="BlackBox intake system" style="width: 100%; height: auto; border-radius: 12px; object-fit: cover; margin-top: 20px; border: 1px solid var(--border-light);">
+        </div>
+
+        <!-- Mechanism 3: Depositor -->
+        <div class="mechanism-section">
+            <h3 class="mechanism-title">📍 Depositor</h3>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Problem</div>
+                <div class="pdr-content">Scoring requires placing pixels precisely onto a backdrop. Our first depositor was a claw — simple, but it was never exactly level with the backdrop due to heavy servos, and was inaccurate when depositing. Our second iteration was a rigid polycarbonate depositor — easier to sub-iterate, but it couldn't drop one pixel at a time and had inconsistent transfer from the intake.</div>
+            </div>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Design Decision</div>
+                <div class="pdr-content">The final depositor used a laser-cut polycarbonate body with compliant wheels that rotate to push pixels upward and allow releasing one at a time. It can tilt parallel to the backdrop within 1/16 of an inch — a precision requirement that took many iterations to achieve. I made all custom parts — the mount, servo hubs, and mechanisms — laser-cuttable so a new prototype could be produced in minutes and tested immediately. The custom servo hub takes 17 seconds to cut. This meant I could swap in a new depositor iteration, test it against the backdrop in different orientations, and modify it the same day. Belt-driven Misumi linear slides (chosen over Viper slides after extensive field testing for smoother belt actuation) integrated the depositor and hanging mechanism into one system, with two GoBilda servo gearboxes tilting the slides for accurate pixel placement anywhere on the board.</div>
+            </div>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Result</div>
+                <div class="pdr-content">Switching from the claw to the compliant-wheel depositor quintupled our average points scored per match — from 20 to 98. The ability to drop one pixel at a time gave drivers precise control over scoring placement. After breaking 8 polycarbonate slide mounts during testing, I switched to custom-machined aluminum versions which held through the rest of the season with no failures.</div>
+            </div>
+
+            <img src="../files/robot-photos/blackbox/depositor.png" alt="BlackBox depositor with compliant wheels" style="width: 100%; height: auto; border-radius: 12px; object-fit: cover; margin-top: 20px; border: 1px solid var(--border-light);">
+        </div>
+
+        <!-- Mechanism 4: Drone Launcher -->
+        <div class="mechanism-section">
+            <h3 class="mechanism-title">✈️ Drone Launcher</h3>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Problem</div>
+                <div class="pdr-content">CENTERSTAGE includes an end-game task where the robot must launch a paper airplane drone into a designated zone. This sounds simple, but achieving consistent launch distance and angle from a moving robot under match pressure is an actual engineering problem. Our first two rubber band launcher iterations misfired frequently — the rubber band release was inconsistent, the drone fell out during teleop, and the mechanism was too large to fit cleanly on the new robot.</div>
+            </div>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Design Decision</div>
+                <div class="pdr-content">I CADed a custom drone holder that was light and compact, giving the drone just enough space to rest securely without falling out. The launcher fires by tilting the holder upward with Axon servos, which releases a rubber band mounted to the front of the launcher and hooked to the bottom of the drone in an L-configuration. I ran over 150 test trials to determine the optimal launch angle, testing at 20°, 25°, 35°, 45°, 60°, and 80° from multiple distances. The data showed 40° was optimal for consistent distance coverage. The earlier rubber band design had operated in a 53°–68° range — too steep and inconsistent. The new mechanism used a single component that served multiple functions simultaneously, which reduced part count and complexity.</div>
+            </div>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Result</div>
+                <div class="pdr-content">We successfully launched the drone in 100% of our matches at States. The 150-trial data-driven approach to finding the launch angle was the key — without empirical testing, we would have stayed in the wrong angle range. The multi-function component design also made the launcher compact enough to integrate cleanly onto the new chassis.</div>
+            </div>
+
+            <img src="../files/robot-photos/blackbox/planelauncher.png" alt="BlackBox drone launcher mechanism" style="width: 100%; height: auto; border-radius: 12px; object-fit: cover; margin-top: 20px; border: 1px solid var(--border-light);">
+        </div>
+
+        <!-- Full Robot -->
+        <div class="mechanism-section">
+            <h3 class="mechanism-title">🤖 Full Robot</h3>
+            <div class="section-content">
+                <p>BlackBox was designed with modularity as the core principle — any subsystem removable with four screws. This wasn't just a design preference; it was what made the 7-week rebuild possible. While one member worked on the depositor, the rest of the robot remained intact and testable. LED lights integrated with color sensors change color to indicate pixel count in the depositor, automatically reversing the intake if more than two pixels are loaded. We hanged in 100% of matches using the linear slides — no separate hanging mechanism was needed, since the slides doubled as the hang point with two integrated hooks.</p>
+            </div>
+
+            <img src="../files/robot-photos/blackbox/full_robot.png" alt="BlackBox full robot assembly" style="width: 100%; height: auto; border-radius: 12px; object-fit: cover; margin-top: 20px; border: 1px solid var(--border-light);">
+        </div>
+
+        <!-- Key Takeaways -->
+        <div class="content-section">
+            <h2 class="section-title">Key Takeaways</h2>
+            <p class="takeaway-intro">Add your own reflection here.</p>
+            <ol class="takeaway-list">
+                <li>
+                    <div class="takeaway-list-item">
+                        <div class="takeaway-list-number">1</div>
+                        <div class="takeaway-list-content">
+                            <div class="takeaway-list-title">Know When to Rebuild</div>
+                            <div class="takeaway-list-text">Patching a fundamentally flawed design wastes more time than a clean restart. After the qualifier debrief, committing fully to the rebuild — rather than compromising — is what produced a 5× improvement in match performance.</div>
+                        </div>
                     </div>
-                    <div class="overview-photo-placeholder">
-                        📸 Autonomous Performance
+                </li>
+                <li>
+                    <div class="takeaway-list-item">
+                        <div class="takeaway-list-number">2</div>
+                        <div class="takeaway-list-content">
+                            <div class="takeaway-list-title">Design for Iteration Speed</div>
+                            <div class="takeaway-list-text">The depositor went through many versions in 7 weeks because I could cut a new prototype in 17 seconds. Designing parts to be laser-cuttable from the start — not as an afterthought — is what made that iteration rate possible.</div>
+                        </div>
                     </div>
-                </div>
-            </div>
+                </li>
+                <li>
+                    <div class="takeaway-list-item">
+                        <div class="takeaway-list-number">3</div>
+                        <div class="takeaway-list-content">
+                            <div class="takeaway-list-title">Use Data, Not Guesses</div>
+                            <div class="takeaway-list-text">150 drone launcher trials to find the right angle wasn't excessive — it was necessary. The instinct to "just try 45°" would have cost us points at every match. When a parameter matters, test it systematically.</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="takeaway-list-item">
+                        <div class="takeaway-list-number">4</div>
+                        <div class="takeaway-list-content">
+                            <div class="takeaway-list-title">Modularity Is a Constraint, Not a Feature</div>
+                            <div class="takeaway-list-text">Building every subsystem to be removable with four screws felt like extra work upfront. Under a 7-week deadline with parallel development happening, it became the only reason the rebuild was possible at all.</div>
+                        </div>
+                    </div>
+                </li>
+            </ol>
         </div>
 
+        <!-- Call to Action -->
         <div class="content-section">
-            <h2 class="section-title">Experience This Robot</h2>
             <div class="action-buttons">
                 <a href="files/BlackBox.usdz" class="btn btn-primary">📱 View in AR</a>
                 <a href="/reactwebsite/#robots" class="btn btn-secondary">View All Robots</a>
             </div>
         </div>
+
     </div>
 
     <script>
-        // Apply saved theme preference
+        function toggleTheme() {
+            const current = document.documentElement.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+            document.getElementById('theme-toggle').textContent = next === 'dark' ? '☀️ Light' : '🌙 Dark';
+        }
+
         const savedTheme = localStorage.getItem('theme') || 'light';
         document.documentElement.setAttribute('data-theme', savedTheme);
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('theme-toggle').textContent = savedTheme === 'dark' ? '☀️ Light' : '🌙 Dark';
+        });
     </script>
 </body>
 </html>

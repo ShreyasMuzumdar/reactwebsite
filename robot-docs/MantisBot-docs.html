@@ -15,10 +15,6 @@
             --accent-secondary: #003366;
             --border-light: rgba(0, 51, 102, 0.2);
             --shadow-medium: rgba(0, 0, 0, 0.1);
-            --modal-backdrop: rgba(0, 0, 0, 0.7);
-            --toggle-track-bg: rgba(0, 0, 0, 0.1);
-            --toggle-border: rgba(0, 0, 0, 0.2);
-            --toggle-thumb-bg: linear-gradient(135deg, #ffffff, #f0f8ff);
         }
 
         [data-theme="dark"] {
@@ -31,29 +27,20 @@
             --accent-secondary: #93C5FD;
             --border-light: rgba(0, 51, 102, 0.3);
             --shadow-medium: rgba(0, 0, 0, 0.3);
-            --modal-backdrop: rgba(0, 0, 0, 0.85);
-            --toggle-track-bg: rgba(255, 255, 255, 0.1);
-            --toggle-border: rgba(255, 255, 255, 0.2);
-            --toggle-thumb-bg: linear-gradient(135deg, #4D96FF, #003366);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
             background: var(--bg-primary);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             padding: 20px;
             transition: background 0.3s ease;
-            position: relative;
             overflow-x: hidden;
         }
 
@@ -61,26 +48,60 @@
             background: var(--bg-card);
             backdrop-filter: blur(10px);
             border-radius: 20px;
-            padding: 40px;
+            padding: 50px 40px;
             box-shadow: 0 20px 60px var(--shadow-medium);
-            max-width: 800px;
+            max-width: 900px;
             width: 100%;
             border: 1px solid var(--border-light);
-            position: relative;
-            z-index: 1;
         }
 
         .header {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
+            align-items: flex-start;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 3px solid var(--border-light);
         }
 
         h1 {
             color: var(--text-primary);
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .header-controls {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .theme-toggle {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .theme-toggle:hover {
+            background: var(--accent-primary);
+            color: white;
         }
 
         .back-link {
@@ -91,6 +112,7 @@
             border-radius: 20px;
             transition: all 0.3s ease;
             border: 1px solid var(--border-light);
+            white-space: nowrap;
         }
 
         .back-link:hover {
@@ -104,130 +126,189 @@
             border-color: var(--accent-primary);
         }
 
-        [data-theme="dark"] .back-link:hover {
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-            filter: brightness(1.1);
-        }
-
-        .subtitle {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-        }
-
-        .content-section {
-            margin-bottom: 40px;
-        }
-
-        .section-title {
-            color: var(--accent-primary);
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--border-light);
-        }
-
-        .section-content {
-            color: var(--text-secondary);
-            line-height: 1.8;
-            font-size: 1rem;
-        }
+        [data-theme="dark"] .back-link:hover { filter: brightness(1.1); }
 
         .specs-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 20px;
-            margin-top: 20px;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid var(--border-light);
         }
 
         .spec-card {
             background: var(--bg-secondary);
-            padding: 20px;
-            border-radius: 15px;
+            padding: 24px;
+            border-radius: 12px;
             border: 1px solid var(--border-light);
+            text-align: center;
         }
 
         .spec-label {
             color: var(--accent-primary);
-            font-weight: 600;
-            margin-bottom: 8px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .spec-value {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .content-section { margin-bottom: 50px; }
+
+        .section-title {
+            color: var(--accent-primary);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--accent-primary);
+            letter-spacing: -0.3px;
+        }
+
+        .section-content {
             color: var(--text-secondary);
-            font-size: 0.95rem;
+            line-height: 1.85;
+            font-size: 1rem;
         }
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
+        .section-content p { margin-bottom: 16px; }
+
+        .mechanism-section {
+            margin-bottom: 50px;
+            padding-bottom: 50px;
+            border-bottom: 2px solid var(--border-light);
         }
 
-        .feature-card {
+        .mechanism-title {
+            color: var(--text-primary);
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            letter-spacing: -0.2px;
+        }
+
+        .problem-decision-result {
             background: var(--bg-secondary);
-            padding: 20px;
-            border-radius: 15px;
-            border: 1px solid var(--border-light);
+            padding: 28px;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-primary);
+            margin-bottom: 20px;
+            line-height: 1.85;
         }
 
-        .feature-icon {
-            font-size: 2rem;
+        .pdr-label {
+            color: var(--accent-primary);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
             margin-bottom: 10px;
         }
 
-        .feature-title {
-            color: var(--accent-primary);
-            font-weight: 600;
-            margin-bottom: 8px;
-            font-size: 1.1rem;
+        .pdr-content {
+            color: var(--text-secondary);
+            font-size: 1rem;
         }
 
-        .feature-description {
+        .strategy-callout {
+            background: var(--bg-secondary);
+            border-left: 4px solid var(--accent-primary);
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin-top: 20px;
+            color: var(--text-secondary);
+            line-height: 1.85;
+            font-size: 1rem;
+        }
+
+        .strategy-label {
+            color: var(--accent-primary);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            min-height: 220px;
+            background: var(--bg-secondary);
+            border: 2px dashed var(--border-light);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 20px;
+            gap: 8px;
+        }
+
+        .photo-placeholder span { font-size: 2rem; }
+
+        .takeaway-intro {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.85;
+            margin-bottom: 24px;
+        }
+
+        .takeaway-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .takeaway-list li { margin-bottom: 28px; padding-left: 0; }
+
+        .takeaway-list-item { display: flex; gap: 20px; }
+
+        .takeaway-list-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent-primary);
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-weight: 700;
+            flex-shrink: 0;
+            line-height: 1;
+        }
+
+        .takeaway-list-content { flex: 1; }
+
+        .takeaway-list-title {
+            color: var(--text-primary);
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .takeaway-list-text {
             color: var(--text-secondary);
             font-size: 0.95rem;
             line-height: 1.6;
         }
 
-        .features-list {
-            list-style: none;
-            margin-top: 15px;
-        }
-
-        .features-list li {
-            color: var(--text-secondary);
-            padding: 10px 0;
-            padding-left: 25px;
-            position: relative;
-        }
-
-        .features-list li:before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: var(--accent-primary);
-            font-weight: bold;
-        }
-
-        .action-buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-top: 30px;
-        }
+        .action-buttons { display: flex; gap: 15px; flex-wrap: wrap; }
 
         .btn {
-            padding: 12px 30px;
-            font-size: 1rem;
-            font-weight: 600;
-            border: none;
+            padding: 14px 28px;
             border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px var(--shadow-medium);
+            font-weight: 600;
+            font-size: 1rem;
             text-decoration: none;
-            display: inline-block;
+            transition: all 0.3s ease;
         }
 
         .btn-primary {
@@ -254,250 +335,231 @@
         }
 
         @media (max-width: 768px) {
-            .container {
-                padding: 25px;
-            }
-
+            .container { padding: 30px 20px; }
             .header {
                 flex-direction: column;
-                gap: 15px;
+                gap: 20px;
                 align-items: flex-start;
+                margin-bottom: 30px;
+                padding-bottom: 20px;
             }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            .specs-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .action-buttons {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-                text-align: center;
-            }
+            h1 { font-size: 2.2rem; }
+            .section-title { font-size: 1.5rem; }
+            .specs-grid { grid-template-columns: 1fr; margin-bottom: 30px; }
+            .problem-decision-result { padding: 20px; }
+            .action-buttons { flex-direction: column; }
+            .btn { width: 100%; text-align: center; }
         }
 
-        html[data-theme="dark"] body {
-            background: var(--bg-primary);
-        }
-
-        .robot-image-section {
-            margin-bottom: 40px;
-            border-radius: 15px;
-            overflow: hidden;
-            border: 1px solid var(--border-light);
-            box-shadow: 0 10px 30px var(--shadow-medium);
-        }
-
-        .page-hero-image {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: cover;
-        }
-
-        .overview-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            align-items: start;
-            margin-bottom: 40px;
-        }
-
-        .overview-text {
-            color: var(--text-secondary);
-            line-height: 1.8;
-            font-size: 1rem;
-        }
-
-        .overview-text p {
-            margin-bottom: 15px;
-        }
-
-        .overview-subtitle {
-            color: var(--accent-primary);
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-
-        .overview-photos {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-        }
-
-        .overview-photo-placeholder {
-            background: var(--bg-secondary);
-            border: 2px dashed var(--border-light);
-            border-radius: 15px;
-            height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .features-compact-list {
-            list-style: none;
-            margin-top: 15px;
-        }
-
-        .features-compact-list li {
-            color: var(--text-primary);
-            padding: 8px 0;
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-
-        .features-compact-list li:before {
-            content: attr(data-icon);
-            margin-right: 12px;
-            font-size: 1.4rem;
-        }
-
-        @media (max-width: 768px) {
-            .overview-section {
-                grid-template-columns: 1fr;
-            }
-
-            .container {
-                padding: 25px;
-            }
-
-            .header {
-                flex-direction: column;
-                gap: 15px;
-                align-items: flex-start;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            .specs-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .action-buttons {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-                text-align: center;
-            }
-        }
+        html[data-theme="dark"] body { background: var(--bg-primary); }
     </style>
 </head>
 <body data-theme="light">
     <div class="container">
+
+        <!-- Header -->
         <div class="header">
             <div>
-                <h1>🤖 MantisBot</h1>
-                <p class="subtitle">INTOTHEDEEP Season Innovation</p>
+                <h1>MantisBot</h1>
+                <div class="subtitle">Mechanical Engineering Case Study</div>
             </div>
-            <a href="../" class="back-link">← Back to Site</a>
-        </div>
-
-        <!-- Technical Specifications at Top -->
-        <div class="content-section">
-            <h2 class="section-title">Technical Specifications</h2>
-            <div class="specs-grid">
-                <div class="spec-card">
-                    <div class="spec-label">Season</div>
-                    <div class="spec-value">INTOTHEDEEP (2024-2025)</div>
-                </div>
-                <div class="spec-card">
-                    <div class="spec-label">Primary Technology</div>
-                    <div class="spec-value">Computer Vision</div>
-                </div>
-                <div class="spec-card">
-                    <div class="spec-label">Specialization</div>
-                    <div class="spec-value">Autonomous Manipulation</div>
-                </div>
+            <div class="header-controls">
+                <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
+                <a href="../" class="back-link">← Back</a>
             </div>
         </div>
 
-        <!-- Key Features as Individual Sections -->
-        <div class="content-section">
-            <h2 class="section-title">Key Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">📷</div>
-                    <div class="feature-title">Advanced Camera-Based Object Detection</div>
-                    <div class="feature-description">High-resolution computer vision system accurately identifying game objects and their positions for autonomous manipulation.</div>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🦀</div>
-                    <div class="feature-title">Intelligent Differential Claw Mechanism</div>
-                    <div class="feature-description">Adaptive gripper that dynamically adjusts grip strength based on object characteristics for optimal handling.</div>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <div class="feature-title">Autonomous Object Recognition and Pickup</div>
-                    <div class="feature-description">Fully autonomous capability to identify, approach, and successfully acquire game objects without human intervention.</div>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📍</div>
-                    <div class="feature-title">Precise Placement Capabilities</div>
-                    <div class="feature-description">High-accuracy positioning system enabling reliable placement of objects in designated scoring zones.</div>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🧠</div>
-                    <div class="feature-title">Adaptive Manipulation Algorithms</div>
-                    <div class="feature-description">Intelligent software that learns and adapts to different object types and environmental conditions in real-time.</div>
-                </div>
+        <!-- Quick Stats -->
+        <div class="specs-grid">
+            <div class="spec-card">
+                <div class="spec-label">Season</div>
+                <div class="spec-value">Into the Deep (2024–25)</div>
+            </div>
+            <div class="spec-card">
+                <div class="spec-label">Key Innovation</div>
+                <div class="spec-value">Differential Claw</div>
             </div>
         </div>
 
-        <!-- Overview Section with Photo Space -->
+        <!-- Overview -->
         <div class="content-section">
-            <h2 class="section-title">Detailed Overview</h2>
-            <div class="overview-section">
-                <div class="overview-text">
-                    <div class="overview-subtitle">Overview</div>
-                    <p>MantisBot represents Pioneer Robotics' latest innovation in the INTOTHEDEEP season (2024-2025). This robot embodies a forward-thinking approach to competitive robotics—prioritizing autonomous capabilities and intelligent mechanical design to achieve tasks that would traditionally require manual control.</p>
-                    
-                    <div class="overview-subtitle">Advanced Claw System</div>
-                    <p>The defining characteristic of MantisBot is its camera-based differential claw system. Rather than relying on simple grabbing mechanisms, this intelligent claw can adapt its grip based on real-time analysis of the object being manipulated. Computer vision guides the entire process, from initial object detection to final placement, creating an almost autonomous competitor.</p>
-                    
-                    <div class="overview-subtitle">Future of Robotics</div>
-                    <p>MantisBot demonstrates that the future of competitive robotics lies in the integration of advanced perception and intelligent manipulation. The robot's ability to autonomously identify, acquire, and place game objects with minimal human intervention opens new possibilities for match strategy. This engineering achievement reflects Pioneer Robotics' commitment to pushing the boundaries of what's possible in FTC competition.</p>
-                </div>
-                <div class="overview-photos">
-                    <div class="overview-photo-placeholder">
-                        📸 Robot Photo
+            <h2 class="section-title">Overview</h2>
+            <div class="section-content">
+                <p>MantisBot is Pioneer Robotics' entry for the Into the Deep season. The game requires collecting samples and specimens from an underwater-themed field and depositing them in scoring zones, with an end-game climb onto hanging bars. This case study documents the key mechanical decisions across the season — the chassis, claw, slide system, and climb — and the major redesign that shaped the final robot.</p>
+                <p><strong>Challenge:</strong> Collect colored samples and metal specimens from the field and score them in designated zones at multiple heights, then ascend to hang on bars at the end of each match, all within tight size and weight limits.</p>
+            </div>
+
+            <div class="strategy-callout">
+                <div class="strategy-label">Season Approach</div>
+                We began the season with ambitious goals — implementing a Power Take Off (PTO) and a Differential Swerve drivetrain, both of which we had never built before. We also applied an Agile development methodology with two-week sprints, daily team standups, and formal sprint reviews. Midseason we acknowledged the design was too complex and simplified to a more focused, reliable system. The final robot emphasizes simplicity and reliability — the two core values that emerged from every lesson this season.
+            </div>
+        </div>
+
+        <!-- Mechanism 1: Chassis -->
+        <div class="mechanism-section">
+            <h3 class="mechanism-title">🔧 Chassis &amp; Drivetrain</h3>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Problem</div>
+                <div class="pdr-content">Our previous season used a live-axle drivetrain, which caused inconsistencies and wasted space. Electronics placed on the bottom panel dragged against the floor and caused disconnect issues mid-match. We needed a more reliable foundation going into a new season with more complex upper mechanisms.</div>
+            </div>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Design Decision</div>
+                <div class="pdr-content">I switched to a dead-axle mecanum drivetrain — stationary axles with wheels rotating freely around them — which reduced our chassis footprint by 25% and eliminated the excess motion from the live-axle system. Electronics were moved to the bottom for easy access during maintenance. The carbon fiber side plate chassis from last season was retained as the structural base, with a modular upper chassis that can be detached independently for mechanism work without touching the drive base. Spring-loaded odometry pods were integrated directly into the chassis to maintain ground contact for accurate localization throughout matches.</div>
+            </div>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Result</div>
+                <div class="pdr-content">The dead-axle system was significantly more consistent than the previous live-axle approach. The modular upper/lower chassis separation proved essential during the midseason redesign — we were able to rebuild the upper mechanisms without disturbing the drivetrain, which saved significant time under a tight competition deadline.</div>
+            </div>
+
+            <img src="../files/robot-photos/mantisbot/full_robot.jpeg" alt="MantisBot chassis assembly" style="width: 100%; height: auto; border-radius: 12px; object-fit: cover; margin-top: 20px; border: 1px solid var(--border-light);">
+        </div>
+
+        <!-- Mechanism 2: Claw -->
+        <div class="mechanism-section">
+            <h3 class="mechanism-title">🦀 Differential Claw</h3>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Problem</div>
+                <div class="pdr-content">Into the Deep requires collecting both flat samples and cylindrical specimens from tight spaces inside the Submersible structure. Our first claw was large and difficult to maneuver inside the confined geometry. It used internal grip — effective for grouping samples — but was bulky and prone to breaking under repeated stress.</div>
+            </div>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Design Decision</div>
+                <div class="pdr-content">I iterated through three claw designs. The first used internal grip and rotated on two axes — flexible but large. The second introduced external grip contoured to the sample shape, which increased consistency and durability, but was still too bulky. The final design applied a differential mechanism — a concept we had explored in our PTO prototype — which allowed rotation on two axes simultaneously using bevel gears, creating a much smaller form factor. Bringing the points of rotation together reduced the distance between moving parts, shrinking the claw from bulky to compact while actually improving rotational freedom. The differential also reduced motor strain by distributing load more efficiently.</div>
+            </div>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Result</div>
+                <div class="pdr-content">The final differential claw was lightweight, reliable inside the Submersible, and gave us more rotational freedom than either previous iteration. The unexpected benefit was that the PTO development — which we ultimately didn't use on the final robot — directly taught us the bevel gear principles that made the claw work. The failed mechanism produced the knowledge that improved the working one.</div>
+            </div>
+
+            <img src="../files/robot-photos/mantisbot/claw.jpeg" alt="MantisBot differential claw mechanism" style="width: 100%; height: auto; border-radius: 12px; object-fit: cover; margin-top: 20px; border: 1px solid var(--border-light);">
+        </div>
+
+        <!-- Mechanism 3: Slides -->
+        <div class="mechanism-section">
+            <h3 class="mechanism-title">⬆️ Slides Actuation &amp; Pivot</h3>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Problem</div>
+                <div class="pdr-content">We needed linear slides that could both extend for scoring and pivot to different angles for depositing at the high basket and bar. Running separate motors for extension and pivot creates coordination problems and wastes motor ports. Belt skipping on the original motor unit caused the slides to lose position during matches.</div>
+            </div>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Design Decision</div>
+                <div class="pdr-content">I designed a custom two-sided pulley with bearings that spin freely on the axle, allowing pivot and actuation on the same axis independently of one another. Both motors are housed together in one module, optimizing space and simplifying maintenance access. After belt skipping issues, I shifted the motor mounting holes back to correct belt tensioning — this also improved structural integrity by connecting the module to the side plates. I also switched from two sets of slides to a single set, which eliminated the need to coordinate two motors and proved more reliable in competition. Custom aluminum slide inserts replaced polycarbonate ones after breaking 8 of the polycarbonate versions during testing. A chain and sprocket system rotates the slides, with the motor selection determined by a torque calculation based on arm weight and extension distance.</div>
+            </div>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Result</div>
+                <div class="pdr-content">The single-slide system was meaningfully more reliable than the dual-slide approach. The hole-shift fix resolved belt skipping entirely. The aluminum inserts held through the full competition season with no failures — the 8 broken polycarbonate mounts were expensive in time but gave us a clear answer on material choice.</div>
+            </div>
+
+            <img src="../files/robot-photos/mantisbot/slides&pivot.jpeg" alt="MantisBot linear slides and pivot system" style="width: 100%; height: auto; border-radius: 12px; object-fit: cover; margin-top: 20px; border: 1px solid var(--border-light);">
+        </div>
+
+        <!-- Mechanism 4: Climb -->
+        <div class="mechanism-section">
+            <h3 class="mechanism-title">🧗 Ascent / Climb</h3>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Problem</div>
+                <div class="pdr-content">The end-game requires climbing onto horizontal bars at increasing heights for bonus points. A separate dedicated climbing mechanism adds weight and complexity. We needed to achieve the climb without adding a new system to an already complex robot.</div>
+            </div>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Design Decision</div>
+                <div class="pdr-content">I designed the ascent component to attach directly to the linear slides, using the same system we already had for scoring to pull the robot onto the bars. Static hooks shaped by the upper chassis maintain a minimal profile during normal play and engage the bar when the slides extend and retract. I performed a torque calculation to determine the required motor force to lift the full robot weight, then selected the fastest motors that met that torque threshold — balancing speed with reliability.</div>
+            </div>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Result</div>
+                <div class="pdr-content">Integrating the climb into the existing slide system eliminated a dedicated mechanism entirely, saving weight and motor ports. The torque-calculated motor selection meant the climb was reliable without being over-engineered. The static hooks' minimal profile meant they didn't interfere with normal scoring operations during teleop.</div>
+            </div>
+
+            <img src="../files/robot-photos/mantisbot/climb.png" alt="MantisBot ascent and climb mechanism" style="width: 100%; height: auto; border-radius: 12px; object-fit: cover; margin-top: 20px; border: 1px solid var(--border-light);">
+        </div>
+
+        <!-- Full Robot -->
+        <div class="mechanism-section">
+            <h3 class="mechanism-title">🤖 Full Robot</h3>
+            <div class="section-content">
+                <p>MantisBot went through more iterations than any previous Pioneer Robotics robot. We attempted PTO and Differential Swerve — two mechanisms we'd never built — before recognizing midseason that the complexity was hurting reliability. The final robot strips back to what works: a dead-axle mecanum base, a single belt-driven slide system, a differential claw, and an integrated climb. Every mechanism on the robot can be accessed or removed for maintenance without disturbing adjacent systems. The Agile sprint methodology meant we had clear documentation of every decision, which made the midseason pivot much faster to execute than it would have been otherwise.</p>
+            </div>
+
+            <img src="../files/robot-photos/mantisbot/full_robot.jpeg" alt="MantisBot complete robot assembly" style="width: 100%; height: auto; border-radius: 12px; object-fit: cover; margin-top: 20px; border: 1px solid var(--border-light);">
+        </div>
+
+        <!-- Key Takeaways -->
+        <div class="content-section">
+            <h2 class="section-title">Key Takeaways</h2>
+            <p class="takeaway-intro">Add your own reflection here.</p>
+            <ol class="takeaway-list">
+                <li>
+                    <div class="takeaway-list-item">
+                        <div class="takeaway-list-number">1</div>
+                        <div class="takeaway-list-content">
+                            <div class="takeaway-list-title">Ambition Needs a Cutoff Date</div>
+                            <div class="takeaway-list-text">We spent months on PTO and Differential Swerve — both legitimate engineering challenges — but waiting too long to acknowledge they weren't competition-ready cost us development time on the final robot. Setting a hard go/no-go date for experimental mechanisms upfront would have saved weeks.</div>
+                        </div>
                     </div>
-                    <div class="overview-photo-placeholder">
-                        📸 Claw Mechanism
+                </li>
+                <li>
+                    <div class="takeaway-list-item">
+                        <div class="takeaway-list-number">2</div>
+                        <div class="takeaway-list-content">
+                            <div class="takeaway-list-title">Failed Mechanisms Teach Working Ones</div>
+                            <div class="takeaway-list-text">The PTO prototype never made it onto the final robot, but the bevel gear knowledge from building it directly enabled the differential claw design. Time spent on an abandoned mechanism isn't always wasted — it depends on what you extract from it.</div>
+                        </div>
                     </div>
-                </div>
-            </div>
+                </li>
+                <li>
+                    <div class="takeaway-list-item">
+                        <div class="takeaway-list-number">3</div>
+                        <div class="takeaway-list-content">
+                            <div class="takeaway-list-title">Test to Failure, Then Choose the Right Material</div>
+                            <div class="takeaway-list-text">Breaking 8 polycarbonate slide mounts was frustrating but conclusive. We knew exactly why aluminum was the right choice and had data to back it. Switching materials based on one failure is a guess — switching after repeated failures under real conditions is engineering.</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="takeaway-list-item">
+                        <div class="takeaway-list-number">4</div>
+                        <div class="takeaway-list-content">
+                            <div class="takeaway-list-title">Simplicity Is a Design Decision, Not a Fallback</div>
+                            <div class="takeaway-list-text">The final robot is simpler than what we originally planned. That simplicity was earned — it came from understanding why the complex version didn't work, not from avoiding complexity in the first place. A simple robot that competes reliably beats a complex one that doesn't.</div>
+                        </div>
+                    </div>
+                </li>
+            </ol>
         </div>
 
+        <!-- Call to Action -->
         <div class="content-section">
-            <h2 class="section-title">Experience This Robot</h2>
             <div class="action-buttons">
                 <a href="files/MantisBot.usdz" class="btn btn-primary">📱 View in AR</a>
-                <a href="/reactwebsite/#robots" class="btn btn-secondary">View All Robots</a>
             </div>
         </div>
+
     </div>
 
     <script>
-        // Apply saved theme preference
+        function toggleTheme() {
+            const current = document.documentElement.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+            document.getElementById('theme-toggle').textContent = next === 'dark' ? '☀️ Light' : '🌙 Dark';
+        }
+
         const savedTheme = localStorage.getItem('theme') || 'light';
         document.documentElement.setAttribute('data-theme', savedTheme);
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('theme-toggle').textContent = savedTheme === 'dark' ? '☀️ Light' : '🌙 Dark';
+        });
     </script>
 </body>
 </html>

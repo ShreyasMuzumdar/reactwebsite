@@ -318,7 +318,7 @@
 
             .header {
                 flex-direction: column;
-                gap: 20px;
+                gap: 15px;
                 align-items: flex-start;
                 margin-bottom: 30px;
                 padding-bottom: 20px;
@@ -341,8 +341,12 @@
                 padding: 20px;
             }
 
-            .takeaway-grid {
-                grid-template-columns: 1fr;
+            .takeaway-list {
+                margin-left: 0;
+            }
+
+            .takeaway-list-item {
+                gap: 15px;
             }
 
             .action-buttons {
@@ -358,6 +362,86 @@
         html[data-theme="dark"] body {
             background: var(--bg-primary);
         }
+
+        .theme-toggle {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+            padding: 6px 12px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+        }
+
+        .theme-toggle:hover {
+            background: var(--accent-primary);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        [data-theme="dark"] .theme-toggle {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            color: white;
+            border-color: var(--accent-primary);
+        }
+
+        .takeaway-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .takeaway-list li {
+            margin-bottom: 28px;
+            padding-left: 0;
+        }
+
+        .takeaway-list-item {
+            display: flex;
+            gap: 20px;
+        }
+
+        .takeaway-list-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent-primary);
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-weight: 700;
+            flex-shrink: 0;
+            line-height: 1;
+        }
+
+        .takeaway-list-content {
+            flex: 1;
+        }
+
+        .takeaway-list-title {
+            color: var(--text-primary);
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .takeaway-list-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .takeaway-intro {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.85;
+            margin-bottom: 24px;
+        }
     </style>
 </head>
 <body data-theme="light">
@@ -367,7 +451,10 @@
                 <h1>Shreybot</h1>
                 <div class="subtitle">Mechanical Engineering Case Study</div>
             </div>
-            <a href="../" class="back-link">← Back</a>
+            <div style="display: flex; gap: 12px; align-items: flex-start;">
+                <button id="theme-toggle" class="theme-toggle" title="Toggle dark/light mode">🌙</button>
+                <a href="../" class="back-link">← Back</a>
+            </div>
         </div>
 
         <!-- Quick Stats -->
@@ -419,7 +506,7 @@
             
             <div class="problem-decision-result">
                 <div class="pdr-label">Problem</div>
-                <div class="pdr-content">We needed to deposit freight at multiple heights (hub levels at ~15", 18", and 24"). Misuimi linear slides offered precision but were prohibitively expensive and too heavy for our drive base load budget. We had to balance lift height, speed, reliability, and cost.</div>
+                <div class="pdr-content">We needed to deposit freight at multiple heights (hub levels 1, 2, and 3). Misumi linear slides offered precision but were prohibitively expensive and too heavy for our drive base load budget. We had to balance lift height, speed, reliability, and cost.</div>
             </div>
 
             <div class="problem-decision-result">
@@ -446,36 +533,52 @@
 
         <!-- Key Takeaways -->
         <div class="content-section">
-            <h2 class="section-title">Key Takeaways</h2>
-            <div class="takeaway-grid">
-                <div class="takeaway-card">
-                    <div class="takeaway-number">1</div>
-                    <div class="takeaway-title">Prototype Early, Prototype Often</div>
-                    <div class="takeaway-text">The hybrid tines approach emerged only after building and testing both material options in parallel. I'd budget even more time for iterative prototyping next time.</div>
-                </div>
-                <div class="takeaway-card">
-                    <div class="takeaway-number">2</div>
-                    <div class="takeaway-title">Understand Your Tradeoffs</div>
-                    <div class="takeaway-text">Every design choice was a deliberate tradeoff. Long Robotics gave up precision for cost and weight. Being explicit about these tradeoffs made it easier to defend design decisions to teammates and coaches.</div>
-                </div>
-                <div class="takeaway-card">
-                    <div class="takeaway-number">3</div>
-                    <div class="takeaway-title">Prioritize Reliability Over Speed</div>
-                    <div class="takeaway-text">In competition, a robot that works 100% of the time beats one that's fast but unreliable. This mindset shaped every decision—from hybrid tines to sequential motion control.</div>
-                </div>
-                <div class="takeaway-card">
-                    <div class="takeaway-number">4</div>
-                    <div class="takeaway-title">Budget Constraints are Features</div>
-                    <div class="takeaway-text">The cost and weight limits forced creative solutions that ended up being more elegant than "best of breed" solutions. Constraints breed innovation.</div>
-                </div>
-            </div>
+            <h2 class="section-title">Lessons Learned</h2>
+            <p class="takeaway-intro">Add your own reflection here.</p>
+            <ol class="takeaway-list">
+                <li>
+                    <div class="takeaway-list-item">
+                        <div class="takeaway-list-number">1</div>
+                        <div class="takeaway-list-content">
+                            <div class="takeaway-list-title">Prototype Early, Prototype Often</div>
+                            <div class="takeaway-list-text">The hybrid tines approach emerged only after building and testing both material options in parallel. Next time I'd set a hard cutoff date to freeze the design and shift focus entirely to optimization and reliability testing.</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="takeaway-list-item">
+                        <div class="takeaway-list-number">2</div>
+                        <div class="takeaway-list-content">
+                            <div class="takeaway-list-title">Understand Your Tradeoffs</div>
+                            <div class="takeaway-list-text">Every design choice was a deliberate tradeoff. Long Robotics gave up precision for cost and weight. Being explicit about these tradeoffs made it easier to defend design decisions to teammates and coaches.</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="takeaway-list-item">
+                        <div class="takeaway-list-number">3</div>
+                        <div class="takeaway-list-content">
+                            <div class="takeaway-list-title">Prioritize Reliability Over Speed</div>
+                            <div class="takeaway-list-text">In competition, a robot that works 100% of the time beats one that's fast but unreliable. This mindset shaped every decision—from hybrid tines to sequential motion control.</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="takeaway-list-item">
+                        <div class="takeaway-list-number">4</div>
+                        <div class="takeaway-list-content">
+                            <div class="takeaway-list-title">Budget Constraints are Features</div>
+                            <div class="takeaway-list-text">The cost and weight limits forced creative solutions that ended up being more elegant than "best of breed" solutions. Constraints breed innovation.</div>
+                        </div>
+                    </div>
+                </li>
+            </ol>
         </div>
 
         <!-- Call to Action -->
         <div class="content-section">
             <div class="action-buttons">
                 <a href="../files/Shreybot.usdz" class="btn btn-primary">📱 View in AR</a>
-                <a href="/reactwebsite/#robots" class="btn btn-secondary">View All Robots</a>
             </div>
         </div>
     </div>
@@ -484,6 +587,24 @@
         // Apply saved theme preference
         const savedTheme = localStorage.getItem('theme') || 'light';
         document.documentElement.setAttribute('data-theme', savedTheme);
+        
+        // Update toggle button icon
+        function updateToggleIcon() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const toggleBtn = document.getElementById('theme-toggle');
+            toggleBtn.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+        }
+        
+        updateToggleIcon();
+        
+        // Theme toggle functionality
+        document.getElementById('theme-toggle').addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateToggleIcon();
+        });
     </script>
 </body>
 </html>
