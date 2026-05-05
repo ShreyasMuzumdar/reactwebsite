@@ -1,165 +1,206 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto Tracking Camera - Documentation</title>
+    <title>ðŸŽ¥ Auto Tracking Camera - Documentation</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-            color: #333;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 10px;
-            padding: 40px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-        }
-        h1 {
-            color: #667eea;
-            margin-bottom: 10px;
-            font-size: 2.5em;
-        }
-        .subtitle {
-            color: #666;
-            font-size: 1.1em;
-            margin-bottom: 30px;
-            border-bottom: 2px solid #667eea;
-            padding-bottom: 15px;
-        }
-        .section {
-            margin: 30px 0;
-        }
-        h2 {
-            color: #667eea;
-            font-size: 1.8em;
-            margin-bottom: 15px;
-            border-left: 4px solid #667eea;
-            padding-left: 15px;
-        }
-        p, li {
-            font-size: 1.05em;
-            line-height: 1.8;
-            color: #444;
-            margin-bottom: 10px;
-        }
-        ul, ol {
-            margin-left: 30px;
-            margin-bottom: 15px;
-        }
-        .tech-stack {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 10px;
-            margin: 15px 0;
-        }
-        .tech-item {
-            background: #f0f0f0;
-            padding: 10px 15px;
-            border-radius: 5px;
-            border-left: 3px solid #667eea;
-        }
-        .link {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 20px;
-            background: #667eea;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-        .link:hover {
-            background: #764ba2;
-        }
-        .back-to-site-btn {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            background: #667eea;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            z-index: 999;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
-        .back-to-site-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-            background: #764ba2;
-        }
+    :root {
+        --bg-gradient: linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%);
+        --container-bg: rgba(255, 255, 255, 0.8);
+        --text-color: #1a1a1a;
+        --accent-color: #003366;
+        --secondary-text: #4a4a4a;
+        --card-bg: rgba(255, 255, 255, 0.5);
+        --border-color: rgba(0, 51, 102, 0.2);
+        --header-bg: rgba(255, 255, 255, 0.9);
+    }
+
+    [data-theme="dark"] {
+        --bg-gradient: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
+        --container-bg: rgba(255, 255, 255, 0.05);
+        --text-color: #ffffff;
+        --accent-color: #93C5FD;
+        --secondary-text: #b0b0b0;
+        --card-bg: rgba(255, 255, 255, 0.05);
+        --border-color: rgba(147, 197, 253, 0.3);
+        --header-bg: rgba(0, 0, 0, 0.8);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+        font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        background: var(--bg-gradient);
+        background-attachment: fixed;
+        color: var(--text-color);
+        line-height: 1.6;
+        transition: all 0.3s ease;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 40px auto;
+        background: var(--container-bg);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid var(--border-color);
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .header-controls { display: flex; gap: 15px; }
+
+    .btn {
+        padding: 8px 16px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid var(--border-color);
+        background: var(--card-bg);
+        color: var(--text-color);
+    }
+
+    .btn:hover {
+        transform: translateY(-2px);
+        background: var(--accent-color);
+        color: white;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        background: linear-gradient(to right, var(--accent-color), #a29bfe);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 10px;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+        color: var(--secondary-text);
+        margin-bottom: 0;
+        border: none;
+        padding: 0;
+    }
+
+    .content-section { margin: 40px 0; }
+
+    .section-title {
+        font-size: 1.8rem;
+        color: var(--accent-color);
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .section-title::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: var(--border-color);
+    }
+
+    .section-content { margin-left: 10px; }
+
+    .tech-stack {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 15px;
+        margin: 20px 0;
+    }
+
+    .tech-item {
+        background: var(--card-bg);
+        padding: 12px;
+        border-radius: 10px;
+        border: 1px solid var(--border-color);
+        text-align: center;
+        font-weight: 600;
+        transition: transform 0.3s ease;
+    }
+
+    .tech-item:hover { transform: scale(1.05); border-color: var(--accent-color); }
+
+    .link-primary {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 24px;
+        background: var(--accent-color);
+        color: white !important;
+        text-decoration: none;
+        border-radius: 10px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    .link-primary:hover {
+        box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
+        transform: translateY(-2px);
+    }
+
+    @media (max-width: 600px) {
+        .container { margin: 0; border-radius: 0; padding: 20px; }
+        h1 { font-size: 2rem; }
+    }
     </style>
 </head>
 <body>
-    <a href="../" class="back-to-site-btn" title="Back to main site">← Back to Site</a>
     <div class="container">
-        <h1>🎥 Auto Tracking Camera</h1>
-        <p class="subtitle">A smart camera system that detects and follows faces using Machine Learning and computer vision</p>
+        <header>
+            <div>
+                <h1>ðŸŽ¥ Auto Tracking Camera</h1>
+                <p class="subtitle">A smart camera system that detects and follows faces using Machine Learning and computer vision</p>
+            </div>
+            <div class="header-controls">
+                <a href="../index.html" class="btn">🏠 Home</a>
+                <button id="themeToggle" class="btn">🌙 Dark Mode</button>
+            </div>
+        </header>
 
-        <div class="section">
-            <h2>Overview</h2>
+        <main>
+            
+        
+        
+
+        <div class="content-section">
+            </div><h2 class="section-title">Overview</h2><div class="section-content">
             <p>The Auto Tracking Camera is an intelligent camera attachment that uses machine learning and computer vision techniques to detect, track, and follow human faces in real-time. The camera system dynamically adjusts its angle and position to maintain the target face in the center of the frame.</p>
         </div>
-
-        <div class="section">
-            <h2>Key Features</h2>
-            <ul>
-                <li>Real-time face detection using machine learning models</li>
-                <li>Automatic camera positioning and angle adjustment</li>
-                <li>Multi-face detection and tracking capabilities</li>
-                <li>High-performance computer vision pipeline</li>
-                <li>Seamless integration with Raspberry Pi systems</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Technology Stack</h2>
-            <div class="tech-stack">
-                <div class="tech-item">Python</div>
-                <div class="tech-item">OpenCV</div>
-                <div class="tech-item">Machine Learning</div>
-                <div class="tech-item">Raspberry Pi</div>
-                <div class="tech-item">Face Detection</div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>How It Works</h2>
-            <ol>
-                <li><strong>Face Detection:</strong> The system uses pre-trained ML models to detect faces in the video stream</li>
-                <li><strong>Position Calculation:</strong> Calculates the position of detected faces relative to the camera center</li>
-                <li><strong>Motor Control:</strong> Sends commands to servo motors to adjust camera position</li>
-                <li><strong>Continuous Tracking:</strong> Updates position in real-time as faces move</li>
-            </ol>
-        </div>
-
-        <div class="section">
-            <h2>Applications</h2>
-            <ul>
-                <li>Video conferencing and streaming</li>
-                <li>Surveillance systems</li>
-                <li>Interactive presentations</li>
-                <li>Security monitoring</li>
-                <li>Content creation and streaming</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <a href="https://github.com/ShreyasMuzumdar/CameraTrackingSystem" class="link">View on GitHub</a>
-        </div>
+        </main>
     </div>
+
+    <script>
+    const themeToggle = document.getElementById('themeToggle');
+    const htmlElement = document.documentElement;
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    htmlElement.setAttribute('data-theme', savedTheme);
+    updateToggleText(savedTheme);
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = htmlElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        htmlElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateToggleText(newTheme);
+    });
+    function updateToggleText(theme) {
+        themeToggle.innerHTML = theme === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode';
+    }
+    </script>
 </body>
 </html>

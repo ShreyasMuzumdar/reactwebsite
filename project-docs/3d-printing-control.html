@@ -1,163 +1,204 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Printing Manufacturing Control System - Documentation</title>
+    <title>ðŸ–¨ï¸ 3D Printing Manufacturing Control System - Documentation</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            min-height: 100vh;
-            padding: 20px;
-            color: #333;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 10px;
-            padding: 40px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-        }
-        h1 {
-            color: #f5576c;
-            margin-bottom: 10px;
-            font-size: 2.5em;
-        }
-        .subtitle {
-            color: #666;
-            font-size: 1.1em;
-            margin-bottom: 30px;
-            border-bottom: 2px solid #f5576c;
-            padding-bottom: 15px;
-        }
-        .section {
-            margin: 30px 0;
-        }
-        h2 {
-            color: #f5576c;
-            font-size: 1.8em;
-            margin-bottom: 15px;
-            border-left: 4px solid #f5576c;
-            padding-left: 15px;
-        }
-        p, li {
-            font-size: 1.05em;
-            line-height: 1.8;
-            color: #444;
-            margin-bottom: 10px;
-        }
-        ul, ol {
-            margin-left: 30px;
-            margin-bottom: 15px;
-        }
-        .tech-stack {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 10px;
-            margin: 15px 0;
-        }
-        .tech-item {
-            background: #f0f0f0;
-            padding: 10px 15px;
-            border-radius: 5px;
-            border-left: 3px solid #f5576c;
-        }
-        .link {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 20px;
-            background: #f5576c;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-        .link:hover {
-            background: #f093fb;
-        }
-        .back-to-site-btn {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            background: #f5576c;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            z-index: 999;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
-        .back-to-site-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-            background: #f093fb;
-        }
+    :root {
+        --bg-gradient: linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%);
+        --container-bg: rgba(255, 255, 255, 0.8);
+        --text-color: #1a1a1a;
+        --accent-color: #003366;
+        --secondary-text: #4a4a4a;
+        --card-bg: rgba(255, 255, 255, 0.5);
+        --border-color: rgba(0, 51, 102, 0.2);
+        --header-bg: rgba(255, 255, 255, 0.9);
+    }
+
+    [data-theme="dark"] {
+        --bg-gradient: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
+        --container-bg: rgba(255, 255, 255, 0.05);
+        --text-color: #ffffff;
+        --accent-color: #93C5FD;
+        --secondary-text: #b0b0b0;
+        --card-bg: rgba(255, 255, 255, 0.05);
+        --border-color: rgba(147, 197, 253, 0.3);
+        --header-bg: rgba(0, 0, 0, 0.8);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+        font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        background: var(--bg-gradient);
+        background-attachment: fixed;
+        color: var(--text-color);
+        line-height: 1.6;
+        transition: all 0.3s ease;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 40px auto;
+        background: var(--container-bg);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid var(--border-color);
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .header-controls { display: flex; gap: 15px; }
+
+    .btn {
+        padding: 8px 16px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid var(--border-color);
+        background: var(--card-bg);
+        color: var(--text-color);
+    }
+
+    .btn:hover {
+        transform: translateY(-2px);
+        background: var(--accent-color);
+        color: white;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        background: linear-gradient(to right, var(--accent-color), #a29bfe);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 10px;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+        color: var(--secondary-text);
+        margin-bottom: 0;
+        border: none;
+        padding: 0;
+    }
+
+    .content-section { margin: 40px 0; }
+
+    .section-title {
+        font-size: 1.8rem;
+        color: var(--accent-color);
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .section-title::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: var(--border-color);
+    }
+
+    .section-content { margin-left: 10px; }
+
+    .tech-stack {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 15px;
+        margin: 20px 0;
+    }
+
+    .tech-item {
+        background: var(--card-bg);
+        padding: 12px;
+        border-radius: 10px;
+        border: 1px solid var(--border-color);
+        text-align: center;
+        font-weight: 600;
+        transition: transform 0.3s ease;
+    }
+
+    .tech-item:hover { transform: scale(1.05); border-color: var(--accent-color); }
+
+    .link-primary {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 24px;
+        background: var(--accent-color);
+        color: white !important;
+        text-decoration: none;
+        border-radius: 10px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    .link-primary:hover {
+        box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
+        transform: translateY(-2px);
+    }
+
+    @media (max-width: 600px) {
+        .container { margin: 0; border-radius: 0; padding: 20px; }
+        h1 { font-size: 2rem; }
+    }
     </style>
 </head>
 <body>
-    <a href="../" class="back-to-site-btn" title="Back to main site">← Back to Site</a>
     <div class="container">
-        <h1>🖨️ 3D Printing Manufacturing Control System</h1>
-        <p class="subtitle">IoT-based system for real-time monitoring and control of 3D printing processes</p>
-
-        <div class="section">
-            <h2>Overview</h2>
-            <p>An advanced IoT system designed to monitor and control 3D printing operations in real-time. This system provides comprehensive oversight of the printing process, including temperature control, print progress tracking, and remote management capabilities.</p>
-        </div>
-
-        <div class="section">
-            <h2>Key Features</h2>
-            <ul>
-                <li>Real-time monitoring of printing parameters</li>
-                <li>Temperature and humidity control</li>
-                <li>Remote access and management via IoT protocols</li>
-                <li>Print progress tracking and notifications</li>
-                <li>Error detection and automated responses</li>
-                <li>Integration with multiple 3D printer models</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Technology Stack</h2>
-            <div class="tech-stack">
-                <div class="tech-item">Arduino</div>
-                <div class="tech-item">IoT</div>
-                <div class="tech-item">Sensors</div>
-                <div class="tech-item">Control Systems</div>
-                <div class="tech-item">Cloud Integration</div>
+        <header>
+            <div>
+                <h1>ðŸ–¨ï¸ 3D Printing Manufacturing Control System</h1>
+                <p class="subtitle">IoT-based system for real-time monitoring and control of 3D printing processes</p>
             </div>
-        </div>
+            <div class="header-controls">
+                <a href="../index.html" class="btn">🏠 Home</a>
+                <button id="themeToggle" class="btn">🌙 Dark Mode</button>
+            </div>
+        </header>
 
-        <div class="section">
-            <h2>System Components</h2>
-            <ol>
-                <li><strong>Sensor Array:</strong> Monitors temperature, humidity, and print progress</li>
-                <li><strong>Arduino Controller:</strong> Main processing unit for system logic</li>
-                <li><strong>Communication Module:</strong> Enables real-time data transmission</li>
-                <li><strong>User Interface:</strong> Dashboard for monitoring and control</li>
-                <li><strong>Alert System:</strong> Notifications for critical events</li>
-            </ol>
-        </div>
-
-        <div class="section">
-            <h2>Benefits</h2>
-            <ul>
-                <li>Improved print quality through precise environmental control</li>
-                <li>Reduced material waste and failed prints</li>
-                <li>Remote monitoring for increased productivity</li>
-                <li>Data logging for quality assurance</li>
-                <li>Scalable solution for manufacturing environments</li>
-            </ul>
-        </div>
+        <main>
+            
+        <div class="header">
+            <div>
+                
+                
+            </div>
+        </main>
     </div>
+
+    <script>
+    const themeToggle = document.getElementById('themeToggle');
+    const htmlElement = document.documentElement;
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    htmlElement.setAttribute('data-theme', savedTheme);
+    updateToggleText(savedTheme);
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = htmlElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        htmlElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateToggleText(newTheme);
+    });
+    function updateToggleText(theme) {
+        themeToggle.innerHTML = theme === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode';
+    }
+    </script>
 </body>
 </html>
