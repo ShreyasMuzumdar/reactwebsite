@@ -1,178 +1,206 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShreyAI Voice Assistant - Documentation</title>
+    <title>ðŸ¤– ShreyAI Voice Assistant - Documentation</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-            min-height: 100vh;
-            padding: 20px;
-            color: #333;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 10px;
-            padding: 40px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-        }
-        h1 {
-            color: #ff6b9d;
-            margin-bottom: 10px;
-            font-size: 2.5em;
-        }
-        .subtitle {
-            color: #666;
-            font-size: 1.1em;
-            margin-bottom: 30px;
-            border-bottom: 2px solid #ff6b9d;
-            padding-bottom: 15px;
-        }
-        .section {
-            margin: 30px 0;
-        }
-        h2 {
-            color: #ff6b9d;
-            font-size: 1.8em;
-            margin-bottom: 15px;
-            border-left: 4px solid #ff6b9d;
-            padding-left: 15px;
-        }
-        p, li {
-            font-size: 1.05em;
-            line-height: 1.8;
-            color: #444;
-            margin-bottom: 10px;
-        }
-        ul, ol {
-            margin-left: 30px;
-            margin-bottom: 15px;
-        }
-        .tech-stack {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 10px;
-            margin: 15px 0;
-        }
-        .tech-item {
-            background: #f0f0f0;
-            padding: 10px 15px;
-            border-radius: 5px;
-            border-left: 3px solid #ff6b9d;
-        }
-        .link {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 20px;
-            background: #ff6b9d;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-        .link:hover {
-            background: #a8edea;
-        }
-        .back-to-site-btn {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            background: #ff6b9d;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            z-index: 999;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
-        .back-to-site-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-            background: #a8edea;
-        }
+    :root {
+        --bg-gradient: linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%);
+        --container-bg: rgba(255, 255, 255, 0.8);
+        --text-color: #1a1a1a;
+        --accent-color: #003366;
+        --secondary-text: #4a4a4a;
+        --card-bg: rgba(255, 255, 255, 0.5);
+        --border-color: rgba(0, 51, 102, 0.2);
+        --header-bg: rgba(255, 255, 255, 0.9);
+    }
+
+    [data-theme="dark"] {
+        --bg-gradient: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
+        --container-bg: rgba(255, 255, 255, 0.05);
+        --text-color: #ffffff;
+        --accent-color: #93C5FD;
+        --secondary-text: #b0b0b0;
+        --card-bg: rgba(255, 255, 255, 0.05);
+        --border-color: rgba(147, 197, 253, 0.3);
+        --header-bg: rgba(0, 0, 0, 0.8);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+        font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        background: var(--bg-gradient);
+        background-attachment: fixed;
+        color: var(--text-color);
+        line-height: 1.6;
+        transition: all 0.3s ease;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 40px auto;
+        background: var(--container-bg);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid var(--border-color);
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .header-controls { display: flex; gap: 15px; }
+
+    .btn {
+        padding: 8px 16px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid var(--border-color);
+        background: var(--card-bg);
+        color: var(--text-color);
+    }
+
+    .btn:hover {
+        transform: translateY(-2px);
+        background: var(--accent-color);
+        color: white;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        background: linear-gradient(to right, var(--accent-color), #a29bfe);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 10px;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+        color: var(--secondary-text);
+        margin-bottom: 0;
+        border: none;
+        padding: 0;
+    }
+
+    .content-section { margin: 40px 0; }
+
+    .section-title {
+        font-size: 1.8rem;
+        color: var(--accent-color);
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .section-title::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: var(--border-color);
+    }
+
+    .section-content { margin-left: 10px; }
+
+    .tech-stack {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 15px;
+        margin: 20px 0;
+    }
+
+    .tech-item {
+        background: var(--card-bg);
+        padding: 12px;
+        border-radius: 10px;
+        border: 1px solid var(--border-color);
+        text-align: center;
+        font-weight: 600;
+        transition: transform 0.3s ease;
+    }
+
+    .tech-item:hover { transform: scale(1.05); border-color: var(--accent-color); }
+
+    .link-primary {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 24px;
+        background: var(--accent-color);
+        color: white !important;
+        text-decoration: none;
+        border-radius: 10px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    .link-primary:hover {
+        box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
+        transform: translateY(-2px);
+    }
+
+    @media (max-width: 600px) {
+        .container { margin: 0; border-radius: 0; padding: 20px; }
+        h1 { font-size: 2rem; }
+    }
     </style>
 </head>
 <body>
-    <a href="../" class="back-to-site-btn" title="Back to main site">← Back to Site</a>
     <div class="container">
-        <h1>🤖 ShreyAI Voice Assistant</h1>
-        <p class="subtitle">A personalized voice assistant with custom cloned voice powered by local AI models</p>
+        <header>
+            <div>
+                <h1>ðŸ¤– ShreyAI Voice Assistant</h1>
+                <p class="subtitle">A personalized voice assistant with custom cloned voice powered by local AI models</p>
+            </div>
+            <div class="header-controls">
+                <a href="../index.html" class="btn">🏠 Home</a>
+                <button id="themeToggle" class="btn">🌙 Dark Mode</button>
+            </div>
+        </header>
 
-        <div class="section">
-            <h2>Overview</h2>
+        <main>
+            
+        
+        
+
+        <div class="content-section">
+            </div><h2 class="section-title">Overview</h2><div class="section-content">
             <p>ShreyAI is a sophisticated voice assistant that combines a custom-cloned voice with advanced language models to provide natural and personalized voice interactions. Powered by DeepSeek and Ollama, this assistant can run locally on Mac or Raspberry Pi, ensuring privacy and enabling smart device control.</p>
         </div>
-
-        <div class="section">
-            <h2>Key Features</h2>
-            <ul>
-                <li>Custom cloned voice for personalized interactions</li>
-                <li>Local AI model execution (no cloud dependency)</li>
-                <li>Natural language understanding via DeepSeek</li>
-                <li>Smart home device control</li>
-                <li>Cross-platform support (Mac, Raspberry Pi)</li>
-                <li>Privacy-focused architecture</li>
-                <li>Real-time voice processing</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Technology Stack</h2>
-            <div class="tech-stack">
-                <div class="tech-item">Python</div>
-                <div class="tech-item">DeepSeek AI</div>
-                <div class="tech-item">Ollama</div>
-                <div class="tech-item">Voice Cloning</div>
-                <div class="tech-item">IoT Integration</div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Architecture</h2>
-            <ol>
-                <li><strong>Voice Input:</strong> Captures and processes voice commands</li>
-                <li><strong>Speech Recognition:</strong> Converts audio to text</li>
-                <li><strong>Language Model:</strong> DeepSeek processes commands and generates responses</li>
-                <li><strong>Voice Synthesis:</strong> Custom voice generates natural speech output</li>
-                <li><strong>Device Control:</strong> Executes actions on connected smart devices</li>
-            </ol>
-        </div>
-
-        <div class="section">
-            <h2>Capabilities</h2>
-            <ul>
-                <li>Conversational AI interactions</li>
-                <li>Smart home automation commands</li>
-                <li>Information retrieval and Q&A</li>
-                <li>Context-aware responses</li>
-                <li>Device status queries</li>
-                <li>Schedule and reminder management</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Deployment Options</h2>
-            <ul>
-                <li><strong>Mac:</strong> Native application for macOS systems</li>
-                <li><strong>Raspberry Pi:</strong> Optimized for low-power ARM architecture</li>
-                <li>Standalone server deployment</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <a href="https://github.com/ShreyasMuzumdar/ollama-voice-mac" class="link">View on GitHub</a>
-        </div>
+        </main>
     </div>
+
+    <script>
+    const themeToggle = document.getElementById('themeToggle');
+    const htmlElement = document.documentElement;
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    htmlElement.setAttribute('data-theme', savedTheme);
+    updateToggleText(savedTheme);
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = htmlElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        htmlElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateToggleText(newTheme);
+    });
+    function updateToggleText(theme) {
+        themeToggle.innerHTML = theme === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode';
+    }
+    </script>
 </body>
 </html>

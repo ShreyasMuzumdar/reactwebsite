@@ -24,6 +24,14 @@ const Projects = (): React.ReactElement => {
 
   const projects = [
     {
+      title: "OpenClaw AI Assistant",
+      description: "High-performance automation hub using Gemini 3.1 Lite and local Llama 3.2 for complex intents and scheduled workflows like weekly newsletters.",
+      categories: ["AI & ML", "Raspberry Pi", "Automation", "IoT"],
+      icon: 'robot' as const,
+      github: "https://github.com/ShreyasMuzumdar",
+      docs: `${import.meta.env.BASE_URL}project-docs/openclaw-assistant.html`
+    },
+    {
       title: "Auto Tracking Camera",
       description: "Developed a camera attachment that tracks and moves to detect and follow faces using Machine Learning and computer vision.",
       categories: ["AI & ML", "Raspberry Pi", "Computer Vision"],
