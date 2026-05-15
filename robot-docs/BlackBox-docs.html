@@ -80,6 +80,7 @@
         .btn-icon:hover { transform: scale(1.1) rotate(10deg); background: var(--accent-primary); color: var(--bg-primary); }
 
         .back-link {
+        
             text-decoration: none;
             padding: 15px 30px;
             background: var(--bg-secondary);
@@ -91,7 +92,9 @@
             transition: all 0.3s ease;
             display: flex;
             align-items: center; gap: 12px;
-        }
+            white-space: nowrap;
+        width: fit-content;
+    }
         .back-link:hover { transform: translateX(-8px); background: var(--accent-primary); color: var(--bg-primary); }
 
         .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 35px; margin-bottom: 90px; }
@@ -274,7 +277,7 @@
         <!-- Key Takeaways -->
         <div class="content-section">
             <h2 class="section-title">Key Takeaways</h2>
-            <p class="takeaway-intro">Add your own reflection here.</p>
+            <p class="takeaway-intro">Building BlackBox challenged my understanding of integrated system design. Balancing high-speed intake requirements with precision delivery mechanisms required a holistic approach to robot geometry, ensuring every subsystem worked in harmony rather than in isolation.</p>
             <ol class="takeaway-list">
                 <li>
                     <div class="takeaway-list-item">
