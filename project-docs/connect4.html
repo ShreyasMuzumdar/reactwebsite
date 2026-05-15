@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ðŸ Python Automations | Portfolio</title>
+    <title>Connect 4 AI Bot | Portfolio</title>
     <style>
         :root {
             --bg-primary: #ffffff;
@@ -90,7 +90,8 @@
             font-size: 1rem;
             transition: all 0.3s ease;
             display: flex;
-            align-items: center; gap: 12px;
+            align-items: center;
+            gap: 12px;
         }
         .back-link:hover { transform: translateX(-8px); background: var(--accent-primary); color: var(--bg-primary); }
 
@@ -110,41 +111,30 @@
         .mechanism-section { margin-bottom: 120px; }
         .mechanism-title { font-size: 2rem; font-weight: 800; color: var(--text-primary); margin-bottom: 40px; }
 
-        .problem-decision-result, .pdr-block { background: var(--bg-secondary); padding: 45px; border-radius: 24px; border-left: 8px solid var(--accent-primary); margin-bottom: 40px; box-shadow: 0 30px 60px -25px rgba(0,0,0,0.6); }
+        .pdr-block { background: var(--bg-secondary); padding: 45px; border-radius: 24px; border-left: 8px solid var(--accent-primary); margin-bottom: 40px; box-shadow: 0 30px 60px -25px rgba(0,0,0,0.6); }
         .pdr-label { font-size: 0.9rem; font-weight: 800; text-transform: uppercase; letter-spacing: 3px; color: var(--accent-primary); margin-bottom: 18px; }
-        .pdr-content { color: var(--text-secondary); font-size: 1.15rem; line-height: 1.85; }
         
         .mechanism-image { width: 100%; border-radius: 24px; border: 1px solid var(--border-light); box-shadow: 0 40px 80px var(--shadow-medium); margin: 40px 0; display: block; }
 
         .takeaway-list { display: grid; gap: 40px; list-style: none; padding: 0; }
         .takeaway-item { display: flex; gap: 35px; align-items: flex-start; background: var(--bg-secondary); padding: 45px; border-radius: 28px; border: 1px solid var(--border-light); transition: all 0.4s ease; }
         .takeaway-item:hover { border-color: var(--accent-primary); transform: translateY(-5px); }
-        .takeaway-number, .takeaway-list-number { background: var(--accent-primary); color: var(--bg-primary); width: 60px; height: 60px; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.5rem; flex-shrink: 0; box-shadow: 0 10px 20px -5px var(--accent-primary); }
-        .takeaway-title, .takeaway-list-title { font-size: 1.6rem; font-weight: 700; color: var(--text-primary); margin-bottom: 15px; }
-        .takeaway-text, .takeaway-list-text { color: var(--text-secondary); font-size: 1.15rem; line-height: 1.85; }
+        .takeaway-number { background: var(--accent-primary); color: var(--bg-primary); width: 60px; height: 60px; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.5rem; flex-shrink: 0; box-shadow: 0 10px 20px -5px var(--accent-primary); }
+        .takeaway-title { font-size: 1.6rem; font-weight: 700; color: var(--text-primary); margin-bottom: 15px; }
 
-        .action-buttons { margin-top: 100px; display: flex; justify-content: center; gap: 20px; }
-        .btn-primary { background: var(--accent-primary); color: var(--bg-primary); padding: 25px 60px; border-radius: 22px; text-decoration: none; font-weight: 800; font-size: 1.2rem; transition: all 0.4s ease; box-shadow: 0 25px 50px -15px var(--accent-primary); display: inline-flex; align-items: center; gap: 15px; border: none; cursor: pointer; }
-        .btn-secondary { background: var(--bg-secondary); color: var(--accent-primary); padding: 25px 60px; border-radius: 22px; text-decoration: none; font-weight: 800; font-size: 1.2rem; transition: all 0.4s ease; border: 1px solid var(--border-light); }
-        .btn-primary:hover, .btn-secondary:hover { transform: translateY(-8px); box-shadow: 0 35px 60px -15px var(--accent-primary); }
-
-        table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 50px 0; border-radius: 24px; overflow: hidden; border: 1px solid var(--border-light); }
-        th { background: var(--bg-secondary); color: var(--accent-primary); padding: 30px; text-align: left; font-weight: 800; border-bottom: 1px solid var(--border-light); }
-        td { padding: 30px; color: var(--text-secondary); border-bottom: 1px solid var(--border-light); }
-        
-        .card { background: var(--bg-secondary); padding: 45px; border-radius: 24px; margin: 40px 0; border: 1px solid var(--border-light); }
-        .strategy-callout { background: var(--bg-secondary); border-left: 6px solid var(--accent-primary); border-radius: 24px; padding: 45px; margin: 40px 0; color: var(--text-secondary); }
-        .strategy-label { color: var(--accent-primary); font-weight: 800; text-transform: uppercase; margin-bottom: 15px; display: block; letter-spacing: 2px; }
+        .action-buttons { margin-top: 100px; display: flex; justify-content: center; }
+        .btn-primary { background: var(--accent-primary); color: var(--bg-primary); padding: 25px 60px; border-radius: 22px; text-decoration: none; font-weight: 800; font-size: 1.2rem; transition: all 0.4s ease; box-shadow: 0 25px 50px -15px var(--accent-primary); display: inline-flex; align-items: center; gap: 15px; }
+        .btn-primary:hover { transform: translateY(-8px); box-shadow: 0 35px 60px -15px var(--accent-primary); }
 
         @media (max-width: 768px) { .container { padding: 50px 30px; } h1 { font-size: 3rem; } .header { flex-direction: column; text-align: center; gap: 40px; } }
-</style>
+    </style>
 </head>
 <body>
     <div class="container">
         <header class="header">
             <div>
-                <h1>ðŸ Python Automations</h1>
-                <p class="subtitle">Software Case Study</p>
+                <h1>Connect 4 AI Bot</h1>
+                <p class="subtitle">Software Engineering Case Study</p>
             </div>
             <div class="header-controls">
                 <button id="theme-toggle" class="btn-icon">🌙</button>
@@ -154,21 +144,73 @@
 
         <section class="specs-grid">
             <div class="spec-card"><p class="spec-label">Category</p><p class="spec-value">Software</p></div>
-            <div class="spec-card"><p class="spec-label">Achievement</p><p class="spec-value">Live Portfolio</p></div>
-            <div class="spec-card"><p class="spec-label">Status</p><p class="spec-value">Live</p></div>
+            <div class="spec-card"><p class="spec-label">Achievement</p><p class="spec-value">🏆 High Performance</p></div>
+            <div class="spec-card"><p class="spec-label">Status</p><p class="spec-value">Online</p></div>
         </section>
 
         <main>
-            
-        
-        
-
         <div class="content-section">
-            </div><h2 class="section-title">Overview</h2><div class="section-content">
-            <p>A collection of Python automation scripts designed to streamline common tasks. This toolkit includes utilities for QR code generation from text input and intelligent file organization systems that automatically categorize and manage files in your file system.</p>
-        </main></main>
+                <h2 class="section-title">Overview</h2>
+                <div class="section-content">
+                    <p>This project features a high-performance Connect 4 AI engine built using Python. The goal was to create an opponent that is virtually unbeatable by human players, utilizing advanced search algorithms and heuristic evaluations to predict moves several turns in advance.</p>
+                    <p>The system balances computational complexity with real-time responsiveness, providing an engaging and challenging experience for users through a web-based interface.</p>
+                </div>
+            </div>
 
-        
+            <div class="mechanism-section">
+                <h3 class="mechanism-title">🧠 Minimax Algorithm</h3>
+                <div class="pdr-block">
+                    <div class="pdr-label">Problem</div>
+                    <div class="section-content">A standard "brute-force" approach to Connect 4 would require calculating trillions of possible game states, which is computationally impossible to do in real-time.</div>
+                </div>
+                <div class="pdr-block">
+                    <div class="pdr-label">Design Decision</div>
+                    <div class="section-content">I implemented the Minimax algorithm, a decision-making rule used for minimizing the possible loss for a worst-case scenario. This allows the AI to simulate opponent moves and choose the path that maximizes its own chance of winning while minimizing the opponent's.</div>
+                </div>
+                <div class="pdr-block">
+                    <div class="pdr-label">Result</div>
+                    <div class="section-content">The AI effectively "sees" the game as a tree of possibilities, playing perfectly up to a defined depth (typically 7-8 moves ahead).</div>
+                </div>
+            </div>
+
+            <div class="mechanism-section">
+                <h3 class="mechanism-title">⚡ Alpha-Beta Pruning</h3>
+                <div class="pdr-block">
+                    <div class="pdr-label">Problem</div>
+                    <div class="section-content">Even with Minimax, the number of nodes to evaluate grows exponentially with search depth, leading to slow move times as the game progresses.</div>
+                </div>
+                <div class="pdr-block">
+                    <div class="pdr-label">Design Decision</div>
+                    <div class="section-content">I integrated Alpha-Beta pruning to "prune" branches of the search tree that are guaranteed to be worse than previously explored options. This significantly reduces the number of nodes evaluated.</div>
+                </div>
+                <div class="pdr-block">
+                    <div class="pdr-label">Result</div>
+                    <div class="section-content">Performance improved by over 10x, allowing the AI to search deeper while maintaining sub-second response times.</div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Key Insights</h2>
+                <div class="takeaway-list">
+                    <div class="takeaway-item">
+                        <div class="takeaway-number">1</div>
+                        <div>
+                            <div class="takeaway-title">Heuristics are Critical</div>
+                            <div class="section-content">The AI's strength depends largely on its board evaluation function. Assigning higher weights to the center column proved most effective.</div>
+                        </div>
+                    </div>
+                    <div class="takeaway-item">
+                        <div class="takeaway-number">2</div>
+                        <div>
+                            <div class="takeaway-title">Efficiency Matters</div>
+                            <div class="section-content">Implementing a transposition table to cache board states prevented redundant calculations and further boosted search speed.</div>
+                        </div>
+                    </div>
+                </main>
+
+        <div class="action-buttons">
+            <a href="https://shreyasmuzumdar.github.io/connect-4/" class="btn-primary" target="_blank">🚀 PLAY THE GAME</a>
+        </div>
     </div>
     <script>
         const theme = localStorage.getItem('theme') || 'dark';
