@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ðŸ›°ï¸ Satellite Tracking Project | Portfolio</title>
+    <title>Shreybot | Portfolio</title>
     <style>
         :root {
             --bg-primary: #ffffff;
@@ -146,8 +146,8 @@
     <div class="container">
         <header class="header">
             <div>
-                <h1>ðŸ›°ï¸ Satellite Tracking Project</h1>
-                <p class="subtitle">Software Case Study</p>
+                <h1>Shreybot</h1>
+                <p class="subtitle">Engineering Case Study</p>
             </div>
             <div class="header-controls">
                 <button id="theme-toggle" class="btn-icon">🌙</button>
@@ -156,22 +156,122 @@
         </header>
 
         <section class="specs-grid">
-            <div class="spec-card"><p class="spec-label">Category</p><p class="spec-value">Software</p></div>
-            <div class="spec-card"><p class="spec-label">Achievement</p><p class="spec-value">Live Portfolio</p></div>
+            <div class="spec-card"><p class="spec-label">Category</p><p class="spec-value">Engineering</p></div>
+            <div class="spec-card"><p class="spec-label">Achievement</p><p class="spec-value">🏅 State Finalist</p></div>
             <div class="spec-card"><p class="spec-label">Status</p><p class="spec-value">Live</p></div>
         </section>
 
         <main>
-            
-        
-        
-
+        <!-- Project Overview -->
         <div class="content-section">
-            </div><h2 class="section-title">Overview</h2><div class="section-content">
-            <p>A school project that combines computational modeling with embedded systems to track satellite positions in real-time. Using MATLAB for orbital calculations and Arduino for hardware control, the system displays satellite trajectories and positions on an intuitive graphical user interface.</p>
-        </main></main>
+            <h2 class="section-title">Overview</h2>
+            <div class="section-content">
+                <p>Shreybot was my first robot with Pioneer Robotics during the Freight Frenzy season. This case study documents the mechanical design decisions, engineering tradeoffs, and lessons learned while building a robot to compete in FTC's rapid-freight logistics challenge.</p>
+                <p style="margin-top: 12px;"><strong>Challenge:</strong> Design a robot to collect cubic and spherical freight from a warehouse and deposit them on alliance-specific shipping hubs at multiple heights, all within severe weight and space constraints.</p>
+            </div>
+        </div>
 
-        
+        <!-- Mechanism 1: Tines Collection System -->
+        <div class="mechanism-section">
+            <h3 class="mechanism-title">🎯 Tines Collection System</h3>
+            
+            <div class="problem-decision-result">
+                <div class="pdr-label">Problem</div>
+                <div class="pdr-content">We needed a mechanism that could reliably pick up both cubic and spherical freight from the ground with minimal energy and jamming risk. Early sketches showed a simple single-material design, but testing revealed we lacked the versatility to handle freight of varying geometry and weight.</div>
+            </div>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Design Decision</div>
+                <div class="pdr-content">I prototyped tines with different materials in parallel: plastic tubing (rigid, precise) and 3D-printed flexible tines. Rather than choosing one, I designed a hybrid system that uses both materials in different configurations depending on which type of freight we're targeting. This dual-material approach trades increased complexity for robustness.</div>
+            </div>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Result</div>
+                <div class="pdr-content">The hybrid tines system achieved consistent pickup rates across all freight types during competition. The tradeoff: more complex assembly and higher material cost, but eliminated mechanical failures during match play—which was worth the investment.</div>
+            </div>
+
+            <img src="../files/robot-photos/shreybot/IMG_3267.jpeg" alt="Tines collection system detail" class="mechanism-image">
+        </div>
+
+        <!-- Mechanism 2: Linear Slide Stack -->
+        <div class="mechanism-section">
+            <h3 class="mechanism-title">⬆️ Long Robotics Slides Vertical Stack</h3>
+            
+            <div class="problem-decision-result">
+                <div class="pdr-label">Problem</div>
+                <div class="pdr-content">We needed to deposit freight at multiple heights (hub levels 1, 2, and 3). Misumi linear slides offered precision but were prohibitively expensive and too heavy for our drive base load budget. We had to balance lift height, speed, reliability, and cost.</div>
+            </div>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Design Decision</div>
+                <div class="pdr-content">I chose a two-stage Long Robotics slide system—these slides extend to roughly 50% of their fully compressed length, cutting our footprint in half versus single-stage alternatives. They're significantly cheaper than Misumi and lighter. The tradeoff: lower precision and slower extension speed compared to Misumi.</div>
+            </div>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Result</div>
+                <div class="pdr-content">The Long Robotics solution proved reliable throughout the season with no wear-related failures. The reduced speed meant slightly longer cycle times, but we prioritized consistency over speed. The cost savings let us allocate budget to other critical systems like intake redundancy.</div>
+            </div>
+
+            <img src="../files/robot-photos/shreybot/IMG_3280.jpeg" alt="Linear slide stack and deposit mechanism" class="mechanism-image">
+        </div>
+
+        <!-- Integrated System -->
+        <div class="mechanism-section">
+            <h3 class="mechanism-title">🔧 System Integration</h3>
+            <img src="../files/robot-photos/shreybot/IMG_3405.jpeg" alt="Full robot assembly" class="mechanism-image">
+            <div class="section-content" style="margin-top: 20px;">
+                <p>The collection system and linear stack required tight integration to handle freight handoff smoothly. The intake tilts freight into the collection tines, then the slides extend to position it precisely for deposit. This sequential motion reduced jamming compared to simultaneous actuation, though it added ~1 second per cycle.</p>
+            </div>
+        </div>
+
+        <!-- Key Takeaways -->
+        <div class="content-section">
+            <h2 class="section-title">Lessons Learned</h2>
+            <p class="takeaway-intro">Add your own reflection here.</p>
+            <ol class="takeaway-list">
+                <li>
+                    <div class="takeaway-list-item">
+                        <div class="takeaway-list-number">1</div>
+                        <div class="takeaway-list-content">
+                            <div class="takeaway-list-title">Prototype Early, Prototype Often</div>
+                            <div class="takeaway-list-text">The hybrid tines approach emerged only after building and testing both material options in parallel. Next time I'd set a hard cutoff date to freeze the design and shift focus entirely to optimization and reliability testing.</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="takeaway-list-item">
+                        <div class="takeaway-list-number">2</div>
+                        <div class="takeaway-list-content">
+                            <div class="takeaway-list-title">Understand Your Tradeoffs</div>
+                            <div class="takeaway-list-text">Every design choice was a deliberate tradeoff. Long Robotics gave up precision for cost and weight. Being explicit about these tradeoffs made it easier to defend design decisions to teammates and coaches.</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="takeaway-list-item">
+                        <div class="takeaway-list-number">3</div>
+                        <div class="takeaway-list-content">
+                            <div class="takeaway-list-title">Prioritize Reliability Over Speed</div>
+                            <div class="takeaway-list-text">In competition, a robot that works 100% of the time beats one that's fast but unreliable. This mindset shaped every decision—from hybrid tines to sequential motion control.</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="takeaway-list-item">
+                        <div class="takeaway-list-number">4</div>
+                        <div class="takeaway-list-content">
+                            <div class="takeaway-list-title">Budget Constraints are Features</div>
+                            <div class="takeaway-list-text">The cost and weight limits forced creative solutions that ended up being more elegant than "best of breed" solutions. Constraints breed innovation.</div>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="content-section">
+            
+        <div class="action-buttons"><a href="../files/Shreybot.usdz" class="btn-primary">📱 VIEW IN AR</a></div>
     </div>
     <script>
         const theme = localStorage.getItem('theme') || 'dark';

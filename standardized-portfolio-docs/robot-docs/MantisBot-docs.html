@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stretchbot | Portfolio</title>
+    <title>MantisBot | Portfolio</title>
     <style>
         :root {
             --bg-primary: #ffffff;
@@ -146,7 +146,7 @@
     <div class="container">
         <header class="header">
             <div>
-                <h1>Stretchbot</h1>
+                <h1>MantisBot</h1>
                 <p class="subtitle">Engineering Case Study</p>
             </div>
             <div class="header-controls">
@@ -157,7 +157,7 @@
 
         <section class="specs-grid">
             <div class="spec-card"><p class="spec-label">Category</p><p class="spec-value">Engineering</p></div>
-            <div class="spec-card"><p class="spec-label">Achievement</p><p class="spec-value">🏆 State Champion</p></div>
+            <div class="spec-card"><p class="spec-label">Achievement</p><p class="spec-value">Live Portfolio</p></div>
             <div class="spec-card"><p class="spec-label">Status</p><p class="spec-value">Live</p></div>
         </section>
 
@@ -166,13 +166,13 @@
         <div class="content-section">
             <h2 class="section-title">Overview</h2>
             <div class="section-content">
-                <p>Stretchbot was Pioneer Robotics' entry for the PowerPlay season. Unlike a typical build cycle, we deliberately designed two robots that year — a restrained qualifier robot and the fully capable competition robot unveiled at states. This case study documents the mechanical decisions behind the chassis, extension, intake, and depositor, and what happened when we pushed further at the Maryland Tech Invitational.</p>
-                <p><strong>Challenge:</strong> Design a robot to collect cones from ground stacks and deposits, then score them on junction poles at low, medium, and high heights as quickly as possible, within strict size and weight constraints.</p>
+                <p>MantisBot is Pioneer Robotics' entry for the Into the Deep season. The game requires collecting samples and specimens from an underwater-themed field and depositing them in scoring zones, with an end-game climb onto hanging bars. This case study documents the key mechanical decisions across the season — the chassis, claw, slide system, and climb — and the major redesign that shaped the final robot.</p>
+                <p><strong>Challenge:</strong> Collect colored samples and metal specimens from the field and score them in designated zones at multiple heights, then ascend to hang on bars at the end of each match, all within tight size and weight limits.</p>
             </div>
 
             <div class="strategy-callout">
-                <div class="strategy-label">Season Strategy</div>
-                We made the deliberate decision to field a less capable robot at the qualifier. The goal was to avoid telegraphing our full design to competitors before states — an element of surprise that gave us a strategic edge during alliance selections. Critically, I carried over key design elements from the qualifier robot so we wouldn't be starting from scratch for states.
+                <div class="strategy-label">Season Approach</div>
+                We began the season with ambitious goals — implementing a Power Take Off (PTO) and a Differential Swerve drivetrain, both of which we had never built before. We also applied an Agile development methodology with two-week sprints, daily team standups, and formal sprint reviews. Midseason we acknowledged the design was too complex and simplified to a more focused, reliable system. The final robot emphasizes simplicity and reliability — the two core values that emerged from every lesson this season.
             </div>
         </div>
 
@@ -182,121 +182,109 @@
 
             <div class="problem-decision-result">
                 <div class="pdr-label">Problem</div>
-                <div class="pdr-content">The robot needed to navigate freely between junction poles on a dense field. Getting the footprint wrong would mean catching on poles or wasting internal volume. I needed a mathematically verified chassis size, not an eyeballed one.</div>
+                <div class="pdr-content">Our previous season used a live-axle drivetrain, which caused inconsistencies and wasted space. Electronics placed on the bottom panel dragged against the floor and caused disconnect issues mid-match. We needed a more reliable foundation going into a new season with more complex upper mechanisms.</div>
             </div>
 
             <div class="problem-decision-result">
                 <div class="pdr-label">Design Decision</div>
-                <div class="pdr-content">I started with a 13" × 16" mecanum drive chassis, verifying field clearance by calculating the robot's diagonal using a hypotenuse check against the junction spacing. When mechanism changes required more internal space for servos, I widened the chassis to 15" × 16" — accounting for intake geometry and rewiring simultaneously. In the final revision I added custom side plates to protect the mecanum wheels, adding a half inch to each dimension but eliminating wheel damage risk during matches.</div>
+                <div class="pdr-content">I switched to a dead-axle mecanum drivetrain — stationary axles with wheels rotating freely around them — which reduced our chassis footprint by 25% and eliminated the excess motion from the live-axle system. Electronics were moved to the bottom for easy access during maintenance. The carbon fiber side plate chassis from last season was retained as the structural base, with a modular upper chassis that can be detached independently for mechanism work without touching the drive base. Spring-loaded odometry pods were integrated directly into the chassis to maintain ground contact for accurate localization throughout matches.</div>
             </div>
 
             <div class="problem-decision-result">
                 <div class="pdr-label">Result</div>
-                <div class="pdr-content">The three-version chassis evolution produced a footprint that satisfied field constraints while providing the internal volume needed for all mechanisms. The side plates proved their value — no wheel damage occurred across the full season including states.</div>
+                <div class="pdr-content">The dead-axle system was significantly more consistent than the previous live-axle approach. The modular upper/lower chassis separation proved essential during the midseason redesign — we were able to rebuild the upper mechanisms without disturbing the drivetrain, which saved significant time under a tight competition deadline.</div>
             </div>
+
+            <img src="../files/robot-photos/mantisbot/full_robot.jpeg" alt="MantisBot chassis assembly" style="width: 100%; height: auto; border-radius: 12px; object-fit: cover; margin-top: 20px; border: 1px solid var(--border-light);">
         </div>
 
-            <img src="../files/robot-photos/stretchbot/fullrobot.jpeg" alt="Full StretchBot robot chassis" style="width: 100%; height: auto; border-radius: 12px; object-fit: cover; margin-top: 20px; border: 1px solid var(--border-light);">
-
-        <!-- Mechanism 2: Extension -->
+        <!-- Mechanism 2: Claw -->
         <div class="mechanism-section">
-            <h3 class="mechanism-title">↔️ Extension &amp; Cone Transfer</h3>
+            <h3 class="mechanism-title">🦀 Differential Claw</h3>
 
             <div class="problem-decision-result">
                 <div class="pdr-label">Problem</div>
-                <div class="pdr-content">We needed horizontal extension to reach cones and transfer them internally for scoring. The robot had to extend fully to reach the ground stack, but retract compactly within the size limit. Our first attempt — belt-driven linear slides — couldn't achieve full extension because the belt geometry physically limited travel range.</div>
+                <div class="pdr-content">Into the Deep requires collecting both flat samples and cylindrical specimens from tight spaces inside the Submersible structure. Our first claw was large and difficult to maneuver inside the confined geometry. It used internal grip — effective for grouping samples — but was bulky and prone to breaking under repeated stress.</div>
             </div>
 
             <div class="problem-decision-result">
                 <div class="pdr-label">Design Decision</div>
-                <div class="pdr-content">I replaced the belt drive with polyplastic composite linkages on each end of the slides. One linkage attached to the intake arm, the other to a GoBilda torque servo — the entire extension mechanism ran on servos rather than motors, freeing motor ports and allowing full slide travel. After validating the linkage system, I upgraded to GoBilda 5-turn torque servos for finer rotational control over extension position, which directly improved cone placement precision.</div>
+                <div class="pdr-content">I iterated through three claw designs. The first used internal grip and rotated on two axes — flexible but large. The second introduced external grip contoured to the sample shape, which increased consistency and durability, but was still too bulky. The final design applied a differential mechanism — a concept we had explored in our PTO prototype — which allowed rotation on two axes simultaneously using bevel gears, creating a much smaller form factor. Bringing the points of rotation together reduced the distance between moving parts, shrinking the claw from bulky to compact while actually improving rotational freedom. The differential also reduced motor strain by distributing load more efficiently.</div>
             </div>
 
             <div class="problem-decision-result">
                 <div class="pdr-label">Result</div>
-                <div class="pdr-content">The linkage-driven system achieved reliable full extension throughout the season. The 5-turn servo upgrade noticeably tightened extension consistency, reducing missed transfers during high-speed cycling. The tradeoff — increased mechanical complexity — was worth it for the scoring reliability gained.</div>
+                <div class="pdr-content">The final differential claw was lightweight, reliable inside the Submersible, and gave us more rotational freedom than either previous iteration. The unexpected benefit was that the PTO development — which we ultimately didn't use on the final robot — directly taught us the bevel gear principles that made the claw work. The failed mechanism produced the knowledge that improved the working one.</div>
             </div>
+
+            <img src="../files/robot-photos/mantisbot/claw.jpeg" alt="MantisBot differential claw mechanism" style="width: 100%; height: auto; border-radius: 12px; object-fit: cover; margin-top: 20px; border: 1px solid var(--border-light);">
         </div>
 
-            <img src="../files/robot-photos/stretchbot/linkage.jpeg" alt="Extension linkage mechanism" style="width: 100%; height: auto; border-radius: 12px; object-fit: cover; margin-top: 20px; border: 1px solid var(--border-light);">
-
-        <!-- Mechanism 3: Intake -->
+        <!-- Mechanism 3: Slides -->
         <div class="mechanism-section">
-            <h3 class="mechanism-title">🎯 Intake &amp; Cone Collection</h3>
+            <h3 class="mechanism-title">⬆️ Slides Actuation &amp; Pivot</h3>
 
             <div class="problem-decision-result">
                 <div class="pdr-label">Problem</div>
-                <div class="pdr-content">PowerPlay cones are tapered, making them difficult to grip reliably at speed. We needed an intake that could grab a cone consistently without requiring the driver to precisely align the entire robot on every approach.</div>
+                <div class="pdr-content">We needed linear slides that could both extend for scoring and pivot to different angles for depositing at the high basket and bar. Running separate motors for extension and pivot creates coordination problems and wastes motor ports. Belt skipping on the original motor unit caused the slides to lose position during matches.</div>
             </div>
 
             <div class="problem-decision-result">
                 <div class="pdr-label">Design Decision</div>
-                <div class="pdr-content">I went through three claw iterations. The first was a rounded polyplastic composite claw with Dycem adhesive on the interior for friction — functional, but only worked when driving directly into the cone. The second was a beveled claw: I calculated the cone's taper geometry (bottom diameter 65.4mm, top 60.9mm, height 14mm) to derive the correct bevel slope, CADed the profile in SolidWorks, and powered it with a GoBilda superspeed servo. The third version mounted this claw on a polycarbonate arm, adding horizontal reach so the driver could collect cones from a distance rather than repositioning the whole robot.</div>
+                <div class="pdr-content">I designed a custom two-sided pulley with bearings that spin freely on the axle, allowing pivot and actuation on the same axis independently of one another. Both motors are housed together in one module, optimizing space and simplifying maintenance access. After belt skipping issues, I shifted the motor mounting holes back to correct belt tensioning — this also improved structural integrity by connecting the module to the side plates. I also switched from two sets of slides to a single set, which eliminated the need to coordinate two motors and proved more reliable in competition. Custom aluminum slide inserts replaced polycarbonate ones after breaking 8 of the polycarbonate versions during testing. A chain and sprocket system rotates the slides, with the motor selection determined by a torque calculation based on arm weight and extension distance.</div>
             </div>
 
             <div class="problem-decision-result">
                 <div class="pdr-label">Result</div>
-                <div class="pdr-content">The arm-mounted beveled claw became our most reliable collection method. The bevel geometry caused cones to self-center on contact, reducing driver precision requirements and cutting collection time per cycle. The Dycem adhesive added a margin of safety on borderline grips.</div>
+                <div class="pdr-content">The single-slide system was meaningfully more reliable than the dual-slide approach. The hole-shift fix resolved belt skipping entirely. The aluminum inserts held through the full competition season with no failures — the 8 broken polycarbonate mounts were expensive in time but gave us a clear answer on material choice.</div>
             </div>
+
+            <img src="../files/robot-photos/mantisbot/slides&pivot.jpeg" alt="MantisBot linear slides and pivot system" style="width: 100%; height: auto; border-radius: 12px; object-fit: cover; margin-top: 20px; border: 1px solid var(--border-light);">
         </div>
 
-            <img src="../files/robot-photos/stretchbot/claw.jpeg" alt="Beveled claw intake mechanism" style="width: 100%; height: auto; border-radius: 12px; object-fit: cover; margin-top: 20px; border: 1px solid var(--border-light);">
-
-        <!-- Mechanism 4: Depositor & Aligner -->
+        <!-- Mechanism 4: Climb -->
         <div class="mechanism-section">
-            <h3 class="mechanism-title">📍 Depositor &amp; Aligner</h3>
+            <h3 class="mechanism-title">🧗 Ascent / Climb</h3>
 
             <div class="problem-decision-result">
                 <div class="pdr-label">Problem</div>
-                <div class="pdr-content">Scoring required placing a cone onto a junction pole accurately and quickly. Our first depositor — a cone-shaped insert that flipped the cone upright onto the pole — blocked the internal transfer path, making efficient cycling impossible. Separately, drivers needed a reliable way to align to junctions without burning time on visual guesswork each cycle.</div>
+                <div class="pdr-content">The end-game requires climbing onto horizontal bars at increasing heights for bonus points. A separate dedicated climbing mechanism adds weight and complexity. We needed to achieve the climb without adding a new system to an already complex robot.</div>
             </div>
 
             <div class="problem-decision-result">
                 <div class="pdr-label">Design Decision</div>
-                <div class="pdr-content">I redesigned the depositor as an open ring shape — the cone slips in from above rather than requiring a full flip motion, which cleared the internal transfer path and enabled much faster cycling. I mounted it on vertical linear slides driven by a GoBilda SuperSpeed servo for rapid height changes between junction levels. For the aligner, I started with a thin PLA filament guide for visual positioning, then redesigned it to physically grab the junction during scoring. After checking the game manual I confirmed it needed to be at least 2 inches in radius to legally contact the pole, so I sized it accordingly.</div>
+                <div class="pdr-content">I designed the ascent component to attach directly to the linear slides, using the same system we already had for scoring to pull the robot onto the bars. Static hooks shaped by the upper chassis maintain a minimal profile during normal play and engage the bar when the slides extend and retract. I performed a torque calculation to determine the required motor force to lift the full robot weight, then selected the fastest motors that met that torque threshold — balancing speed with reliability.</div>
             </div>
 
             <div class="problem-decision-result">
                 <div class="pdr-label">Result</div>
-                <div class="pdr-content">The ring depositor eliminated the jam risk from the first version. Combined with the aligner physically latching onto the junction, drivers could execute deposits with significantly higher confidence — which was critical for achieving our 269-point high score and maintaining consistency throughout states.</div>
+                <div class="pdr-content">Integrating the climb into the existing slide system eliminated a dedicated mechanism entirely, saving weight and motor ports. The torque-calculated motor selection meant the climb was reliable without being over-engineered. The static hooks' minimal profile meant they didn't interfere with normal scoring operations during teleop.</div>
             </div>
+
+            <img src="../files/robot-photos/mantisbot/climb.png" alt="MantisBot ascent and climb mechanism" style="width: 100%; height: auto; border-radius: 12px; object-fit: cover; margin-top: 20px; border: 1px solid var(--border-light);">
         </div>
 
-            <img src="../files/robot-photos/stretchbot/depositor.png" alt="Ring depositor and aligner mechanism" style="width: 100%; height: auto; border-radius: 12px; object-fit: cover; margin-top: 20px; border: 1px solid var(--border-light);">
-
-        <!-- MTI -->
+        <!-- Full Robot -->
         <div class="mechanism-section">
-            <h3 class="mechanism-title">🌍 Post-Season: Maryland Tech Invitational</h3>
-
-            <div class="problem-decision-result">
-                <div class="pdr-label">Context</div>
-                <div class="pdr-content">After winning states, we were invited to the Maryland Tech Invitational — a field of the top 40 FTC teams in the world. To compete at that level we needed more precise autonomous positioning. Our existing system used drive motor encoders, which accumulate drift over time. I decided to add a dedicated odometry wheel for more accurate real-time position tracking.</div>
+            <h3 class="mechanism-title">🤖 Full Robot</h3>
+            <div class="section-content">
+                <p>MantisBot went through more iterations than any previous Pioneer Robotics robot. We attempted PTO and Differential Swerve — two mechanisms we'd never built — before recognizing midseason that the complexity was hurting reliability. The final robot strips back to what works: a dead-axle mecanum base, a single belt-driven slide system, a differential claw, and an integrated climb. Every mechanism on the robot can be accessed or removed for maintenance without disturbing adjacent systems. The Agile sprint methodology meant we had clear documentation of every decision, which made the midseason pivot much faster to execute than it would have been otherwise.</p>
             </div>
 
-            <div class="problem-decision-result">
-                <div class="pdr-label">Design Decision</div>
-                <div class="pdr-content">I designed the odometry wheel to be spring-loaded so it would maintain consistent ground contact regardless of field surface variation. The concept was correct, but the springs available weren't stiff enough to prevent the wheel from skipping under load. Rather than delay the build, I switched to a fixed rigid mount — simpler, and still a meaningful accuracy improvement over motor encoders alone.</div>
-            </div>
-
-            <div class="problem-decision-result">
-                <div class="pdr-label">Result (and What Went Wrong)</div>
-                <div class="pdr-content">During a match at MTI, our robot made brief contact with an opposing robot. The impact lifted the rigidly-mounted odometry wheel off the ground momentarily. With no position feedback, the autonomous routine lost its reference frame and drove the robot directly into the wall. The spring-loaded design I had originally prototyped would have absorbed that impact and maintained contact. It was an expensive lesson in not abandoning the original design intent under time pressure — the failure was very public, but it made the reasoning stick.</div>
-            </div>
+            <img src="../files/robot-photos/mantisbot/full_robot.jpeg" alt="MantisBot complete robot assembly" style="width: 100%; height: auto; border-radius: 12px; object-fit: cover; margin-top: 20px; border: 1px solid var(--border-light);">
         </div>
-
-            <img src="../files/robot-photos/stretchbot/fullrobot.jpeg" alt="StretchBot competition robot" style="width: 100%; height: auto; border-radius: 12px; object-fit: cover; margin-top: 20px; border: 1px solid var(--border-light);">
 
         <!-- Key Takeaways -->
         <div class="content-section">
             <h2 class="section-title">Key Takeaways</h2>
-            <p class="takeaway-intro">StretchBot pushed the limits of linear extension and structural stability. Developing a stable multi-stage lift within tight weight constraints reinforced the value of material selection and the necessity of rigorous stress analysis during the initial design phase.</p>
+            <p class="takeaway-intro">Add your own reflection here.</p>
             <ol class="takeaway-list">
                 <li>
                     <div class="takeaway-list-item">
                         <div class="takeaway-list-number">1</div>
                         <div class="takeaway-list-content">
-                            <div class="takeaway-list-title">Strategy Is Part of Design</div>
-                            <div class="takeaway-list-text">Fielding a deliberate underperformer at the qualifier required designing upgrade paths into the robot from the start. The strategic decision shaped every mechanical choice made in the first build.</div>
+                            <div class="takeaway-list-title">Ambition Needs a Cutoff Date</div>
+                            <div class="takeaway-list-text">We spent months on PTO and Differential Swerve — both legitimate engineering challenges — but waiting too long to acknowledge they weren't competition-ready cost us development time on the final robot. Setting a hard go/no-go date for experimental mechanisms upfront would have saved weeks.</div>
                         </div>
                     </div>
                 </li>
@@ -304,8 +292,8 @@
                     <div class="takeaway-list-item">
                         <div class="takeaway-list-number">2</div>
                         <div class="takeaway-list-content">
-                            <div class="takeaway-list-title">Measure Before You Prototype</div>
-                            <div class="takeaway-list-text">The beveled claw only worked because I calculated the cone's taper mathematically first. Starting from measured geometry gets you closer on iteration one and avoids chasing a shape by feel.</div>
+                            <div class="takeaway-list-title">Failed Mechanisms Teach Working Ones</div>
+                            <div class="takeaway-list-text">The PTO prototype never made it onto the final robot, but the bevel gear knowledge from building it directly enabled the differential claw design. Time spent on an abandoned mechanism isn't always wasted — it depends on what you extract from it.</div>
                         </div>
                     </div>
                 </li>
@@ -313,8 +301,8 @@
                     <div class="takeaway-list-item">
                         <div class="takeaway-list-number">3</div>
                         <div class="takeaway-list-content">
-                            <div class="takeaway-list-title">Don't Compromise the Original Intent</div>
-                            <div class="takeaway-list-text">The spring-loaded odometry was the right design. Switching to a rigid mount to save time cost us at MTI. When a change is driven by schedule rather than engineering reasoning, it needs to be flagged — not quietly shipped.</div>
+                            <div class="takeaway-list-title">Test to Failure, Then Choose the Right Material</div>
+                            <div class="takeaway-list-text">Breaking 8 polycarbonate slide mounts was frustrating but conclusive. We knew exactly why aluminum was the right choice and had data to back it. Switching materials based on one failure is a guess — switching after repeated failures under real conditions is engineering.</div>
                         </div>
                     </div>
                 </li>
@@ -322,8 +310,8 @@
                     <div class="takeaway-list-item">
                         <div class="takeaway-list-number">4</div>
                         <div class="takeaway-list-content">
-                            <div class="takeaway-list-title">Public Failures Teach Better</div>
-                            <div class="takeaway-list-text">The MTI failure was livestreamed and spread widely. That visibility made the lesson about sensor robustness and mechanical redundancy concrete in a way that no successful run could have.</div>
+                            <div class="takeaway-list-title">Simplicity Is a Design Decision, Not a Fallback</div>
+                            <div class="takeaway-list-text">The final robot is simpler than what we originally planned. That simplicity was earned — it came from understanding why the complex version didn't work, not from avoiding complexity in the first place. A simple robot that competes reliably beats a complex one that doesn't.</div>
                         </div>
                     </div>
                 </li>
@@ -333,7 +321,7 @@
         <!-- Call to Action -->
         <div class="content-section">
             
-        <div class="action-buttons"><a href="files/StretchBot.usdz" class="btn-primary">📱 VIEW IN AR</a></div>
+        <div class="action-buttons"><a href="files/MantisBot.usdz" class="btn-primary">📱 VIEW IN AR</a></div>
     </div>
     <script>
         const theme = localStorage.getItem('theme') || 'dark';

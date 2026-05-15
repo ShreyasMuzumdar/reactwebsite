@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ðŸ›°ï¸ Satellite Tracking Project | Portfolio</title>
+    <title>Connect 4 AI Bot | Portfolio</title>
     <style>
         :root {
             --bg-primary: #ffffff;
@@ -91,7 +91,8 @@
             font-size: 1rem;
             transition: all 0.3s ease;
             display: flex;
-            align-items: center; gap: 12px;
+            align-items: center;
+            gap: 12px;
             white-space: nowrap;
         width: fit-content;
     }
@@ -113,31 +114,30 @@
         .mechanism-section { margin-bottom: 120px; }
         .mechanism-title { font-size: 2rem; font-weight: 800; color: var(--text-primary); margin-bottom: 40px; }
 
-        .problem-decision-result, .pdr-block { background: var(--bg-secondary); padding: 45px; border-radius: 24px; border-left: 8px solid var(--accent-primary); margin-bottom: 40px; box-shadow: 0 30px 60px -25px rgba(0,0,0,0.6); }
+        .pdr-block { background: var(--bg-secondary); padding: 45px; border-radius: 24px; border-left: 8px solid var(--accent-primary); margin-bottom: 40px; box-shadow: 0 30px 60px -25px rgba(0,0,0,0.6); transition: transform 0.3s ease; }
+        .pdr-block:hover { transform: scale(1.01); }
         .pdr-label { font-size: 0.9rem; font-weight: 800; text-transform: uppercase; letter-spacing: 3px; color: var(--accent-primary); margin-bottom: 18px; }
-        .pdr-content { color: var(--text-secondary); font-size: 1.15rem; line-height: 1.85; }
         
         .mechanism-image { width: 100%; border-radius: 24px; border: 1px solid var(--border-light); box-shadow: 0 40px 80px var(--shadow-medium); margin: 40px 0; display: block; }
 
         .takeaway-list { display: grid; gap: 40px; list-style: none; padding: 0; }
         .takeaway-item { display: flex; gap: 35px; align-items: flex-start; background: var(--bg-secondary); padding: 45px; border-radius: 28px; border: 1px solid var(--border-light); transition: all 0.4s ease; }
         .takeaway-item:hover { border-color: var(--accent-primary); transform: translateY(-5px); }
-        .takeaway-number, .takeaway-list-number { background: var(--accent-primary); color: var(--bg-primary); width: 60px; height: 60px; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.5rem; flex-shrink: 0; box-shadow: 0 10px 20px -5px var(--accent-primary); }
-        .takeaway-title, .takeaway-list-title { font-size: 1.6rem; font-weight: 700; color: var(--text-primary); margin-bottom: 15px; }
-        .takeaway-text, .takeaway-list-text { color: var(--text-secondary); font-size: 1.15rem; line-height: 1.85; }
+        .takeaway-number { background: var(--accent-primary); color: var(--bg-primary); width: 60px; height: 60px; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.5rem; flex-shrink: 0; box-shadow: 0 10px 20px -5px var(--accent-primary); }
+        .takeaway-title { font-size: 1.6rem; font-weight: 700; color: var(--text-primary); margin-bottom: 15px; }
 
-        .action-buttons { margin-top: 100px; display: flex; justify-content: center; gap: 20px; }
-        .btn-primary { background: var(--accent-primary); color: var(--bg-primary); padding: 25px 60px; border-radius: 22px; text-decoration: none; font-weight: 800; font-size: 1.2rem; transition: all 0.4s ease; box-shadow: 0 25px 50px -15px var(--accent-primary); display: inline-flex; align-items: center; gap: 15px; border: none; cursor: pointer; }
-        .btn-secondary { background: var(--bg-secondary); color: var(--accent-primary); padding: 25px 60px; border-radius: 22px; text-decoration: none; font-weight: 800; font-size: 1.2rem; transition: all 0.4s ease; border: 1px solid var(--border-light); }
-        .btn-primary:hover, .btn-secondary:hover { transform: translateY(-8px); box-shadow: 0 35px 60px -15px var(--accent-primary); }
+        .action-buttons { margin-top: 100px; display: flex; justify-content: center; }
+        .btn-primary { background: var(--accent-primary); color: var(--bg-primary); padding: 25px 60px; border-radius: 22px; text-decoration: none; font-weight: 800; font-size: 1.2rem; transition: all 0.4s ease; box-shadow: 0 25px 50px -15px var(--accent-primary); display: inline-flex; align-items: center; gap: 15px; }
+        .btn-primary:hover { transform: translateY(-8px); box-shadow: 0 35px 60px -15px var(--accent-primary); }
 
         table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 50px 0; border-radius: 24px; overflow: hidden; border: 1px solid var(--border-light); }
         th { background: var(--bg-secondary); color: var(--accent-primary); padding: 30px; text-align: left; font-weight: 800; border-bottom: 1px solid var(--border-light); }
         td { padding: 30px; color: var(--text-secondary); border-bottom: 1px solid var(--border-light); }
         
-        .card { background: var(--bg-secondary); padding: 45px; border-radius: 24px; margin: 40px 0; border: 1px solid var(--border-light); }
-        .strategy-callout { background: var(--bg-secondary); border-left: 6px solid var(--accent-primary); border-radius: 24px; padding: 45px; margin: 40px 0; color: var(--text-secondary); }
-        .strategy-label { color: var(--accent-primary); font-weight: 800; text-transform: uppercase; margin-bottom: 15px; display: block; letter-spacing: 2px; }
+        .card { background: var(--bg-secondary); padding: 45px; border-radius: 24px; margin: 40px 0; border: 1px solid var(--border-light); box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+        .roadmap { border-left: 4px solid var(--accent-primary); padding-left: 50px; margin: 50px 0; }
+        .roadmap-item { margin-bottom: 50px; position: relative; }
+        .roadmap-item::before { content: ''; position: absolute; left: -62px; top: 12px; width: 20px; height: 20px; border-radius: 50%; background: var(--accent-primary); box-shadow: 0 0 30px var(--accent-primary); }
 
         @media (max-width: 768px) { .container { padding: 50px 30px; } h1 { font-size: 3rem; } .header { flex-direction: column; text-align: center; gap: 40px; } }
 </style>
@@ -146,8 +146,8 @@
     <div class="container">
         <header class="header">
             <div>
-                <h1>ðŸ›°ï¸ Satellite Tracking Project</h1>
-                <p class="subtitle">Software Case Study</p>
+                <h1>Connect 4 AI Bot</h1>
+                <p class="subtitle">Engineering Case Study</p>
             </div>
             <div class="header-controls">
                 <button id="theme-toggle" class="btn-icon">🌙</button>
@@ -156,20 +156,14 @@
         </header>
 
         <section class="specs-grid">
-            <div class="spec-card"><p class="spec-label">Category</p><p class="spec-value">Software</p></div>
-            <div class="spec-card"><p class="spec-label">Achievement</p><p class="spec-value">Live Portfolio</p></div>
-            <div class="spec-card"><p class="spec-label">Status</p><p class="spec-value">Live</p></div>
+            <div class="spec-card"><p class="spec-label">Category</p><p class="spec-value">Engineering</p></div>
+            <div class="spec-card"><p class="spec-label">Achievement</p><p class="spec-value">Live Project</p></div>
+            <div class="spec-card"><p class="spec-label">Status</p><p class="spec-value">Online</p></div>
         </section>
 
         <main>
-            
-        
-        
-
-        <div class="content-section">
-            </div><h2 class="section-title">Overview</h2><div class="section-content">
-            <p>A school project that combines computational modeling with embedded systems to track satellite positions in real-time. Using MATLAB for orbital calculations and Arduino for hardware control, the system displays satellite trajectories and positions on an intuitive graphical user interface.</p>
-        </main></main>
+        <div class="content-section"><h2 class="section-title">Overview</h2><div class="section-content"><p>This project features a high-performance Connect 4 AI engine built using Python. The goal was to create an opponent that is virtually unbeatable by human players, utilizing advanced search algorithms and heuristic evaluations to predict moves several turns in advance. 
+                     The system balances computational complexity with real-time responsiveness, providing an engaging and challenging experience for users through a web-based interface.</p></div></main>
 
         
     </div>
@@ -185,6 +179,6 @@
             localStorage.setItem('theme', next);
             update();
         });
-    </script>
+</script>
 </body>
 </html>
