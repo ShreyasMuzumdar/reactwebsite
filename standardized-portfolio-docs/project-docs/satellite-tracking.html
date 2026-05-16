@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ðŸ›°ï¸ Satellite Tracking Project | Portfolio</title>
+    <title>🛰️ Satellite Tracking Project | Portfolio</title>
     <style>
         :root {
             --bg-primary: #ffffff;
@@ -146,7 +146,7 @@
     <div class="container">
         <header class="header">
             <div>
-                <h1>ðŸ›°ï¸ Satellite Tracking Project</h1>
+                <h1>🛰️ Satellite Tracking Project</h1>
                 <p class="subtitle">Software Case Study</p>
             </div>
             <div class="header-controls">
@@ -158,18 +158,86 @@
         <section class="specs-grid">
             <div class="spec-card"><p class="spec-label">Category</p><p class="spec-value">Software</p></div>
             <div class="spec-card"><p class="spec-label">Achievement</p><p class="spec-value">Live Portfolio</p></div>
-            <div class="spec-card"><p class="spec-label">Status</p><p class="spec-value">Live</p></div>
+            
         </section>
 
         <main>
-            
-        
-        
+            <div class="content-section">
+                <h2 class="section-title">Introduction & Problem Statement</h2>
+                <div class="section-content">
+                    <p>Children ages 7-11 in underserved communities in the Boston area lack accessible, engaging, and culturally relevant educational experiences that explain how modern communications infrastructure (specifically satellite technology) works, and how it connects to their daily lives and future opportunities. As a result, many of these children do not see engineering and technology as pathways available to them, limiting their aspirations and reducing the pipeline of future STEM innovators from these communities.</p>
+                    <p>A well-designed travel campaign exhibit must address this gap by delivering a hands-on, interactive learning experience that is portable, durable, budget-conscious (under $1000 in materials), and capable of operating without reliable electrical infrastructure beyond a standard power outlet. The exhibit must engage children physically and emotionally, deliver clear educational content about satellite communication, and leave participants feeling inspired and capable.</p>
+                </div>
+            </div>
 
-        <div class="content-section">
-            </div><h2 class="section-title">Overview</h2><div class="section-content">
-            <p>A school project that combines computational modeling with embedded systems to track satellite positions in real-time. Using MATLAB for orbital calculations and Arduino for hardware control, the system displays satellite trajectories and positions on an intuitive graphical user interface.</p>
-        </main></main>
+            <div class="content-section">
+                <h2 class="section-title">Research & Background</h2>
+                <div class="section-content">
+                    <p>Satellites have been used to improve human lives and tend to get misunderstood by people. While some satellite projects get the majority media attention, there are other projects that NASA runs that are just as impactful. For example, Projects SMAP and RADARSAT are popular tools used to measure many different conditions on earth that help to improve living conditions here on earth. Project SMAP looks at the soil moisture level and reads it every 2 days <a href="#source-1">[1]</a>. It helps to create a more accurate model of earth which can be used to better predict the issues we will face on earth. Project RADARSAT looks at the sea level and other conditions to help predict flooding.</p>
+                    
+                    <img src="images/satellite/submarine_cable.png" alt="Global Submarine Cable Network" class="mechanism-image">
+                    <p align="center"><i>Fig. 1. Global Submarine Cable Network showing the physical infrastructure of the internet.</i></p>
+
+                    <p>Satellites also solve many different problems. For example, we have a digital divide here on earth. While 51% of the population has access to 5G, it does not mean that the 5G coverage is even. There is 84% coverage in high-income coverage and 4% coverage in Low-income coverage <a href="#source-2">[2]</a>. This means that there is a significant amount of the population that does not have access to the internet. The internet gives these people the opportunity to help themselves with jobs, education and better access to healthcare services.</p>
+                    <p>The internet is a collection of servers all over the world. In order for these servers to be connected, they must be connected with fiber optic cables. These cables are underground as well as on the ocean floor <a href="#source-3">[3]</a>. While all these cables are inexpensive to put in densely populated, developed communities, it is expensive to keep all this infrastructure in rural areas which causes the digital divide. The goal of this project is to give students the resources to help themselves rather than give the students handouts. When explaining what these projects do, it helps the students to understand what they can do with satellites and it empowers them to become the changemakers of tomorrow.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Methodology & Implementation</h2>
+                <div class="section-content">
+                    <p>The engineering design process (EDP) for the "Science in Orbit" exhibit was a highly structured and iterative cycle, ensuring that every design decision was grounded in stakeholder research and technical feasibility. The process began with an extensive Problem Definition phase during Milestone 1, where the team conducted in-depth analysis of potential users, specifically children aged 7-11 in underserved communities. By gathering over 20 academic and scientific sources, the team mapped the needs, pain points, and motivations of these children, revealing that they are most motivated by tangible, personally relevant experiences. This research confirmed a significant gap in portable, low-cost, physically interactive exhibits focused on communications infrastructure, which shaped the final design brief.</p>
+                    
+                    <div class="card">
+                        <img src="images/satellite/motor_diagram.png" alt="Motor and Sensor Circuit Diagram" class="mechanism-image">
+                        <p align="center"><i>Fig. 2. Circuit diagram for the motor driver and ultrasonic sensor integration.</i></p>
+                    </div>
+
+                    <p>During the Solution Generation phase (Milestone 2), the team utilized a variety of structured ideation techniques, including individual brainstorming, round-robin ideation, analogical thinking, and a structured idea list review. This broad exploration led to diverse concepts ranging from magnetic levitation trains to nuclear energy simulations. To select the most effective solution, a two-step process was employed: a rank-order chart followed by a Kepner-Tregoe Decision Analysis (KTDA). Concepts were scored against MUST criteria, such as fitting within a transport container and staying under a $100 budget, and WANT criteria, including modularity and visual appeal. The satellite orbit concept emerged as the winner due to its strong visual impact and clear connection to real-world technology.</p>
+                    
+                    <p>The Implementation phase proceeded through five distinct stages: cardboard prototyping, CAD development, 60% proof of concept, 90% prototype, and the final prototype. Initial cardboard models explored the physical geometry and the feasibility of a rotating ring mechanism. As the project progressed, SolidWorks CAD models were developed for the satellite bodies and central Earth housing. A significant technical pivot occurred when the team switched from a Raspberry Pi Pico to an Arduino-based system to ensure better compatibility with MATLAB for real-time radar-style visual output. Each milestone involved rigorous testing and user evaluation, leading to critical design changes such as replacing string-mounted satellites with rod-mounted ones for improved stability and visual clarity. The final prototype consolidated the satellites and Earth structure onto a single platform, incorporating space-themed aesthetic elements to maximize engagement.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Results & Conclusion</h2>
+                <div class="section-content">
+                    <p>The final "Science in Orbit" exhibit successfully realized the project's physical and educational goals within the established constraints. Physically, the exhibit featured a motorized rotating ring with three 3D-printed satellites orbiting a central Earth model. The system integrated an ultrasonic distance sensor, a joystick controller, an LED screen for scoring, and an LED light strip for visual feedback. All components were designed to be portable and durable, fitting within the required transport bag. The total budget used for the project was $83.11, well within the $100 limit, demonstrating the team's ability to innovate under strict financial constraints.</p>
+                    
+                    <img src="images/satellite/full_assembly.jpg" alt="Final Exhibit Assembly" class="mechanism-image">
+                    <p align="center"><i>Fig. 3. Final assembly of the Science in Orbit exhibit at the expo.</i></p>
+
+                    <p>On the day of the exhibition, the team faced a significant challenge when the wiring for the joystick and servos became disconnected, rendering the automated scoring system non-functional. However, the team demonstrated resilience by pivoting to a facilitated interaction model. Using the physical ring and the informational poster board, they explained the concepts of satellite orbits (LEO, MEO, GEO) and their real-world applications to the visiting children and judges. This experience highlighted the importance of robust wiring protection and redundancy in field-deployed exhibits, leading to recommendations for 3D-printed protective encasings in future iterations.</p>
+                    
+                    <div class="specs-grid" style="margin-top: 40px;">
+                        <div class="spec-card">
+                            <img src="images/satellite/evaluation_data.png" alt="Evaluation Data" style="width: 100%; border-radius: 12px; margin-bottom: 15px;">
+                            <p class="spec-label">User Engagement</p>
+                            <p class="spec-value">High</p>
+                        </div>
+                        <div class="spec-card">
+                            <img src="images/satellite/informational_poster.jpg" alt="Educational Poster" style="width: 100%; border-radius: 12px; margin-bottom: 15px;">
+                            <p class="spec-label">Knowledge Transfer</p>
+                            <p class="spec-value">Verified</p>
+                        </div>
+                    </div>
+
+                    <p>Despite the technical setbacks, the educational impact of the exhibit was substantial. Over ten post-it notes were collected from children at the exhibition, documenting their learning takeaways. Responses such as "LEO satellites help u get jobs + schoolwork done" and "They are used for predicting weather" indicated that the core message of how satellites impact daily life was successfully communicated. A formal survey conducted with the children also returned positive results, with attendees reporting an engaging and powerful experience. Verbal feedback from educators and parents further validated the exhibit's design, particularly the rotating satellite rig, as a high-engagement tool. Ultimately, the project met its empowerment goal, leaving the children with a greater awareness of modern communications infrastructure and inspiring them to see themselves as future STEM innovators.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Sources</h2>
+                <div class="section-content">
+                    <ol>
+                        <li id="source-1" style="word-break: break-all;">“Description | Mission,” SMAP. Accessed: Apr. 16, 2026. [Online]. Available: <a href="https://smap.jpl.nasa.gov/mission/description" target="_blank" rel="noopener noreferrer">https://smap.jpl.nasa.gov/mission/description</a></li>
+                        <li id="source-2" style="word-break: break-all;">“Goal 9 | Department of Economic and Social Affairs.” Accessed: Apr. 16, 2026. [Online]. Available: <a href="https://sdgs.un.org/goals/goal9" target="_blank" rel="noopener noreferrer">https://sdgs.un.org/goals/goal9</a></li>
+                        <li id="source-3" style="word-break: break-all;">A. Sufyan, K. B. Khan, O. A. Khashan, T. Mir, and U. Mir, “From 5G to beyond 5G: A Comprehensive Survey of Wireless Network Evolution, Challenges, and Promising Technologies,” Electronics, vol. 12, no. 10, p. 2200, May 2023, doi: <a href="https://doi.org/10.3390/electronics12102200" target="_blank" rel="noopener noreferrer">10.3390/electronics12102200</a></li>
+                        <li id="source-4" style="word-break: break-all;">E. Westberg, J. Staudinger, J. Annes, and V. Shilimkar, “5G Infrastructure RF Solutions: Challenges and Opportunities,” IEEE Microwave Magazine, vol. 20, no. 12, pp. 51–58, Dec. 2019, doi: <a href="https://doi.org/10.1109/mmm.2019.2941631" target="_blank" rel="noopener noreferrer">10.1109/mmm.2019.2941631</a></li>
+                    </ol>
+                </div>
+            </div>
+        </main>
 
         
     </div>

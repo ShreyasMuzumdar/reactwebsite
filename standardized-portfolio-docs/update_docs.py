@@ -5,9 +5,11 @@ import re
 script_dir = os.path.dirname(os.path.abspath(__file__))
 directory = os.path.join(script_dir, "project-docs")
 robot_directory = os.path.join(script_dir, "robot-docs")
+public_directory = os.path.join(script_dir, "..", "public", "project-docs")
 
 files = [f for f in os.listdir(directory) if f.endswith('.html')]
 robot_files = [f for f in os.listdir(robot_directory) if f.endswith('.html')]
+public_files = [f for f in os.listdir(public_directory) if f.endswith('.html')] if os.path.exists(public_directory) else []
 
 # Standardized CSS from Shreybot-docs.html + accessibility fixes
 MODERN_CSS = """
@@ -381,17 +383,20 @@ def update_file(filepath):
     subtitle_match = re.search(r'class="subtitle">(.*?)</', content)
     subtitle = subtitle_match.group(1).strip() if subtitle_match else ""
 
-    main_match = re.search(r'<main>(.*?)</main>', content, re.DOTALL)
+    main_match = re.search(r'<main>(.*)</main>', content, re.DOTALL)
     if main_match:
         inner_content = main_match.group(1).strip()
     else:
         inner_content = re.sub(r'<!DOCTYPE.*?</header>', '', content, flags=re.DOTALL)
         inner_content = re.sub(r'<script>.*</html>', '', inner_content, flags=re.DOTALL)
+        inner_content = re.sub(r'</div>\s*$', '', inner_content.strip())
         inner_content = inner_content.strip()
+
+    inner_content = re.sub(r'</?main[^>]*>', '', inner_content, flags=re.IGNORECASE)
 
     project_type = "Engineering" if ("hardware" in content.lower() or "3d" in content.lower()) else "Software"
 
-    new_html = f\"\"\"<!DOCTYPE html>
+    new_html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -420,10 +425,6 @@ def update_file(filepath):
                 <div class="spec-label">Project Type</div>
                 <div class="spec-value">{project_type}</div>
             </div>
-            <div class="spec-card">
-                <div class="spec-label">Status</div>
-                <div class="spec-value">Completed</div>
-            </div>
         </div>
 
         <main>
@@ -435,7 +436,7 @@ def update_file(filepath):
 {THEME_SCRIPT}
     </script>
 </body>
-</html>\"\"\"
+</html>"""
 
     with open(filepath, 'w', encoding='utf-8') as f:
         f.write(new_html)
@@ -447,5 +448,10 @@ for filename in files:
 
 for filename in robot_files:
     path = os.path.join(robot_directory, filename)
+    if os.path.exists(path):
+        update_file(path)
+
+for filename in public_files:
+    path = os.path.join(public_directory, filename)
     if os.path.exists(path):
         update_file(path)
