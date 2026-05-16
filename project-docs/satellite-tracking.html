@@ -80,7 +80,6 @@
         .btn-icon:hover { transform: scale(1.1) rotate(10deg); background: var(--accent-primary); color: var(--bg-primary); }
 
         .back-link {
-        
             text-decoration: none;
             padding: 15px 30px;
             background: var(--bg-secondary);
@@ -93,8 +92,8 @@
             display: flex;
             align-items: center; gap: 12px;
             white-space: nowrap;
-        width: fit-content;
-    }
+            width: fit-content;
+        }
         .back-link:hover { transform: translateX(-8px); background: var(--accent-primary); color: var(--bg-primary); }
 
         .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 35px; margin-bottom: 90px; }
@@ -106,41 +105,18 @@
         .section-title { font-size: 2.5rem; font-weight: 800; margin-bottom: 45px; color: var(--accent-primary); display: flex; align-items: center; gap: 25px; }
         .section-title::after { content: ''; flex: 1; height: 1px; background: var(--border-light); }
 
-        .content-section { margin-bottom: 90px; }
+        .content-section { margin-bottom: 160px; padding-top: 40px; }
         .section-content { font-size: 1.2rem; color: var(--text-secondary); line-height: 1.9; }
-        .section-content p { margin-bottom: 30px; }
+        .section-content p { margin-bottom: 40px; }
 
         .mechanism-section { margin-bottom: 120px; }
         .mechanism-title { font-size: 2rem; font-weight: 800; color: var(--text-primary); margin-bottom: 40px; }
 
-        .problem-decision-result, .pdr-block { background: var(--bg-secondary); padding: 45px; border-radius: 24px; border-left: 8px solid var(--accent-primary); margin-bottom: 40px; box-shadow: 0 30px 60px -25px rgba(0,0,0,0.6); }
-        .pdr-label { font-size: 0.9rem; font-weight: 800; text-transform: uppercase; letter-spacing: 3px; color: var(--accent-primary); margin-bottom: 18px; }
-        .pdr-content { color: var(--text-secondary); font-size: 1.15rem; line-height: 1.85; }
-        
         .mechanism-image { width: 100%; border-radius: 24px; border: 1px solid var(--border-light); box-shadow: 0 40px 80px var(--shadow-medium); margin: 40px 0; display: block; }
-
-        .takeaway-list { display: grid; gap: 40px; list-style: none; padding: 0; }
-        .takeaway-item { display: flex; gap: 35px; align-items: flex-start; background: var(--bg-secondary); padding: 45px; border-radius: 28px; border: 1px solid var(--border-light); transition: all 0.4s ease; }
-        .takeaway-item:hover { border-color: var(--accent-primary); transform: translateY(-5px); }
-        .takeaway-number, .takeaway-list-number { background: var(--accent-primary); color: var(--bg-primary); width: 60px; height: 60px; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.5rem; flex-shrink: 0; box-shadow: 0 10px 20px -5px var(--accent-primary); }
-        .takeaway-title, .takeaway-list-title { font-size: 1.6rem; font-weight: 700; color: var(--text-primary); margin-bottom: 15px; }
-        .takeaway-text, .takeaway-list-text { color: var(--text-secondary); font-size: 1.15rem; line-height: 1.85; }
-
-        .action-buttons { margin-top: 100px; display: flex; justify-content: center; gap: 20px; }
-        .btn-primary { background: var(--accent-primary); color: var(--bg-primary); padding: 25px 60px; border-radius: 22px; text-decoration: none; font-weight: 800; font-size: 1.2rem; transition: all 0.4s ease; box-shadow: 0 25px 50px -15px var(--accent-primary); display: inline-flex; align-items: center; gap: 15px; border: none; cursor: pointer; }
-        .btn-secondary { background: var(--bg-secondary); color: var(--accent-primary); padding: 25px 60px; border-radius: 22px; text-decoration: none; font-weight: 800; font-size: 1.2rem; transition: all 0.4s ease; border: 1px solid var(--border-light); }
-        .btn-primary:hover, .btn-secondary:hover { transform: translateY(-8px); box-shadow: 0 35px 60px -15px var(--accent-primary); }
-
-        table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 50px 0; border-radius: 24px; overflow: hidden; border: 1px solid var(--border-light); }
-        th { background: var(--bg-secondary); color: var(--accent-primary); padding: 30px; text-align: left; font-weight: 800; border-bottom: 1px solid var(--border-light); }
-        td { padding: 30px; color: var(--text-secondary); border-bottom: 1px solid var(--border-light); }
-        
         .card { background: var(--bg-secondary); padding: 45px; border-radius: 24px; margin: 40px 0; border: 1px solid var(--border-light); }
-        .strategy-callout { background: var(--bg-secondary); border-left: 6px solid var(--accent-primary); border-radius: 24px; padding: 45px; margin: 40px 0; color: var(--text-secondary); }
-        .strategy-label { color: var(--accent-primary); font-weight: 800; text-transform: uppercase; margin-bottom: 15px; display: block; letter-spacing: 2px; }
 
         @media (max-width: 768px) { .container { padding: 50px 30px; } h1 { font-size: 3rem; } .header { flex-direction: column; text-align: center; gap: 40px; } }
-</style>
+    </style>
 </head>
 <body>
     <div class="container">
@@ -155,74 +131,87 @@
             </div>
         </header>
 
-        <section class="specs-grid">
-            <div class="spec-card"><p class="spec-label">Category</p><p class="spec-value">Software</p></div>
-            <div class="spec-card"><p class="spec-label">Achievement</p><p class="spec-value">Live Portfolio</p></div>
-            
-        </section>
-
         <main>
             <div class="content-section">
                 <h2 class="section-title">Introduction & Problem Statement</h2>
                 <div class="section-content">
-                    <p>Children ages 7-11 in underserved communities in the Boston area lack accessible, engaging, and culturally relevant educational experiences that explain how modern communications infrastructure (specifically satellite technology) works, and how it connects to their daily lives and future opportunities. As a result, many of these children do not see engineering and technology as pathways available to them, limiting their aspirations and reducing the pipeline of future STEM innovators from these communities.</p>
-                    <p>A well-designed travel campaign exhibit must address this gap by delivering a hands-on, interactive learning experience that is portable, durable, budget-conscious (under $1000 in materials), and capable of operating without reliable electrical infrastructure beyond a standard power outlet. The exhibit must engage children physically and emotionally, deliver clear educational content about satellite communication, and leave participants feeling inspired and capable.</p>
+                    <div class="card">
+                        <img src="images/satellite/final_assembly_actual.jpeg" alt="Final Assembly Photo" class="mechanism-image">
+                        <p align="center"><i>Fig. 1. The actual final assembly of the Science in Orbit interactive exhibit.</i></p>
+                    </div>
+
+                    <p>Children ages 7-11 in underserved communities across the Boston area face significant barriers to accessing and benefitting from modern technology infrastructure, including little exposure to concepts such as satellite communications and internet connectivity. This gap contributes to broader disparities in STEM interest and career aspirations among youth. Current educational resources tend to assume digital access and fail to provide children with meaningful, hands-on experiences that connect engineering principles to their everyday lives. As a result, many of these children do not see engineering and technology as pathways available to them, limiting their aspirations and reducing the pipeline of future STEM innovators from these communities.</p>
+                    
+                    <p>A well-designed travel campaign exhibit must address this specific educational gap by delivering a hands-on, interactive learning experience. The physical requirements are strict: the exhibit must be highly portable (fitting within a 36x28" profile), durable enough to withstand interaction from energetic 7-11 year olds, budget-conscious (originally planned for under $1000 in materials, but targeted strictly under $100 for this prototype), and capable of operating without reliable electrical infrastructure beyond a standard power outlet. Furthermore, the setup parameters dictate that it must be assembled by a maximum of 2 people in under 10 minutes, and the total weight should not exceed 227 grams for individual modular components. The exhibit must engage children physically and emotionally, deliver clear educational content about satellite communication, and leave participants feeling inspired and capable. The overarching goal is not simply to be informative, but to genuinely empower the youth by demonstrating that they, too, can understand and build complex systems that impact the world.</p>
                 </div>
             </div>
 
             <div class="content-section">
                 <h2 class="section-title">Research & Background</h2>
                 <div class="section-content">
-                    <p>Satellites have been used to improve human lives and tend to get misunderstood by people. While some satellite projects get the majority media attention, there are other projects that NASA runs that are just as impactful. For example, Projects SMAP and RADARSAT are popular tools used to measure many different conditions on earth that help to improve living conditions here on earth. Project SMAP looks at the soil moisture level and reads it every 2 days <a href="#source-1">[1]</a>. It helps to create a more accurate model of earth which can be used to better predict the issues we will face on earth. Project RADARSAT looks at the sea level and other conditions to help predict flooding.</p>
+                    <p>Satellites have been used for decades to improve human lives and manage global infrastructure, yet they tend to be deeply misunderstood by the general public. While some commercial satellite projects get the majority of media attention, there are other critically important projects that organizations like NASA run that are just as impactful. For example, Projects SMAP (Soil Moisture Active Passive) and RADARSAT are highly valuable tools used to measure many different environmental conditions on earth that help to improve living conditions globally. Project SMAP specifically looks at the soil moisture level and the freeze/thaw conditions everywhere on earth, reading it every 2 days <a href="#source-1">[1]</a>. It helps to create a more accurate model of earth which can be used to better predict the agricultural and climate issues we will face, informing farmers on the best places for planting crops. Project RADARSAT captures data for flood mapping, landslide detection, and damage assessment.</p>
                     
-                    <img src="images/satellite/submarine_cable.png" alt="Global Submarine Cable Network" class="mechanism-image">
-                    <p align="center"><i>Fig. 1. Global Submarine Cable Network showing the physical infrastructure of the internet.</i></p>
+                    <img src="images/satellite/submarine_map.jpeg" alt="Global Submarine Cable Network" class="mechanism-image">
+                    <p align="center"><i>Fig. 2. Global Submarine Cable Network showing the physical infrastructure of the internet.</i></p>
 
-                    <p>Satellites also solve many different problems. For example, we have a digital divide here on earth. While 51% of the population has access to 5G, it does not mean that the 5G coverage is even. There is 84% coverage in high-income coverage and 4% coverage in Low-income coverage <a href="#source-2">[2]</a>. This means that there is a significant amount of the population that does not have access to the internet. The internet gives these people the opportunity to help themselves with jobs, education and better access to healthcare services.</p>
-                    <p>The internet is a collection of servers all over the world. In order for these servers to be connected, they must be connected with fiber optic cables. These cables are underground as well as on the ocean floor <a href="#source-3">[3]</a>. While all these cables are inexpensive to put in densely populated, developed communities, it is expensive to keep all this infrastructure in rural areas which causes the digital divide. The goal of this project is to give students the resources to help themselves rather than give the students handouts. When explaining what these projects do, it helps the students to understand what they can do with satellites and it empowers them to become the changemakers of tomorrow.</p>
+                    <p>Satellites also solve many different societal problems. For example, we face a massive digital divide here on earth. While 51% of the global population has access to 5G, it does not mean that the 5G coverage is evenly distributed. There is 84% coverage in high-income areas and merely 4% coverage in low-income areas <a href="#source-2">[2]</a>. This means that there is a significant amount of the population that does not have access to the internet. The internet gives these people the opportunity to help themselves with jobs, education, and better access to healthcare services. The internet is fundamentally a collection of servers all over the world. In order for these servers to be connected, they must be linked with fiber optic cables. These cables are routed underground as well as laid across the ocean floor <a href="#source-3">[3]</a>. While all these cables are relatively inexpensive to install in densely populated, developed communities, it is prohibitively expensive to keep all this infrastructure maintained in rural or underserved areas, which directly causes the digital divide.</p>
+                    
+                    <p>The solution to bridging this divide is deploying satellites in Low Earth Orbit (LEO). Using satellites will allow for better, more equitable access to the internet without the need for extensive ground infrastructure. The thematic frameworks central to this project are Humanitarian Engineering and the Entrepreneurial Mindset. Humanitarian Engineering refers to applying engineering skills to address the needs of marginalized communities with explicit attention to equity and community ownership. The goal of this project is to give students the resources and knowledge to help themselves rather than giving them a handout. When explaining what these infrastructure projects do, it helps the students to understand what they can achieve with satellite technology and empowers them to become the changemakers of tomorrow.</p>
                 </div>
             </div>
 
             <div class="content-section">
                 <h2 class="section-title">Methodology & Implementation</h2>
                 <div class="section-content">
-                    <p>The engineering design process (EDP) for the "Science in Orbit" exhibit was a highly structured and iterative cycle, ensuring that every design decision was grounded in stakeholder research and technical feasibility. The process began with an extensive Problem Definition phase during Milestone 1, where the team conducted in-depth analysis of potential users, specifically children aged 7-11 in underserved communities. By gathering over 20 academic and scientific sources, the team mapped the needs, pain points, and motivations of these children, revealing that they are most motivated by tangible, personally relevant experiences. This research confirmed a significant gap in portable, low-cost, physically interactive exhibits focused on communications infrastructure, which shaped the final design brief.</p>
+                    <p>The engineering design process (EDP) for the "Science in Orbit" exhibit was a highly structured and iterative cycle, ensuring that every design decision was grounded in stakeholder research and technical feasibility. The process began with an extensive Problem Definition phase (Milestone 1), where the team conducted in-depth analysis of potential users. By gathering over 20 academic and scientific sources, the team mapped the needs, pain points, and motivations of the children, revealing that they are most motivated by tangible, personally relevant experiences and tend to indulge in activities that are "trendy" or congruent with video games.</p>
                     
-                    <div class="card">
-                        <img src="images/satellite/motor_diagram.png" alt="Motor and Sensor Circuit Diagram" class="mechanism-image">
-                        <p align="center"><i>Fig. 2. Circuit diagram for the motor driver and ultrasonic sensor integration.</i></p>
+                    <div class="spec-card">
+                            <img src="images/satellite/ktda_table.jpeg" alt="KTDA Table" style="width: 100%; border-radius: 12px; margin-bottom: 15px;">
+                            <p class="spec-label">Phase 2 Selection</p>
+                            <p class="spec-value">KTDA Analysis</p>
+                        </div>
                     </div>
 
-                    <p>During the Solution Generation phase (Milestone 2), the team utilized a variety of structured ideation techniques, including individual brainstorming, round-robin ideation, analogical thinking, and a structured idea list review. This broad exploration led to diverse concepts ranging from magnetic levitation trains to nuclear energy simulations. To select the most effective solution, a two-step process was employed: a rank-order chart followed by a Kepner-Tregoe Decision Analysis (KTDA). Concepts were scored against MUST criteria, such as fitting within a transport container and staying under a $100 budget, and WANT criteria, including modularity and visual appeal. The satellite orbit concept emerged as the winner due to its strong visual impact and clear connection to real-world technology.</p>
+                    <p>During the Solution Generation phase (Milestone 2), the team utilized a variety of structured ideation techniques. To select the most effective solution, a two-step process was employed: a rank-order chart followed by a Kepner-Tregoe Decision Analysis (KTDA). The satellite orbit concept emerged as the winner over alternative concepts like a magnetic levitation train, primarily due to its strong visual impact, high interactivity, and clear connection to real-world technology. The physical Implementation phase proceeded through five distinct stages: cardboard prototyping, CAD development, 60% proof of concept, 90% prototype, and the final prototype.</p>
                     
-                    <p>The Implementation phase proceeded through five distinct stages: cardboard prototyping, CAD development, 60% proof of concept, 90% prototype, and the final prototype. Initial cardboard models explored the physical geometry and the feasibility of a rotating ring mechanism. As the project progressed, SolidWorks CAD models were developed for the satellite bodies and central Earth housing. A significant technical pivot occurred when the team switched from a Raspberry Pi Pico to an Arduino-based system to ensure better compatibility with MATLAB for real-time radar-style visual output. Each milestone involved rigorous testing and user evaluation, leading to critical design changes such as replacing string-mounted satellites with rod-mounted ones for improved stability and visual clarity. The final prototype consolidated the satellites and Earth structure onto a single platform, incorporating space-themed aesthetic elements to maximize engagement.</p>
+                    <div class="card">
+                        <img src="images/satellite/user_flow_chart.jpeg" alt="User Interaction Flow Chart" class="mechanism-image">
+                        <p align="center"><i>Fig. 3. Detailed user interaction flow showing the logic of the satellite tracking game.</i></p>
+                    </div>
+
+                    <p>I (Shreyas) took charge of the CAD modeling, coding, and the entire circuitry of the design. My main goal was to ensure the ultrasonic sensor provided accurate readings to the Arduino, which would then control the servos based on that input. A user controls the sensor orientation via a joystick, and a score is generated depending on their accuracy in tracking the physical satellites. The circuitry proved to be exceptionally difficult due to its complexity, and I ran into several major issues during development. The wiring itself was a significant hurdle. Looking back, there were many things I wished I had known before starting the project. For example, I desperately wished I had labeled all of my wiring from the very beginning. During the first few prototypes, it was incredibly difficult to know what the purpose of each wire was, and I would often end up plugging the wiring into the wrong places, leading to hours of debugging. The initial wiring mess was a major learning curve.</p>
+
+                    <div class="spec-card">
+                            <img src="images/satellite/wiring1.jpeg" alt="Final Wiring 1" style="width: 100%; border-radius: 12px; margin-bottom: 15px;">
+                            <p class="spec-label">Final Version</p>
+                            <p class="spec-value">Main Circuit</p>
+                        </div>
+                        <div class="spec-card">
+                            <img src="images/satellite/wiring2.jpeg" alt="Final Wiring 2" style="width: 100%; border-radius: 12px; margin-bottom: 15px;">
+                            <p class="spec-label">Final Version</p>
+                            <p class="spec-value">Motor Circuit</p>
+                        </div>
+                    </div>
+
+                    <p>Another critical issue I ran into was related to power management. Initially, I had a 9V battery connected to power the system. This excessive voltage caused weird, jittery behavior in the servos and was making the entire project highly unreliable. The servos would jump unpredictably, ruining the tracking experience. Once I diagnosed the voltage issue and switched to a regulated 6V external battery, I was able to get a much more stable and reliable project. The final electronics setup was so complex that it had to be split into two distinct final circuits. "Wiring 1" was the main circuit handling the ultrasonic sensor, the two servos for pan/tilt, the LCD screen, the joystick, and the LED strip lights. "Wiring 2" was dedicated specifically to the TT gear motor that drove the rotating ring, utilizing a separate motor driver connected to the Arduino. Both of these circuits represented the final, functional state of the exhibit's electronics.</p>
+
+                    <p>Beyond the electronics, the structural design also required intense iteration. The initial ring design was flimsy and warped at the ends, making it difficult to maintain a sturdy connection to the arms of the satellites. We had to pivot from using string-mounted satellites to rigid rod-mounted ones to improve visual clarity and stability, and to ensure they came at an angle that did not interfere with the structure.</p>
                 </div>
             </div>
 
             <div class="content-section">
                 <h2 class="section-title">Results & Conclusion</h2>
                 <div class="section-content">
-                    <p>The final "Science in Orbit" exhibit successfully realized the project's physical and educational goals within the established constraints. Physically, the exhibit featured a motorized rotating ring with three 3D-printed satellites orbiting a central Earth model. The system integrated an ultrasonic distance sensor, a joystick controller, an LED screen for scoring, and an LED light strip for visual feedback. All components were designed to be portable and durable, fitting within the required transport bag. The total budget used for the project was $83.11, well within the $100 limit, demonstrating the team's ability to innovate under strict financial constraints.</p>
+                    <p>The final "Science in Orbit" exhibit successfully realized the project's physical constraints and overarching educational goals. Physically, the exhibit featured a motorized rotating ring with three 3D-printed satellites (representing LEO, MEO, and GEO orbits) rotating around a central Earth model. The system integrated an ultrasonic distance sensor, a joystick controller, an LED screen for scoring, and an LED light strip for visual feedback. All components were designed to be portable and durable, successfully fitting within the required transport bag. Furthermore, the team demonstrated exceptional resourcefulness; the total budget used for the project was merely $83.11, coming in well under the strict $100 limit, largely by utilizing recycled parts from the FYELIC makerspace and cost-effective wood for the housing.</p>
                     
-                    <img src="images/satellite/full_assembly.jpg" alt="Final Exhibit Assembly" class="mechanism-image">
-                    <p align="center"><i>Fig. 3. Final assembly of the Science in Orbit exhibit at the expo.</i></p>
+                    <img src="images/satellite/feedback1.jpeg" alt="Exhibition Feedback" class="mechanism-image">
+                    <p align="center"><i>Fig. 4. Educational poster and feedback wall indicating strong user engagement during the exhibition.</i></p>
 
-                    <p>On the day of the exhibition, the team faced a significant challenge when the wiring for the joystick and servos became disconnected, rendering the automated scoring system non-functional. However, the team demonstrated resilience by pivoting to a facilitated interaction model. Using the physical ring and the informational poster board, they explained the concepts of satellite orbits (LEO, MEO, GEO) and their real-world applications to the visiting children and judges. This experience highlighted the importance of robust wiring protection and redundancy in field-deployed exhibits, leading to recommendations for 3D-printed protective encasings in future iterations.</p>
+                    <p>However, the journey was not without significant unexpected challenges. During the day of the final exhibition expo, disaster struck. One of the servos failed, which completely rendered the interactive scoring system non-functional. When I (Shreyas) desperately tried to fix the issue on-site by swapping out the cable, the situation cascaded—other parts of the circuit stopped working entirely, likely due to the fact that I was rapidly changing complex wires under extreme pressure. In the end, I was not able to fix the project in time to get it fully ready for the live expo judging. While this was deeply frustrating, the team demonstrated remarkable resilience by pivoting to a facilitated, educational interaction model. We used the physical ring and our highly detailed informational poster board to manually explain the concepts of satellite orbits and their real-world applications to the visiting children.</p>
                     
-                    <div class="specs-grid" style="margin-top: 40px;">
-                        <div class="spec-card">
-                            <img src="images/satellite/evaluation_data.png" alt="Evaluation Data" style="width: 100%; border-radius: 12px; margin-bottom: 15px;">
-                            <p class="spec-label">User Engagement</p>
-                            <p class="spec-value">High</p>
-                        </div>
-                        <div class="spec-card">
-                            <img src="images/satellite/informational_poster.jpg" alt="Educational Poster" style="width: 100%; border-radius: 12px; margin-bottom: 15px;">
-                            <p class="spec-label">Knowledge Transfer</p>
-                            <p class="spec-value">Verified</p>
-                        </div>
-                    </div>
+                    <p>Reflecting on the team dynamics and the engineering design process, I realized that my communication could have been better. If I were to go back and give myself feedback, I would have strongly suggested speaking up about technical issues sooner rather than later. I was worried about how I came across to my teammates since they did not have prior engineering experience. For example, I had known that our initial project idea (the maglev train) would not have worked interactively, but I didn't say anything on day one to stop the confusion ahead of time. I learned that clear, assertive communication is absolutely vital in a collaborative engineering environment.</p>
 
-                    <p>Despite the technical setbacks, the educational impact of the exhibit was substantial. Over ten post-it notes were collected from children at the exhibition, documenting their learning takeaways. Responses such as "LEO satellites help u get jobs + schoolwork done" and "They are used for predicting weather" indicated that the core message of how satellites impact daily life was successfully communicated. A formal survey conducted with the children also returned positive results, with attendees reporting an engaging and powerful experience. Verbal feedback from educators and parents further validated the exhibit's design, particularly the rotating satellite rig, as a high-engagement tool. Ultimately, the project met its empowerment goal, leaving the children with a greater awareness of modern communications infrastructure and inspiring them to see themselves as future STEM innovators.</p>
+                    <p>Despite the mechanical failure at the expo, the educational impact of the exhibit was definitively proven. Over ten post-it notes were collected from the children at the exhibition, documenting their specific learning takeaways. Responses such as "LEO satellites help u get jobs + schoolwork done" and "They are used for predicting weather" indicated that the core message of how satellites impact daily life was successfully communicated and retained. The interaction time averaged about 2 minutes per child, and the project succeeded because the user comments showed them asking bigger questions once they started engaging with the models. Ultimately, the project met its humanitarian empowerment goal, leaving the children with a greater awareness of modern communications infrastructure and inspiring them to see themselves as future STEM innovators.</p>
                 </div>
             </div>
 
@@ -238,8 +227,6 @@
                 </div>
             </div>
         </main>
-
-        
     </div>
     <script>
         const theme = localStorage.getItem('theme') || 'dark';
