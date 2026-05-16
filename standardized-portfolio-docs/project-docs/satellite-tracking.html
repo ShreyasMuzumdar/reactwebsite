@@ -105,9 +105,9 @@
         .section-title { font-size: 2.5rem; font-weight: 800; margin-bottom: 45px; color: var(--accent-primary); display: flex; align-items: center; gap: 25px; }
         .section-title::after { content: ''; flex: 1; height: 1px; background: var(--border-light); }
 
-        .content-section { margin-bottom: 90px; }
+        .content-section { margin-bottom: 160px; padding-top: 40px; }
         .section-content { font-size: 1.2rem; color: var(--text-secondary); line-height: 1.9; }
-        .section-content p { margin-bottom: 30px; }
+        .section-content p { margin-bottom: 40px; }
 
         .mechanism-section { margin-bottom: 120px; }
         .mechanism-title { font-size: 2rem; font-weight: 800; color: var(--text-primary); margin-bottom: 40px; }
@@ -136,8 +136,8 @@
                 <h2 class="section-title">Introduction & Problem Statement</h2>
                 <div class="section-content">
                     <div class="card">
-                        <img src="images/satellite/final_cad_assembly.png" alt="Final CAD Assembly" class="mechanism-image">
-                        <p align="center"><i>Fig. 1. The complete and final CAD assembly modeling the satellite exhibit infrastructure.</i></p>
+                        <img src="images/satellite/final_assembly_actual.jpeg" alt="Final Assembly Photo" class="mechanism-image">
+                        <p align="center"><i>Fig. 1. The actual final assembly of the Science in Orbit interactive exhibit.</i></p>
                     </div>
 
                     <p>Children ages 7-11 in underserved communities across the Boston area face significant barriers to accessing and benefitting from modern technology infrastructure, including little exposure to concepts such as satellite communications and internet connectivity. This gap contributes to broader disparities in STEM interest and career aspirations among youth. Current educational resources tend to assume digital access and fail to provide children with meaningful, hands-on experiences that connect engineering principles to their everyday lives. As a result, many of these children do not see engineering and technology as pathways available to them, limiting their aspirations and reducing the pipeline of future STEM innovators from these communities.</p>
@@ -165,13 +165,7 @@
                 <div class="section-content">
                     <p>The engineering design process (EDP) for the "Science in Orbit" exhibit was a highly structured and iterative cycle, ensuring that every design decision was grounded in stakeholder research and technical feasibility. The process began with an extensive Problem Definition phase (Milestone 1), where the team conducted in-depth analysis of potential users. By gathering over 20 academic and scientific sources, the team mapped the needs, pain points, and motivations of the children, revealing that they are most motivated by tangible, personally relevant experiences and tend to indulge in activities that are "trendy" or congruent with video games.</p>
                     
-                    <div class="specs-grid">
-                        <div class="spec-card">
-                            <img src="images/satellite/rank_order_table.jpeg" alt="Rank Order Table" style="width: 100%; border-radius: 12px; margin-bottom: 15px;">
-                            <p class="spec-label">Phase 1 Selection</p>
-                            <p class="spec-value">Rank Order</p>
-                        </div>
-                        <div class="spec-card">
+                    <div class="spec-card">
                             <img src="images/satellite/ktda_table.jpeg" alt="KTDA Table" style="width: 100%; border-radius: 12px; margin-bottom: 15px;">
                             <p class="spec-label">Phase 2 Selection</p>
                             <p class="spec-value">KTDA Analysis</p>
@@ -187,13 +181,7 @@
 
                     <p>I (Shreyas) took charge of the CAD modeling, coding, and the entire circuitry of the design. My main goal was to ensure the ultrasonic sensor provided accurate readings to the Arduino, which would then control the servos based on that input. A user controls the sensor orientation via a joystick, and a score is generated depending on their accuracy in tracking the physical satellites. The circuitry proved to be exceptionally difficult due to its complexity, and I ran into several major issues during development. The wiring itself was a significant hurdle. Looking back, there were many things I wished I had known before starting the project. For example, I desperately wished I had labeled all of my wiring from the very beginning. During the first few prototypes, it was incredibly difficult to know what the purpose of each wire was, and I would often end up plugging the wiring into the wrong places, leading to hours of debugging. The initial wiring mess was a major learning curve.</p>
 
-                    <div class="specs-grid">
-                        <div class="spec-card">
-                            <img src="images/satellite/initial_wiring.jpeg" alt="Initial Wiring Mess" style="width: 100%; border-radius: 12px; margin-bottom: 15px;">
-                            <p class="spec-label">Issue 1</p>
-                            <p class="spec-value">Wiring Mess</p>
-                        </div>
-                        <div class="spec-card">
+                    <div class="spec-card">
                             <img src="images/satellite/wiring1.jpeg" alt="Final Wiring 1" style="width: 100%; border-radius: 12px; margin-bottom: 15px;">
                             <p class="spec-label">Final Version</p>
                             <p class="spec-value">Main Circuit</p>
