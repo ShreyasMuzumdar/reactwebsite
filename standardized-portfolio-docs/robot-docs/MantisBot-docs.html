@@ -55,14 +55,18 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg-primary); color: var(--text-primary); transition: background 0.3s ease; line-height: 1.7; padding: 60px 20px; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg-primary); color: var(--text-primary); transition: background 0.3s ease, color 0.3s ease; line-height: 1.7; padding: 60px 20px; }
         .container { max-width: 950px; margin: 0 auto; background: var(--bg-card); border-radius: 28px; padding: 80px 70px; box-shadow: 0 40px 100px var(--shadow-medium); border: 1px solid var(--border-light); backdrop-filter: blur(15px); }
         .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 70px; padding-bottom: 40px; border-bottom: 2px solid var(--border-light); }
         h1 { font-size: 3rem; font-weight: 800; color: var(--text-primary); margin: 0; }
         .subtitle { font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 5px; color: var(--accent-primary); margin-top: 15px; }
         .back-link { text-decoration: none; padding: 12px 25px; background: var(--bg-secondary); border: 1px solid var(--border-light); border-radius: 15px; color: var(--accent-primary); font-weight: 700; transition: all 0.3s ease; }
         .back-link:hover { transform: translateX(-5px); background: var(--accent-primary); color: var(--bg-primary); }
-        .theme-toggle { background: var(--bg-secondary); border: 1px solid var(--border-light); width: 45px; height: 45px; border-radius: 12px; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; }
+        .theme-toggle { position: relative; background: none; border: none; cursor: pointer; padding: 4px; border-radius: 50px; transition: all 0.3s ease; z-index: 1000; }
+        .theme-toggle-track { width: 56px; height: 28px; background: var(--toggle-track-bg); border-radius: 50px; border: 1px solid var(--toggle-border); position: relative; display: flex; align-items: center; padding: 0 4px; transition: all 0.3s ease; }
+        .theme-toggle-thumb { width: 22px; height: 22px; background: var(--toggle-thumb-bg); border-radius: 50%; position: absolute; left: 3px; display: flex; align-items: center; justify-content: center; transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1); box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); }
+        .theme-icon { font-size: 12px; line-height: 1; }
+        [data-theme="dark"] .theme-toggle-thumb { transform: translateX(28px); }
         .content-section { margin-bottom: 120px; padding-top: 20px; }
         .section-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 35px; color: var(--accent-primary); border-bottom: 2px solid var(--accent-primary); padding-bottom: 10px; display: flex; align-items: center; gap: 20px; }
         .section-title::after { content: ''; flex: 1; height: 1px; background: var(--border-light); }
@@ -71,21 +75,70 @@
         .mechanism-image { width: 100%; border-radius: 20px; border: 1px solid var(--border-light); box-shadow: 0 30px 60px var(--shadow-medium); margin: 30px 0; display: block; }
         .card { background: var(--bg-secondary); padding: 35px; border-radius: 20px; margin: 30px 0; border: 1px solid var(--border-light); }
         @media (max-width: 768px) { .container { padding: 40px 20px; } h1 { font-size: 2.2rem; } .header { flex-direction: column; text-align: center; gap: 30px; } }
+
+        /* Specs Grid Styles */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-bottom: 80px;
+            padding-top: 20px;
+        }
+
+        .spec-card {
+            background: var(--bg-secondary);
+            padding: 25px;
+            border-radius: 20px;
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .spec-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 15px 30px var(--shadow-medium);
+        }
+
+        .spec-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-primary);
+            font-weight: 800;
+        }
+
+        .spec-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <header class="header">
+        <div class="header">
             <div>
                 <h1>MantisBot</h1>
-                <p class="subtitle">Engineering Case Study</p>
+                <div class="subtitle">Engineering Case Study</div>
             </div>
-            <div class="header-controls">
-                <button id="theme-toggle" class="btn-icon">🌙</button>
-                <a href="../" class="back-link">← BACK</a>
+            <div style="display: flex; gap: 20px; align-items: center;">
+                <button id="theme-toggle" class="theme-toggle" title="Toggle dark/light mode">
+                    <div class="theme-toggle-track">
+                        <div class="theme-toggle-thumb">
+                            <span class="theme-icon">🌙</span>
+                        </div>
+                    </div>
+                </button>
+                <a href="../" class="back-link">← Back</a>
             </div>
-        </header>
+        </div>
 
+        
+
+        
         <section class="specs-grid">
             <div class="spec-card"><p class="spec-label">Category</p><p class="spec-value">Engineering</p></div>
             <div class="spec-card"><p class="spec-label">Achievement</p><p class="spec-value">Live Portfolio</p></div>
@@ -93,165 +146,165 @@
         </section>
 
         <main>
-        <!-- Overview -->
-        <div class="content-section">
-            <h2 class="section-title">Overview</h2>
-            <div class="section-content">
-                <p>MantisBot is Pioneer Robotics' entry for the Into the Deep season. The game requires collecting samples and specimens from an underwater-themed field and depositing them in scoring zones, with an end-game climb onto hanging bars. This case study documents the key mechanical decisions across the season — the chassis, claw, slide system, and climb — and the major redesign that shaped the final robot.</p>
-                <p><strong>Challenge:</strong> Collect colored samples and metal specimens from the field and score them in designated zones at multiple heights, then ascend to hang on bars at the end of each match, all within tight size and weight limits.</p>
-            </div>
-
-            <div class="strategy-callout">
-                <div class="strategy-label">Season Approach</div>
-                We began the season with ambitious goals — implementing a Power Take Off (PTO) and a Differential Swerve drivetrain, both of which we had never built before. We also applied an Agile development methodology with two-week sprints, daily team standups, and formal sprint reviews. Midseason we acknowledged the design was too complex and simplified to a more focused, reliable system. The final robot emphasizes simplicity and reliability — the two core values that emerged from every lesson this season.
-            </div>
-        </div>
-
-        <!-- Mechanism 1: Chassis -->
-        <div class="mechanism-section">
-            <h3 class="mechanism-title">🔧 Chassis &amp; Drivetrain</h3>
-
-            <div class="problem-decision-result">
-                <div class="pdr-label">Problem</div>
-                <div class="pdr-content">Our previous season used a live-axle drivetrain, which caused inconsistencies and wasted space. Electronics placed on the bottom panel dragged against the floor and caused disconnect issues mid-match. We needed a more reliable foundation going into a new season with more complex upper mechanisms.</div>
-            </div>
-
-            <div class="problem-decision-result">
-                <div class="pdr-label">Design Decision</div>
-                <div class="pdr-content">I switched to a dead-axle mecanum drivetrain — stationary axles with wheels rotating freely around them — which reduced our chassis footprint by 25% and eliminated the excess motion from the live-axle system. Electronics were moved to the bottom for easy access during maintenance. The carbon fiber side plate chassis from last season was retained as the structural base, with a modular upper chassis that can be detached independently for mechanism work without touching the drive base. Spring-loaded odometry pods were integrated directly into the chassis to maintain ground contact for accurate localization throughout matches.</div>
-            </div>
-
-            <div class="problem-decision-result">
-                <div class="pdr-label">Result</div>
-                <div class="pdr-content">The dead-axle system was significantly more consistent than the previous live-axle approach. The modular upper/lower chassis separation proved essential during the midseason redesign — we were able to rebuild the upper mechanisms without disturbing the drivetrain, which saved significant time under a tight competition deadline.</div>
-            </div>
-
-            <img src="../files/robot-photos/mantisbot/full_robot.jpeg" alt="MantisBot chassis assembly" style="width: 100%; height: auto; border-radius: 12px; object-fit: cover; margin-top: 20px; border: 1px solid var(--border-light);">
-        </div>
-
-        <!-- Mechanism 2: Claw -->
-        <div class="mechanism-section">
-            <h3 class="mechanism-title">🦀 Differential Claw</h3>
-
-            <div class="problem-decision-result">
-                <div class="pdr-label">Problem</div>
-                <div class="pdr-content">Into the Deep requires collecting both flat samples and cylindrical specimens from tight spaces inside the Submersible structure. Our first claw was large and difficult to maneuver inside the confined geometry. It used internal grip — effective for grouping samples — but was bulky and prone to breaking under repeated stress.</div>
-            </div>
-
-            <div class="problem-decision-result">
-                <div class="pdr-label">Design Decision</div>
-                <div class="pdr-content">I iterated through three claw designs. The first used internal grip and rotated on two axes — flexible but large. The second introduced external grip contoured to the sample shape, which increased consistency and durability, but was still too bulky. The final design applied a differential mechanism — a concept we had explored in our PTO prototype — which allowed rotation on two axes simultaneously using bevel gears, creating a much smaller form factor. Bringing the points of rotation together reduced the distance between moving parts, shrinking the claw from bulky to compact while actually improving rotational freedom. The differential also reduced motor strain by distributing load more efficiently.</div>
-            </div>
-
-            <div class="problem-decision-result">
-                <div class="pdr-label">Result</div>
-                <div class="pdr-content">The final differential claw was lightweight, reliable inside the Submersible, and gave us more rotational freedom than either previous iteration. The unexpected benefit was that the PTO development — which we ultimately didn't use on the final robot — directly taught us the bevel gear principles that made the claw work. The failed mechanism produced the knowledge that improved the working one.</div>
-            </div>
-
-            <img src="../files/robot-photos/mantisbot/claw.jpeg" alt="MantisBot differential claw mechanism" style="width: 100%; height: auto; border-radius: 12px; object-fit: cover; margin-top: 20px; border: 1px solid var(--border-light);">
-        </div>
-
-        <!-- Mechanism 3: Slides -->
-        <div class="mechanism-section">
-            <h3 class="mechanism-title">⬆️ Slides Actuation &amp; Pivot</h3>
-
-            <div class="problem-decision-result">
-                <div class="pdr-label">Problem</div>
-                <div class="pdr-content">We needed linear slides that could both extend for scoring and pivot to different angles for depositing at the high basket and bar. Running separate motors for extension and pivot creates coordination problems and wastes motor ports. Belt skipping on the original motor unit caused the slides to lose position during matches.</div>
-            </div>
-
-            <div class="problem-decision-result">
-                <div class="pdr-label">Design Decision</div>
-                <div class="pdr-content">I designed a custom two-sided pulley with bearings that spin freely on the axle, allowing pivot and actuation on the same axis independently of one another. Both motors are housed together in one module, optimizing space and simplifying maintenance access. After belt skipping issues, I shifted the motor mounting holes back to correct belt tensioning — this also improved structural integrity by connecting the module to the side plates. I also switched from two sets of slides to a single set, which eliminated the need to coordinate two motors and proved more reliable in competition. Custom aluminum slide inserts replaced polycarbonate ones after breaking 8 of the polycarbonate versions during testing. A chain and sprocket system rotates the slides, with the motor selection determined by a torque calculation based on arm weight and extension distance.</div>
-            </div>
-
-            <div class="problem-decision-result">
-                <div class="pdr-label">Result</div>
-                <div class="pdr-content">The single-slide system was meaningfully more reliable than the dual-slide approach. The hole-shift fix resolved belt skipping entirely. The aluminum inserts held through the full competition season with no failures — the 8 broken polycarbonate mounts were expensive in time but gave us a clear answer on material choice.</div>
-            </div>
-
-            <img src="../files/robot-photos/mantisbot/slides&pivot.jpeg" alt="MantisBot linear slides and pivot system" style="width: 100%; height: auto; border-radius: 12px; object-fit: cover; margin-top: 20px; border: 1px solid var(--border-light);">
-        </div>
-
-        <!-- Mechanism 4: Climb -->
-        <div class="mechanism-section">
-            <h3 class="mechanism-title">🧗 Ascent / Climb</h3>
-
-            <div class="problem-decision-result">
-                <div class="pdr-label">Problem</div>
-                <div class="pdr-content">The end-game requires climbing onto horizontal bars at increasing heights for bonus points. A separate dedicated climbing mechanism adds weight and complexity. We needed to achieve the climb without adding a new system to an already complex robot.</div>
-            </div>
-
-            <div class="problem-decision-result">
-                <div class="pdr-label">Design Decision</div>
-                <div class="pdr-content">I designed the ascent component to attach directly to the linear slides, using the same system we already had for scoring to pull the robot onto the bars. Static hooks shaped by the upper chassis maintain a minimal profile during normal play and engage the bar when the slides extend and retract. I performed a torque calculation to determine the required motor force to lift the full robot weight, then selected the fastest motors that met that torque threshold — balancing speed with reliability.</div>
-            </div>
-
-            <div class="problem-decision-result">
-                <div class="pdr-label">Result</div>
-                <div class="pdr-content">Integrating the climb into the existing slide system eliminated a dedicated mechanism entirely, saving weight and motor ports. The torque-calculated motor selection meant the climb was reliable without being over-engineered. The static hooks' minimal profile meant they didn't interfere with normal scoring operations during teleop.</div>
-            </div>
-
-            <img src="../files/robot-photos/mantisbot/climb.png" alt="MantisBot ascent and climb mechanism" style="width: 100%; height: auto; border-radius: 12px; object-fit: cover; margin-top: 20px; border: 1px solid var(--border-light);">
-        </div>
-
-        <!-- Full Robot -->
-        <div class="mechanism-section">
-            <h3 class="mechanism-title">🤖 Full Robot</h3>
-            <div class="section-content">
-                <p>MantisBot went through more iterations than any previous Pioneer Robotics robot. We attempted PTO and Differential Swerve — two mechanisms we'd never built — before recognizing midseason that the complexity was hurting reliability. The final robot strips back to what works: a dead-axle mecanum base, a single belt-driven slide system, a differential claw, and an integrated climb. Every mechanism on the robot can be accessed or removed for maintenance without disturbing adjacent systems. The Agile sprint methodology meant we had clear documentation of every decision, which made the midseason pivot much faster to execute than it would have been otherwise.</p>
-            </div>
-
-            <img src="../files/robot-photos/mantisbot/full_robot.jpeg" alt="MantisBot complete robot assembly" style="width: 100%; height: auto; border-radius: 12px; object-fit: cover; margin-top: 20px; border: 1px solid var(--border-light);">
-        </div>
-
-        <!-- Key Takeaways -->
-        <div class="content-section">
-            <h2 class="section-title">Key Takeaways</h2>
-            <p class="takeaway-intro">Add your own reflection here.</p>
-            <ol class="takeaway-list">
-                <li>
-                    <div class="takeaway-list-item">
-                        <div class="takeaway-list-number">1</div>
-                        <div class="takeaway-list-content">
-                            <div class="takeaway-list-title">Ambition Needs a Cutoff Date</div>
-                            <div class="takeaway-list-text">We spent months on PTO and Differential Swerve — both legitimate engineering challenges — but waiting too long to acknowledge they weren't competition-ready cost us development time on the final robot. Setting a hard go/no-go date for experimental mechanisms upfront would have saved weeks.</div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="takeaway-list-item">
-                        <div class="takeaway-list-number">2</div>
-                        <div class="takeaway-list-content">
-                            <div class="takeaway-list-title">Failed Mechanisms Teach Working Ones</div>
-                            <div class="takeaway-list-text">The PTO prototype never made it onto the final robot, but the bevel gear knowledge from building it directly enabled the differential claw design. Time spent on an abandoned mechanism isn't always wasted — it depends on what you extract from it.</div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="takeaway-list-item">
-                        <div class="takeaway-list-number">3</div>
-                        <div class="takeaway-list-content">
-                            <div class="takeaway-list-title">Test to Failure, Then Choose the Right Material</div>
-                            <div class="takeaway-list-text">Breaking 8 polycarbonate slide mounts was frustrating but conclusive. We knew exactly why aluminum was the right choice and had data to back it. Switching materials based on one failure is a guess — switching after repeated failures under real conditions is engineering.</div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="takeaway-list-item">
-                        <div class="takeaway-list-number">4</div>
-                        <div class="takeaway-list-content">
-                            <div class="takeaway-list-title">Simplicity Is a Design Decision, Not a Fallback</div>
-                            <div class="takeaway-list-text">The final robot is simpler than what we originally planned. That simplicity was earned — it came from understanding why the complex version didn't work, not from avoiding complexity in the first place. A simple robot that competes reliably beats a complex one that doesn't.</div>
-                        </div>
-                    </div>
-                </li>
-            </ol>
-        </div>
-
-        <!-- Call to Action -->
-        <div class="content-section">
-            
+        <!-- Overview -->
+        <div class="content-section">
+            <h2 class="section-title">Overview</h2>
+            <div class="section-content">
+                <p>MantisBot is Pioneer Robotics' entry for the Into the Deep season. The game requires collecting samples and specimens from an underwater-themed field and depositing them in scoring zones, with an end-game climb onto hanging bars. This case study documents the key mechanical decisions across the season — the chassis, claw, slide system, and climb — and the major redesign that shaped the final robot.</p>
+                <p><strong>Challenge:</strong> Collect colored samples and metal specimens from the field and score them in designated zones at multiple heights, then ascend to hang on bars at the end of each match, all within tight size and weight limits.</p>
+            </div>
+
+            <div class="strategy-callout">
+                <div class="strategy-label">Season Approach</div>
+                We began the season with ambitious goals — implementing a Power Take Off (PTO) and a Differential Swerve drivetrain, both of which we had never built before. We also applied an Agile development methodology with two-week sprints, daily team standups, and formal sprint reviews. Midseason we acknowledged the design was too complex and simplified to a more focused, reliable system. The final robot emphasizes simplicity and reliability — the two core values that emerged from every lesson this season.
+            </div>
+        </div>
+
+        <!-- Mechanism 1: Chassis -->
+        <div class="mechanism-section">
+            <h3 class="mechanism-title">🔧 Chassis &amp; Drivetrain</h3>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Problem</div>
+                <div class="pdr-content">Our previous season used a live-axle drivetrain, which caused inconsistencies and wasted space. Electronics placed on the bottom panel dragged against the floor and caused disconnect issues mid-match. We needed a more reliable foundation going into a new season with more complex upper mechanisms.</div>
+            </div>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Design Decision</div>
+                <div class="pdr-content">I switched to a dead-axle mecanum drivetrain — stationary axles with wheels rotating freely around them — which reduced our chassis footprint by 25% and eliminated the excess motion from the live-axle system. Electronics were moved to the bottom for easy access during maintenance. The carbon fiber side plate chassis from last season was retained as the structural base, with a modular upper chassis that can be detached independently for mechanism work without touching the drive base. Spring-loaded odometry pods were integrated directly into the chassis to maintain ground contact for accurate localization throughout matches.</div>
+            </div>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Result</div>
+                <div class="pdr-content">The dead-axle system was significantly more consistent than the previous live-axle approach. The modular upper/lower chassis separation proved essential during the midseason redesign — we were able to rebuild the upper mechanisms without disturbing the drivetrain, which saved significant time under a tight competition deadline.</div>
+            </div>
+
+            <img src="../files/robot-photos/mantisbot/full_robot.jpeg" alt="MantisBot chassis assembly" style="width: 100%; height: auto; border-radius: 12px; object-fit: cover; margin-top: 20px; border: 1px solid var(--border-light);">
+        </div>
+
+        <!-- Mechanism 2: Claw -->
+        <div class="mechanism-section">
+            <h3 class="mechanism-title">🦀 Differential Claw</h3>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Problem</div>
+                <div class="pdr-content">Into the Deep requires collecting both flat samples and cylindrical specimens from tight spaces inside the Submersible structure. Our first claw was large and difficult to maneuver inside the confined geometry. It used internal grip — effective for grouping samples — but was bulky and prone to breaking under repeated stress.</div>
+            </div>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Design Decision</div>
+                <div class="pdr-content">I iterated through three claw designs. The first used internal grip and rotated on two axes — flexible but large. The second introduced external grip contoured to the sample shape, which increased consistency and durability, but was still too bulky. The final design applied a differential mechanism — a concept we had explored in our PTO prototype — which allowed rotation on two axes simultaneously using bevel gears, creating a much smaller form factor. Bringing the points of rotation together reduced the distance between moving parts, shrinking the claw from bulky to compact while actually improving rotational freedom. The differential also reduced motor strain by distributing load more efficiently.</div>
+            </div>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Result</div>
+                <div class="pdr-content">The final differential claw was lightweight, reliable inside the Submersible, and gave us more rotational freedom than either previous iteration. The unexpected benefit was that the PTO development — which we ultimately didn't use on the final robot — directly taught us the bevel gear principles that made the claw work. The failed mechanism produced the knowledge that improved the working one.</div>
+            </div>
+
+            <img src="../files/robot-photos/mantisbot/claw.jpeg" alt="MantisBot differential claw mechanism" style="width: 100%; height: auto; border-radius: 12px; object-fit: cover; margin-top: 20px; border: 1px solid var(--border-light);">
+        </div>
+
+        <!-- Mechanism 3: Slides -->
+        <div class="mechanism-section">
+            <h3 class="mechanism-title">⬆️ Slides Actuation &amp; Pivot</h3>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Problem</div>
+                <div class="pdr-content">We needed linear slides that could both extend for scoring and pivot to different angles for depositing at the high basket and bar. Running separate motors for extension and pivot creates coordination problems and wastes motor ports. Belt skipping on the original motor unit caused the slides to lose position during matches.</div>
+            </div>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Design Decision</div>
+                <div class="pdr-content">I designed a custom two-sided pulley with bearings that spin freely on the axle, allowing pivot and actuation on the same axis independently of one another. Both motors are housed together in one module, optimizing space and simplifying maintenance access. After belt skipping issues, I shifted the motor mounting holes back to correct belt tensioning — this also improved structural integrity by connecting the module to the side plates. I also switched from two sets of slides to a single set, which eliminated the need to coordinate two motors and proved more reliable in competition. Custom aluminum slide inserts replaced polycarbonate ones after breaking 8 of the polycarbonate versions during testing. A chain and sprocket system rotates the slides, with the motor selection determined by a torque calculation based on arm weight and extension distance.</div>
+            </div>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Result</div>
+                <div class="pdr-content">The single-slide system was meaningfully more reliable than the dual-slide approach. The hole-shift fix resolved belt skipping entirely. The aluminum inserts held through the full competition season with no failures — the 8 broken polycarbonate mounts were expensive in time but gave us a clear answer on material choice.</div>
+            </div>
+
+            <img src="../files/robot-photos/mantisbot/slides&pivot.jpeg" alt="MantisBot linear slides and pivot system" style="width: 100%; height: auto; border-radius: 12px; object-fit: cover; margin-top: 20px; border: 1px solid var(--border-light);">
+        </div>
+
+        <!-- Mechanism 4: Climb -->
+        <div class="mechanism-section">
+            <h3 class="mechanism-title">🧗 Ascent / Climb</h3>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Problem</div>
+                <div class="pdr-content">The end-game requires climbing onto horizontal bars at increasing heights for bonus points. A separate dedicated climbing mechanism adds weight and complexity. We needed to achieve the climb without adding a new system to an already complex robot.</div>
+            </div>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Design Decision</div>
+                <div class="pdr-content">I designed the ascent component to attach directly to the linear slides, using the same system we already had for scoring to pull the robot onto the bars. Static hooks shaped by the upper chassis maintain a minimal profile during normal play and engage the bar when the slides extend and retract. I performed a torque calculation to determine the required motor force to lift the full robot weight, then selected the fastest motors that met that torque threshold — balancing speed with reliability.</div>
+            </div>
+
+            <div class="problem-decision-result">
+                <div class="pdr-label">Result</div>
+                <div class="pdr-content">Integrating the climb into the existing slide system eliminated a dedicated mechanism entirely, saving weight and motor ports. The torque-calculated motor selection meant the climb was reliable without being over-engineered. The static hooks' minimal profile meant they didn't interfere with normal scoring operations during teleop.</div>
+            </div>
+
+            <img src="../files/robot-photos/mantisbot/climb.png" alt="MantisBot ascent and climb mechanism" style="width: 100%; height: auto; border-radius: 12px; object-fit: cover; margin-top: 20px; border: 1px solid var(--border-light);">
+        </div>
+
+        <!-- Full Robot -->
+        <div class="mechanism-section">
+            <h3 class="mechanism-title">🤖 Full Robot</h3>
+            <div class="section-content">
+                <p>MantisBot went through more iterations than any previous Pioneer Robotics robot. We attempted PTO and Differential Swerve — two mechanisms we'd never built — before recognizing midseason that the complexity was hurting reliability. The final robot strips back to what works: a dead-axle mecanum base, a single belt-driven slide system, a differential claw, and an integrated climb. Every mechanism on the robot can be accessed or removed for maintenance without disturbing adjacent systems. The Agile sprint methodology meant we had clear documentation of every decision, which made the midseason pivot much faster to execute than it would have been otherwise.</p>
+            </div>
+
+            <img src="../files/robot-photos/mantisbot/full_robot.jpeg" alt="MantisBot complete robot assembly" style="width: 100%; height: auto; border-radius: 12px; object-fit: cover; margin-top: 20px; border: 1px solid var(--border-light);">
+        </div>
+
+        <!-- Key Takeaways -->
+        <div class="content-section">
+            <h2 class="section-title">Key Takeaways</h2>
+            <p class="takeaway-intro">Add your own reflection here.</p>
+            <ol class="takeaway-list">
+                <li>
+                    <div class="takeaway-list-item">
+                        <div class="takeaway-list-number">1</div>
+                        <div class="takeaway-list-content">
+                            <div class="takeaway-list-title">Ambition Needs a Cutoff Date</div>
+                            <div class="takeaway-list-text">We spent months on PTO and Differential Swerve — both legitimate engineering challenges — but waiting too long to acknowledge they weren't competition-ready cost us development time on the final robot. Setting a hard go/no-go date for experimental mechanisms upfront would have saved weeks.</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="takeaway-list-item">
+                        <div class="takeaway-list-number">2</div>
+                        <div class="takeaway-list-content">
+                            <div class="takeaway-list-title">Failed Mechanisms Teach Working Ones</div>
+                            <div class="takeaway-list-text">The PTO prototype never made it onto the final robot, but the bevel gear knowledge from building it directly enabled the differential claw design. Time spent on an abandoned mechanism isn't always wasted — it depends on what you extract from it.</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="takeaway-list-item">
+                        <div class="takeaway-list-number">3</div>
+                        <div class="takeaway-list-content">
+                            <div class="takeaway-list-title">Test to Failure, Then Choose the Right Material</div>
+                            <div class="takeaway-list-text">Breaking 8 polycarbonate slide mounts was frustrating but conclusive. We knew exactly why aluminum was the right choice and had data to back it. Switching materials based on one failure is a guess — switching after repeated failures under real conditions is engineering.</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="takeaway-list-item">
+                        <div class="takeaway-list-number">4</div>
+                        <div class="takeaway-list-content">
+                            <div class="takeaway-list-title">Simplicity Is a Design Decision, Not a Fallback</div>
+                            <div class="takeaway-list-text">The final robot is simpler than what we originally planned. That simplicity was earned — it came from understanding why the complex version didn't work, not from avoiding complexity in the first place. A simple robot that competes reliably beats a complex one that doesn't.</div>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="content-section">
+            
         <div class="action-buttons"><a href="files/MantisBot.usdz" class="btn-primary">📱 VIEW IN AR</a></div>
     </div>
             <script>
@@ -261,7 +314,8 @@
         function updateToggleIcon() {
             const currentTheme = document.documentElement.getAttribute('data-theme');
             const toggleBtn = document.getElementById('theme-toggle');
-            if (toggleBtn) toggleBtn.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+            const icon = document.querySelector('.theme-icon');
+            if (icon) icon.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
         }
         
         updateToggleIcon();
@@ -279,6 +333,7 @@
     </script>
 </body>
 </html>
+
 
 
 

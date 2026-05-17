@@ -11,7 +11,7 @@ files = [f for f in os.listdir(directory) if f.endswith('.html')]
 robot_files = [f for f in os.listdir(robot_directory) if f.endswith('.html')]
 public_files = [f for f in os.listdir(public_directory) if f.endswith('.html')] if os.path.exists(public_directory) else []
 
-# Standardized CSS from Shreybot-docs.html + accessibility fixes
+# Standardized CSS with Spec Grid support + accessibility fixes
 MODERN_CSS = """
         :root {
             --bg-primary: #ffffff;
@@ -85,6 +85,47 @@ MODERN_CSS = """
         .section-content p { margin-bottom: 40px; }
         .mechanism-image { width: 100%; border-radius: 24px; border: 1px solid var(--border-light); box-shadow: 0 40px 80px var(--shadow-medium); margin: 40px 0; display: block; }
         .card { background: var(--bg-secondary); padding: 45px; border-radius: 24px; margin: 40px 0; border: 1px solid var(--border-light); }
+        
+        /* Specs Grid Styles */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-bottom: 80px;
+            padding-top: 20px;
+        }
+
+        .spec-card {
+            background: var(--bg-secondary);
+            padding: 25px;
+            border-radius: 20px;
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .spec-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 15px 30px var(--shadow-medium);
+        }
+
+        .spec-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-primary);
+            font-weight: 800;
+        }
+
+        .spec-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
         @media (max-width: 768px) { .container { padding: 40px 20px; } h1 { font-size: 2.2rem; } .header { flex-direction: column; text-align: center; gap: 30px; } }
 """
 
@@ -123,18 +164,21 @@ def update_file(filepath):
     subtitle_match = re.search(r'class="subtitle">(.*?)</', content)
     subtitle = subtitle_match.group(1).strip() if subtitle_match else ""
 
+    specs_match = re.search(r'(<section class="specs-grid">.*?</section>)', content, re.DOTALL)
+    specs_content = specs_match.group(1).strip() if specs_match else ""
+
     main_match = re.search(r'<main>(.*)</main>', content, re.DOTALL)
     if main_match:
         inner_content = main_match.group(1).strip()
     else:
+        # Improved extraction if main tag is missing or broken
         inner_content = re.sub(r'<!DOCTYPE.*?</header>', '', content, flags=re.DOTALL)
+        inner_content = re.sub(r'<section class="specs-grid">.*?</section>', '', inner_content, flags=re.DOTALL)
         inner_content = re.sub(r'<script>.*</html>', '', inner_content, flags=re.DOTALL)
         inner_content = re.sub(r'</div>\s*$', '', inner_content.strip())
         inner_content = inner_content.strip()
 
     inner_content = re.sub(r'</?main[^>]*>', '', inner_content, flags=re.IGNORECASE)
-
-    project_type = "Engineering" if ("hardware" in content.lower() or "3d" in content.lower()) else "Software"
 
     new_html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -153,11 +197,19 @@ def update_file(filepath):
                 <h1>{title}</h1>
                 <div class="subtitle">{subtitle}</div>
             </div>
-            <div style="display: flex; gap: 12px; align-items: flex-start;">
-                <button id="theme-toggle" class="theme-toggle" title="Toggle dark/light mode">🌙</button>
+            <div style="display: flex; gap: 20px; align-items: center;">
+                <button id="theme-toggle" class="theme-toggle" title="Toggle dark/light mode">
+                    <div class="theme-toggle-track">
+                        <div class="theme-toggle-thumb">
+                            <span class="theme-icon">🌙</span>
+                        </div>
+                    </div>
+                </button>
                 <a href="../" class="back-link">← Back</a>
             </div>
         </div>
+
+        {specs_content}
 
         <main>
             {inner_content}
@@ -175,6 +227,19 @@ def update_file(filepath):
 
 for filename in files:
     path = os.path.join(directory, filename)
+    if os.path.exists(path):
+        update_file(path)
+
+for filename in robot_files:
+    path = os.path.join(robot_directory, filename)
+    if os.path.exists(path):
+        update_file(path)
+
+for filename in public_files:
+    path = os.path.join(public_directory, filename)
+    if os.path.exists(path):
+        update_file(path)
+ename)
     if os.path.exists(path):
         update_file(path)
 

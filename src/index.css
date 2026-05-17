@@ -14,11 +14,11 @@
 
 /* Light Theme Variables */
 [data-theme="light"] {
-  --bg-primary: #f5fffb; /* Cleaner Mint White */
-  --bg-secondary: #ebfff8;
+  --bg-primary: #f0fdf4; /* Light Green Background */
+  --bg-secondary: #e8f5e9;
   --bg-tertiary: rgba(0, 112, 255, 0.05);
-  --bg-card: rgba(255, 255, 255, 0.95);
-  --bg-card-hover: #ffffff;
+  --bg-card: #e0f7e6; /* Light Green Card */
+  --bg-card-hover: #d8f5e0; /* Slightly darker light green on hover */
   
   --text-primary: #0044cc; /* Deep Vibrant Blue for headings */
   --text-secondary: #0055ff; /* Vibrant Blue for body text */
@@ -42,7 +42,7 @@
   
   --gradient-primary: linear-gradient(135deg, #0070ff 0%, #00c2ff 100%);
   --gradient-secondary: linear-gradient(135deg, #0044cc 0%, #0070ff 100%);
-  --gradient-background: linear-gradient(135deg, #f5fffb 0%, #ebfff8 100%);
+  --gradient-background: linear-gradient(135deg, #f0fdf4 0%, #e8f5e9 100%);
 }
 
 /* Dark Theme Variables - Elite Premium Style */

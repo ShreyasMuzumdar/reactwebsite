@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🛰️ Satellite Tracking Project | Portfolio</title>
+    <title>ðŸ›°ï¸ Satellite Tracking Project | Portfolio</title>
     <style>
         :root {
             --bg-primary: #ffffff;
@@ -54,7 +54,7 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg-primary); color: var(--text-primary); transition: background 0.3s ease; line-height: 1.7; padding: 60px 20px; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg-primary); color: var(--text-primary); transition: background 0.3s ease, color 0.3s ease; line-height: 1.7; padding: 60px 20px; }
         .container { max-width: 950px; margin: 0 auto; background: var(--bg-card); border-radius: 28px; padding: 80px 70px; box-shadow: 0 40px 100px var(--shadow-medium); border: 1px solid var(--border-light); backdrop-filter: blur(15px); }
         
         .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 70px; padding-bottom: 40px; border-bottom: 2px solid var(--border-light); }
@@ -77,18 +77,58 @@
         .mechanism-image { width: 100%; border-radius: 24px; border: 1px solid var(--border-light); box-shadow: 0 40px 80px var(--shadow-medium); margin: 40px 0; display: block; }
         .card { background: var(--bg-secondary); padding: 45px; border-radius: 24px; margin: 40px 0; border: 1px solid var(--border-light); }
         @media (max-width: 768px) { .container { padding: 40px 20px; } h1 { font-size: 2.2rem; } .header { flex-direction: column; text-align: center; gap: 30px; } .header-controls { margin-top: 20px; } }
+
+        /* Specs Grid Styles */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-bottom: 80px;
+            padding-top: 20px;
+        }
+
+        .spec-card {
+            background: var(--bg-secondary);
+            padding: 25px;
+            border-radius: 20px;
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .spec-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 15px 30px var(--shadow-medium);
+        }
+
+        .spec-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-primary);
+            font-weight: 800;
+        }
+
+        .spec-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <header class="header">
             <div>
-                <h1>🛰️ Satellite Tracking Project</h1>
+                <h1>ðŸ›°ï¸ Satellite Tracking Project</h1>
                 <p class="subtitle">Software Case Study</p>
             </div>
-            <div class="header-controls">
-                <button id="theme-toggle" class="btn-icon">🌙</button>
-                <a href="../" class="back-link">← BACK</a>
+                        <div style="display: flex; gap: 20px; align-items: center;">
+                <button id="theme-toggle" class="theme-toggle" title="Toggle dark/light mode">ðŸŒ™</button>
+                <a href="../" class="back-link">â† Back</a>
             </div>
         </header>
 
@@ -180,7 +220,7 @@
                     <img src="images/satellite/feedback1.jpeg" alt="Exhibition Feedback" class="mechanism-image">
                     <p align="center"><i>Fig. 4. Educational poster and feedback wall indicating strong user engagement during the exhibition.</i></p>
 
-                    <p>However, the journey was not without significant unexpected challenges. During the day of the final exhibition expo, disaster struck. One of the servos failed, which completely rendered the interactive scoring system non-functional. When I (Shreyas) desperately tried to fix the issue on-site by swapping out the cable, the situation cascaded—other parts of the circuit stopped working entirely, likely due to the fact that I was rapidly changing complex wires under extreme pressure. In the end, I was not able to fix the project in time to get it fully ready for the live expo judging. While this was deeply frustrating, the team demonstrated remarkable resilience by pivoting to a facilitated, educational interaction model. We used the physical ring and our highly detailed informational poster board to manually explain the concepts of satellite orbits and their real-world applications to the visiting children.</p>
+                    <p>However, the journey was not without significant unexpected challenges. During the day of the final exhibition expo, disaster struck. One of the servos failed, which completely rendered the interactive scoring system non-functional. When I (Shreyas) desperately tried to fix the issue on-site by swapping out the cable, the situation cascadedâ€”other parts of the circuit stopped working entirely, likely due to the fact that I was rapidly changing complex wires under extreme pressure. In the end, I was not able to fix the project in time to get it fully ready for the live expo judging. While this was deeply frustrating, the team demonstrated remarkable resilience by pivoting to a facilitated, educational interaction model. We used the physical ring and our highly detailed informational poster board to manually explain the concepts of satellite orbits and their real-world applications to the visiting children.</p>
                     
                     <p>Reflecting on the team dynamics and the engineering design process, I realized that my communication could have been better. If I were to go back and give myself feedback, I would have strongly suggested speaking up about technical issues sooner rather than later. I was worried about how I came across to my teammates since they did not have prior engineering experience. For example, I had known that our initial project idea (the maglev train) would not have worked interactively, but I didn't say anything on day one to stop the confusion ahead of time. I learned that clear, assertive communication is absolutely vital in a collaborative engineering environment.</p>
 
@@ -192,10 +232,10 @@
                 <h2 class="section-title">Sources</h2>
                 <div class="section-content">
                     <ol>
-                        <li id="source-1" style="word-break: break-all;">“Description | Mission,” SMAP. Accessed: Apr. 16, 2026. [Online]. Available: <a href="https://smap.jpl.nasa.gov/mission/description" target="_blank" rel="noopener noreferrer">https://smap.jpl.nasa.gov/mission/description</a></li>
-                        <li id="source-2" style="word-break: break-all;">“Goal 9 | Department of Economic and Social Affairs.” Accessed: Apr. 16, 2026. [Online]. Available: <a href="https://sdgs.un.org/goals/goal9" target="_blank" rel="noopener noreferrer">https://sdgs.un.org/goals/goal9</a></li>
-                        <li id="source-3" style="word-break: break-all;">A. Sufyan, K. B. Khan, O. A. Khashan, T. Mir, and U. Mir, “From 5G to beyond 5G: A Comprehensive Survey of Wireless Network Evolution, Challenges, and Promising Technologies,” Electronics, vol. 12, no. 10, p. 2200, May 2023, doi: <a href="https://doi.org/10.3390/electronics12102200" target="_blank" rel="noopener noreferrer">10.3390/electronics12102200</a></li>
-                        <li id="source-4" style="word-break: break-all;">E. Westberg, J. Staudinger, J. Annes, and V. Shilimkar, “5G Infrastructure RF Solutions: Challenges and Opportunities,” IEEE Microwave Magazine, vol. 20, no. 12, pp. 51–58, Dec. 2019, doi: <a href="https://doi.org/10.1109/mmm.2019.2941631" target="_blank" rel="noopener noreferrer">10.1109/mmm.2019.2941631</a></li>
+                        <li id="source-1" style="word-break: break-all;">â€œDescription | Mission,â€ SMAP. Accessed: Apr. 16, 2026. [Online]. Available: <a href="https://smap.jpl.nasa.gov/mission/description" target="_blank" rel="noopener noreferrer">https://smap.jpl.nasa.gov/mission/description</a></li>
+                        <li id="source-2" style="word-break: break-all;">â€œGoal 9 | Department of Economic and Social Affairs.â€ Accessed: Apr. 16, 2026. [Online]. Available: <a href="https://sdgs.un.org/goals/goal9" target="_blank" rel="noopener noreferrer">https://sdgs.un.org/goals/goal9</a></li>
+                        <li id="source-3" style="word-break: break-all;">A. Sufyan, K. B. Khan, O. A. Khashan, T. Mir, and U. Mir, â€œFrom 5G to beyond 5G: A Comprehensive Survey of Wireless Network Evolution, Challenges, and Promising Technologies,â€ Electronics, vol. 12, no. 10, p. 2200, May 2023, doi: <a href="https://doi.org/10.3390/electronics12102200" target="_blank" rel="noopener noreferrer">10.3390/electronics12102200</a></li>
+                        <li id="source-4" style="word-break: break-all;">E. Westberg, J. Staudinger, J. Annes, and V. Shilimkar, â€œ5G Infrastructure RF Solutions: Challenges and Opportunities,â€ IEEE Microwave Magazine, vol. 20, no. 12, pp. 51â€“58, Dec. 2019, doi: <a href="https://doi.org/10.1109/mmm.2019.2941631" target="_blank" rel="noopener noreferrer">10.1109/mmm.2019.2941631</a></li>
                     </ol>
                 </div>
             </div>
@@ -208,7 +248,7 @@
         function updateToggleIcon() {
             const currentTheme = document.documentElement.getAttribute('data-theme');
             const toggleBtn = document.getElementById('theme-toggle');
-            if (toggleBtn) toggleBtn.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+            if (toggleBtn) toggleBtn.textContent = currentTheme === 'dark' ? 'â˜€ï¸' : 'ðŸŒ™';
         }
         
         updateToggleIcon();

@@ -44,8 +44,12 @@ html {
   width: 8px;
 }
 
-::-webkit-scrollbar-track {
-  background: #f0f4f8;
+[data-theme="light"] ::-webkit-scrollbar-track {
+  background: #e0f7e6;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-track {
+  background: #172a45;
 }
 
 ::-webkit-scrollbar-thumb {
