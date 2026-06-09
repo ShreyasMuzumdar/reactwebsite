@@ -29,7 +29,7 @@ const Projects = (): React.ReactElement => {
       categories: ["AI & ML", "Raspberry Pi", "Automation", "IoT"],
       icon: 'robot' as const,
       github: "https://github.com/ShreyasMuzumdar",
-      docs: `${import.meta.env.BASE_URL}project-docs/openclaw-assistant.html`
+      docs: `https://shreyasmuzumdar.github.io/engineering-documentation/project-docs/hermes-assistant`
     },
     {
       title: "Auto Tracking Camera",
@@ -37,21 +37,21 @@ const Projects = (): React.ReactElement => {
       categories: ["AI & ML", "Raspberry Pi", "Computer Vision"],
       icon: 'video' as const,
       github: "https://github.com/ShreyasMuzumdar/CameraTrackingSystem",
-      docs: `${import.meta.env.BASE_URL}project-docs/auto-tracking-camera.html`
+      docs: `https://shreyasmuzumdar.github.io/engineering-documentation/project-docs/auto-tracking-camera`
     },
     {
       title: "3D Printing Manufacturing Control System",
       description: "IoT-based system for real-time monitoring and control of 3D printing processes.",
       categories: ["3D Printing", "IoT", "Arduino"],
       icon: 'print' as const,
-      docs: `${import.meta.env.BASE_URL}project-docs/3d-printing-control.html`
+      docs: `https://shreyasmuzumdar.github.io/engineering-documentation/project-docs/3d-printing-control`
     },
     {
       title: "Home Automation System",
       description: "Installed a home automation system that connects over 150 smart devices across multiple ecosystems to a single Raspberry Pi server.",
       categories: ["IoT", "Arduino", "Automation"],
       icon: 'house' as const,
-      docs: `${import.meta.env.BASE_URL}project-docs/home-automation.html`
+      docs: `https://shreyasmuzumdar.github.io/engineering-documentation/project-docs/Home%20Automation%20System`
     },
     {
       title: "Hand Tracking Mouse",
@@ -59,7 +59,7 @@ const Projects = (): React.ReactElement => {
       categories: ["AI & ML", "Arduino", "Computer Vision"],
       icon: 'hand' as const,
       github: "https://github.com/ShreyasMuzumdar/HandTrackingMouse",
-      docs: `${import.meta.env.BASE_URL}project-docs/hand-tracking-mouse.html`
+      docs: `https://shreyasmuzumdar.github.io/engineering-documentation/project-docs/hand-tracking-mouse`
     },
     {
       title: "ShreyAI Voice Assistant",
@@ -67,7 +67,7 @@ const Projects = (): React.ReactElement => {
       categories: ["AI & ML", "IoT", "Raspberry Pi"],
       icon: 'robot' as const,
       github: "https://github.com/ShreyasMuzumdar/ollama-voice-mac",
-      docs: `${import.meta.env.BASE_URL}project-docs/voice-assistant.html`
+      docs: `https://shreyasmuzumdar.github.io/engineering-documentation/project-docs/voice-assistant`
     },
     {
       title: "Connect 4 AI Bot",
@@ -75,7 +75,7 @@ const Projects = (): React.ReactElement => {
       categories: ["AI & ML", "Python"],
       icon: 'chess' as const,
       github: "https://github.com/ShreyasMuzumdar/connect4",
-      docs: `${import.meta.env.BASE_URL}project-docs/connect4.html`,
+      docs: `https://shreyasmuzumdar.github.io/engineering-documentation/project-docs/connect4`,
       demo: "https://shreyasmuzumdar.github.io/connect-4/"
     },
     {
@@ -84,7 +84,7 @@ const Projects = (): React.ReactElement => {
       categories: ["Python"],
       icon: 'python' as const,
       github: "https://github.com/ShreyasMuzumdar",
-      docs: `${import.meta.env.BASE_URL}project-docs/python-automations.html`
+      docs: `https://shreyasmuzumdar.github.io/engineering-documentation/project-docs/python-automations`
     },
     {
       title: "Satellite Tracking Project",
@@ -92,7 +92,7 @@ const Projects = (): React.ReactElement => {
       categories: ["Arduino", "MATLAB"],
       icon: 'satellite' as const,
       github: "https://github.com/ShreyasMuzumdar",
-      docs: `${import.meta.env.BASE_URL}project-docs/satellite-tracking.html`
+      docs: `https://shreyasmuzumdar.github.io/engineering-documentation/project-docs/satellite-tracking`
     }
   ];
 

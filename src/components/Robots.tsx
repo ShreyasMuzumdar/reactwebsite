@@ -11,28 +11,28 @@ const Robots: React.FC = () => {
       description: "Shreybot is a custom robot project showcasing innovative design and engineering.",
       image: `${baseUrl}files/Shreybot.png`,
       model3d: `${baseUrl}files/Shreybot.usdz`,
-      docs: `${baseUrl}robot-docs/Shreybot-docs.html`,
+      docs: `https://shreyasmuzumdar.github.io/engineering-documentation/robot-docs/Shreybot`,
     },
     {
       name: "StretchBot",
       description: "Stretch Bot was our robot during the POWERPLAY season. We won the State Championship and had the highest scoring match in the State Championship with 269 points.",
       image: `${baseUrl}files/StretchBot.png`,
       model3d: `${baseUrl}files/StretchBot.usdz`,
-      docs: `${baseUrl}robot-docs/StretchBot-docs.html`,
+      docs: `https://shreyasmuzumdar.github.io/engineering-documentation/robot-docs/StretchBot`,
     },
     {
       name: "BlackBox",
       description: "BlackBox was our robot during the CENTERSTAGE season. We went to the finals of the State Championship and averaged the highest autonomous robot score.",
       image: `${baseUrl}files/BlackBox.png`,
       model3d: `${baseUrl}files/BlackBox.usdz`,
-      docs: `${baseUrl}robot-docs/BlackBox-docs.html`,
+      docs: `https://shreyasmuzumdar.github.io/engineering-documentation/robot-docs/BlackBox`,
     },
     {
       name: "MantisBot",
       description: "MantisBot was our robot during the INTOTHEDEEP season. It uses a camera and differential claw designed to precisely pick up objects with minimal human intervention.",
       image: `${baseUrl}files/MantisBot.png`,
       model3d: `${baseUrl}files/MantisBot.usdz`,
-      docs: `${baseUrl}robot-docs/MantisBot-docs.html`,
+      docs: `https://shreyasmuzumdar.github.io/engineering-documentation/robot-docs/MantisBot`,
     }
   ];
 
