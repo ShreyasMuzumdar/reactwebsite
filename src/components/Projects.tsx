@@ -24,7 +24,7 @@ const Projects = (): React.ReactElement => {
 
   const projects = [
     {
-      title: "OpenClaw AI Assistant",
+      title: "Hermes AI Assistant",
       description: "High-performance automation hub using Gemini 3.1 Lite and local Llama 3.2 for complex intents and scheduled workflows like weekly newsletters.",
       categories: ["AI & ML", "Raspberry Pi", "Automation", "IoT"],
       icon: 'robot' as const,
