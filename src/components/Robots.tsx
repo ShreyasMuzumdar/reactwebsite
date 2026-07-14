@@ -5,7 +5,7 @@ import GlareHover from './GlareHover';
 const Robots: React.FC = () => {
   const baseUrl = import.meta.env.BASE_URL;
   
-  const robots = [
+  const ftcRobots = [
     {
       name: "Shreybot",
       description: "Shreybot is a custom robot project showcasing innovative design and engineering.",
@@ -36,6 +36,44 @@ const Robots: React.FC = () => {
     }
   ];
 
+  const roverProjects = [
+    {
+      name: "Watney MKVII — Auger",
+      description: "Subsystem on the Watney MKVII rover competing in the University Rover Challenge (URC) and the Canadian International Rover Challenge (CIRC). The Auger collects sand samples from the surface for life detection analysis.",
+      image: `${baseUrl}files/WatneyMKVII.png`,
+      docs: `https://shreyasmuzumdar.github.io/engineering-documentation/robot-docs/Auger`,
+    }
+  ];
+
+  const RobotCard = ({ robot, show3d = true }: { robot: { name: string; description: string; image: string; docs: string; model3d?: string }, show3d?: boolean }) => (
+    <GlareHover className="robot-card">
+      <div className="robot-image-container">
+        <img src={robot.image} alt={robot.name} className="robot-image" />
+        {show3d && robot.model3d && (
+          <div className="image-overlay">
+            <a href={robot.model3d} className="view-3d-btn">
+              <span>📱</span> View in AR
+            </a>
+          </div>
+        )}
+      </div>
+      <div className="robot-content">
+        <h3 className="robot-name">{robot.name}</h3>
+        <p className="robot-description">{robot.description}</p>
+        <div className="robot-actions">
+          {show3d && robot.model3d && (
+            <a href={robot.model3d} className="robot-link primary">
+              <span>🥽</span> 3D Preview
+            </a>
+          )}
+          <a href={robot.docs} className="robot-link primary">
+            <span>📖</span> Documentation
+          </a>
+        </div>
+      </div>
+    </GlareHover>
+  );
+
   return (
     <section id="robots" className="robots-section">
       <div className="container">
@@ -43,40 +81,21 @@ const Robots: React.FC = () => {
           <span className="title-icon">🤖</span>
           Robots
         </h2>
-        
+
+        <h3 className="robots-subsection-title">🏆 FTC — Pioneer Robotics (Team 12589)</h3>
         <div className="robots-grid">
-          {robots.map((robot, index) => (
-            <GlareHover key={index} className="robot-card">
-              <div className="robot-image-container">
-                <img src={robot.image} alt={robot.name} className="robot-image" />
-                <div className="image-overlay">
-                  <a href={robot.model3d} className="view-3d-btn">
-                    <span>📱</span> View in AR
-                  </a>
-                </div>
-              </div>
-              
-              <div className="robot-content">
-                <h3 className="robot-name">
-                  {robot.name}
-                </h3>
-                <p className="robot-description">
-                  {robot.description}
-                </p>
-                
-                <div className="robot-actions">
-                  <a href={robot.model3d} className="robot-link primary">
-                    <span>🥽</span> 3D Preview
-                  </a>
-                  <a href={robot.docs} className="robot-link primary">
-                    <span>📖</span> Documentation
-                  </a>
-                </div>
-              </div>
-            </GlareHover>
+          {ftcRobots.map((robot, index) => (
+            <RobotCard key={index} robot={robot} show3d={true} />
           ))}
         </div>
-        
+
+        <h3 className="robots-subsection-title">🪐 Rover — Watney MKVII (URC / CIRC)</h3>
+        <div className="robots-grid">
+          {roverProjects.map((robot, index) => (
+            <RobotCard key={index} robot={robot} show3d={false} />
+          ))}
+        </div>
+
         <div className="ar-info">
           <div className="ar-notice">
             <span className="ar-icon">📱</span>
