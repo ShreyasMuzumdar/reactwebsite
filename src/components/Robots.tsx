@@ -38,9 +38,10 @@ const Robots: React.FC = () => {
 
   const roverProjects = [
     {
-      name: "Watney MKVII — Auger",
+      name: "Watney MKVII",
       description: "Subsystem on the Watney MKVII rover competing in the University Rover Challenge (URC) and the Canadian International Rover Challenge (CIRC). The Auger collects sand samples from the surface for life detection analysis.",
       image: `${baseUrl}files/WatneyMKVII.png`,
+      model3d: `${baseUrl}files/WatneyMKVII.usdz`,
       docs: `https://shreyasmuzumdar.github.io/engineering-documentation/robot-docs/Auger`,
     }
   ];
@@ -90,9 +91,9 @@ const Robots: React.FC = () => {
         </div>
 
         <h3 className="robots-subsection-title">🪐 Rover — Watney MKVII (URC / CIRC)</h3>
-        <div className="robots-grid">
+        <div className={`robots-grid ${roverProjects.length === 1 ? 'single-card' : ''}`}>
           {roverProjects.map((robot, index) => (
-            <RobotCard key={index} robot={robot} show3d={false} />
+            <RobotCard key={index} robot={robot} show3d={true} />
           ))}
         </div>
 

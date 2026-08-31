@@ -52,6 +52,14 @@
   margin-bottom: 50px;
 }
 
+.robots-grid.single-card {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.robots-grid.single-card .robot-card {
+  grid-column: 1;
+}
+
 .robot-card {
   background: var(--bg-card);
   border-radius: 4px;
@@ -98,6 +106,12 @@
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
+}
+
+.robots-grid.single-card .robot-image {
+  object-fit: contain;
+  padding: 5px;
+  transform: scale(1.15);
 }
 
 .robot-card:hover .robot-image {
@@ -456,5 +470,25 @@
   
   .spec-item {
     padding: 15px;
+  }
+}
+
+/* Mobile Robot Grid Styles */
+@media (max-width: 768px) {
+  .robots-grid,
+  .robots-grid.single-card {
+    grid-template-columns: 1fr;
+  }
+
+  .robots-grid.single-card .robot-card {
+    grid-column: 1;
+  }
+
+  .robot-image-container {
+    height: 220px;
+  }
+
+  .robots-grid.single-card .robot-image {
+    transform: scale(1);
   }
 }
