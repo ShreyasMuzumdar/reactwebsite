@@ -65,16 +65,6 @@
   transition: color 0.3s ease;
 }
 
-.title-icon {
-  font-size: 2rem;
-  animation: rotate 3s linear infinite;
-}
-
-@keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));

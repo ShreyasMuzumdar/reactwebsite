@@ -62,7 +62,6 @@ const EducationExperience: React.FC = () => {
     <section id="education-experience" className="education-experience-section">
       <div className="container">
         <h2 className="section-title">
-          <span className="title-icon">📚</span>
           Education & Experience
         </h2>
         

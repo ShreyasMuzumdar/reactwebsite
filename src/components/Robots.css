@@ -34,17 +34,6 @@
   transition: color 0.3s ease;
 }
 
-.title-icon {
-  font-size: 2rem;
-  animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-  40% { transform: translateY(-10px); }
-  60% { transform: translateY(-5px); }
-}
-
 .robots-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));

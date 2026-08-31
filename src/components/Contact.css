@@ -25,16 +25,6 @@
   transition: color 0.3s ease;
 }
 
-.title-icon {
-  font-size: 2rem;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-}
-
 .contact-content-centered {
   display: flex;
   justify-content: center;

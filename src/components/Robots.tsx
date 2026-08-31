@@ -39,7 +39,7 @@ const Robots: React.FC = () => {
   const roverProjects = [
     {
       name: "Watney MKVII",
-      description: "Subsystem on the Watney MKVII rover competing in the University Rover Challenge (URC) and the Canadian International Rover Challenge (CIRC). The Auger collects sand samples from the surface for life detection analysis.",
+      description: "The sand-collection auger I designed for Watney MKVII, Northeastern's rover for the University Rover Challenge (URC) and Canadian International Rover Challenge (CIRC). Iterated from an ice-auger drill to a straight-tube design after real sample-yield testing.",
       image: `${baseUrl}files/WatneyMKVII.png`,
       model3d: `${baseUrl}files/WatneyMKVII.usdz`,
       docs: `https://shreyasmuzumdar.github.io/engineering-documentation/robot-docs/Auger`,
@@ -79,18 +79,17 @@ const Robots: React.FC = () => {
     <section id="robots" className="robots-section">
       <div className="container">
         <h2 className="section-title">
-          <span className="title-icon">🤖</span>
           Robots
         </h2>
 
-        <h3 className="robots-subsection-title">🏆 FTC — Pioneer Robotics (Team 12589)</h3>
+        <h3 className="robots-subsection-title">FTC — Pioneer Robotics (Team 12589)</h3>
         <div className="robots-grid">
           {ftcRobots.map((robot, index) => (
             <RobotCard key={index} robot={robot} show3d={true} />
           ))}
         </div>
 
-        <h3 className="robots-subsection-title">🪐 Rover — Watney MKVII (URC / CIRC)</h3>
+        <h3 className="robots-subsection-title">Rover — Watney MKVII (URC / CIRC)</h3>
         <div className={`robots-grid ${roverProjects.length === 1 ? 'single-card' : ''}`}>
           {roverProjects.map((robot, index) => (
             <RobotCard key={index} robot={robot} show3d={true} />

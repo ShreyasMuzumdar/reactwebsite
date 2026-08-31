@@ -41,9 +41,6 @@ const Contact: React.FC = () => {
     <section id="contact" className="contact-section">
         <div className="container">
         <h2 className="section-title">
-          <FloatingElement intensity="medium" direction="up" duration={3}>
-            <span className="title-icon">📡</span>
-          </FloatingElement>
           <TypewriterEffect 
             text="Get In Touch" 
             speed={120}

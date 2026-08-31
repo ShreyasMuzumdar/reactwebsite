@@ -23,13 +23,6 @@
   letter-spacing: -1px;
 }
 
-.education-experience-section .title-icon {
-  font-size: 3.5rem;
-  margin-right: 1.5rem;
-  display: inline-block;
-  animation: float 3s ease-in-out infinite;
-}
-
 .subsection-title {
   display: flex;
   align-items: center;

@@ -112,7 +112,6 @@ const Projects = (): React.ReactElement => {
     <section id="projects" className="projects-section">
         <div className="container">
         <h2 className="section-title">
-          <span className="title-icon">🔧</span>
           Projects
         </h2>
         

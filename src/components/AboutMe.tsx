@@ -25,16 +25,17 @@ const AboutMe = () => {
               </h1>
               <h2 className="subtitle">
                 <TypewriterEffect 
-                  text={["Mechanical Engineer", "Robotics Enthusiast", "Problem Solver", "Innovation Driver"]} 
+                  text={["Mechanical Engineer", "FTC Robotics — Team 12589", "Rover Auger Designer", "CAD & Fabrication"]} 
                   speed={150}
                   className="gradient"
                 />
               </h2>
               <p className="description">
-                Hello, My name is Shreyas Muzumdar. I am a student at Northeastern
-                University and graduated from Saint Johns High School. Over the past few years, worked
-                on various projects broadening my engineering experience. Eager to work hard
-                while learning new concepts and helping you and your team in any way I can.
+                I'm a mechanical engineering student at Northeastern University. Most of what I build
+                sits at the intersection of mechanical design and code — I spent years on FTC robotics
+                with Pioneer Robotics (Team 12589), where our robots won a State Championship and
+                made state finals twice more, and I'm currently on Northeastern's Rover Team designing
+                the sand-collection auger for our Mars-analog rover, Watney MKVII.
               </p>
             </div>
           </div>
